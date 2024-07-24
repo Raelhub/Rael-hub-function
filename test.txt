@@ -48,32 +48,4 @@ local function RaelHubFunction.ShowText(text, count)
     countdown()
 end
 
-local function RaelHubFunction.congelar(tempo)
-    local player = game.Players.LocalPlayer
-    local character = player.Character
-    if character then
-        local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
-        if humanoidRootPart then
-            humanoidRootPart.Anchored = true
-            game.StarterGui:SetCore("ChatMakeSystemMessage", {
-                Text = "Personagem congelado por " .. tostring(tempo) .. " segundos!",
-                Color = Color3.new(1, 0, 0)
-            })
-
-            wait(tempo)
-            
-            humanoidRootPart.Anchored = false
-            game.StarterGui:SetCore("ChatMakeSystemMessage", {
-                Text = "Personagem descongelado!",
-                Color = Color3.new(0, 1, 0)
-            })
-        else
-            game.StarterGui:SetCore("ChatMakeSystemMessage", {
-                Text = "HumanoidRootPart não encontrado!",
-                Color = Color3.new(1, 0, 0)
-            })
-        end
-    end
-end
-
 return RaelHubFunction
