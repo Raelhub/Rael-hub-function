@@ -1,0 +1,168 @@
+local Tab1 = {
+  tabname1 = "",
+  section1 = "",
+  button1 = ""
+}
+
+local Tab2 = {
+  tabname2 = "",
+  section2 = "",
+  button2 = ""
+}
+
+local Tab3 = {
+  tabname3 = "",
+  section3 = "",
+  button3 = ""
+}
+
+local Tab4 = {
+  tabname4 = "",
+  section4 = "",
+  button4 = "",
+  section5 = "",
+  button5 = ""
+}
+
+local Tab5 = {
+  tabname5 = "",
+  section5 = "",
+  nameNotificacao5 = "",
+  notificacao5 = ""
+}
+
+local RaelHubTranslator = {
+  Tab1 = Tab1,
+  Tab2 = Tab2,
+  Tab3 = Tab3,
+  Tab4 = Tab4,
+  Tab5 = Tab5
+}
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local locale = player.LocaleId:lower()
+
+if locale == "pt-br" then
+    
+    -- Primeira aba do script 
+    RaelHubTranslator.Tab1.tabname1 = "Começar custcine"
+    RaelHubTranslator.Tab1.section1 = "Começar custcine"
+    RaelHubTranslator.Tab1.button1 = "Começar custcine"
+    
+    -- Segunda aba do script
+    RaelHubTranslator.Tab2.tabname2 = "Auto coletar"
+    RaelHubTranslator.Tab2.section2 = "Auto coletar almas"
+    RaelHubTranslator.Tab2.button2 = "Auto coletar"
+    
+    -- Terceira aba do script
+    RaelHubTranslator.Tab3.tabname3 = "Esp bixo"
+    RaelHubTranslator.Tab3.section3 = "Mostrar aonde tá o bixo"
+    RaelHubTranslator.Tab3.button3 = "Executar"
+    
+    -- Quarta aba do script
+    RaelHubTranslator.Tab4.tabname4 = "Outros"
+    RaelHubTranslator.Tab4.section4 = "Mostrar onde o jogador tá"
+    RaelHubTranslator.Tab4.button4 = "Esp player (não funciona corretamente)"
+    RaelHubTranslator.Tab4.section5 = "Iluminar ao redor"
+    RaelHubTranslator.Tab4.button5 = "FullBright"
+    
+    -- Quinta aba do script
+    RaelHubTranslator.Tab5.tabname5 = "Créditos"
+    RaelHubTranslator.Tab5.section5 = "Criador do script"
+    RaelHubTranslator.Tab5.nameNotificacao5 = "Copiado"
+    RaelHubTranslator.Tab5.notificacao5 = "O nick Laelmano24 foi copiado na área de trabalho"
+    
+elseif locale == "en-us" then
+    
+    RaelHubTranslator.Tab1.tabname1 = "Play custcine"
+    RaelHubTranslator.Tab1.section1 = "Play custcine"
+    RaelHubTranslator.Tab1.button1 = "Play custcine"
+    
+    -- Segunda aba do script
+    RaelHubTranslator.Tab2.tabname2 = "Auto collect"
+    RaelHubTranslator.Tab2.section2 = "Auto collect souls"
+    RaelHubTranslator.Tab2.button2 = "Auto collect"
+
+    -- Terceira aba do script
+    RaelHubTranslator.Tab3.tabname3 = "Esp monster"
+    RaelHubTranslator.Tab3.section3 = "Show monster location"
+    RaelHubTranslator.Tab3.button3 = "To execute"
+
+    -- Quarta aba do script
+    RaelHubTranslator.Tab4.tabname4 = "Others"
+    RaelHubTranslator.Tab4.section4 = "Show player location"
+    RaelHubTranslator.Tab4.button4 = "Esp player (does not work correctly)"
+    RaelHubTranslator.Tab4.section5 = "Light up your surroundings"
+    RaelHubTranslator.Tab4.button5 = "FullBright"
+    
+    -- Quinta aba do script
+    RaelHubTranslator.Tab5.tabname5 = "Credit"
+    RaelHubTranslator.Tab5.section5 = "Script creator"
+    RaelHubTranslator.Tab5.nameNotificacao5 = "Copied"
+    RaelHubTranslator.Tab5.notificacao5 = "The nickname Laelmano24 was copied to the desktop"
+  
+elseif locale:sub(1, 2) == "es" then
+    
+    RaelHubTranslator.Tab1.tabname1 = "comenzar custcine"
+    RaelHubTranslator.Tab1.section1 = "comenzar custcine"
+    RaelHubTranslator.Tab1.button1 = "comenzar custcine"
+    
+    -- Segunda aba do script
+    RaelHubTranslator.Tab2.tabname2 = "Recolección auto"
+    RaelHubTranslator.Tab2.section2 = "Recoge almas automáticamente"
+    RaelHubTranslator.Tab2.button2 = "Recolección auto"
+    
+    -- Terceira aba do script
+    RaelHubTranslator.Tab3.tabname3 = "Esp monstruo"
+    RaelHubTranslator.Tab3.section3 = "Mostrar ubicación del monstruo"
+    RaelHubTranslator.Tab3.button3 = "Ejecutar"
+
+    -- Quarta aba do script
+    RaelHubTranslator.Tab4.tabname4 = "Otros"
+    RaelHubTranslator.Tab4.section4 = "Indique la posición del jugador"
+    RaelHubTranslator.Tab4.button4 = "Esp player (no funciona correctamente)"
+    RaelHubTranslator.Tab4.section5 = "Ilumina a tu alrededor"
+    RaelHubTranslator.Tab4.button5 = "FullBright"
+    
+    -- Quinta aba do script
+    RaelHubTranslator.Tab5.tabname5 = "Crédito"
+    RaelHubTranslator.Tab5.section5 = "Script creador"
+    RaelHubTranslator.Tab5.nameNotificacao5 = "Copiado"
+    RaelHubTranslator.Tab5.notificacao5 = "El apodo Laelmano24 fue copiado al escritorio"
+
+else
+    
+    RaelHubTranslator.Tab1.tabname1 = "Play custcine"
+    RaelHubTranslator.Tab1.section1 = "Play custcine"
+    RaelHubTranslator.Tab1.button1 = "Play custcine"
+    
+    -- Segunda aba do script
+    RaelHubTranslator.Tab2.tabname2 = "Auto collect"
+    RaelHubTranslator.Tab2.section2 = "Auto collect souls"
+    RaelHubTranslator.Tab2.button2 = "Auto collect"
+
+    -- Terceira aba do script
+    RaelHubTranslator.Tab3.tabname3 = "Esp monster"
+    RaelHubTranslator.Tab3.section3 = "Show monster location"
+    RaelHubTranslator.Tab3.button3 = "To execute"
+
+    -- Quarta aba do script
+    RaelHubTranslator.Tab4.tabname4 = "Others"
+    RaelHubTranslator.Tab4.section4 = "Show player location"
+    RaelHubTranslator.Tab4.button4 = "To execute (does not work correctly)"
+    RaelHubTranslator.Tab4.section5 = "Light up your surroundings"
+    RaelHubTranslator.Tab4.button5 = "To execute"
+    
+    -- Quinta aba do script
+    RaelHubTranslator.Tab5.tabname5 = "Credit"
+    RaelHubTranslator.Tab5.section5 = "Script creator"
+    RaelHubTranslator.Tab5.nameNotificacao5 = "Copied"
+    RaelHubTranslator.Tab5.notificacao5 = "The nickname Laelmano24 was copied to the desktop"
+
+end
+
+return {
+  RaelHubTranslator = RaelHubTranslator
+}
