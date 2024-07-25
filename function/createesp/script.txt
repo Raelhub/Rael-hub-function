@@ -1,0 +1,70 @@
+local runService = game:GetService("RunService")
+local camera = game:GetService("Workspace").CurrentCamera
+
+local function createESP(monster)
+    local espLine = nil
+    local espText = nil
+    local monsterHighlight = nil
+
+    -- Criar linha
+    espLine = Drawing.new("Line")
+    espLine.Color = Color3.fromRGB(255, 0, 0) -- Cor da linha (vermelho)
+    espLine.Thickness = 1 -- Espessura da linha
+    espLine.Transparency = 1 -- Transparência da linha (1 é totalmente visível)
+
+    -- Criar texto
+    espText = Drawing.new("Text")
+    espText.Color = Color3.fromRGB(255, 0, 0) -- Cor do texto (vermelho)
+    espText.Size = 20 -- Tamanho do texto
+    espText.Center = true
+    espText.Outline = true -- Contorno no texto
+    espText.OutlineColor = Color3.fromRGB(0, 0, 0) -- Cor do contorno do texto (preto)
+    espText.Text = monster.Name -- Nome do monstro como texto
+
+    -- Aplicar cor vermelha ao monstro
+    if monster:FindFirstChild("Hitbox") then
+        monsterHighlight = Instance.new("Highlight")
+        monsterHighlight.FillColor = Color3.fromRGB(255, 0, 0) -- Cor do ESP (vermelho)
+        monsterHighlight.FillTransparency = 0.5 -- Transparência do preenchimento (0 é opaco, 1 é transparente)
+        monsterHighlight.OutlineColor = Color3.fromRGB(0, 0, 0) -- Cor do contorno (preto)
+        monsterHighlight.OutlineTransparency = 0 -- Transparência do contorno (0 é opaco, 1 é transparente)
+        monsterHighlight.Parent = monster.Hitbox
+    end
+
+    local function updateESP()
+        if monster:FindFirstChild("Hitbox") and monster.Hitbox.Parent then
+            local hitboxPosition, onScreen = camera:WorldToViewportPoint(monster.Hitbox.Position)
+            if onScreen then
+                espLine.From = Vector2.new(camera.ViewportSize.X / 2, camera.ViewportSize.Y) -- Ponto inicial (centro inferior da tela)
+                espLine.To = Vector2.new(hitboxPosition.X, hitboxPosition.Y) -- Ponto final (hitbox)
+                espLine.Visible = true
+
+                espText.Position = Vector2.new(hitboxPosition.X, hitboxPosition.Y - 20) -- Posição do texto
+                espText.Visible = true
+            else
+                espLine.Visible = false
+                espText.Visible = false
+            end
+        else
+            espLine.Visible = false
+            espText.Visible = false
+        end
+    end
+
+    runService.RenderStepped:Connect(updateESP)
+
+    return {
+        Update = updateESP,
+        Remove = function()
+            espLine:Remove()
+            espText:Remove()
+            if monsterHighlight then
+                monsterHighlight:Destroy()
+            end
+        end
+    }
+end
+
+return {
+    createESP = createESP
+}
