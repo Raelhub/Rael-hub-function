@@ -1,0 +1,45 @@
+local function createESP(monster, NameBixo)
+    local espLine = Drawing.new("Line")
+    espLine.Color = Color3.fromRGB(255, 0, 0)
+    espLine.Thickness = 1
+    espLine.Transparency = 1
+
+    local espText = Drawing.new("Text")
+    espText.Color = Color3.fromRGB(255, 0, 0)
+    espText.Size = 20
+    espText.Center = true
+    espText.Outline = true
+    espText.OutlineColor = Color3.fromRGB(0, 0, 0)
+    espText.Text = NameBixo
+
+    local function updateHighlight()
+        if monster and monster:FindFirstChild("HumanoidRootPart") then
+            local rootPart = monster.HumanoidRootPart
+            local hitboxPosition, onScreen = camera:WorldToViewportPoint(rootPart.Position)
+            if onScreen then
+                espLine.From = Vector2.new(camera.ViewportSize.X / 2, camera.ViewportSize.Y)
+                espLine.To = Vector2.new(hitboxPosition.X, hitboxPosition.Y)
+                espLine.Visible = true
+
+                espText.Position = Vector2.new(hitboxPosition.X, hitboxPosition.Y - 20)
+                espText.Visible = true
+            else
+                espLine.Visible = false
+                espText.Visible = false
+            end
+        else
+            espLine.Visible = false
+            espText.Visible = false
+        end
+    end
+
+    runService.RenderStepped:Connect(updateHighlight)
+
+    return {
+        Update = updateHighlight,
+        Remove = function()
+            espLine:Remove()
+            espText:Remove()
+        end
+    }
+end
