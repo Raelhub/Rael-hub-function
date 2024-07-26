@@ -1,4 +1,11 @@
-local function createESP(monster, NameBixo)
+-- EspModule.lua
+
+local runService = game:GetService("RunService")
+local camera = workspace.CurrentCamera
+
+local EspModule = {}
+
+function EspModule.createESP(monster, NameBixo)
     local espLine = Drawing.new("Line")
     espLine.Color = Color3.fromRGB(255, 0, 0)
     espLine.Thickness = 1
@@ -43,3 +50,5 @@ local function createESP(monster, NameBixo)
         end
     }
 end
+
+return EspModule
