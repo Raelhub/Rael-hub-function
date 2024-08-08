@@ -1,0 +1,40 @@
+-- Módulo AutoClicker
+local AutoClicker = {}
+
+-- Variáveis de controle
+AutoClicker.autoClickEnabled = false
+AutoClicker.interval = 1
+AutoClicker.connection = nil
+
+-- Serviços necessários
+local VirtualInputManager = game:GetService("VirtualInputManager")
+local RunService = game:GetService("RunService")
+
+-- Função que realiza o auto click
+local function autoClick()
+    while AutoClicker.autoClickEnabled do
+        VirtualInputManager:SendMouseButtonEvent(0, 0, 0, true, game, 0)
+        VirtualInputManager:SendMouseButtonEvent(0, 0, 0, false, game, 0)
+        wait(AutoClicker.interval)
+    end
+end
+
+-- Função para ativar o auto click
+function AutoClicker.enable(clickInterval)
+    if not AutoClicker.autoClickEnabled then
+        AutoClicker.interval = clickInterval
+        AutoClicker.autoClickEnabled = true
+        AutoClicker.connection = RunService.RenderStepped:Connect(autoClick)
+    end
+end
+
+-- Função para desativar o auto click
+function AutoClicker.disable()
+    AutoClicker.autoClickEnabled = false
+    if AutoClicker.connection then
+        AutoClicker.connection:Disconnect()
+        AutoClicker.connection = nil
+    end
+end
+
+return AutoClicker
