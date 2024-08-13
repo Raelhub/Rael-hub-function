@@ -1,0 +1,10 @@
+local EspMonster = {}
+
+function EspMonster.EspBixo(monster, cor)
+    local highlight = Instance.new("Highlight")
+    highlight.Adornee = monster
+    highlight.FillColor = Color3.fromRGB(cor) -- Cor #EAC810
+    highlight.Parent = monster
+end
+
+return EspMonster
