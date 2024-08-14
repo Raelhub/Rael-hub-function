@@ -10,7 +10,7 @@ function EspItens.EspItem(itens, cor, texto, textSize)
     -- Criação do BillboardGui para exibir o texto
     local billboard = Instance.new("BillboardGui")
     billboard.Adornee = itens
-    billboard.Size = UDim2.new(0, 50, 0, 25) -- Tamanho do quadro de texto
+    billboard.Size = UDim2.new(0, 30, 0, 15) -- Tamanho do quadro de texto
     billboard.StudsOffset = Vector3.new(0, 2, 0) -- Deslocamento acima do item
     billboard.AlwaysOnTop = true
     billboard.Parent = itens
