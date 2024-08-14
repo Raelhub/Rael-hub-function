@@ -1,10 +1,28 @@
 local EspItens = {}
 
-function EspItens.EspItem(itens, cor)
+function EspItens.EspItem(itens, cor, texto)
+    -- Criação do Highlight
     local highlight = Instance.new("Highlight")
-    highlight.Adornee = itens -- Troquei de 'monster' para 'itens'
-    highlight.FillColor = cor -- A cor já deve ser passada como Color3
+    highlight.Adornee = itens
+    highlight.FillColor =  cor
     highlight.Parent = itens
+
+    -- Criação do BillboardGui para exibir o texto
+    local billboard = Instance.new("BillboardGui")
+    billboard.Adornee = itens
+    billboard.Size = UDim2.new(0, 100, 0, 50) -- Tamanho do quadro de texto
+    billboard.StudsOffset = Vector3.new(0, 2, 0) -- Deslocamento acima do item
+    billboard.AlwaysOnTop = true
+    billboard.Parent = itens
+
+    -- Criação do Label para mostrar o texto
+    local textLabel = Instance.new("TextLabel")
+    textLabel.Size = UDim2.new(1, 0, 1, 0) -- Tamanho do texto
+    textLabel.BackgroundTransparency = 1 -- Deixa o fundo transparente
+    textLabel.Text = texto
+    textLabel.TextColor3 = cor -- Cor do texto (branco)
+    textLabel.TextScaled = true -- Texto redimensionável
+    textLabel.Parent = billboard
 end
 
 return EspItens
