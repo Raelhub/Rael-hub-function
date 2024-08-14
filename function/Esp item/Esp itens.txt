@@ -1,16 +1,16 @@
 local EspItens = {}
 
-function EspItens.EspItem(itens, cor, texto)
+function EspItens.EspItem(itens, cor, texto, textSize)
     -- Criação do Highlight
     local highlight = Instance.new("Highlight")
     highlight.Adornee = itens
-    highlight.FillColor =  cor
+    highlight.FillColor = cor
     highlight.Parent = itens
 
     -- Criação do BillboardGui para exibir o texto
     local billboard = Instance.new("BillboardGui")
     billboard.Adornee = itens
-    billboard.Size = UDim2.new(0, 100, 0, 50) -- Tamanho do quadro de texto
+    billboard.Size = UDim2.new(0, 50, 0, 25) -- Tamanho do quadro de texto
     billboard.StudsOffset = Vector3.new(0, 2, 0) -- Deslocamento acima do item
     billboard.AlwaysOnTop = true
     billboard.Parent = itens
@@ -20,8 +20,9 @@ function EspItens.EspItem(itens, cor, texto)
     textLabel.Size = UDim2.new(1, 0, 1, 0) -- Tamanho do texto
     textLabel.BackgroundTransparency = 1 -- Deixa o fundo transparente
     textLabel.Text = texto
-    textLabel.TextColor3 = cor -- Cor do texto (branco)
-    textLabel.TextScaled = true -- Texto redimensionável
+    textLabel.TextColor3 = cor -- Cor do texto
+    textLabel.TextSize = 20 -- Tamanho do texto específico
+    textLabel.Font = Enum.Font.GothamBold -- Fonte mais grossa
     textLabel.Parent = billboard
 end
 
