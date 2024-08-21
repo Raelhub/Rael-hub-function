@@ -57,7 +57,7 @@ function RatCollector.AtivarLivro(folder)
     for _, Pasta in ipairs(folder:GetChildren()) do
         if Pasta:IsA("Folder") then
             for _, obj in ipairs(Pasta:GetChildren()) do
-                if obj:IsA("Model") then
+                if obj:IsA("Model") and obj.Name == "Book" then  -- Verifica se o modelo é chamado "Book"
                     print("Achei o " .. obj.Name)
                     local Interagir = obj:FindFirstChild("Interact")
                     if Interagir and Interagir:IsA("BasePart") then
