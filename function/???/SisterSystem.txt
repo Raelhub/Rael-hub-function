@@ -37,7 +37,21 @@ function RatCollector.findFolderWithExactThreeModels(folder)
     return nil
 end
 
+function RatCollector.EspMonsterMio(folder)
+    for _, MonsterMio in ipairs(folder:GetChildren()) do
+        if MonsterMio:IsA("Folder") then
+            for _, obj in ipairs(MonsterMio:GetChildren()) do
+                if obj:IsA("Model") and obj:FindFirstChild("Humanoid") then
+                    local RaelHubCreateEsp = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/main/function/createesp/Hitbox/script.txt"))()
+                    local esp = RaelHubCreateEsp.createESP(obj)
 
+                    return obj
+                end
+            end
+        end
+    end
+    return nil
+end
 
 -- Função para encontrar a pasta com exatamente 12 objetos e ativar ProximityPrompts
 function RatCollector.findFolderWithExactTwelveObjects(folder)
