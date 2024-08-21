@@ -58,8 +58,15 @@ function RatCollector.AtivarLivro(folder)
         if Pasta:IsA("Folder") then
             for _, obj in ipairs(Pasta:GetChildren()) do
                 if obj:IsA("Model") then
-                    if obj:FindFirstChild("Interact") then
-                        fireproximityprompt(obj.Interact:GetChildren()[1])
+                    print("Achei o " .. obj.Name)
+                    local Interagir = obj:FindFirstChild("Interact")
+                    if Interagir and Interagir:IsA("BasePart") then
+                        for _, toque in ipairs(Interagir:GetChildren()) do
+                            if toque:IsA("ProximityPrompt") then
+                                fireproximityprompt(toque)
+                                break
+                            end
+                        end
                     end
                     return obj
                 end
