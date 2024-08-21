@@ -37,10 +37,10 @@ function RatCollector.findFolderWithExactThreeModels(folder)
     return nil
 end
 
-function RatCollector.EspMonsterMio(folder)
-    for _, MonsterMio in ipairs(folder:GetChildren()) do
-        if MonsterMio:IsA("Folder") then
-            for _, obj in ipairs(MonsterMio:GetChildren()) do
+function RatCollector.EspMonsterRin(folder)
+    for _, MonsterRin in ipairs(folder:GetChildren()) do
+        if MonsterRin:IsA("Folder") then
+            for _, obj in ipairs(MonsterRin:GetChildren()) do
                 if obj:IsA("Model") and obj:FindFirstChild("Humanoid") then
                     local RaelHubEspDestaque = loadstring(game:HttpGet"https://raw.githubusercontent.com/Raelhub/Rael-hub-function/main/function/createesp/No%20Hitbox%20destaque/script.txt")()
                     RaelHubEspDestaque.EspBixo(obj, cor)
