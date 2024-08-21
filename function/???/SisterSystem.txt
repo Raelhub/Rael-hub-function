@@ -42,8 +42,8 @@ function RatCollector.EspMonsterMio(folder)
         if MonsterMio:IsA("Folder") then
             for _, obj in ipairs(MonsterMio:GetChildren()) do
                 if obj:IsA("Model") and obj:FindFirstChild("Humanoid") then
-                    local RaelHubCreateEsp = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/main/function/createesp/Hitbox/script.txt"))()
-                    local esp = RaelHubCreateEsp.createESP(obj)
+                    local RaelHubEspDestaque = loadstring(game:HttpGet"https://raw.githubusercontent.com/Raelhub/Rael-hub-function/main/function/createesp/No%20Hitbox%20destaque/script.txt")()
+                    RaelHubEspDestaque.EspBixo(obj, cor)
 
                     return obj
                 end
