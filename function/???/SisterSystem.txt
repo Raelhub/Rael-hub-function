@@ -1,0 +1,114 @@
+-- Módulo: RatCollector
+local RatCollector = {}
+
+local Workspace = game:GetService("Workspace")
+
+-- Função para encontrar a pasta que contenha o AISpawn ou AI SPAWN Point
+function RatCollector.findAISpawnFolder()
+    for _, folder in ipairs(Workspace:GetChildren()) do
+        if folder:IsA("Folder") and (folder:FindFirstChild("AISpawn") or folder:FindFirstChild("AI SPAWN Point")) then
+            print("Yes pasta " .. folder.Name)
+            return folder
+        end
+    end
+    print("No pasta")
+    return nil
+end
+
+-- Função para encontrar a pasta com exatamente três Models e mais nada
+function RatCollector.findFolderWithExactThreeModels(folder)
+    for _, child in ipairs(folder:GetChildren()) do
+        if child:IsA("Folder") then
+            local modelCount = 0
+            local hasOtherItems = false
+
+            for _, obj in ipairs(child:GetChildren()) do
+                if obj:IsA("Model") then
+                    modelCount = modelCount + 1
+                else
+                    hasOtherItems = true
+                    break
+                end
+            end
+
+            if modelCount == 3 and not hasOtherItems then
+                print("Yes model 3 " .. child.Name)
+                return child
+            end
+        end
+    end
+    print("No model 3")
+    return nil
+end
+
+-- Função para encontrar a pasta com exatamente 12 objetos e ativar ProximityPrompts
+function RatCollector.findFolderWithExactTwelveObjects(folder)
+    for _, child in ipairs(folder:GetChildren()) do
+        if child:IsA("Folder") and #child:GetChildren() == 12 then
+            print("Yes object pasta " .. child.Name)
+
+            for _, obj in ipairs(child:GetChildren()) do
+                for _, descendant in ipairs(obj:GetDescendants()) do
+                    if descendant:IsA("ProximityPrompt") then
+                        fireproximityprompt(descendant)
+                    end
+                end
+            end
+
+            return child
+        end
+    end
+    print("No object pasta")
+    return nil
+end
+
+-- Função para verificar se o 'Cube' tem 'Transparency' igual a 0 em cada Model
+function RatCollector.checkModelsTransparency(folder, foundFolder)
+    local player = game.Players.LocalPlayer
+
+    for _, model in ipairs(folder:GetChildren()) do
+        if model:IsA("Model") then
+            local cube = model:FindFirstChild("Cube")
+            if cube and cube:IsA("BasePart") and cube.Transparency == 0 then
+                local function teleportPlayer(cframe)
+                    player.Character.HumanoidRootPart.CFrame = cframe
+                    wait(0.3)
+                end
+
+                teleportPlayer(CFrame.new(cube.Position))
+
+                for _, toque in ipairs(cube:GetChildren()) do
+                    if toque:IsA("ProximityPrompt") then
+                        fireproximityprompt(toque)
+                    end
+                end
+
+                teleportPlayer(CFrame.new(-1540.4487, -30.1707, -3544.8022))
+
+                local folderWithExactTwelveObjects = RatCollector.findFolderWithExactTwelveObjects(foundFolder)
+                if folderWithExactTwelveObjects then
+                    print("Yes Object " .. folderWithExactTwelveObjects.Name)
+                end
+
+                wait(4)
+
+                teleportPlayer(CFrame.new(-1563.4094, -28.9097, -3408.4204))
+
+                folderWithExactTwelveObjects = RatCollector.findFolderWithExactTwelveObjects(foundFolder)
+                if folderWithExactTwelveObjects then
+                    print("Erro Object " .. folderWithExactTwelveObjects.Name)
+                end
+
+                wait(2)
+                teleportPlayer(CFrame.new(-1674.685791015625, -23.473472595214844, -3409.773681640625))
+                break
+            else
+                print("Yes Object 'Cube' " .. model.Name .. " yes mode 0")
+            end
+        else
+            print("No Object 'Cube' " .. model.Name .. " No Object cube cube")
+        end
+    end
+end
+
+return RatCollector
