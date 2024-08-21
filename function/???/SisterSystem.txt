@@ -10,7 +10,6 @@ function RatCollector.findAISpawnFolder()
             return folder
         end
     end
-    print("")
     return nil
 end
 
@@ -31,13 +30,6 @@ function RatCollector.findFolderWithExactThreeModels(folder)
 
             if modelCount == 3 and not hasOtherItems then
                 print("Yes model 3 " .. child.Name)
-                local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-                OrionLib:MakeNotification({
-	                Name = "Loading...",
- 	                Content = "Processing game files and loading script",
-	                Image = "rbxassetid://4483345998",
-	                Time = 5
-                })
                 return child
             end
         end
