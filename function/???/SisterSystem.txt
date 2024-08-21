@@ -53,6 +53,22 @@ function RatCollector.EspMonsterRin(folder)
     return nil
 end
 
+function RatCollector.AtivarLivro(folder)
+    for _, Pasta in ipairs(folder:GetChildren()) do
+        if Pasta:IsA("Folder") then
+            for _, obj in ipairs(Pasta:GetChildren()) do
+                if obj:IsA("Model") then
+                    if obj:FindFirstChild("Interact") then
+                        fireproximityprompt(obj.Interact:GetChildren()[1])
+                    end
+                    return obj
+                end
+            end
+        end
+    end
+    return nil
+end
+
 -- Função para encontrar a pasta com exatamente 12 objetos e ativar ProximityPrompts
 function RatCollector.findFolderWithExactTwelveObjects(folder)
     for _, child in ipairs(folder:GetChildren()) do
