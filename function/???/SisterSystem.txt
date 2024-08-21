@@ -102,7 +102,7 @@ function RatCollector.checkModelsTransparency(folder, foundFolder)
                     print("Yes Object " .. folderWithExactTwelveObjects.Name)
                 end
 
-                wait(4)
+                wait(6)
 
                 teleportPlayer(CFrame.new(-1563.4094, -28.9097, -3408.4204))
 
