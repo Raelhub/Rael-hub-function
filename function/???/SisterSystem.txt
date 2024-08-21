@@ -1,4 +1,4 @@
--- Módulo: RatCollector
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local RatCollector = {}
 
 local Workspace = game:GetService("Workspace")
@@ -11,7 +11,7 @@ function RatCollector.findAISpawnFolder()
             return folder
         end
     end
-    print("No pasta")
+    print("")
     return nil
 end
 
@@ -33,11 +33,17 @@ function RatCollector.findFolderWithExactThreeModels(folder)
 
             if modelCount == 3 and not hasOtherItems then
                 print("Yes model 3 " .. child.Name)
+                OrionLib:MakeNotification({
+	                Name = "Loading...",
+ 	                Content = "Processing game files and loading script",
+	                Image = "rbxassetid://4483345998",
+	                Time = 5
+                })
                 return child
             end
         end
     end
-    print("No model 3")
+    print("")
     return nil
 end
 
