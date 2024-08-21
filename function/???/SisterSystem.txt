@@ -1,4 +1,3 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local RatCollector = {}
 
 local Workspace = game:GetService("Workspace")
@@ -15,7 +14,6 @@ function RatCollector.findAISpawnFolder()
     return nil
 end
 
--- Função para encontrar a pasta com exatamente três Models e mais nada
 function RatCollector.findFolderWithExactThreeModels(folder)
     for _, child in ipairs(folder:GetChildren()) do
         if child:IsA("Folder") then
@@ -33,6 +31,7 @@ function RatCollector.findFolderWithExactThreeModels(folder)
 
             if modelCount == 3 and not hasOtherItems then
                 print("Yes model 3 " .. child.Name)
+                local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
                 OrionLib:MakeNotification({
 	                Name = "Loading...",
  	                Content = "Processing game files and loading script",
@@ -43,9 +42,10 @@ function RatCollector.findFolderWithExactThreeModels(folder)
             end
         end
     end
-    print("")
     return nil
 end
+
+
 
 -- Função para encontrar a pasta com exatamente 12 objetos e ativar ProximityPrompts
 function RatCollector.findFolderWithExactTwelveObjects(folder)
