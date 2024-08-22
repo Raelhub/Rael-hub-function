@@ -1,0 +1,31 @@
+local FasedosNavios = {}
+
+local Workspace = game:GetService("Workspace")
+
+function FasedosNavios.EncontrarPasta()
+    for _, QuandoPasta in ipairs(Workspace:GetChildren()) do
+        if QuandoPasta:IsA("Folder") and QuandoPasta:FindFirstChild("OxygenTanks") then
+            print(QuandoPasta.Name)
+            return QuandoPasta
+        end
+    end
+    return nil
+end
+
+function FasedosNavios.EspMonsterBixo(folder)
+    for _, MonsterBixo in ipairs(folder:GetChildren()) do
+        if MonsterBixo:IsA("Folder") then
+            for _, obj in ipairs(MonsterBixo:GetChildren()) do
+                if obj:IsA("Model") and obj:FindFirstChild("Humanoid") then
+                    local RaelHubEspDestaque = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/main/function/createesp/No%20Hitbox%20destaque/script.txt"))()
+                    RaelHubEspDestaque.EspBixo(obj, cor)
+
+                    return obj
+                end
+            end
+        end
+    end
+    return nil
+end
+
+return FasedosNavios
