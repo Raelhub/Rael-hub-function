@@ -2,19 +2,22 @@ local FaseDosQuadros = {}
 
 local Workspace = game:GetService("Workspace")
 
-function FaseDosQuadros.TalkKenio()
-    for _, folder in ipairs(Workspace:GetChildren()) do
-        if folder:IsA("Folder") and folder:FindFirstChild("Jumpscare") then
-            print(folder.Name)
-            
-            for _, folder2 in ipairs(folder:GetChildren()) do
-                if folder2:IsA("Folder") and folder2:FindFirstChild("Quest") then
-                    print(folder2.Name)
-                    fireproximityprompt(folder2.Quest:FindFirstChildOfClass("ProximityPrompt"))
-                end
-            end
-            
-            return folder
+function FaseDosQuadros.EncontrarPasta()
+    for _, QuandoPasta in ipairs(Workspace:GetChildren()) do
+        if QuandoPasta:IsA("Folder") and QuandoPasta:FindFirstChild("Jumpscare") then
+            print(QuandoPasta.Name)
+            return QuandoPasta
+        end
+    end
+    return nil
+end
+
+function FaseDosQuadros.TalkKenio(folder)
+    for _, folder2 in ipairs(folder:GetChildren()) do
+        if folder2:IsA("Folder") and folder2:FindFirstChild("Quest") then
+            print(folder2.Name)
+            fireproximityprompt(folder2.Quest:FindFirstChildOfClass("ProximityPrompt"))
+            return folder2
         end
     end
     return nil
@@ -25,7 +28,7 @@ function FaseDosQuadros.EspMonsterBixo(folder)
         if MonsterBixo:IsA("Folder") then
             for _, obj in ipairs(MonsterBixo:GetChildren()) do
                 if obj:IsA("Model") and obj:FindFirstChild("Humanoid") then
-                    local RaelHubEspDestaque = loadstring(game:HttpGet"https://raw.githubusercontent.com/Raelhub/Rael-hub-function/main/function/createesp/No%20Hitbox%20destaque/script.txt")()
+                    local RaelHubEspDestaque = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/main/function/createesp/No%20Hitbox%20destaque/script.txt"))()
                     RaelHubEspDestaque.EspBixo(obj, cor)
 
                     return obj
@@ -36,4 +39,4 @@ function FaseDosQuadros.EspMonsterBixo(folder)
     return nil
 end
 
-return KenioModule
+return FaseDosQuadros
