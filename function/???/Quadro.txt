@@ -1,0 +1,39 @@
+local FaseQuadro = {}
+
+local Workspace = game:GetService("Workspace")
+
+function FaseQuadro.TalkKenio()
+    for _, folder in ipairs(Workspace:GetChildren()) do
+        if folder:IsA("Folder") and folder:FindFirstChild("Jumpscare") then
+            print(folder.Name)
+            
+            for _, folder2 in ipairs(folder:GetChildren()) do
+                if folder2:IsA("Folder") and folder2:FindFirstChild("Quest") then
+                    print(folder2.Name)
+                    fireproximityprompt(folder2.Quest:FindFirstChildOfClass("ProximityPrompt"))
+                end
+            end
+            
+            return folder
+        end
+    end
+    return nil
+end
+
+function FaseQuadro.EspMonsterBixo(folder)
+    for _, MonsterBixo in ipairs(folder:GetChildren()) do
+        if MonsterBixo:IsA("Folder") then
+            for _, obj in ipairs(MonsterBixo:GetChildren()) do
+                if obj:IsA("Model") and obj:FindFirstChild("Humanoid") then
+                    local RaelHubEspDestaque = loadstring(game:HttpGet"https://raw.githubusercontent.com/Raelhub/Rael-hub-function/main/function/createesp/No%20Hitbox%20destaque/script.txt")()
+                    RaelHubEspDestaque.EspBixo(obj, cor)
+
+                    return obj
+                end
+            end
+        end
+    end
+    return nil
+end
+
+return KenioModule
