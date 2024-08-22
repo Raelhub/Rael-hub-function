@@ -1,8 +1,8 @@
-local FaseQuadro = {}
+local FaseDosQuadros = {}
 
 local Workspace = game:GetService("Workspace")
 
-function FaseQuadro.TalkKenio()
+function FaseDosQuadros.TalkKenio()
     for _, folder in ipairs(Workspace:GetChildren()) do
         if folder:IsA("Folder") and folder:FindFirstChild("Jumpscare") then
             print(folder.Name)
@@ -20,7 +20,7 @@ function FaseQuadro.TalkKenio()
     return nil
 end
 
-function FaseQuadro.EspMonsterBixo(folder)
+function FaseDosQuadros.EspMonsterBixo(folder)
     for _, MonsterBixo in ipairs(folder:GetChildren()) do
         if MonsterBixo:IsA("Folder") then
             for _, obj in ipairs(MonsterBixo:GetChildren()) do
