@@ -3,10 +3,19 @@ local AlancasSistemas = {}
 function AlancasSistemas.EncontrarPastaAlavancas()
     for _, pasta in ipairs(Workspace:GetChildren()) do
         if pasta:IsA("Folder") then
-            for _, model in ipairs(pasta:GetChildren()) do
-                if model:IsA("Folder") and model.Name == "HANDLER" then
+            for _, PastaCooking in ipairs(pasta:GetChildren()) do
+                if PastaCooking:IsA("Folder") and PastaCooking.Name == "Cooking" then
                     print("Working...")
-                    return pasta
+                  
+                  for _, PastaHANDLER in ipairs(PastaCooking:GetChildren()) do
+                    if PastaHANDLER:IsA("Folder") and PastaHANDLER.Name == "HANDLER" then
+                      print("Working...")
+                      return PastaHANDLER
+                    end
+                   end
+                  
+                  
+                  
                 end
             end
         end
@@ -14,7 +23,10 @@ function AlancasSistemas.EncontrarPastaAlavancas()
 end
 
 function AlancasSistemas.AtivarAlanvas(folder)
-    for _, alavanca in ipairs(folder.Levers:GetChildren()) do
+
+    local pasta = folder
+    
+    for _, alavanca in ipairs(pasta.Levers:GetChildren()) do
         if alavanca.Lever.Transparency == 0 then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(alavanca.Lever.Position)
             wait(0.5)
