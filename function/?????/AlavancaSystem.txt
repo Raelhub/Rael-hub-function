@@ -1,33 +1,34 @@
 local AlancasSistemas = {}
 
 function AlancasSistemas.EncontrarPastaAlavancas()
-    for _, pasta in ipairs(Workspace:GetChildren()) do
+    for _, pasta in ipairs(game.Workspace:GetChildren()) do
         if pasta:IsA("Folder") then
             for _, PastaCooking in ipairs(pasta:GetChildren()) do
                 if PastaCooking:IsA("Folder") and PastaCooking.Name == "Cooking" then
-                    print("Working...")
+                    print("Working... " .. PastaCooking.Name)
                   
-                  for _, PastaHANDLER in ipairs(PastaCooking:GetChildren()) do
-                    if PastaHANDLER:IsA("Folder") and PastaHANDLER.Name == "HANDLER" then
-                      print("Working... " .. PastaHANDLER)
-                      return PastaHANDLER
+                    for _, PastaHANDLER in ipairs(PastaCooking:GetChildren()) do
+                        if PastaHANDLER:IsA("Folder") and PastaHANDLER.Name == "HANDLER" then
+                            print("Working... " .. PastaHANDLER.Name)
+                            return PastaHANDLER
+                        end
                     end
-                   end
-                  
-                  
-                  
                 end
             end
         end
     end
 end
 
-function AlancasSistemas.AtivarAlanvas(folder)
-
+function AlancasSistemas.AtivarAlavancas(folder)
     local pasta = folder
     
+    if not pasta.Levers then
+        warn("A pasta Levers não foi encontrada!")
+        return
+    end
+
     for _, alavanca in ipairs(pasta.Levers:GetChildren()) do
-        if alavanca.Lever.Transparency == 0 then
+        if alavanca:FindFirstChild("Lever") and alavanca.Lever.Transparency == 0 then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(alavanca.Lever.Position)
             wait(0.5)
             local proximityPrompt = alavanca.Lever:FindFirstChildOfClass("ProximityPrompt")
