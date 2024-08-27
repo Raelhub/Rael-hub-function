@@ -9,7 +9,7 @@ function AlancasSistemas.EncontrarPastaAlavancas()
                   
                   for _, PastaHANDLER in ipairs(PastaCooking:GetChildren()) do
                     if PastaHANDLER:IsA("Folder") and PastaHANDLER.Name == "HANDLER" then
-                      print("Working...")
+                      print("Working... " .. PastaHANDLER)
                       return PastaHANDLER
                     end
                    end
