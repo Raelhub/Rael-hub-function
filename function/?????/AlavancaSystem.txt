@@ -11,7 +11,7 @@ function AlancasSistemas.EncontrarPastaAlavancas()
                         if Pasta2:IsA("Folder") then
                             for _, PastaHANDLER in ipairs(Pasta2:GetChildren()) do
                                 if PastaHANDLER:IsA("Folder") and PastaHANDLER.Name == "HANDLER" then
-                                    print("Working... " .. PastaHANDLER.Name)
+                                    print("Working... " .. Pasta2.Name)
                                     return Pasta2
                                 end
                             end
