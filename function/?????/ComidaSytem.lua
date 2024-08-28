@@ -68,7 +68,7 @@ function CrafterSistema.EncontrarPastaCooking()
 
             for _, PastaCooking in ipairs(pasta:GetChildren()) do
                 if PastaCooking:IsA("Folder") and PastaCooking.Name == "Cooking" then
-                  
+                  print("working...")
                   return PastaCooking
                   
                 end
