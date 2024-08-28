@@ -31,7 +31,12 @@ function TorreSistema.TpTorre(folder)
 
                             if Part1 and Part1:IsA("BasePart") and Part2 and Part2:IsA("BasePart") then
                                 if Part1.Color == Color3.fromRGB(27, 42, 53) or Part2.Color == Color3.fromRGB(27, 42, 53) then
-                                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(part.Position)
+                                  
+                                  local RaelHubCreateFloor = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/main/function/criarplace/script.txt"))()
+                                  
+                                  RaelHubCreateFloor.Criarchao(Vector3.new(part.Position))
+                                  
+                                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(part.Position + Vector3.new(0, 15, 0))
                                     return
                                 end
                             end
