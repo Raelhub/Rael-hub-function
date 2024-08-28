@@ -29,17 +29,21 @@ end
 
 function AlancasSistemas.AtivarAlavancas(folder)
     local pasta = folder
-    
-    if not pasta.Levers then
+
+    if not pasta:FindFirstChild("Levers") then
         warn("A pasta Levers não foi encontrada!")
         return
     end
 
-    for _, alavanca in ipairs(pasta.Levers:GetChildren()) do
-        if alavanca:FindFirstChild("Lever") and alavanca.Lever.Transparency == 0 then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(alavanca.Lever.Position)
+    local levers = pasta.Levers:GetChildren()
+    
+    for _, alavanca in ipairs(levers) do
+        local lever = alavanca:FindFirstChild("Lever")
+        if lever and lever:IsA("BasePart") and lever.Transparency == 0 then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lever.Position)
             wait(0.5)
-            local proximityPrompt = alavanca.Lever:FindFirstChildOfClass("ProximityPrompt")
+            
+            local proximityPrompt = lever:FindFirstChildOfClass("ProximityPrompt")
             if proximityPrompt then
                 fireproximityprompt(proximityPrompt)
             end
