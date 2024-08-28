@@ -11,15 +11,21 @@ function TorreSistema.EncontrarPastaDaTorre()
       end
     end
   end
+  return nil
 end
 
 function TorreSistema.TpTorre(folder)
+  if not folder then
+    warn("Folder inválida ou não encontrada!")
+    return
+  end
+
   for _, PastaPuzzle in ipairs(folder:GetChildren()) do
     if PastaPuzzle:IsA("Folder") then
       for _, Models in ipairs(PastaPuzzle:GetChildren()) do
         if Models:IsA("Model") and (Models.Name == "1" or Models.Name == "2" or Models.Name == "3") then
           for _, part in ipairs(Models:GetChildren()) do
-            if part:IsA("BasePart") and part.Transparency == 0 then
+            if part:IsA("BasePart") and part.Name == "Base" and part.Transparency == 0 then
               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(part.Position)
               return
             end
@@ -28,6 +34,7 @@ function TorreSistema.TpTorre(folder)
       end
     end
   end
+  warn("Nenhuma torre válida foi encontrada!")
 end
 
 return TorreSistema
