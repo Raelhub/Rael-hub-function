@@ -3,15 +3,18 @@ local AlancasSistemas = {}
 function AlancasSistemas.EncontrarPastaAlavancas()
     for _, pasta in ipairs(game.Workspace:GetChildren()) do
         if pasta:IsA("Folder") then
+            -- Verifica se há uma pasta 'Cooking' dentro da pasta atual
             for _, PastaCooking in ipairs(pasta:GetChildren()) do
                 if PastaCooking:IsA("Folder") and PastaCooking.Name == "Cooking" then
                     print("Working... " .. PastaCooking.Name)
                     
+                    -- Itera apenas nas pastas da pasta que contém 'Cooking'
                     for _, Pasta2 in ipairs(pasta:GetChildren()) do
                         if Pasta2:IsA("Folder") then
+                            -- Verifica se há uma pasta 'HANDLER' dentro da pasta encontrada
                             for _, PastaHANDLER in ipairs(Pasta2:GetChildren()) do
                                 if PastaHANDLER:IsA("Folder") and PastaHANDLER.Name == "HANDLER" then
-                                    print("Working... " .. Pasta2.Name)
+                                    print("Found HANDLER in " .. Pasta2.Name)
                                     return Pasta2
                                 end
                             end
