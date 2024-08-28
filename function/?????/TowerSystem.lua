@@ -21,7 +21,7 @@ function TorreSistema.TpTorre(folder)
           for _, part in ipairs(Models:GetChildren()) do
             if part:IsA("BasePart") and part.Transparency == 0 then
               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(part.Position)
-              return -- Para sair da função após o teleporte
+              return
             end
           end
         end
