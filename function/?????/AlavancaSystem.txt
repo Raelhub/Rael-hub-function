@@ -6,11 +6,15 @@ function AlancasSistemas.EncontrarPastaAlavancas()
             for _, PastaCooking in ipairs(pasta:GetChildren()) do
                 if PastaCooking:IsA("Folder") and PastaCooking.Name == "Cooking" then
                     print("Working... " .. PastaCooking.Name)
-                  
-                    for _, PastaHANDLER in ipairs(pasta:GetChildren()) do
-                        if PastaHANDLER:IsA("Folder") and PastaHANDLER.Name == "HANDLER" then
-                            print("Working... " .. PastaHANDLER.Name)
-                            return PastaHANDLER
+                    
+                    for _, Pasta2 in ipairs(pasta:GetChildren()) do
+                        if Pasta2:IsA("Folder") then
+                            for _, PastaHANDLER in ipairs(Pasta2:GetChildren()) do
+                                if PastaHANDLER:IsA("Folder") and PastaHANDLER.Name == "HANDLER" then
+                                    print("Working... " .. PastaHANDLER.Name)
+                                    return Pasta2
+                                end
+                            end
                         end
                     end
                 end
@@ -18,6 +22,7 @@ function AlancasSistemas.EncontrarPastaAlavancas()
         end
     end
 end
+
 
 function AlancasSistemas.AtivarAlavancas(folder)
     local pasta = folder
