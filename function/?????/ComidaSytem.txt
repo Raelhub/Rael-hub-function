@@ -91,7 +91,7 @@ end
 
 function CrafterSistema.Mesa2System(folder)
     local pasta = folder
-    local parts = pasta.WoodenCounters:GetChildren()[17]
+    local parts = pasta.WoodenCounters:GetChildren()[24]
     
     local part = findPartWithProximityPrompt(parts)
     
