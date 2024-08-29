@@ -1,6 +1,6 @@
 local NagisaSistema = {}
 
-function ChihiroSistema.EncontrarPastaDaChihiro()
+function NagisaSistema.EncontrarPastaDaNagisa()
     for _, pasta in ipairs(Workspace:GetChildren()) do
         if pasta:IsA("Folder") then
             for _, model in ipairs(pasta:GetChildren()) do
