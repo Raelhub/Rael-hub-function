@@ -54,6 +54,7 @@ function ChihiroSistema.AutoCartas(folder)
             end
         end
     end
+    return nil
 end
 
 function ChihiroSistema.EspMonsterMother(folder)
