@@ -39,7 +39,7 @@ function ChihiroSistema.AutoCartas(folder)
                         if Part:IsA("BasePart") then
                             local Front = Part:FindFirstChild("Front")
                             if Front and Front.Transparency == 0 then
-                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Front.Position)
+                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Part.Position)
                                 
                                 wait(0.5)
                                 
