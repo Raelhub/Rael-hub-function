@@ -14,7 +14,7 @@ function ChihiroSistema.EncontrarPastaDaChihiro()
     return nil
 end
 
-function ChihiroSistema.EncontrarPastaDa(folder)
+function ChihiroSistema.EspMonsterMother(folder)
   for _, Pasta in ipairs(folder:GetChildren()) do
     if Pasta:IsA("Folder") then
       for _, Monster in ipairs(Pasta:GetChildren()) do
