@@ -43,7 +43,7 @@ function ChihiroSistema.AutoCartas(folder)
                                 
                                 wait(0.5)
                                 
-                                local proximityPrompt = Front:FindFirstChildOfClass("ProximityPrompt")
+                                local proximityPrompt = Part:FindFirstChildOfClass("ProximityPrompt")
                                 if proximityPrompt then
                                     fireproximityprompt(proximityPrompt)
                                 end
