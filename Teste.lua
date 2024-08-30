@@ -22,40 +22,40 @@ function TranslationModule:GetTabs()
         Tab_Oceano.section = "Pular essa fase do oceano"
         Tab_Oceano.button = "Pular oceano"
 
-        Tab_Navio.name = "Fase do navio"
-        Tab_Navio.section = "Teleportar para o navio"
-        Tab_Navio.button = "Tp navio"
+        Tab_ComedorCarne.name = "Fase dos Comedores"
+        Tab_ComedorCarne.section = "Pular essa fase dos comedores"
+        Tab_ComedorCarne.button = "Pular comedor"
 
     elseif locale == "en-us" then
         Tab_Oceano.name = "Ocean Phase"
         Tab_Oceano.section = "Skip this ocean phase"
         Tab_Oceano.button = "Skip Ocean"
 
-        Tab_Navio.name = "Ship phase"
-        Tab_Navio.section = "Teleport to the ship"
-        Tab_Navio.button = "Tp ship"
+        Tab_ComedorCarne.name = "Feast Phase"
+        Tab_ComedorCarne.section = "Skip this feast phase"
+        Tab_ComedorCarne.button = "Skip Feast"
 
     elseif locale:sub(1, 2) == "es" then
         Tab_Oceano.name = "Fase del Océano"
         Tab_Oceano.section = "Saltar esta fase del océano"
         Tab_Oceano.button = "Saltar océano"
 
-        Tab_Navio.name = "Fase de envío"
-        Tab_Navio.section = "Teletransportarse al barco"
-        Tab_Navio.button = "nave TP"
+        Tab_ComedorCarne.name = "Fase de los Comedores"
+        Tab_ComedorCarne.section = "Saltar esta fase de los comedores"
+        Tab_ComedorCarne.button = "Saltar comedor"
 
     else
         Tab_Oceano.name = "Ocean Phase"
         Tab_Oceano.section = "Skip this ocean phase"
         Tab_Oceano.button = "Skip Ocean"
 
-        Tab_Navio.name = "Ship phase"
-        Tab_Navio.section = "Teleport to the ship"
-        Tab_Navio.button = "Tp ship"
+        Tab_ComedorCarne.name = "Feast Phase"
+        Tab_ComedorCarne.section = "Skip this feast phase"
+        Tab_ComedorCarne.button = "Skip Feast"
 
     end
 
-    return Tab_Oceano, Tab_Navio
+    return Tab_Oceano, Tab_ComedorCarne
 end
 
 return TranslationModule
