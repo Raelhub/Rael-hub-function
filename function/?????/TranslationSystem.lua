@@ -141,7 +141,7 @@ function TranslationModule:GetTabs()
         Tab_Meat.button4 = "Entregar carnes"
         Tab_Meat.button5 = "Tp puerta final"
         
-        Tab_esqueletos.name = "Escapar de los Esqueletos"
+        Tab_esqueletos.name = "Escapar Esqueletos"
         Tab_esqueletos.section1 = "Teletransportarse para comenzar la cinemática"
         Tab_esqueletos.section2 = "Escapar automáticamente de los esqueletos"
         Tab_esqueletos.button1 = "Comenzar cinemática"
