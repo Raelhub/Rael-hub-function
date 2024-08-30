@@ -110,7 +110,7 @@ function TranslationModule:GetTabs()
     
     local Tab_Others = {
       name = "",
-      section2 "",
+      section2 = "",
       button2 = ""
     }
     
