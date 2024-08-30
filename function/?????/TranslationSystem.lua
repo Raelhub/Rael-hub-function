@@ -22,9 +22,9 @@ function TranslationModule:GetTabs()
         Tab_Oceano.section = "Pular essa fase do oceano"
         Tab_Oceano.button = "Pular oceano"
 
-        Tab_ComedorCarne.name = "Fase dos Comedores"
+        Tab_ComedorCarne.name = "Fase Comedores"
         Tab_ComedorCarne.section = "Pular essa fase dos comedores"
-        Tab_ComedorCarne.button = "Pular comedor"
+        Tab_ComedorCarne.button = "Pular comedores"
 
     elseif locale == "en-us" then
         Tab_Oceano.name = "Ocean Phase"
@@ -40,7 +40,7 @@ function TranslationModule:GetTabs()
         Tab_Oceano.section = "Saltar esta fase del océano"
         Tab_Oceano.button = "Saltar océano"
 
-        Tab_ComedorCarne.name = "Fase de los Comedores"
+        Tab_ComedorCarne.name = "Fase Comedores"
         Tab_ComedorCarne.section = "Saltar esta fase de los comedores"
         Tab_ComedorCarne.button = "Saltar comedor"
 
