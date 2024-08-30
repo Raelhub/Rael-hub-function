@@ -11,7 +11,8 @@ function TranslationModule:GetTabs()
     local Tab_ComedorCarne = {
         name = "",
         section = "",
-        button = ""
+        button1 = "",
+        button2 = ""
 
     }
     
@@ -119,7 +120,8 @@ function TranslationModule:GetTabs()
 
         Tab_ComedorCarne.name = "Fase Comedores"
         Tab_ComedorCarne.section = "Pular essa fase dos comedores"
-        Tab_ComedorCarne.button = "Pular comedores"
+        Tab_ComedorCarne.button1 = "Pular comedores [Normal]"
+        Tab_ComedorCarne.button2 = "Pular comedores [Nightmare]"
         
         Tab_Meat.name = "Fase das Carnes"
         Tab_Meat.section1 = "Teleportar para zona segura"
@@ -197,7 +199,8 @@ function TranslationModule:GetTabs()
 
         Tab_ComedorCarne.name = "Feast Phase"
         Tab_ComedorCarne.section = "Skip this feast phase"
-        Tab_ComedorCarne.button = "Skip Feast"
+        Tab_ComedorCarne.button1 = "Skip Feast [Normal]"
+        Tab_ComedorCarne.button2 = "Skip Feast [Nightmare]"
         
         Tab_Meat.name = "Meat Phase"
         Tab_Meat.section1 = "Teleport to safe zone"
@@ -279,7 +282,8 @@ function TranslationModule:GetTabs()
 
         Tab_ComedorCarne.name = "Fase Comedores"
         Tab_ComedorCarne.section = "Saltar esta fase de los comedores"
-        Tab_ComedorCarne.button = "Saltar comedores"
+        Tab_ComedorCarne.button1 = "Saltar comedores [Normal]"
+        Tab_ComedorCarne.button2 = "Saltar comedores [Nightmare]"
         
         Tab_Meat.name = "Fase Carnes"
         Tab_Meat.section1 = "Teletransportarse a zona segura"
@@ -358,7 +362,8 @@ function TranslationModule:GetTabs()
 
         Tab_ComedorCarne.name = "Feast Phase"
         Tab_ComedorCarne.section = "Skip this feast phase"
-        Tab_ComedorCarne.button = "Skip Feast"
+        Tab_ComedorCarne.button1 = "Skip Feast [Normal]"
+        Tab_ComedorCarne.button2 = "Skip Feast [Nightmare]"
         
         Tab_Meat.name = "Meat Phase"
         Tab_Meat.section1 = "Teleport to safe zone"
