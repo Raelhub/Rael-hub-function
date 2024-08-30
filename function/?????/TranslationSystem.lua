@@ -107,6 +107,20 @@ function TranslationModule:GetTabs()
       section1 = "",
       button1 = ""
     }
+    
+    local Tab_Others = {
+      name = "",
+      section2 "",
+      button2 = ""
+    }
+    
+    local Tab_Credits = {
+      name = "",
+      section = "",
+      button = "",
+      NotifierName = "",
+      NotifierContent = ""
+    }
 
     local Players = game:GetService("Players")
     local player = Players.LocalPlayer
@@ -188,6 +202,16 @@ function TranslationModule:GetTabs()
         Tab_Boss.section1 = "Auto coletar bola de canhão"
         Tab_Boss.button1 = "Auto coletar munição"
         
+        Tab_Others.name = "Outros"
+        Tab_Others.section2 = "Auto coletar as moedas"
+        Tab_Others.button2 = "Esp moedas"
+        Tab_Others.button3 = "Auto coletar moedas"
+        
+        Tab_Credits.name = "Créditos"
+        Tab_Credits.section = "Criador do script e desenvolvedor"
+        Tab_Credits.button = "Rael | Laelmano24"
+        Tab_Credits.NotifierName = "Copiado!"
+        Tab_Credits.NotifierContent = "Nick do criador foi copiado na área de transferência."
         
         
 
@@ -271,7 +295,16 @@ function TranslationModule:GetTabs()
         Tab_Boss.section1 = "Auto collect cannonball"
         Tab_Boss.button1 = "Auto collect ammo"
         
+        Tab_Others.name = "Others"
+        Tab_Others.section2 = "Auto collect coins"
+        Tab_Others.button2 = "Show Coins"
+        Tab_Others.button3 = "Auto Collect Coins"
         
+        Tab_Credits.name = "Credits"
+        Tab_Credits.section = "Script creator and developer"
+        Tab_Credits.button = "Rael | Laelmano24"
+        Tab_Credits.NotifierName = "Copied!"
+        Tab_Credits.NotifierContent = "Creator's nickname has been copied to the clipboard."
         
 
     elseif locale:sub(1, 2) == "es" then
@@ -353,6 +386,17 @@ function TranslationModule:GetTabs()
         
         Tab_Boss.section1 = "Auto recoger bola de cañón"
         Tab_Boss.button1 = "Auto recoger munición"
+        
+        Tab_Others.name = "Otros"
+        Tab_Others.section2 = "Auto recoger las monedas"
+        Tab_Others.button2 = "Mostrar monedas"
+        Tab_Others.button3 = "Auto recoger monedas"
+        
+        Tab_Credits.name = "Créditos"
+        Tab_Credits.section = "Creador del script y desarrollador"
+        Tab_Credits.button = "Rael | Laelmano24"
+        Tab_Credits.NotifierName = "¡Copiado!"
+        Tab_Credits.NotifierContent = "El apodo del creador ha sido copiado al portapapeles."
 
     else
         Tab_Oceano.name = "Ocean Phase"
@@ -433,10 +477,21 @@ function TranslationModule:GetTabs()
         
         Tab_Boss.section1 = "Auto collect cannonball"
         Tab_Boss.button1 = "Auto collect ammo"
+        
+        Tab_Others.name = "Others"
+        Tab_Others.section2 = "Auto collect coins"
+        Tab_Others.button2 = "Show Coins"
+        Tab_Others.button3 = "Auto Collect Coins"
+        
+        Tab_Credits.name = "Credits"
+        Tab_Credits.section = "Script creator and developer"
+        Tab_Credits.button = "Rael | Laelmano24"
+        Tab_Credits.NotifierName = "Copied!"
+        Tab_Credits.NotifierContent = "Creator's nickname has been copied to the clipboard."
 
     end
 
-    return Tab_Oceano, Tab_ComedorCarne, Tab_Meat, Tab_esqueletos, Tab_Alavancas, Tab_Engima, Tab_Comida, Tab_Teiryu, Tab_Torre, Tab_Chihiro, Tab_Boss
+    return Tab_Oceano, Tab_ComedorCarne, Tab_Meat, Tab_esqueletos, Tab_Alavancas, Tab_Engima, Tab_Comida, Tab_Teiryu, Tab_Torre, Tab_Chihiro, Tab_Boss, Tab_Others, Tab_Credits
 end
 
 return TranslationModule
