@@ -7,7 +7,7 @@ function TranslationModule:GetTabs()
         button = ""
     }
 
-    local Tab_Navio = {
+    local Tab_ComedorCarne = {
         name = "",
         section = "",
         button = ""
