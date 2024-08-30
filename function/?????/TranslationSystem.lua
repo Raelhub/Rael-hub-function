@@ -99,6 +99,11 @@ function TranslationModule:GetTabs()
       button4 = "",
       button5 = ""
     }
+    
+    local Tab_Boss = {
+      section1 = "",
+      button1 = ""
+    }
 
     local Players = game:GetService("Players")
     local player = Players.LocalPlayer
@@ -175,6 +180,9 @@ function TranslationModule:GetTabs()
         Tab_Chihiro.button4 = "Tp porta"
         Tab_Chihiro.button5 = "Auto coletar cartas"
         
+        Tab_Boss.section1 = "Auto coletar bola de canhão"
+        Tab_Boss.button1 = "Auto coletar munição"
+        
         
         
 
@@ -246,12 +254,15 @@ function TranslationModule:GetTabs()
         Tab_Chihiro.section2 = "Show mom's location"
         Tab_Chihiro.section3 = "Teleport to Chihiro"
         Tab_Chihiro.section4 = "Teleport to escape door"
-        Tab_Chihiro.section5 = "Auto collect all cards"
+        Tab_Chihiro.section5 = "Auto collect all Notes"
         Tab_Chihiro.button1 = "Safe Area"
         Tab_Chihiro.button2 = "Show Mom"
         Tab_Chihiro.button3 = "Tp Chihiro"
         Tab_Chihiro.button4 = "Tp Door"
-        Tab_Chihiro.button5 = "Auto Collect Cards"
+        Tab_Chihiro.button5 = "Auto Collect notes"
+        
+        Tab_Boss.section1 = "Auto collect cannonball"
+        Tab_Boss.button1 = "Auto collect ammo"
         
         
         
@@ -330,6 +341,9 @@ function TranslationModule:GetTabs()
         Tab_Chihiro.button3 = "Tp Chihiro"
         Tab_Chihiro.button4 = "Tp puerta"
         Tab_Chihiro.button5 = "Auto recoger cartas"
+        
+        Tab_Boss.section1 = "Auto recoger bola de cañón"
+        Tab_Boss.button1 = "Auto recoger munición"
 
     else
         Tab_Oceano.name = "Ocean Phase"
@@ -399,16 +413,19 @@ function TranslationModule:GetTabs()
         Tab_Chihiro.section2 = "Show mom's location"
         Tab_Chihiro.section3 = "Teleport to Chihiro"
         Tab_Chihiro.section4 = "Teleport to escape door"
-        Tab_Chihiro.section5 = "Auto collect all cards"
+        Tab_Chihiro.section5 = "Auto collect all notes"
         Tab_Chihiro.button1 = "Safe Area"
         Tab_Chihiro.button2 = "Show Mom"
         Tab_Chihiro.button3 = "Tp Chihiro"
         Tab_Chihiro.button4 = "Tp Door"
-        Tab_Chihiro.button5 = "Auto Collect Cards"
+        Tab_Chihiro.button5 = "Auto Collect Notes"
+        
+        Tab_Boss.section1 = "Auto collect cannonball"
+        Tab_Boss.button1 = "Auto collect ammo"
 
     end
 
-    return Tab_Oceano, Tab_ComedorCarne, Tab_Meat, Tab_esqueletos, Tab_Alavancas, Tab_Engima, Tab_Comida, Tab_Teiryu, Tab_Torre, Tab_Chihiro
+    return Tab_Oceano, Tab_ComedorCarne, Tab_Meat, Tab_esqueletos, Tab_Alavancas, Tab_Engima, Tab_Comida, Tab_Teiryu, Tab_Torre, Tab_Chihiro, Tab_Boss
 end
 
 return TranslationModule
