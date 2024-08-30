@@ -4,13 +4,15 @@ function TranslationModule:GetTabs()
     local Tab_Oceano = {
         name = "",
         section = "",
-        button = ""
+        button1 = "",
+        button2 = ""
     }
 
     local Tab_ComedorCarne = {
         name = "",
         section = "",
         button = ""
+
     }
     
     local Tab_Meat = {
@@ -112,7 +114,8 @@ function TranslationModule:GetTabs()
     if locale == "pt-br" then
         Tab_Oceano.name = "Fase do Oceano"
         Tab_Oceano.section = "Pular essa fase do oceano"
-        Tab_Oceano.button = "Pular oceano"
+        Tab_Oceano.button1 = "Pular oceano [Normal]"
+        Tab_Oceano.button2 = "Pular oceano [Nightmare]"
 
         Tab_ComedorCarne.name = "Fase Comedores"
         Tab_ComedorCarne.section = "Pular essa fase dos comedores"
@@ -189,7 +192,8 @@ function TranslationModule:GetTabs()
     elseif locale == "en-us" then
         Tab_Oceano.name = "Ocean Phase"
         Tab_Oceano.section = "Skip this ocean phase"
-        Tab_Oceano.button = "Skip Ocean"
+        Tab_Oceano.button1 = "Skip Ocean [Normal]"
+        Tab_Oceano.button2 = "Skip Ocean [Nigthmare]"
 
         Tab_ComedorCarne.name = "Feast Phase"
         Tab_ComedorCarne.section = "Skip this feast phase"
@@ -270,7 +274,8 @@ function TranslationModule:GetTabs()
     elseif locale:sub(1, 2) == "es" then
         Tab_Oceano.name = "Fase del Océano"
         Tab_Oceano.section = "Saltar esta fase del océano"
-        Tab_Oceano.button = "Saltar océano"
+        Tab_Oceano.button1 = "Saltar océano [Normal]"
+        Tab_Oceano.button2 = "Saltar océano [Nightmare]"
 
         Tab_ComedorCarne.name = "Fase Comedores"
         Tab_ComedorCarne.section = "Saltar esta fase de los comedores"
@@ -348,7 +353,8 @@ function TranslationModule:GetTabs()
     else
         Tab_Oceano.name = "Ocean Phase"
         Tab_Oceano.section = "Skip this ocean phase"
-        Tab_Oceano.button = "Skip Ocean"
+        Tab_Oceano.button1 = "Skip Ocean [Normal]"
+        Tab_Oceano.button2 = "Skip Ocean [Nigthmare]"
 
         Tab_ComedorCarne.name = "Feast Phase"
         Tab_ComedorCarne.section = "Skip this feast phase"
