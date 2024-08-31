@@ -105,7 +105,9 @@ function TranslationModule:GetTabs()
     
     local Tab_Boss = {
       section1 = "",
-      button1 = ""
+      section2 = "",
+      button1 = "",
+      button2 = ""
     }
     
     local Tab_Others = {
@@ -187,7 +189,7 @@ function TranslationModule:GetTabs()
         Tab_Torre.button1 = "Zona segura"
         Tab_Torre.button2 = "Tp puzzle"
         
-        Tab_Chihiro.name = "Fase da hihiro"
+        Tab_Chihiro.name = "Fase da Chihiro"
         Tab_Chihiro.section1 = "Teleportar para zona segura"
         Tab_Chihiro.section2 = "Mostra localização da mamãe"
         Tab_Chihiro.section3 = "Teleportar para Chihiro"
@@ -200,7 +202,9 @@ function TranslationModule:GetTabs()
         Tab_Chihiro.button5 = "Auto coletar cartas"
         
         Tab_Boss.section1 = "Auto coletar bola de canhão"
+        Tab_Boss.section2 = "Auto se proteger com o Leizer da Nagisa"
         Tab_Boss.button1 = "Auto coletar munição"
+        Tab_Boss.button2 = "Auto proteger laizer Nagisa"
         
         Tab_Others.name = "Outros"
         Tab_Others.section2 = "Auto coletar as moedas"
@@ -293,7 +297,9 @@ function TranslationModule:GetTabs()
         Tab_Chihiro.button5 = "Auto Collect notes"
         
         Tab_Boss.section1 = "Auto collect cannonball"
+        Tab_Boss.section2 = "Auto protect with Nagisa's laser"
         Tab_Boss.button1 = "Auto collect ammo"
+        Tab_Boss.button2 = "Auto protect Nagisa's laser"
         
         Tab_Others.name = "Others"
         Tab_Others.section2 = "Auto collect coins"
@@ -385,7 +391,9 @@ function TranslationModule:GetTabs()
         Tab_Chihiro.button5 = "Auto recoger cartas"
         
         Tab_Boss.section1 = "Auto recoger bola de cañón"
+        Tab_Boss.section2 = "Auto protegerse con el láser de Nagisa"
         Tab_Boss.button1 = "Auto recoger munición"
+        Tab_Boss.button2 = "Auto proteger láser Nagisa"
         
         Tab_Others.name = "Otros"
         Tab_Others.section2 = "Auto recoger las monedas"
@@ -476,7 +484,9 @@ function TranslationModule:GetTabs()
         Tab_Chihiro.button5 = "Auto Collect Notes"
         
         Tab_Boss.section1 = "Auto collect cannonball"
+        Tab_Boss.section2 = "Auto protect with Nagisa's laser"
         Tab_Boss.button1 = "Auto collect ammo"
+        Tab_Boss.button2 = "Auto protect Nagisa's laser"
         
         Tab_Others.name = "Others"
         Tab_Others.section2 = "Auto collect coins"
