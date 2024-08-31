@@ -106,8 +106,10 @@ function TranslationModule:GetTabs()
     local Tab_Boss = {
       section1 = "",
       section2 = "",
+      section3 = "",
       button1 = "",
-      button2 = ""
+      button2 = "",
+      button3 = ""
     }
     
     local Tab_Others = {
@@ -203,8 +205,10 @@ function TranslationModule:GetTabs()
         
         Tab_Boss.section1 = "Auto coletar bola de canhão"
         Tab_Boss.section2 = "Auto se proteger com o Leizer da Nagisa"
+        Tab_Boss.section3 = "Melhor área pra matar a Nagisa Serpente"
         Tab_Boss.button1 = "Auto coletar munição"
         Tab_Boss.button2 = "Auto proteger laizer Nagisa"
+        Tab_Boss.button3 = "Teleportar para zona"
         
         Tab_Others.name = "Outros"
         Tab_Others.section2 = "Auto coletar as moedas"
@@ -298,8 +302,10 @@ function TranslationModule:GetTabs()
         
         Tab_Boss.section1 = "Auto collect cannonball"
         Tab_Boss.section2 = "Auto protect with Nagisa's laser"
+        Tab_Boss.section3 = "Best area to kill Nagisa Serpent"
         Tab_Boss.button1 = "Auto collect ammo"
         Tab_Boss.button2 = "Auto protect Nagisa's laser"
+        Tab_Boss.button3 = "Teleport to zone"
         
         Tab_Others.name = "Others"
         Tab_Others.section2 = "Auto collect coins"
@@ -392,8 +398,10 @@ function TranslationModule:GetTabs()
         
         Tab_Boss.section1 = "Auto recoger bola de cañón"
         Tab_Boss.section2 = "Auto protegerse con el láser de Nagisa"
+        Tab_Boss.section3 = "Mejor área para matar a Nagisa Serpiente"
         Tab_Boss.button1 = "Auto recoger munición"
         Tab_Boss.button2 = "Auto proteger láser Nagisa"
+        Tab_Boss.button3 = "Teletransportarse a la zona"
         
         Tab_Others.name = "Otros"
         Tab_Others.section2 = "Auto recoger las monedas"
@@ -485,8 +493,10 @@ function TranslationModule:GetTabs()
         
         Tab_Boss.section1 = "Auto collect cannonball"
         Tab_Boss.section2 = "Auto protect with Nagisa's laser"
+        Tab_Boss.section3 = "Best area to kill Nagisa Serpent"
         Tab_Boss.button1 = "Auto collect ammo"
         Tab_Boss.button2 = "Auto protect Nagisa's laser"
+        Tab_Boss.button3 = "Teleport to zone"
         
         Tab_Others.name = "Others"
         Tab_Others.section2 = "Auto collect coins"
