@@ -356,7 +356,7 @@ function TranslationModule:GetTabs()
 
     end
 
-    return Tab_Oficine, Tab_Sisters, Tab_Nagisa, Tab_VelaFase, Other, Creditos
+    return Tab_Oficine, Tab_Sisters, Tab_Nagisa, Tab_PhasesFrame, Tab_VelaFase, Other, Creditos
 end
 
 return TranslationModule
