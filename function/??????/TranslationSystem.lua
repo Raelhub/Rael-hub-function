@@ -138,7 +138,7 @@ function TranslationModule:GetTabs()
       
       Tab_Mapmaze.name = "Fase GrinDemon"
       Tab_Mapmaze.section1 = "Mostrar a localização do GrinDemon"
-      Tab_section2 = "Área segura"
+      Tab_Mapmaze.section2 = "Área segura"
       Tab_Mapmaze.section3 = "Auto fazer tocha"
       Tab_Mapmaze.section4 = "Incendiar a tocha"
       Tab_Mapmaze.section5 = "Passar do portão"
@@ -184,7 +184,7 @@ function TranslationModule:GetTabs()
       
       Tab_Train.name = "Fase metrô"
       Tab_Train.section = "Auto escapar do trem"
-      Tab_Train.button = "Auto fugir tr"
+      Tab_Train.button = "Auto fugir trem"
       
       
       Tab_larvas.name = "Fase Larvas"
@@ -410,7 +410,7 @@ function TranslationModule:GetTabs()
 
     end
 
-    return Tab_cutscene, Tab_GiveHeart, Tab_Mapmaze, Tab_DodoMeki, Tab_Enzuzai, Tab_HouseUchiumi, Tab_Train, Tab_Others, Tab_Credit
+    return Tab_cutscene, Tab_GiveHeart, Tab_Mapmaze, Tab_DodoMeki, Tab_Enzuzai, Tab_HouseUchiumi, Tab_Train, Tab_larvas, Tab_Others, Tab_Credit
 end
 
 return TranslationModule
