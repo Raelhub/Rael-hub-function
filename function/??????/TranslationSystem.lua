@@ -110,12 +110,15 @@ function TranslationModule:GetTabs()
       button6 = ""
     }
     
-    local Tab_Credits = {
+    local Tab_Credit = {
       name = "",
-      section = "",
-      button = "",
+      section1 = "",
+      section2 = "",
+      button1 = "",
+      button2 = "",
       NotifierName = "",
-      NotifierContent = ""
+      NotifierContent1 = "",
+      NotifierContent2 = ""
     }
 
     local Players = game:GetService("Players")
@@ -213,6 +216,15 @@ function TranslationModule:GetTabs()
       Tab_Others.button4 = "Auto coletar moedas"
       Tab_Others.button5 = "No clip Portas"
       Tab_Others.button6 = "FullBright"
+      
+      Tab_Credit.name = "Créditos"
+      Tab_Credit.section1 = "Criador do Script e head programmer"
+      Tab_Credit.section2 = "Test script"
+      Tab_Credit.button1 = "Rael | Laelmano24"
+      Tab_Credit.button2 = "David | DDGM_oficial"
+      Tab_Credit.NotifierName = "Copiado!"
+      Tab_Credit.NotifierContent1 = "Nick do criador foi copiado na área de transferência."
+      Tab_Credit.NotifierContent2 = "Nick do test foi copiado na área de transferência."
     elseif locale == "en-us" then
       
       
