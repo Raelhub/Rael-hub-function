@@ -101,6 +101,26 @@ function TranslationModule:GetTabs()
       button = ""
     }
     
+    Tab_HouseYurei = {
+      name = "",
+      section1 = "",
+      section2 = "",
+      section3 = "",
+      button1 = "",
+      button2 = "",
+      NameEsp1 = "",
+      NameEsp2 = "",
+      NameEsp3 = "",
+      NameEsp4 = "",
+      NameEsp5 = "",
+      House1 = "",
+      House2 = "",
+      House3 = "",
+      House4 = "",
+      House5 = ""
+      
+    }
+    
     local Tab_Others = {
       name = "",
       section1 = "",
@@ -213,6 +233,19 @@ function TranslationModule:GetTabs()
       Tab_Lama.section = "Finalizar essa fase"
       Tab_Lama.button = "Auto finalizar"
       
+      Tab_HouseYurei.name = "Casa Yurei"
+      Tab_HouseYurei.section1 = "Mostrar todas as estátuas malignas"
+      Tab_HouseYurei.section2 = "Mostrar a localização das casas"
+      Tab_HouseYurei.section3 = "Teleportar para as casas"
+      Tab_HouseYurei.button1 = "Esp estátuas"
+      Tab_HouseYurei.button2 = "Esp casas"
+      for i = 1, 5 do
+        Tab_HouseYurei["NameEsp" .. i] = "Casa " .. i
+      end
+      for i = 1, 5 do
+        Tab_HouseYurei["House" .. i] = "Casa " .. i
+      end
+      
       Tab_Others.name = "Outros"
       Tab_Others.section1 = "Aumentar o fps"
       Tab_Others.section2 = "Esp"
@@ -323,6 +356,8 @@ function TranslationModule:GetTabs()
         Tab_Boss.button2 = "Auto proteger láser Nagisa"
         Tab_Boss.button3 = "Teletransportarse a la zona"
         
+    
+        
         Tab_Others.name = "Otros"
         Tab_Others.section2 = "Auto recoger las monedas"
         Tab_Others.button2 = "Mostrar monedas"
@@ -431,7 +466,7 @@ function TranslationModule:GetTabs()
 
     end
 
-    return Tab_cutscene, Tab_GiveHeart, Tab_Mapmaze, Tab_DodoMeki, Tab_Enzuzai, Tab_HouseUchiumi, Tab_Train, Tab_larvas, Tab_Lama, Tab_Others, Tab_Credit
+    return Tab_cutscene, Tab_GiveHeart, Tab_Mapmaze, Tab_DodoMeki, Tab_Enzuzai, Tab_HouseUchiumi, Tab_Train, Tab_larvas, Tab_Lama,Tab_HouseYurei, Tab_Others, Tab_Credit
 end
 
 return TranslationModule
