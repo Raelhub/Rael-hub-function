@@ -95,6 +95,12 @@ function TranslationModule:GetTabs()
 
     }
     
+    Tab_Lama = {
+      name = "",
+      section = "",
+      button = ""
+    }
+    
     local Tab_Others = {
       name = "",
       section1 = "",
@@ -203,6 +209,9 @@ function TranslationModule:GetTabs()
       Tab_larvas.button6 = "Tp larva 4"
       Tab_larvas.button7 = "Tp Nurikabe"
       
+      Tab_Lama.name = "Fase lama"
+      Tab_Lama.section = "Finalizar essa fase"
+      Tab_Lama.button = "Auto finalizar"
       
       Tab_Others.name = "Outros"
       Tab_Others.section1 = "Aumentar o fps"
@@ -422,7 +431,7 @@ function TranslationModule:GetTabs()
 
     end
 
-    return Tab_cutscene, Tab_GiveHeart, Tab_Mapmaze, Tab_DodoMeki, Tab_Enzuzai, Tab_HouseUchiumi, Tab_Train, Tab_larvas, Tab_Others, Tab_Credit
+    return Tab_cutscene, Tab_GiveHeart, Tab_Mapmaze, Tab_DodoMeki, Tab_Enzuzai, Tab_HouseUchiumi, Tab_Train, Tab_larvas, Tab_Lama, Tab_Others, Tab_Credit
 end
 
 return TranslationModule
