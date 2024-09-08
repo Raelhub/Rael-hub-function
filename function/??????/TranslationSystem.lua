@@ -121,6 +121,26 @@ function TranslationModule:GetTabs()
       
     }
     
+    Tab_BossYurei = {
+      name = "",
+      section1 = "",
+      section2 = "",
+      button1 = "",
+      button2 = "",
+      NotificationName1 = "",
+      NotificationName2 = "",
+      NotificationContent1 = "",
+      NotificationContent2 = ""
+    }
+    
+    Tab_FaseFinal = {
+      name = "",
+      section1 = "",
+      section2 = "",
+      button1 = "",
+      button2 = ""
+    }
+    
     local Tab_Others = {
       name = "",
       section1 = "",
@@ -245,6 +265,23 @@ function TranslationModule:GetTabs()
       for i = 1, 5 do
         Tab_HouseYurei["House" .. i] = "Casa " .. i
       end
+      
+      
+      Tab_BossYurei.name = "Boss Yurei"
+      Tab_BossYurei.section1 = "Auto coletar as katanas"
+      Tab_BossYurei.section2 = "Voar + mira"
+      Tab_BossYurei.button1 = "Coletar katanas"
+      Tab_BossYurei.button2 = "Fly (velocidade recomendada: 1)"
+      Tab_BossYurei.NotificationName1 = "Ativado"
+      Tab_BossYurei.NotificationName2 = "Desativado"
+      Tab_BossYurei.NotificationContent1 = "O auto coletar está ativado."
+      Tab_BossYurei.NotificationContent2 = "O auto coletar está desativado"
+      
+      Tab_FaseFinal.name = "Fase Final"
+      Tab_FaseFinal.section1 = "Executar a cutscene do Shinigami"
+      Tab_FaseFinal.section2 = "Auto passar do Shinigami"
+      Tab_FaseFinal.button1 = "Executar cutscene"
+      Tab_FaseFinal.button2 = "Fugir do Shinigami"
       
       Tab_Others.name = "Outros"
       Tab_Others.section1 = "Aumentar o fps"
@@ -466,7 +503,7 @@ function TranslationModule:GetTabs()
 
     end
 
-    return Tab_cutscene, Tab_GiveHeart, Tab_Mapmaze, Tab_DodoMeki, Tab_Enzuzai, Tab_HouseUchiumi, Tab_Train, Tab_larvas, Tab_Lama,Tab_HouseYurei, Tab_Others, Tab_Credit
+    return Tab_cutscene, Tab_GiveHeart, Tab_Mapmaze, Tab_DodoMeki, Tab_Enzuzai, Tab_HouseUchiumi, Tab_Train, Tab_larvas, Tab_Lama, Tab_HouseYurei , Tab_BossYurei, Tab_FaseFinal, Tab_Others, Tab_Credit
 end
 
 return TranslationModule
