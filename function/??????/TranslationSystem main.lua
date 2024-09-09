@@ -11,7 +11,6 @@ function TranslationModule:GetTabs()
     local player = Players.LocalPlayer
     local locale = player.LocaleId:lower()
 
-    -- Verificação de idioma do jogador
     if locale == "pt-br" then
         Texto.paragrafo = "Você deseja escolher quais versões do script?"
         Texto.btn1 = "Normal"
@@ -25,7 +24,7 @@ function TranslationModule:GetTabs()
         Texto.btn1 = "Normal"
         Texto.btn2 = "Auto casa yurei"
     else
-        -- Idioma padrão
+        
         Texto.paragrafo = "Do you want to choose which versions of the script?"
         Texto.btn1 = "Normal"
         Texto.btn2 = "Auto house yurei"
