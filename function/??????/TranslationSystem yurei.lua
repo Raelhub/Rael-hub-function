@@ -239,7 +239,7 @@ function TranslationModule:GetTabs()
       Tab_Others.button3 = "ESP Monedas"
       Tab_Others.button4 = "Recoger monedas automáticamente"
       Tab_Others.button5 = "No clip puertas"
-      Tab_Others.button6 = "Iluminar al máximo"
+      Tab_Others.button6 = "FullBright"
     
       Tab_Credit.name = "Créditos"
       Tab_Credit.section1 = "Creador del script y programador principal"
