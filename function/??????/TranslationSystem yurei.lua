@@ -309,7 +309,7 @@ function TranslationModule:GetTabs()
         
     end
 
-    return Tab_HouseYurei, Tab_BossYurei, Tab_FaseFinal, Tab_Others, Tab_Credit
+    return Tab_AutoHouseYurei, Tab_HouseYurei, Tab_BossYurei, Tab_FaseFinal, Tab_Others, Tab_Credit
 end
 
 return TranslationModule
