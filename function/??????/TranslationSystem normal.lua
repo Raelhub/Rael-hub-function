@@ -125,8 +125,10 @@ function TranslationModule:GetTabs()
       name = "",
       section1 = "",
       section2 = "",
+      section3 = "",
       button1 = "",
       button2 = "",
+      button3 = "",
       NotificationName1 = "",
       NotificationName2 = "",
       NotificationContent1 = "",
@@ -269,9 +271,11 @@ function TranslationModule:GetTabs()
       
       Tab_BossYurei.name = "Boss Yurei"
       Tab_BossYurei.section1 = "Auto coletar as katanas"
-      Tab_BossYurei.section2 = "Voar + mira"
+      Tab_BossYurei.section2 = "Atravessar todas as árvores"
+      Tab_BossYurei.section3 = "Voar + mira"
       Tab_BossYurei.button1 = "Coletar katanas"
-      Tab_BossYurei.button2 = "Fly (velocidade recomendada: 1)"
+      Tab_BossYurei.button2 = "No clip Árvore"
+      Tab_BossYurei.button3 = "Fly (velocidade recomendada: 1)"
       Tab_BossYurei.NotificationName1 = "Ativado"
       Tab_BossYurei.NotificationName2 = "Desativado"
       Tab_BossYurei.NotificationContent1 = "O auto coletar está ativado."
@@ -392,15 +396,17 @@ function TranslationModule:GetTabs()
         Tab_HouseYurei["House" .. i] = "House " .. i
       end
     
-      Tab_BossYurei.name = "Yurei Boss"
-      Tab_BossYurei.section1 = "Auto collect katanas"
-      Tab_BossYurei.section2 = "Fly + Aim"
+      Tab_BossYurei.name = "Boss Yurei"
+      Tab_BossYurei.section1 = "Auto collect the katanas"
+      Tab_BossYurei.section2 = "Go through all the trees"
+      Tab_BossYurei.section3 = "Fly + aim"
       Tab_BossYurei.button1 = "Collect katanas"
-      Tab_BossYurei.button2 = "Fly (Recommended speed: 1)"
-      Tab_BossYurei.NotificationName1 = "Enabled"
-      Tab_BossYurei.NotificationName2 = "Disabled"
-      Tab_BossYurei.NotificationContent1 = "Auto collect is enabled."
-      Tab_BossYurei.NotificationContent2 = "Auto collect is disabled."
+      Tab_BossYurei.button2 = "No clip Tree"
+      Tab_BossYurei.button3 = "Fly (recommended speed: 1)"
+      Tab_BossYurei.NotificationName1 = "Activated"
+      Tab_BossYurei.NotificationName2 = "Deactivated"
+      Tab_BossYurei.NotificationContent1 = "Auto collect is activated."
+      Tab_BossYurei.NotificationContent2 = "Auto collect is deactivated."
     
       Tab_FaseFinal.name = "Final Stage"
       Tab_FaseFinal.section1 = "Execute Shinigami cutscene"
@@ -518,15 +524,17 @@ function TranslationModule:GetTabs()
         Tab_HouseYurei["House" .. i] = "Casa " .. i
       end
     
-      Tab_BossYurei.name = "Jefe Yurei"
-      Tab_BossYurei.section1 = "Recoger automáticamente las katanas"
-      Tab_BossYurei.section2 = "Volar + Apuntar"
+      Tab_BossYurei.name = "Boss Yurei"
+      Tab_BossYurei.section1 = "Auto recoger las katanas"
+      Tab_BossYurei.section2 = "Atravesar todos los árboles"
+      Tab_BossYurei.section3 = "Volar + apuntar"
       Tab_BossYurei.button1 = "Recoger katanas"
-      Tab_BossYurei.button2 = "Volar (Velocidad recomendada: 1)"
+      Tab_BossYurei.button2 = "No clip Árbol"
+      Tab_BossYurei.button3 = "Volar (velocidad recomendada: 1)"
       Tab_BossYurei.NotificationName1 = "Activado"
       Tab_BossYurei.NotificationName2 = "Desactivado"
-      Tab_BossYurei.NotificationContent1 = "Auto recogida activada."
-      Tab_BossYurei.NotificationContent2 = "Auto recogida desactivada."
+      Tab_BossYurei.NotificationContent1 = "El auto recoger está activado."
+      Tab_BossYurei.NotificationContent2 = "El auto recoger está desactivado."
     
       Tab_FaseFinal.name = "Fase Final"
       Tab_FaseFinal.section1 = "Ejecutar la escena del Shinigami"
@@ -644,15 +652,17 @@ function TranslationModule:GetTabs()
         Tab_HouseYurei["House" .. i] = "House " .. i
       end
     
-      Tab_BossYurei.name = "Yurei Boss"
-      Tab_BossYurei.section1 = "Auto collect katanas"
-      Tab_BossYurei.section2 = "Fly + Aim"
+      Tab_BossYurei.name = "Boss Yurei"
+      Tab_BossYurei.section1 = "Auto collect the katanas"
+      Tab_BossYurei.section2 = "Go through all the trees"
+      Tab_BossYurei.section3 = "Fly + aim"
       Tab_BossYurei.button1 = "Collect katanas"
-      Tab_BossYurei.button2 = "Fly (Recommended speed: 1)"
-      Tab_BossYurei.NotificationName1 = "Enabled"
-      Tab_BossYurei.NotificationName2 = "Disabled"
-      Tab_BossYurei.NotificationContent1 = "Auto collect is enabled."
-      Tab_BossYurei.NotificationContent2 = "Auto collect is disabled."
+      Tab_BossYurei.button2 = "No clip Tree"
+      Tab_BossYurei.button3 = "Fly (recommended speed: 1)"
+      Tab_BossYurei.NotificationName1 = "Activated"
+      Tab_BossYurei.NotificationName2 = "Deactivated"
+      Tab_BossYurei.NotificationContent1 = "Auto collect is activated."
+      Tab_BossYurei.NotificationContent2 = "Auto collect is deactivated."
     
       Tab_FaseFinal.name = "Final Stage"
       Tab_FaseFinal.section1 = "Execute Shinigami cutscene"
