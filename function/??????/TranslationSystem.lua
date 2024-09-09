@@ -95,13 +95,13 @@ function TranslationModule:GetTabs()
 
     }
     
-    Tab_Lama = {
+    local Tab_Lama = {
       name = "",
       section = "",
       button = ""
     }
     
-    Tab_HouseYurei = {
+    local Tab_HouseYurei = {
       name = "",
       section1 = "",
       section2 = "",
@@ -121,7 +121,7 @@ function TranslationModule:GetTabs()
       
     }
     
-    Tab_BossYurei = {
+    local Tab_BossYurei = {
       name = "",
       section1 = "",
       section2 = "",
@@ -133,7 +133,7 @@ function TranslationModule:GetTabs()
       NotificationContent2 = ""
     }
     
-    Tab_FaseFinal = {
+    local Tab_FaseFinal = {
       name = "",
       section1 = "",
       section2 = "",
