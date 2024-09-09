@@ -103,7 +103,7 @@ function TranslationModule:GetTabs()
       Tab_BossYurei.name = "Boss Yurei"
       Tab_BossYurei.section1 = "Auto coletar as katanas"
       Tab_BossYurei.section2 = "Atravessar todos as árvores"
-      Tab_BossYurei.sectio3 = "Voar + mira"
+      Tab_BossYurei.section3 = "Voar + mira"
       Tab_BossYurei.button1 = "Coletar katanas"
       Tab_BossYurei.button2 = "No clip Árvore"
       Tab_BossYurei.button3 = "Fly (velocidade recomendada: 1)"
