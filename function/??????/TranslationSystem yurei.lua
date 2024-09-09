@@ -1,6 +1,12 @@
 local TranslationModule = {}
 
 function TranslationModule:GetTabs()
+    
+    local Tab_AutoHouseYurei = {
+      name = "",
+      section = "",
+      button = ""
+    }
   
     local Tab_HouseYurei = {
       name = "",
@@ -74,6 +80,10 @@ function TranslationModule:GetTabs()
 
     if locale == "pt-br" then
       
+      Tab_AutoHouseYurei.name = "Auto yurei"
+      Tab_AutoHouseYurei.section = "Pular fases e ir para casa da yurei"
+      Tab_AutoHouseYurei.button = "Auto casa yurei"
+      
       Tab_HouseYurei.name = "Casa Yurei"
       Tab_HouseYurei.section1 = "Mostrar todas as estátuas malignas"
       Tab_HouseYurei.section2 = "Mostrar a localização das casas"
@@ -127,7 +137,11 @@ function TranslationModule:GetTabs()
       Tab_Credit.NotifierContent2 = "Nick do test foi copiado na área de transferência."
       
     elseif locale == "en-us" then
-    
+      
+      Tab_AutoHouseYurei.name = "Auto Yurei"
+      Tab_AutoHouseYurei.section = "Skip levels and go to Yurei's house"
+      Tab_AutoHouseYurei.button = "Auto Yurei House"
+      
       Tab_HouseYurei.name = "Yurei House"
       Tab_HouseYurei.section1 = "Show all evil statues"
       Tab_HouseYurei.section2 = "Show house locations"
@@ -180,7 +194,11 @@ function TranslationModule:GetTabs()
       Tab_Credit.NotifierContent2 = "Tester's nickname copied to clipboard."
       
     elseif locale:sub(1, 2) == "es" then
-
+      
+      Tab_AutoHouseYurei.name = "Auto Yurei"
+      Tab_AutoHouseYurei.section = "Saltar niveles e ir a la casa de Yurei"
+      Tab_AutoHouseYurei.button = "Auto casa de Yurei"
+      
       Tab_HouseYurei.name = "Casa Yurei"
       Tab_HouseYurei.section1 = "Mostrar todas las estatuas malignas"
       Tab_HouseYurei.section2 = "Mostrar ubicaciones de las casas"
@@ -233,6 +251,10 @@ function TranslationModule:GetTabs()
       Tab_Credit.NotifierContent2 = "Apodo del tester copiado al portapapeles."
 
     else
+      
+      Tab_AutoHouseYurei.name = "Auto Yurei"
+      Tab_AutoHouseYurei.section = "Skip levels and go to Yurei's house"
+      Tab_AutoHouseYurei.button = "Auto Yurei House"
     
       Tab_HouseYurei.name = "Yurei House"
       Tab_HouseYurei.section1 = "Show all evil statues"
