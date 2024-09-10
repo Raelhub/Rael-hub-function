@@ -74,10 +74,12 @@ function TranslationModule:GetTabs()
 
 
       Tab_AutoKillSaigomo.name = "Saigomo"
-      Tab_AutoKillSaigomo.section1 = "Auto matar saigomo"
-      Tab_AutoKillSaigomo.section2 = "Auto click"
-      Tab_AutoKillSaigomo.button1 = "Auto matar saigomo [Beta]"
-      Tab_AutoKillSaigomo.button2 = "Auto click"
+      Tab_AutoKillSaigomo.section1 = "Auto matar saigomo bem simples"
+      Tab_AutoKillSaigomo.section2 = "Auto matar saigomo versão avançada"
+      Tab_AutoKillSaigomo.section3 = "Auto click"
+      Tab_AutoKillSaigomo.button1 = "Auto matar saigomo simples"
+      Tab_AutoKillSaigomo.button2 = "Auto matar saigomo avançado"
+      Tab_AutoKillSaigomo.button3 = "Auto click"
       Tab_AutoKillSaigomo.NotificationName1 = "Instruções"
       Tab_AutoKillSaigomo.NotificationContent1 = '[Ativado] Recomendo baixar um auto click, porque esse não é otimizado. [Atenção] Se a saigomo para de atacar, desative e ative o " Auto matar saigomo [Beta] "'
       Tab_AutoKillSaigomo.NotificationName2 = "Atenção"
