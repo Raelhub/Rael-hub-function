@@ -81,9 +81,9 @@ function TranslationModule:GetTabs()
       Tab_AutoKillSaigomo.button2 = "Auto matar saigomo avançado"
       Tab_AutoKillSaigomo.button3 = "Auto click"
       Tab_AutoKillSaigomo.NotificationName1 = "Instruções"
-      Tab_AutoKillSaigomo.NotificationContent1 = '[Ativado] Recomendo baixar um auto click, porque esse não é otimizado. [Atenção] Se a saigomo para de atacar, desative e ative o " Auto matar saigomo [Beta] "'
-      Tab_AutoKillSaigomo.NotificationName2 = "Atenção"
-      Tab_AutoKillSaigomo.NotificationContent2 = "[Desativado]. [Aviso] Mesmo com isso desativado, ele continua atacando a saigomo" 
+      Tab_AutoKillSaigomo.NotificationContent1 = '[Ativado] 🟢 Recomendo baixar um auto click, porque esse não é otimizado. [Atenção] Se a saigomo para de atacar, desative e ative o " Auto matar saigomo [Beta] "'
+      Tab_AutoKillSaigomo.NotificationName2 = "[Desativado] 🔴"
+      Tab_AutoKillSaigomo.NotificationContent2 = "..." 
 
 
       Tab_EspBixo.name = "Esp bixo"
@@ -128,8 +128,9 @@ function TranslationModule:GetTabs()
       Tab_AutoKillSaigomo.button3 = "Auto click"
       Tab_AutoKillSaigomo.NotificationName1 = "Instructions"
       Tab_AutoKillSaigomo.NotificationContent1 = '[Activated] I recommend downloading an auto clicker because this one is not optimized. [Warning] If saigomo stops attacking, disable and re-enable "Auto kill saigomo [Beta]"'
-      Tab_AutoKillSaigomo.NotificationName2 = "Warning"
-      Tab_AutoKillSaigomo.NotificationContent2 = "[Deactivated]. [Notice] Even when this is disabled, it continues attacking saigomo"
+      Tab_AutoKillSaigomo.NotificationContent1 = '[Activated] 🟢 I recommend downloading an auto clicker because this one is not optimized. [Warning] If saigomo stops attacking, disable and re-enable "Auto kill saigomo [Beta]"'
+      Tab_AutoKillSaigomo.NotificationName2 = "[Disabled] 🔴"
+      Tab_AutoKillSaigomo.NotificationContent2 = "..."
       
       Tab_EspBixo.name = "Esp monster"
       Tab_EspBixo.section = "Shows monster location"
@@ -168,9 +169,9 @@ function TranslationModule:GetTabs()
       Tab_AutoKillSaigomo.button2 = "Auto matar saigomo avanzado"
       Tab_AutoKillSaigomo.button3 = "Auto click"
       Tab_AutoKillSaigomo.NotificationName1 = "Instrucciones"
-      Tab_AutoKillSaigomo.NotificationContent1 = '[Activado] Recomiendo descargar un auto clicker, porque este no está optimizado. [Advertencia] Si saigomo deja de atacar, desactiva y vuelve a activar "Auto matar saigomo [Beta]"'
-      Tab_AutoKillSaigomo.NotificationName2 = "Advertencia"
-      Tab_AutoKillSaigomo.NotificationContent2 = "[Desactivado]. [Aviso] Incluso cuando esto está desactivado, sigue atacando a saigomo"
+      Tab_AutoKillSaigomo.NotificationContent1 = '[Activado] 🟢 Recomiendo descargar un auto clicker, porque este no está optimizado. [Advertencia] Si saigomo deja de atacar, desactiva y vuelve a activar "Auto matar saigomo [Beta]"'
+      Tab_AutoKillSaigomo.NotificationName2 = "[Desactivado] 🔴"
+      Tab_AutoKillSaigomo.NotificationContent2 = "..."
       
       Tab_EspBixo.name = "Esp monstruo"
       Tab_EspBixo.section = "Muestra la ubicación del monstruo"
@@ -209,9 +210,9 @@ function TranslationModule:GetTabs()
       Tab_AutoKillSaigomo.button2 = "Auto kill advanced saigomo"
       Tab_AutoKillSaigomo.button3 = "Auto click"
       Tab_AutoKillSaigomo.NotificationName1 = "Instructions"
-      Tab_AutoKillSaigomo.NotificationContent1 = '[Activated] I recommend downloading an auto clicker because this one is not optimized. [Warning] If saigomo stops attacking, disable and re-enable "Auto kill saigomo [Beta]"'
-      Tab_AutoKillSaigomo.NotificationName2 = "Warning"
-      Tab_AutoKillSaigomo.NotificationContent2 = "[Deactivated]. [Notice] Even when this is disabled, it continues attacking saigomo"
+      Tab_AutoKillSaigomo.NotificationContent1 = '[Activated] 🟢 I recommend downloading an auto clicker because this one is not optimized. [Warning] If saigomo stops attacking, disable and re-enable "Auto kill saigomo [Beta]"'
+      Tab_AutoKillSaigomo.NotificationName2 = "[Disabled] 🔴"
+      Tab_AutoKillSaigomo.NotificationContent2 = "..."
       
       Tab_EspBixo.name = "Esp monster"
       Tab_EspBixo.section = "Shows monster location"
