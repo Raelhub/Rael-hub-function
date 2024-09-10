@@ -222,7 +222,7 @@ function TranslationModule:GetTabs()
       
     end
 
-    return Tab_Oficine, Tab_Sisters, Tab_Nagisa, Tab_PhasesFrame, Tab_VelaFase, Other, Creditos
+    return Tab_AutoWin, Tab_KillHearts, Tab_AutoKillSaigomo, Tab_EspBixo, Other, Creditos
 end
 
 return TranslationModule
