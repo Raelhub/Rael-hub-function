@@ -81,7 +81,7 @@ function TranslationModule:GetTabs()
       Tab_AutoKillSaigomo.button2 = "Auto matar saigomo avançado"
       Tab_AutoKillSaigomo.button3 = "Auto click"
       Tab_AutoKillSaigomo.NotificationName1 = "Instruções"
-      Tab_AutoKillSaigomo.NotificationContent1 = '[Ativado] 🟢 Recomendo baixar um auto click, porque esse não é otimizado. [Atenção] Se a saigomo para de atacar, desative e ative o " Auto matar saigomo [Beta] "'
+      Tab_AutoKillSaigomo.NotificationContent1 = '[Ativado] 🟢 Se a saigomo para de atacar, desative e ative o " Auto matar saigomo [Beta] "'
       Tab_AutoKillSaigomo.NotificationName2 = "[Desativado] 🔴"
       Tab_AutoKillSaigomo.NotificationContent2 = "..." 
 
@@ -128,7 +128,7 @@ function TranslationModule:GetTabs()
       Tab_AutoKillSaigomo.button3 = "Auto click"
       Tab_AutoKillSaigomo.NotificationName1 = "Instructions"
       Tab_AutoKillSaigomo.NotificationContent1 = '[Activated] I recommend downloading an auto clicker because this one is not optimized. [Warning] If saigomo stops attacking, disable and re-enable "Auto kill saigomo [Beta]"'
-      Tab_AutoKillSaigomo.NotificationContent1 = '[Activated] 🟢 I recommend downloading an auto clicker because this one is not optimized. [Warning] If saigomo stops attacking, disable and re-enable "Auto kill saigomo [Beta]"'
+      Tab_AutoKillSaigomo.NotificationContent1 = '[Activated] 🟢 If the saigomo stops attacking, disable and enable the "Auto Kill Saigomo [Beta]"'
       Tab_AutoKillSaigomo.NotificationName2 = "[Disabled] 🔴"
       Tab_AutoKillSaigomo.NotificationContent2 = "..."
       
@@ -169,7 +169,7 @@ function TranslationModule:GetTabs()
       Tab_AutoKillSaigomo.button2 = "Auto matar saigomo avanzado"
       Tab_AutoKillSaigomo.button3 = "Auto click"
       Tab_AutoKillSaigomo.NotificationName1 = "Instrucciones"
-      Tab_AutoKillSaigomo.NotificationContent1 = '[Activado] 🟢 Recomiendo descargar un auto clicker, porque este no está optimizado. [Advertencia] Si saigomo deja de atacar, desactiva y vuelve a activar "Auto matar saigomo [Beta]"'
+      Tab_AutoKillSaigomo.NotificationContent1 = '[Activado] 🟢 Si el saigomo deja de atacar, desactiva y activa el "Auto Matar Saigomo [Beta]"'
       Tab_AutoKillSaigomo.NotificationName2 = "[Desactivado] 🔴"
       Tab_AutoKillSaigomo.NotificationContent2 = "..."
       
@@ -210,7 +210,7 @@ function TranslationModule:GetTabs()
       Tab_AutoKillSaigomo.button2 = "Auto kill advanced saigomo"
       Tab_AutoKillSaigomo.button3 = "Auto click"
       Tab_AutoKillSaigomo.NotificationName1 = "Instructions"
-      Tab_AutoKillSaigomo.NotificationContent1 = '[Activated] 🟢 I recommend downloading an auto clicker because this one is not optimized. [Warning] If saigomo stops attacking, disable and re-enable "Auto kill saigomo [Beta]"'
+      Tab_AutoKillSaigomo.NotificationContent1 = '[Activated] 🟢 If the saigomo stops attacking, disable and enable the "Auto Kill Saigomo [Beta]"'
       Tab_AutoKillSaigomo.NotificationName2 = "[Disabled] 🔴"
       Tab_AutoKillSaigomo.NotificationContent2 = "..."
       
