@@ -117,7 +117,7 @@ function TranslationModule:GetTabs()
     Tab_Cards.section2 = "Show where the cards are"
     Tab_Cards.button2 = "Show cards"
     Tab_Cards.section3 = "Teleport to the card area"
-    Tab_Cards.button3 = "Tp card area"
+    Tab_Cards.button3 = "Tp card zone"
     
     Tab_RingMaster.name = "RingMaster"
     Tab_RingMaster.section1 = "Teleport to safe zone"
@@ -195,7 +195,7 @@ function TranslationModule:GetTabs()
     Tab_Cards.section2 = "Show where the cards are"
     Tab_Cards.button2 = "Show cards"
     Tab_Cards.section3 = "Teleport to the card area"
-    Tab_Cards.button3 = "Tp card area"
+    Tab_Cards.button3 = "Tp card zone"
     
     Tab_RingMaster.name = "RingMaster"
     Tab_RingMaster.section1 = "Teleport to safe zone"
