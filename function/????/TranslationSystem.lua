@@ -62,14 +62,15 @@ function TranslationModule:GetTabs()
   local locale = player.LocaleId:lower()
 
   if locale == "pt-br" then
-    Tab_TpBoxe.name = "Tp boxes"
-    Tab_TpBoxe.section1 = "Skip the clown stage"
-    Tab_TpBoxe.section2 = "Teleport to safe zone"
-    Tab_TpBoxe.section3 = "Teleport to the boxes"
-    Tab_TpBoxe.button1 = "Skip stage"
+
+    Tab_TpBoxe.name = "Tp caixas"
+    Tab_TpBoxe.section1 = "Pular a fase do palhaço"
+    Tab_TpBoxe.section2 = "Teleportar para safe zone"
+    Tab_TpBoxe.section3 = "Teleportar para as caixas"
+    Tab_TpBoxe.button1 = "Pular fase"
     Tab_TpBoxe.button2 = "Safe zone"
     for i = 1, 7 do
-        Tab_TpBoxe["TpBoxeButton" .. i] = "Box " .. i
+      Tab_TpBoxe["TpBoxeButton" .. i] = "Caixa " .. i
     end
 
 
