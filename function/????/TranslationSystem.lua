@@ -5,7 +5,9 @@ function TranslationModule:GetTabs()
     name = "",
     section1 = "",
     section2 = "",
-    button = "",
+    button1 = "",
+    button2 = "",
+    section3 = "",
     TpBoxeButton1 = "",
     TpBoxeButton2 = "",
     TpBoxeButton3 = "",
@@ -60,12 +62,14 @@ function TranslationModule:GetTabs()
   local locale = player.LocaleId:lower()
 
   if locale == "pt-br" then
-    Tab_TpBoxe.name = "Tp caixas"
-    Tab_TpBoxe.section1 = "Teleportar para safe zone"
-    Tab_TpBoxe.section2 = "Teleportar para as caixas"
-    Tab_TpBoxe.button = "Safe zone"
+    Tab_TpBoxe.name = "Tp boxes"
+    Tab_TpBoxe.section1 = "Skip the clown stage"
+    Tab_TpBoxe.section2 = "Teleport to safe zone"
+    Tab_TpBoxe.section3 = "Teleport to the boxes"
+    Tab_TpBoxe.button1 = "Skip stage"
+    Tab_TpBoxe.button2 = "Safe zone"
     for i = 1, 7 do
-      Tab_TpBoxe["TpBoxeButton" .. i] = "Caixa " .. i
+        Tab_TpBoxe["TpBoxeButton" .. i] = "Box " .. i
     end
 
 
@@ -103,12 +107,14 @@ function TranslationModule:GetTabs()
     Creditos.NotificationContent = "Nick do jogador foi copiado na área de trabalho"
 
   elseif locale == "en-us" then
-    Tab_TpBoxe.name = "Tp boxes"
-    Tab_TpBoxe.section1 = "Teleport to safe zone"
-    Tab_TpBoxe.section2 = "Teleport to the boxes"
-    Tab_TpBoxe.button = "Safe zone"
+    Tab_TpBoxe.name = "Tp cajas"
+    Tab_TpBoxe.section1 = "Saltar la fase del payaso"
+    Tab_TpBoxe.section2 = "Teletransportar a la zona segura"
+    Tab_TpBoxe.section3 = "Teletransportar a las cajas"
+    Tab_TpBoxe.button1 = "Saltar fase"
+    Tab_TpBoxe.button2 = "Zona segura"
     for i = 1, 7 do
-      Tab_TpBoxe["TpBoxeButton" .. i] = "Box " .. i
+        Tab_TpBoxe["TpBoxeButton" .. i] = "Caja " .. i
     end
     
     Tab_Cards.name = "Cards phase"
@@ -182,11 +188,13 @@ function TranslationModule:GetTabs()
   else
     
     Tab_TpBoxe.name = "Tp boxes"
-    Tab_TpBoxe.section1 = "Teleport to safe zone"
-    Tab_TpBoxe.section2 = "Teleport to the boxes"
-    Tab_TpBoxe.button = "Safe zone"
+    Tab_TpBoxe.section1 = "Skip the clown stage"
+    Tab_TpBoxe.section2 = "Teleport to safe zone"
+    Tab_TpBoxe.section3 = "Teleport to the boxes"
+    Tab_TpBoxe.button1 = "Skip stage"
+    Tab_TpBoxe.button2 = "Safe zone"
     for i = 1, 7 do
-      Tab_TpBoxe["TpBoxeButton" .. i] = "Box " .. i
+        Tab_TpBoxe["TpBoxeButton" .. i] = "Box " .. i
     end
     
     Tab_Cards.name = "Cards phase"
