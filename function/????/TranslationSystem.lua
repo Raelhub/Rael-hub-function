@@ -107,14 +107,14 @@ function TranslationModule:GetTabs()
     Creditos.NotificationContent = "Nick do jogador foi copiado na área de trabalho"
 
   elseif locale == "en-us" then
-    Tab_TpBoxe.name = "Tp cajas"
-    Tab_TpBoxe.section1 = "Saltar la fase del payaso"
-    Tab_TpBoxe.section2 = "Teletransportar a la zona segura"
-    Tab_TpBoxe.section3 = "Teletransportar a las cajas"
-    Tab_TpBoxe.button1 = "Saltar fase"
-    Tab_TpBoxe.button2 = "Zona segura"
+    Tab_TpBoxe.name = "Tp boxes"
+    Tab_TpBoxe.section1 = "Skip the clown stage"
+    Tab_TpBoxe.section2 = "Teleport to safe zone"
+    Tab_TpBoxe.section3 = "Teleport to the boxes"
+    Tab_TpBoxe.button1 = "Skip stage"
+    Tab_TpBoxe.button2 = "Safe zone"
     for i = 1, 7 do
-        Tab_TpBoxe["TpBoxeButton" .. i] = "Caja " .. i
+        Tab_TpBoxe["TpBoxeButton" .. i] = "Box " .. i
     end
     
     Tab_Cards.name = "Cards phase"
@@ -149,11 +149,13 @@ function TranslationModule:GetTabs()
   elseif locale:sub(1, 2) == "es" then
     
     Tab_TpBoxe.name = "Tp cajas"
-    Tab_TpBoxe.section1 = "Teletransportar a la zona segura"
-    Tab_TpBoxe.section2 = "Teletransportar a las cajas"
-    Tab_TpBoxe.button = "Zona segura"
+    Tab_TpBoxe.section1 = "Saltar la fase del payaso"
+    Tab_TpBoxe.section2 = "Teletransportar a la zona segura"
+    Tab_TpBoxe.section3 = "Teletransportar a las cajas"
+    Tab_TpBoxe.button1 = "Saltar fase"
+    Tab_TpBoxe.button2 = "Zona segura"
     for i = 1, 7 do
-      Tab_TpBoxe["TpBoxeButton" .. i] = "Caja " .. i
+        Tab_TpBoxe["TpBoxeButton" .. i] = "Caja " .. i
     end
     
     Tab_Cards.name = "Fase de las cartas"
