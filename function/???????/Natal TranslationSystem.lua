@@ -65,8 +65,8 @@ function TranslationModule:GetTabs()
 
 
     Tab_Collect_toys.name = "Coletar brinquedos"
-    Tab_Collect_toys.section = "Coletar os brinquedos"
-    Tab_Collect_toys.button = "Coletar"
+    Tab_Collect_toys.section = "Auto coletar os brinquedos"
+    Tab_Collect_toys.button = "Auto coletar"
 
 
 
@@ -114,8 +114,8 @@ function TranslationModule:GetTabs()
     
     
     Tab_Collect_toys.name = "Collect toys"
-    Tab_Collect_toys.section = "Collect the toys"
-    Tab_Collect_toys.button = "Collect"
+    Tab_Collect_toys.section = "Auto collect the toys"
+    Tab_Collect_toys.button = "Auto collect"
     
     
     
@@ -163,8 +163,8 @@ function TranslationModule:GetTabs()
     
     
     Tab_Collect_toys.name = "Recoger juguetes"
-    Tab_Collect_toys.section = "Recoger los juguetes"
-    Tab_Collect_toys.button = "Recoger"
+    Tab_Collect_toys.section = "Auto recoger los juguetes"
+    Tab_Collect_toys.button = "Auto recoger"
     
     
     
@@ -212,8 +212,8 @@ function TranslationModule:GetTabs()
     
     
     Tab_Collect_toys.name = "Collect toys"
-    Tab_Collect_toys.section = "Collect the toys"
-    Tab_Collect_toys.button = "Collect"
+    Tab_Collect_toys.section = "Auto collect the toys"
+    Tab_Collect_toys.button = "Auto collect"
     
     
     
