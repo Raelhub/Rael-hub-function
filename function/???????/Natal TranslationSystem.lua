@@ -53,7 +53,7 @@ function TranslationModule:GetTabs()
 
 
     Tab_Talk_elf.name = "Falar com o elfo"
-    Tab_Talk_elf.section = "Falar com o elf"
+    Tab_Talk_elf.section = "Falar com o elfo"
     Tab_Talk_elf.button = "Falar"
 
 
@@ -78,7 +78,7 @@ function TranslationModule:GetTabs()
 
     Tab_BixoEsp.name = "Esp bixo"
     Tab_BixoEsp.section = "Mostrar aonde tá o bixo"
-    Tab_BixoEsp.button = "Executar"
+    Tab_BixoEsp.button = "Esp Krampus"
 
 
 
@@ -98,44 +98,152 @@ function TranslationModule:GetTabs()
 
 
   elseif locale == "en-us" then
-
-
+  
+  
+  
+    Tab_Talk_elf.name = "Talk to the elf"
+    Tab_Talk_elf.section = "Talk to the elf"
+    Tab_Talk_elf.button = "Talk"
+    
+    
+    
+    Tab_Fix_sledding.name = "Fix the sled"
+    Tab_Fix_sledding.section = "Auto fix Santa's sled"
+    Tab_Fix_sledding.button = "Auto fix"
+    
+    
+    
+    Tab_Collect_toys.name = "Collect toys"
+    Tab_Collect_toys.section = "Collect the toys"
+    Tab_Collect_toys.button = "Collect"
+    
+    
+    
+    Tab_Get_key.name = "Auto get key"
+    Tab_Get_key.section = "Auto collect the key"
+    Tab_Get_key.button = "Auto collect"
+    
+    
+    
+    Tab_BixoEsp.name = "Esp creature"
+    Tab_BixoEsp.section = "Show where the creature is"
+    Tab_BixoEsp.button = "Esp Krampus"
+    
+    
+    
     Other.name = "Others"
     Other.section1 = "Show the player"
     Other.section2 = "Illuminate around you"
-    Other.button1 = "Esp player (Does not work properly)"
+    Other.button1 = "Esp player (Doesn't work properly)"
     Other.button2 = "FullBright"
+    
+    
     
     Creditos.name = "Credits"
     Creditos.section = "Script creator"
     Creditos.NotificationName = "Copied!"
     Creditos.NotificationContent = "Player's nickname has been copied to the clipboard"
+    
+    
+    
   elseif locale:sub(1, 2) == "es" then
 
-
+  
+  
+    Tab_Talk_elf.name = "Hablar con el elfo"
+    Tab_Talk_elf.section = "Hablar con el elfo"
+    Tab_Talk_elf.button = "Hablar"
+    
+    
+    
+    Tab_Fix_sledding.name = "Arreglar el trineo"
+    Tab_Fix_sledding.section = "Auto arreglar el trineo de Papá Noel"
+    Tab_Fix_sledding.button = "Auto arreglar"
+    
+    
+    
+    Tab_Collect_toys.name = "Recoger juguetes"
+    Tab_Collect_toys.section = "Recoger los juguetes"
+    Tab_Collect_toys.button = "Recoger"
+    
+    
+    
+    Tab_Get_key.name = "Auto coger llave"
+    Tab_Get_key.section = "Auto recoger la llave"
+    Tab_Get_key.button = "Auto recoger"
+    
+    
+    
+    Tab_BixoEsp.name = "Esp criatura"
+    Tab_BixoEsp.section = "Mostrar dónde está la criatura"
+    Tab_BixoEsp.button = "Esp Krampus"
+    
+    
+    
     Other.name = "Otros"
     Other.section1 = "Mostrar el jugador"
-    Other.section2 = "Ilumina alrededor de ti"
+    Other.section2 = "Iluminar a tu alrededor"
     Other.button1 = "Esp jugador (No funciona correctamente)"
     Other.button2 = "FullBright"
+    
+    
     
     Creditos.name = "Créditos"
     Creditos.section = "Creador del script"
     Creditos.NotificationName = "¡Copiado!"
-    Creditos.NotificationContent = "El nombre del jugador ha sido copiado al portapapeles"
+    Creditos.NotificationContent = "El apodo del jugador ha sido copiado al portapapeles"
+ 
+ 
+ 
   else
 
 
+
+    Tab_Talk_elf.name = "Talk to the elf"
+    Tab_Talk_elf.section = "Talk to the elf"
+    Tab_Talk_elf.button = "Talk"
+    
+    
+    
+    Tab_Fix_sledding.name = "Fix the sled"
+    Tab_Fix_sledding.section = "Auto fix Santa's sled"
+    Tab_Fix_sledding.button = "Auto fix"
+    
+    
+    
+    Tab_Collect_toys.name = "Collect toys"
+    Tab_Collect_toys.section = "Collect the toys"
+    Tab_Collect_toys.button = "Collect"
+    
+    
+    
+    Tab_Get_key.name = "Auto get key"
+    Tab_Get_key.section = "Auto collect the key"
+    Tab_Get_key.button = "Auto collect"
+    
+    
+    
+    Tab_BixoEsp.name = "Esp creature"
+    Tab_BixoEsp.section = "Show where the creature is"
+    Tab_BixoEsp.button = "Esp Krampus"
+    
+    
+    
     Other.name = "Others"
     Other.section1 = "Show the player"
     Other.section2 = "Illuminate around you"
-    Other.button1 = "Esp player (Does not work properly)"
+    Other.button1 = "Esp player (Doesn't work properly)"
     Other.button2 = "FullBright"
+    
+    
     
     Creditos.name = "Credits"
     Creditos.section = "Script creator"
     Creditos.NotificationName = "Copied!"
     Creditos.NotificationContent = "Player's nickname has been copied to the clipboard"
+
+
+
   end
 
     return Tab_Talk_elf, Tab_Fix_sledding, Tab_Collect_toys, Tab_BixoEsp, Other, Creditos
