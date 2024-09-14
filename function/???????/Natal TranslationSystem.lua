@@ -246,7 +246,7 @@ function TranslationModule:GetTabs()
 
   end
 
-    return Tab_Talk_elf, Tab_Fix_sledding, Tab_Collect_toys, Tab_BixoEsp, Other, Creditos
+    return Tab_Talk_elf, Tab_Fix_sledding, Tab_Collect_toys, Tab_Get_key, Tab_BixoEsp, Other, Creditos
 end
 
 return TranslationModule
