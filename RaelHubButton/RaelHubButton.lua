@@ -16,6 +16,7 @@ local screenGui = game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstCh
 if not screenGui then
   screenGui = Instance.new("ScreenGui")
   screenGui.Name = screenGuiName
+  screenGui.ResetOnSpawn = false -- Impede que a interface desapareça ao morrer
   screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 end
 
