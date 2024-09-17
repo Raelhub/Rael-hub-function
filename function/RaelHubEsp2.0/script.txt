@@ -1,118 +1,134 @@
 local Esp = {}
 
 function Esp.CreateEsp(objeto, cor, imageId)
-  if not objeto or not objeto:IsA("Model") or not objeto:FindFirstChild("HumanoidRootPart") then
-    return
-  end
+    if not objeto or not objeto:IsA("Model") or not objeto:FindFirstChild("HumanoidRootPart") then
+        return
+    end
 
-  local highlight = Instance.new("Highlight")
-  highlight.Name = "RaelHubDestaque"
-  highlight.Adornee = objeto
-  highlight.FillColor = cor
-  highlight.Parent = objeto
+    local highlight = Instance.new("Highlight")
+    highlight.Name = "RaelHubDestaque"
+    highlight.Adornee = objeto
+    highlight.FillColor = cor
+    highlight.Parent = objeto
 
-  local billboard = Instance.new("BillboardGui")
-  billboard.Name = "RaelHubIcon"
-  billboard.Adornee = objeto:FindFirstChild("HumanoidRootPart")
-  billboard.Size = UDim2.new(0, 30, 0, 30)
-  billboard.StudsOffset = Vector3.new(0, 0, 0)
-  billboard.AlwaysOnTop = true
-  billboard.Parent = objeto
+    local billboard = Instance.new("BillboardGui")
+    billboard.Name = "RaelHubIcon"
+    billboard.Adornee = objeto:FindFirstChild("HumanoidRootPart")
+    billboard.Size = UDim2.new(0, 30, 0, 30)
+    billboard.StudsOffset = Vector3.new(0, 0, 0)
+    billboard.AlwaysOnTop = true
+    billboard.Parent = objeto
 
-  local imageLabel = Instance.new("ImageLabel")
-  imageLabel.Size = UDim2.new(1, 0, 1, 0)
-  imageLabel.BackgroundTransparency = 1
-  imageLabel.Image = "rbxassetid://" .. imageId
-  imageLabel.Parent = billboard
+    local imageLabel = Instance.new("ImageLabel")
+    imageLabel.Size = UDim2.new(1, 0, 1, 0)
+    imageLabel.BackgroundTransparency = 1
+    imageLabel.Image = "rbxassetid://" .. imageId
+    imageLabel.Parent = billboard
 end
 
 function Esp.CreateEspObject(objeto, cor, imageId)
-  if not objeto or not objeto:IsA("Model") or not objeto:FindFirstChildOfClass("BasePart") then
-    return
-  end
+    if not objeto or not objeto:IsA("Model") or not objeto:FindFirstChildOfClass("BasePart") then
+        return
+    end
 
-  local highlight = Instance.new("Highlight")
-  highlight.Name = "RaelHubDestaque"
-  highlight.Adornee = objeto
-  highlight.FillColor = cor
-  highlight.Parent = objeto
+    local highlight = Instance.new("Highlight")
+    highlight.Name = "RaelHubDestaque"
+    highlight.Adornee = objeto
+    highlight.FillColor = cor
+    highlight.Parent = objeto
 
-  local billboard = Instance.new("BillboardGui")
-  billboard.Name = "RaelHubIcon"
-  billboard.Adornee = objeto:FindFirstChildOfClass("BasePart")
-  billboard.Size = UDim2.new(0, 30, 0, 30)
-  billboard.StudsOffset = Vector3.new(0, 0, 0)
-  billboard.AlwaysOnTop = true
-  billboard.Parent = objeto
+    local billboard = Instance.new("BillboardGui")
+    billboard.Name = "RaelHubIcon"
+    billboard.Adornee = objeto:FindFirstChildOfClass("BasePart")
+    billboard.Size = UDim2.new(0, 30, 0, 30)
+    billboard.StudsOffset = Vector3.new(0, 0, 0)
+    billboard.AlwaysOnTop = true
+    billboard.Parent = objeto
 
-  local imageLabel = Instance.new("ImageLabel")
-  imageLabel.Size = UDim2.new(1, 0, 1, 0)
-  imageLabel.BackgroundTransparency = 1
-  imageLabel.Image = "rbxassetid://" .. imageId
-  imageLabel.Parent = billboard
+    local imageLabel = Instance.new("ImageLabel")
+    imageLabel.Size = UDim2.new(1, 0, 1, 0)
+    imageLabel.BackgroundTransparency = 1
+    imageLabel.Image = "rbxassetid://" .. imageId
+    imageLabel.Parent = billboard
 end
 
 function Esp.DisableEsp(objeto)
-  if objeto then
-    if objeto:FindFirstChild("RaelHubDestaque") and objeto:FindFirstChild("RaelHubIcon") then
-      objeto:FindFirstChild("RaelHubDestaque"):Destroy()
-      objeto:FindFirstChild("RaelHubIcon"):Destroy()
+    if objeto then
+        local highlight = objeto:FindFirstChild("RaelHubDestaque")
+        local billboard = objeto:FindFirstChild("RaelHubIcon")
+
+        if highlight then
+            highlight:Destroy()
+        end
+
+        if billboard then
+            billboard:Destroy()
+        end
     end
-  end
 end
 
 function Esp.PlayersEspActive()
-  local players = game:GetService("Players")
-        
-  for _, jogador in ipairs(players:GetPlayers()) do
-    local personagem = jogador.Character
+    local players = game:GetService("Players")
 
-    if personagem then
-      if not personagem:FindFirstChild("RaelHubDestaque") and not personagem:FindFirstChild("RaelHubIcon") then
-        Esp.CreateEsp(personagem, Color3.fromRGB(144, 238, 144), "117259180607823")
-      end
+    for _, jogador in ipairs(players:GetPlayers()) do
+        local personagem = jogador.Character
+
+        if personagem then
+            if not personagem:FindFirstChild("RaelHubDestaque") and not personagem:FindFirstChild("RaelHubIcon") then
+                Esp.CreateEsp(personagem, Color3.fromRGB(144, 238, 144), "117259180607823")
+            end
+        end
     end
-  end
 end
 
 function Esp.PlayersEspDisabled()
-  local players = game:GetService("Players")
-        
-  for _, jogador in ipairs(players:GetPlayers()) do
-    local personagem = jogador.Character
+    local players = game:GetService("Players")
 
-    if personagem then
-      Esp.DisableEsp(personagem)
+    for _, jogador in ipairs(players:GetPlayers()) do
+        local personagem = jogador.Character
+
+        if personagem then
+            Esp.DisableEsp(personagem)
+        end
     end
-  end
 end
 
 function Esp.EspPlayer()
-  while RaelHubEspState do
-    Esp.PlayersEspActive()
-    task.wait(1) -- Atraso para evitar execução rápida demais
-  end
-  Esp.PlayersEspDisabled() -- Desativa o ESP se o estado mudar para false
+    while RaelHubEspState do
+        Esp.PlayersEspActive()
+        task.wait(1) -- Atraso para evitar execução rápida demais
+    end
+    Esp.PlayersEspDisabled() -- Desativa o ESP se o estado mudar para false
 end
 
 function Esp.EspMonstroActive(Monstros)
-  for _, Monstro in ipairs(Monstros) do
-    if Monstro then
-        Esp.CreateEsp(Monstro, Color3.fromRGB(255, 102, 102), "90885967226561")
-    else
-      print("Nenhum monstro encontrado.")
+    local monstrosEncontrados = false
+
+    for _, Monstro in ipairs(Monstros) do
+        if Monstro then
+            monstrosEncontrados = true
+            Esp.CreateEsp(Monstro, Color3.fromRGB(255, 102, 102), "90885967226561")
+        end
     end
-  end
+
+    if not monstrosEncontrados then
+        print("Nenhum monstro encontrado.")
+    end
 end
 
 function Esp.EspMonstroDisabled(Monstros)
-  for _, Monstro in ipairs(Monstros) do
-    if Monstro then
-        Esp.DisableEsp(Monstro)
-    else
-      print("Nenhum monstro encontrado.")
+    local monstrosEncontrados = false
+
+    for _, Monstro in ipairs(Monstros) do
+        if Monstro then
+            monstrosEncontrados = true
+            Esp.DisableEsp(Monstro)
+        end
     end
-  end
+
+    if not monstrosEncontrados then
+        print("Nenhum monstro encontrado.")
+    end
 end
 
 return Esp
