@@ -77,7 +77,7 @@ function RaelHubEsp.PlayersEspActive()
 
     if personagem then
       if not personagem:FindFirstChild("RaelHubDestaque") and not personagem:FindFirstChild("RaelHubIcon") then
-        RaelHubEsp.CreateEsp(personagem, Color3.fromRGB(144, 238, 144), "117259180607823")
+        RaelHubEsp.CreateEsp(personagem, Color3.fromRGB(144, 238, 144), "117259180607823", personagem)
       end
     end
   end
