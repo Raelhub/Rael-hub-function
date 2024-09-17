@@ -77,8 +77,7 @@ function RaelHubEsp.PlayersEspActive()
 
     if personagem then
       if not personagem:FindFirstChild("RaelHubDestaque") and not personagem:FindFirstChild("RaelHubIcon") then
-        -- Alterado para jogador.Name para exibir o nome correto
-        RaelHubEsp.CreateEsp(personagem, Color3.fromRGB(144, 238, 144), "11725918", jogador.Name)
+        RaelHubEsp.CreateEsp(personagem, Color3.fromRGB(144, 238, 144), "117259180607823", jogador.Name)
       end
     end
   end
