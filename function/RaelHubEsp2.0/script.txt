@@ -115,7 +115,7 @@ end
 function RaelHubEsp.EspMonstroActive(Monstros)
   for _, Monstro in ipairs(Monstros) do
     if Monstro then
-        RaelHubEsp.CreateEsp(Monstro, Color3.fromRGB(255, 102, 102), "90885967226561")
+        RaelHubEsp.CreateEsp(Monstro, Color3.fromRGB(255, 102, 102), "88229448947616")
     else
       print("Nenhum monstro encontrado.")
     end
