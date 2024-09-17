@@ -1,4 +1,5 @@
 -- Salva os valores originais da iluminação
+local Light = game:GetService("Lighting")
 local originalAmbient = Light.Ambient
 local originalColorShiftBottom = Light.ColorShift_Bottom
 local originalColorShiftTop = Light.ColorShift_Top
