@@ -1,6 +1,12 @@
-local RaelHubEsp = {}
+-- Salva os valores originais da iluminação
+local originalAmbient = Light.Ambient
+local originalColorShiftBottom = Light.ColorShift_Bottom
+local originalColorShiftTop = Light.ColorShift_Top
+local originalClockTime = Light.ClockTime
 
-function RaelHubEsp.CreateEsp(objeto, cor, imageId, texto)
+local RaelHubFunction = {}
+
+function RaelHubFunction.CreateEsp(objeto, cor, imageId, texto)
   if not objeto or not objeto:IsA("Model") or not objeto:FindFirstChild("HumanoidRootPart") then
     return
   end
@@ -36,7 +42,7 @@ function RaelHubEsp.CreateEsp(objeto, cor, imageId, texto)
   textLabel.Parent = billboard
 end
 
-function RaelHubEsp.CreateEspObject(objeto, cor, imageId, texto)
+function RaelHubFunction.CreateEspObject(objeto, cor, imageId, texto)
 
   local highlight = Instance.new("Highlight")
   highlight.Name = "RaelHubDestaque"
@@ -69,7 +75,7 @@ function RaelHubEsp.CreateEspObject(objeto, cor, imageId, texto)
   textLabel.Parent = billboard
 end
 
-function RaelHubEsp.PlayersEspActive()
+function RaelHubFunction.PlayersEspActive()
   local players = game:GetService("Players")
         
   for _, jogador in ipairs(players:GetPlayers()) do
@@ -77,13 +83,13 @@ function RaelHubEsp.PlayersEspActive()
 
     if personagem then
       if not personagem:FindFirstChild("RaelHubDestaque") and not personagem:FindFirstChild("RaelHubIcon") then
-        RaelHubEsp.CreateEsp(personagem, Color3.fromRGB(144, 238, 144), "117259180607823", jogador.Name)
+        RaelHubFunction.CreateEsp(personagem, Color3.fromRGB(144, 238, 144), "117259180607823", jogador.Name)
       end
     end
   end
 end
 
-function RaelHubEsp.DisableEsp(objeto)
+function RaelHubFunction.DisableEsp(objeto)
   if objeto then
     if objeto:FindFirstChild("RaelHubDestaque") and objeto:FindFirstChild("RaelHubIcon") then
       objeto:FindFirstChild("RaelHubDestaque"):Destroy()
@@ -92,44 +98,58 @@ function RaelHubEsp.DisableEsp(objeto)
   end
 end
 
-function RaelHubEsp.PlayersEspDisabled()
+function RaelHubFunction.PlayersEspDisabled()
   local players = game:GetService("Players")
         
   for _, jogador in ipairs(players:GetPlayers()) do
     local personagem = jogador.Character
 
     if personagem then
-      RaelHubEsp.DisableEsp(personagem)
+      RaelHubFunction.DisableEsp(personagem)
     end
   end
 end
 
-function RaelHubEsp.EspPlayer()
+function RaelHubFunction.EspPlayer()
   while RaelHubEspState do
-    RaelHubEsp.PlayersEspActive()
+    RaelHubFunction.PlayersEspActive()
     task.wait(1) -- Atraso para evitar execução rápida demais
   end
-  RaelHubEsp.PlayersEspDisabled() -- Desativa o ESP se o estado mudar para false
+  RaelHubFunction.PlayersEspDisabled() -- Desativa o ESP se o estado mudar para false
 end
 
-function RaelHubEsp.EspMonstroActive(Monstros)
+function RaelHubFunction.EspMonstroActive(Monstros)
   for _, Monstro in ipairs(Monstros) do
     if Monstro then
-        RaelHubEsp.CreateEsp(Monstro, Color3.fromRGB(255, 102, 102), "88229448947616", "")
+        RaelHubFunction.CreateEsp(Monstro, Color3.fromRGB(255, 102, 102), "88229448947616", "")
     else
       print("Nenhum monstro encontrado.")
     end
   end
 end
 
-function RaelHubEsp.EspMonstroDisabled(Monstros)
+function RaelHubFunction.EspMonstroDisabled(Monstros)
   for _, Monstro in ipairs(Monstros) do
     if Monstro then
-        RaelHubEsp.DisableEsp(Monstro)
+        RaelHubFunction.DisableEsp(Monstro)
     else
       print("Nenhum monstro encontrado.")
     end
   end
 end
 
-return RaelHubEsp
+function dofullbright()
+  Light.Ambient = Color3.new(1, 1, 1)
+  Light.ColorShift_Bottom = Color3.new(1, 1, 1)
+  Light.ColorShift_Top = Color3.new(1, 1, 1)
+  Light.ClockTime = 14 -- Deixa o céu de dia
+end
+
+function restoreLighting()
+  Light.Ambient = originalAmbient
+  Light.ColorShift_Bottom = originalColorShiftBottom
+  Light.ColorShift_Top = originalColorShiftTop
+  Light.ClockTime = originalClockTime
+end
+
+return RaelHubFunction
