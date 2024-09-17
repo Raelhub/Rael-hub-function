@@ -60,7 +60,7 @@ function RaelHubEsp.CreateEspObject(objeto, cor, imageId, texto)
 end
 
 
-function Esp.DisableEsp(objeto)
+function RaelHubEsp.DisableEsp(objeto)
   if objeto then
     if objeto:FindFirstChild("RaelHubDestaque") and objeto:FindFirstChild("RaelHubIcon") then
       objeto:FindFirstChild("RaelHubDestaque"):Destroy()
