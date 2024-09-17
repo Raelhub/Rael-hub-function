@@ -139,14 +139,14 @@ function RaelHubFunction.EspMonstroDisabled(Monstros)
   end
 end
 
-function dofullbright()
+function RaelHubFunction.dofullbright()
   Light.Ambient = Color3.new(1, 1, 1)
   Light.ColorShift_Bottom = Color3.new(1, 1, 1)
   Light.ColorShift_Top = Color3.new(1, 1, 1)
   Light.ClockTime = 14 -- Deixa o céu de dia
 end
 
-function restoreLighting()
+function RaelHubFunction.restoreLighting()
   Light.Ambient = originalAmbient
   Light.ColorShift_Bottom = originalColorShiftBottom
   Light.ColorShift_Top = originalColorShiftTop
