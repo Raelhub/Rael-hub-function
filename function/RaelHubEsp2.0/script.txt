@@ -83,11 +83,12 @@ function RaelHubEsp.PlayersEspActive()
   local players = game:GetService("Players")
         
   for _, jogador in ipairs(players:GetPlayers()) do
+    local Nome = jogador.Character
     local personagem = jogador.Character
 
     if personagem then
       if not personagem:FindFirstChild("RaelHubDestaque") and not personagem:FindFirstChild("RaelHubIcon") then
-        RaelHubEsp.CreateEspObject(personagem, Color3.fromRGB(144, 238, 144), "117259180607823", personagem)
+        RaelHubEsp.CreateEspObject(personagem, Color3.fromRGB(144, 238, 144), "117259180607823", Nome)
       end
     end
   end
