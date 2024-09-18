@@ -594,7 +594,7 @@ function redzlib:MakeWindow(Configs)
         Flags = s and r or {}
       end
     end
-  end;LoadFile()
+  end;
   
   local UISizeX, UISizeY = unpack(redzlib.Save.UISize)
   local MainFrame = InsertTheme(Create("ImageButton", ScreenGui, {
