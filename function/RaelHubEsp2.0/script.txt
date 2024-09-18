@@ -164,7 +164,7 @@ end
 function RaelHubFunction.createPlayerDropdown()
     return Player_section2:AddDropdown("Players", {
         Title = "Player: ",
-        Values = getPlayers(),
+        Values = RaelHubFunction.getPlayers(),
         Multi = false,
         Default = 1,
     })
