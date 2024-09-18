@@ -153,12 +153,4 @@ function RaelHubFunction.restoreLighting()
   Light.ClockTime = originalClockTime
 end
 
-function RaelHubFunction.getPlayers()
-    local Players = {}
-    for _, jogador in ipairs(game.Players:GetPlayers()) do
-        table.insert(Players, jogador.Name)
-    end
-    return Players
-end
-
 return RaelHubFunction
