@@ -161,21 +161,4 @@ function RaelHubFunction.getPlayers()
     return Players
 end
 
-function RaelHubFunction.ImportPlayersTp()
-local Player_section2 = Tabs.Player:AddSection("Teleportar para jogadores")
-
-function createPlayerDropdown()
-    return Player_section2:AddDropdown("Players", {
-        Title = "Player: ",
-        Values = RaelHubFunction.getPlayers(),
-        Multi = false,
-        Default = 1,
-    })
-end
-
-function updateDropdown()
-    PlayersDropdown:Destroy()
-    PlayersDropdown = createPlayerDropdown()
-end
-
 return RaelHubFunction
