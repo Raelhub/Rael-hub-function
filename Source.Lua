@@ -546,7 +546,7 @@ function redzlib:SetTheme(NewTheme)
   if not VerifyTheme(NewTheme) then return end
   
   redzlib.Save.Theme = NewTheme
-  SaveJson("redz library V5.json", redzlib.Save)
+  --SaveJson("redz library V5.json", redzlib.Save)
   Theme = redzlib.Themes[NewTheme]
   
   Comnection:FireConnection("ThemeChanged", NewTheme)
@@ -713,7 +713,7 @@ function redzlib:MakeWindow(Configs)
   ControlSize1:GetPropertyChangedSignal("Position"):Connect(ControlSize)
   ControlSize2:GetPropertyChangedSignal("Position"):Connect(ControlSize)
   
-  ConnectSave(ControlSize1, function()
+  --[[ ConnectSave(ControlSize1, function()
     if not Minimized then
       redzlib.Save.UISize = {MainFrame.Size.X.Offset, MainFrame.Size.Y.Offset}
       SaveJson("redz library V5.json", redzlib.Save)
@@ -723,7 +723,7 @@ function redzlib:MakeWindow(Configs)
   ConnectSave(ControlSize2, function()
     redzlib.Save.TabSize = MainScroll.Size.X.Offset
     SaveJson("redz library V5.json", redzlib.Save)
-  end)
+  end) ]]
   
   local ButtonsFolder = Create("Folder", TopBar, {
     Name = "Buttons"
