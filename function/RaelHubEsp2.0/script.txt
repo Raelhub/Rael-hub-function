@@ -161,18 +161,4 @@ function RaelHubFunction.getPlayers()
     return Players
 end
 
-function RaelHubFunction.createPlayerDropdown()
-    return Player_section2:AddDropdown("Players", {
-        Title = "Player: ",
-        Values = RaelHubFunction.getPlayers(),
-        Multi = false,
-        Default = 1,
-    })
-end
-
-function RaelHubFunction.updateDropdown()
-    PlayersDropdown:Destroy()
-    PlayersDropdown = RaelHubFunction.createPlayerDropdown()
-end
-
 return RaelHubFunction
