@@ -175,7 +175,4 @@ function RaelHubFunction.updateDropdown()
     PlayersDropdown = RaelHubFunction.createPlayerDropdown()
 end
 
-game.Players.PlayerAdded:Connect(RaelHubFunction.updateDropdown)
-game.Players.PlayerRemoving:Connect(RaelHubFunction.updateDropdown)
-
 return RaelHubFunction
