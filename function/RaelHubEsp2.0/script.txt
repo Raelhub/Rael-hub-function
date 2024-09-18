@@ -153,22 +153,25 @@ function RaelHubFunction.restoreLighting()
   Light.ClockTime = originalClockTime
 end
 
-function RaelHubFunction.ImportPlayerFunctions(Tabs)
-    -- Função para obter a lista de jogadores
-    local function getPlayers()
-        local Players = {}
-        for _, jogador in ipairs(game.Players:GetPlayers()) do
-            table.insert(Players, jogador.Name)
-        end
-        return Players
+-- Função para obter a lista de jogadores
+local function getPlayers()
+    local Players = {}
+    for _, jogador in ipairs(game.Players:GetPlayers()) do
+        table.insert(Players, jogador.Name)
     end
+    return Players
+end
 
-    -- Seção de Teleporte para Jogadores
-    local Player_section1 = Tabs.Player:AddSection("Teleportar para jogadores")
+-- Função para criar dropdown de jogadores e botões na aba Player
+function RaelHubFunction.SetupPlayerTab(Tabs)
+    local PlayerTab = Tabs.Player
 
-    -- Função para criar o dropdown de jogadores
+    -- Seção de Teleporte
+    local Player_section2 = PlayerTab:AddSection("Teleportar para jogadores")
+    
+    -- Função para criar um dropdown de jogadores
     local function createPlayerDropdown()
-        return Player_section1:AddDropdown("Players", {
+        return Player_section2:AddDropdown("Players", {
             Title = "Player: ",
             Values = getPlayers(),
             Multi = false,
@@ -176,21 +179,20 @@ function RaelHubFunction.ImportPlayerFunctions(Tabs)
         })
     end
 
-    -- Inicializa o dropdown com a lista de jogadores
+    -- Inicializa o dropdown de jogadores
     local PlayersDropdown = createPlayerDropdown()
 
-    -- Função para atualizar o dropdown quando um jogador entrar ou sair
+    -- Atualiza o dropdown quando um jogador entrar ou sair
     local function updateDropdown()
-        PlayersDropdown:Destroy() -- Remove o dropdown antigo
-        PlayersDropdown = createPlayerDropdown() -- Recria o dropdown na posição original
+        PlayersDropdown:Destroy()
+        PlayersDropdown = createPlayerDropdown()
     end
 
-    -- Conectando os eventos de adicionar ou remover jogadores
     game.Players.PlayerAdded:Connect(updateDropdown)
     game.Players.PlayerRemoving:Connect(updateDropdown)
 
-    -- Botão de teleporte para o jogador selecionado
-    Tabs.Player:AddButton({
+    -- Botão de Teleporte
+    PlayerTab:AddButton({
         Title = "Tp teleport",
         Description = "",
         Callback = function()
@@ -204,9 +206,8 @@ function RaelHubFunction.ImportPlayerFunctions(Tabs)
         end
     })
 
-    -- Slider de Velocidade do Jogador
-    local Player_section2 = Tabs.Player:AddSection("Velocidade do jogador")
-    local SpeedSlider = Player_section2:AddSlider("Slider", {
+    -- Botão para ajustar a velocidade do jogador
+    PlayerTab:AddSlider("Slider", {
         Title = "Velocidade",
         Description = "",
         Default = 25,
@@ -217,17 +218,6 @@ function RaelHubFunction.ImportPlayerFunctions(Tabs)
             game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
         end
     })
-
-    -- Toggle Fullbright
-    local Player_section3 = Tabs.Player:AddSection("Iluminar ao redor")
-    local Fullbright_button = Player_section3:AddToggle("FullbrightToggle", { Title = "Fullbright", Default = false })
-
-    Fullbright_button:OnChanged(function()
-        if Fullbright_button.Value then
-            RaelHubFunction.dofullbright()
-        else
-            RaelHubFunction.restoreLighting()
-        end
-    end)
 end
+
 return RaelHubFunction
