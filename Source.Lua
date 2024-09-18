@@ -13,7 +13,7 @@ local redzlib = {
     Darker = {
       ["Color Hub 1"] = ColorSequence.new({
         ColorSequenceKeypoint.new(0.00, Color3.fromRGB(13, 59, 38)),
-        ColorSequenceKeypoint.new(0.50, Color3.fromRGB(32.5, 32.5, 32.5)),
+        ColorSequenceKeypoint.new(0.50, Color3.fromRGB(20, 93, 60)),
         ColorSequenceKeypoint.new(1.00, Color3.fromRGB(13, 59, 38))
       }),
       ["Color Hub 2"] = Color3.fromRGB(30, 30, 30),
