@@ -153,4 +153,76 @@ function RaelHubFunction.restoreLighting()
   Light.ClockTime = originalClockTime
 end
 
+function RaelHubFunction.ImportPlayerFunctions()
+  -- Função para obter a lista de jogadores
+  local function getPlayers()
+    local Players = {}
+    for _, jogador in ipairs(game.Players:GetPlayers()) do
+        table.insert(Players, jogador.Name)
+    end
+    return Players
+  end
+
+  local Player_section1 = Tabs.Player:AddSection("Teleportar para jogadores")
+
+  local function createPlayerDropdown()
+    return Player_section2:AddDropdown("Players", {
+      Title = "Player: ",
+      Values = getPlayers(),
+      Multi = false,
+      Default = 1,
+    })
+  end
+
+  -- Inicializa o dropdown com a lista de jogadores
+  local PlayersDropdown = createPlayerDropdown()
+
+  -- Atualiza o dropdown quando um jogador entrar ou sair
+  local function updateDropdown()
+    PlayersDropdown:Destroy() -- Remove o dropdown antigo
+    PlayersDropdown = createPlayerDropdown() -- Recria o dropdown na posição original
+  end
+
+  game.Players.PlayerAdded:Connect(updateDropdown)
+  game.Players.PlayerRemoving:Connect(updateDropdown)
+  
+  Tabs.Player:AddButton({
+    Title = "Tp teleport",
+    Description = "",
+    Callback = function()
+      local targetPlayerName = PlayersDropdown.Value
+      local targetPlayer = game.Players:FindFirstChild(targetPlayerName)
+      if targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = targetPlayer.Character.HumanoidRootPart.CFrame
+      else
+        print("Não foi possível teleportar. Verifique se o jogador está no jogo e se o personagem está carregado.")
+      end
+    end
+  })
+
+  local Player_section2 = Tabs.Player:AddSection("Velocidade do jogador")
+  local SpeedSlider = Tabs.Player:AddSlider("Slider", {
+    Title = "Velocidade",
+    Description = "",
+    Default = 25,
+    Min = 1,
+    Max = 100,
+    Rounding = 1,
+    Callback = function(Value)
+      game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end
+  })
+
+-- Fullbright Toggle
+  local Player_section3 = Tabs.Player:AddSection("Iluminar ao redor")
+  local Fullbright_button = Tabs.Player:AddToggle("FullbrightToggle", { Title = "Fullbright", Default = false })
+
+  Fullbright_button:OnChanged(function()
+    if Fullbright_button.Value then
+        RaelHubFunction.dofullbright()
+    else
+        RaelHubFunction.restoreLighting()
+    end
+  end)
+end
 return RaelHubFunction
