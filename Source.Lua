@@ -12,13 +12,13 @@ local redzlib = {
   Themes = {
     Darker = {
       ["Color Hub 1"] = ColorSequence.new({
-        ColorSequenceKeypoint.new(0.00, Color3.fromRGB(19, 97, 61)),
-        ColorSequenceKeypoint.new(0.50, Color3.fromRGB(19, 97, 61)),
-        ColorSequenceKeypoint.new(1.00, Color3.fromRGB(19, 97, 61))
+        ColorSequenceKeypoint.new(0.00, Color3.fromRGB(25, 25, 25)),
+        ColorSequenceKeypoint.new(0.50, Color3.fromRGB(32.5, 32.5, 32.5)),
+        ColorSequenceKeypoint.new(1.00, Color3.fromRGB(25, 25, 25))
       }),
-      ["Color Hub 2"] = Color3.fromRGB(20, 93, 60),
-      ["Color Stroke"] = Color3.fromRGB(26, 119, 77),
-      ["Color Theme"] = Color3.fromRGB(50, 229, 148),
+      ["Color Hub 2"] = Color3.fromRGB(30, 30, 30),
+      ["Color Stroke"] = Color3.fromRGB(40, 40, 40),
+      ["Color Theme"] = Color3.fromRGB(88, 101, 242),
       ["Color Text"] = Color3.fromRGB(243, 243, 243),
       ["Color Dark Text"] = Color3.fromRGB(180, 180, 180)
     },
@@ -45,7 +45,20 @@ local redzlib = {
       ["Color Theme"] = Color3.fromRGB(150, 0, 255),
       ["Color Text"] = Color3.fromRGB(240, 240, 240),
       ["Color Dark Text"] = Color3.fromRGB(180, 180, 180)
+    },
+    Green = {
+      ["Color Hub 1"] = ColorSequence.new({
+        ColorSequenceKeypoint.new(0.00, Color3.fromRGB(19, 97, 61)),
+        ColorSequenceKeypoint.new(0.50, Color3.fromRGB(19, 97, 61)),
+        ColorSequenceKeypoint.new(1.00, Color3.fromRGB(19, 97, 61))
+      }),
+      ["Color Hub 2"] = Color3.fromRGB(20, 93, 60),
+      ["Color Stroke"] = Color3.fromRGB(26, 119, 77),
+      ["Color Theme"] = Color3.fromRGB(50, 229, 148),
+      ["Color Text"] = Color3.fromRGB(243, 243, 243),
+      ["Color Dark Text"] = Color3.fromRGB(180, 180, 180)
     }
+    
   },
   Info = {
     Version = "1.1.0"
@@ -53,7 +66,7 @@ local redzlib = {
   Save = {
     UISize = {550, 380},
     TabSize = 160,
-    Theme = "Darker"
+    Theme = "Green"
   },
   Settings = {},
   Connection = {},
@@ -546,7 +559,7 @@ function redzlib:SetTheme(NewTheme)
   if not VerifyTheme(NewTheme) then return end
   
   redzlib.Save.Theme = NewTheme
-  --SaveJson("redz library V5.json", redzlib.Save)
+  SaveJson("redz library V5.json", redzlib.Save)
   Theme = redzlib.Themes[NewTheme]
   
   Comnection:FireConnection("ThemeChanged", NewTheme)
@@ -594,7 +607,7 @@ function redzlib:MakeWindow(Configs)
         Flags = s and r or {}
       end
     end
-  end;
+  end
   
   local UISizeX, UISizeY = unpack(redzlib.Save.UISize)
   local MainFrame = InsertTheme(Create("ImageButton", ScreenGui, {
@@ -713,7 +726,7 @@ function redzlib:MakeWindow(Configs)
   ControlSize1:GetPropertyChangedSignal("Position"):Connect(ControlSize)
   ControlSize2:GetPropertyChangedSignal("Position"):Connect(ControlSize)
   
-  --[[ ConnectSave(ControlSize1, function()
+  ConnectSave(ControlSize1, function()
     if not Minimized then
       redzlib.Save.UISize = {MainFrame.Size.X.Offset, MainFrame.Size.Y.Offset}
       SaveJson("redz library V5.json", redzlib.Save)
@@ -723,7 +736,7 @@ function redzlib:MakeWindow(Configs)
   ConnectSave(ControlSize2, function()
     redzlib.Save.TabSize = MainScroll.Size.X.Offset
     SaveJson("redz library V5.json", redzlib.Save)
-  end) ]]
+  end)
   
   local ButtonsFolder = Create("Folder", TopBar, {
     Name = "Buttons"
