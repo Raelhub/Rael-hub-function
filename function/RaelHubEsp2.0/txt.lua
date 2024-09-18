@@ -21,7 +21,7 @@ local function createPlayerDropdown()
 end
 
 -- Inicializa o dropdown com a lista de jogadores
-local PlayersDropdown = createPlayerDropdown()
+
 
 -- Atualiza o dropdown quando um jogador entrar ou sair
 local function updateDropdown()
@@ -33,16 +33,3 @@ game.Players.PlayerAdded:Connect(updateDropdown)
 game.Players.PlayerRemoving:Connect(updateDropdown)
 
 -- Botão de teleporte
-Tabs.Player:AddButton({
-    Title = "Tp teleport",
-    Description = "",
-    Callback = function()
-        local targetPlayerName = PlayersDropdown.Value
-        local targetPlayer = game.Players:FindFirstChild(targetPlayerName)
-        if targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = targetPlayer.Character.HumanoidRootPart.CFrame
-        else
-            print("Não foi possível teleportar. Verifique se o jogador está no jogo e se o personagem está carregado.")
-        end
-    end
-})
