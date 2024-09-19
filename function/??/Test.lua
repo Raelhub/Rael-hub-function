@@ -143,7 +143,7 @@ function TranslationModule:GetTabs()
     section3 = "",
     dropdowntext = "",
     slidetext = "",
-    button1 = ""
+    button = ""
   }
   
   Main.name = RaelHubTradutor.Tradutor("Main")
@@ -166,12 +166,14 @@ function TranslationModule:GetTabs()
   Jogador.section3 = RaelHubTradutor.Tradutor("Light up the map")
   Jogador.dropdowntext = RaelHubTradutor.Tradutor("Players: ")
   Jogador.slidetext =   RaelHubTradutor.Tradutor("Speed: ")
-  Jogador.button1 = "Teleport player"
+  Jogador.button = "Teleport player"
+  
+  screenGui:Destroy()
   
   return Main, Jigoku, Jogador
   
 end
 
-screenGui:Destroy()
+
 
 return TranslationModule
