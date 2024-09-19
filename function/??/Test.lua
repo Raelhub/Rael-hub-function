@@ -165,8 +165,8 @@ function TranslationModule:GetTabs()
   Jogador.section2 = RaelHubTradutor.Tradutor("Player Speed")
   Jogador.section3 = RaelHubTradutor.Tradutor("Light up the map")
   Jogador.dropdowntext = RaelHubTradutor.Tradutor("Players: ")
-  Jogador.slidetext =   RaelHubTradutor.Tradutor("Speed: ")
-  Jogador.button = "Teleport player"
+  Jogador.slidetext = RaelHubTradutor.Tradutor("Speed: ")
+  Jogador.button = RaelHubTradutor.Tradutor("Teleport player")
   
   screenGui:Destroy()
   
