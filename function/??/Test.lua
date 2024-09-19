@@ -136,6 +136,15 @@ function TranslationModule:GetTabs()
     CancelButton = "",
     NotifyContent = ""
   }
+  local Jogador = {
+    name = "",
+    section1 = "",
+    section2 = "",
+    section3 = "",
+    dropdowntext = "",
+    slidetext = "",
+    button1 = ""
+  }
   
   Main.name = RaelHubTradutor.Tradutor("Main")
   Main.section1 = RaelHubTradutor.Tradutor("Auto win part 1")
@@ -151,8 +160,15 @@ function TranslationModule:GetTabs()
   Jigoku.CancelButton = RaelHubTradutor.Tradutor("Cancel ")
   Jigoku.NotifyContent = RaelHubTradutor.Tradutor("Wait one moment")
   
+  Jogador.name = RaelHubTradutor.Tradutor("Player")
+  Jogador.section1 = RaelHubTradutor.Tradutor("Teleport to players")
+  Jogador.section2 = RaelHubTradutor.Tradutor("Player Speed")
+  Jogador.section3 = RaelHubTradutor.Tradutor("Light up the map")
+  Jogador.dropdowntext = RaelHubTradutor.Tradutor("Players: ")
+  Jogador.slidetext =   RaelHubTradutor.Tradutor("Speed: ")
+  Jogador.button1 = "Teleport player"
   
-  return Main, Jigoku
+  return Main, Jigoku, Jogador
   
 end
 
