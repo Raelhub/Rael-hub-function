@@ -136,36 +136,6 @@ function TranslationModule:GetTabs()
     CancelButton = "",
     NotifyContent = ""
   }
-
-  local Tab_RingMaster = {
-    name = "",
-    section1 = "",
-    section2 = "",
-    button1 = "",
-    button2 = ""
-  }
-
-  local Tab_BixoEsp = {
-    name = "",
-    section = "",
-    button1 = "",
-    button2 = ""
-  }
-
-  local Other = {
-    name = "",
-    section1 = "",
-    section2 = "",
-    button1 = "",
-    button2 = ""
-  }
-
-  local Creditos = {
-    name = "",
-    section = "",
-    NotificationName = "",
-    NotificationContent = ""
-  }
   
   Main.name = RaelHubTradutor.Tradutor("Main")
   Main.section1 = RaelHubTradutor.Tradutor("Auto win part 1")
@@ -181,10 +151,9 @@ function TranslationModule:GetTabs()
   Jigoku.CancelButton = RaelHubTradutor.Tradutor("Cancel ")
   Jigoku.NotifyContent = RaelHubTradutor.Tradutor("Wait one moment")
   
-  return Main, Jigoku
-  
   screenGui:Destroy()
   
+  return Main, Jigoku
   
 end
 
