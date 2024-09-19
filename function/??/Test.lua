@@ -146,6 +146,20 @@ function TranslationModule:GetTabs()
     button = ""
   }
   
+  local Mostrar = {
+    name = "",
+    toggle1 = "",
+    toggle2 = "",
+    toggle3 = ""
+  }
+  
+  local Creditos = {
+    name = "",
+    section = "",
+    descricao = "",
+    ContentNotify = ""
+  }
+  
   Main.name = RaelHubTradutor.Tradutor("Main")
   Main.section1 = RaelHubTradutor.Tradutor("Auto win part 1")
   Main.section2 = RaelHubTradutor.Tradutor("Auto win part 1")
@@ -166,11 +180,20 @@ function TranslationModule:GetTabs()
   Jogador.section3 = RaelHubTradutor.Tradutor("Light up the map")
   Jogador.dropdowntext = RaelHubTradutor.Tradutor("Players: ")
   Jogador.slidetext = RaelHubTradutor.Tradutor("Speed: ")
-  Jogador.button = RaelHubTradutor.Tradutor("Teleport player")
+  Jogador.button = RaelHubTradutor.Tradutor("Teleport to player")
   
+  Mostrar.name = "Esp"
+  Mostrar.toggle1 = "Esp " .. RaelHubTradutor.Tradutor(" monster ")
+  Mostrar.toggle2 = "Esp " .. RaelHubTradutor.Tradutor(" players ")
+  Mostrar.toggle3 = "Esp " .. RaelHubTradutor.Tradutor(" objects ")
+  
+  Creditos.name = RaelHubTradutor.Tradutor("Credits")
+  Creditos.section = RaelHubTradutor.Tradutor("Script creator")
+  Creditos.descricao = RaelHubTradutor.Tradutor("Join my YouTube channel and Discord for new updates")
+  Creditos.ContentNotify = RaelHubTradutor.Tradutor("The script has been copied to the desktop")
   screenGui:Destroy()
   
-  return Main, Jigoku, Jogador
+  return Main, Jigoku, Jogador, Mostrar, Creditos
   
 end
 
