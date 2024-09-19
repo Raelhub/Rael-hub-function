@@ -151,10 +151,11 @@ function TranslationModule:GetTabs()
   Jigoku.CancelButton = RaelHubTradutor.Tradutor("Cancel ")
   Jigoku.NotifyContent = RaelHubTradutor.Tradutor("Wait one moment")
   
-  screenGui:Destroy()
   
   return Main, Jigoku
   
 end
+
+screenGui:Destroy()
 
 return TranslationModule
