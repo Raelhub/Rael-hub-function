@@ -182,6 +182,10 @@ function TranslationModule:GetTabs()
   Jigoku.NotifyContent = RaelHubTradutor.Tradutor("Wait one moment")
   
   return Main, Jigoku
+  
+  screenGui:Destroy()
+  
+  
 end
 
 return TranslationModule
