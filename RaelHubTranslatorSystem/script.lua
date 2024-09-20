@@ -16,11 +16,11 @@ function RaelHubTradutor.Tradutor(texto)
         return cache[texto] -- Retorna a tradução armazenada no cache
     end
     
-    local url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=" .. userLocale .. "&dt=t&q=" .. HttpService:UrlEncqode(texto)
+    local url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=" .. userLocale .. "&dt=t&q=" .. HttpService:UrlEncode(texto)
     
     -- Tenta fazer a requisição HTTP com tratamento de erros
     local success, response = pcall(function()
-        return request({
+        return HttpService:RequestAsync({
             Url = url,
             Method = "GET",
             Headers = { ["Content-Type"] = "application/json" }
