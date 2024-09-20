@@ -20,7 +20,7 @@ function RaelHubTradutor.Tradutor(texto)
     
     -- Tenta fazer a requisição HTTP com tratamento de erros
     local success, response = pcall(function()
-        return HttpService:RequestAsync({
+        return request({
             Url = url,
             Method = "GET",
             Headers = { ["Content-Type"] = "application/json" }
