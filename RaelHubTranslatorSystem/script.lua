@@ -2,49 +2,108 @@ local RaelHubTradutor = {}
 
 local HttpService = game:GetService("HttpService")
 local LocalizationService = game:GetService("LocalizationService")
+local Players = game:GetService("Players")
 
--- Pega o idioma da experiência do Roblox
-local userLocale = LocalizationService.RobloxLocaleId or "en" -- Caso não consiga pegar o idioma, define como inglês
+local Player = Players.LocalPlayer
 
--- Cria uma tabela para armazenar traduções em cache
-local cache = {}
+-- Configurações da API
+local request = request or http_request or HttpPost or syn.request
+local executeURL = "https://Translate.google.com/_/TranslateWebserverUi/data/batchexecute"
+local rootURL = "https://Translate.google.com/"
 
--- Função para traduzir texto
-function RaelHubTradutor.Tradutor(texto)
-    -- Verifica se o texto já foi traduzido antes e está no cache
-    if cache[texto] then
-        return cache[texto] -- Retorna a tradução armazenada no cache
+-- Obtém o idioma da experiência do Roblox
+local userLocale = LocalizationService.RobloxLocaleId or "en"
+
+-- Função para encoding/decoding
+local function Encode(Source)
+    return HttpService:JSONEncode(Source)
+end
+
+local function Decode(Source)
+    return HttpService:JSONDecode(Source)
+end
+
+-- Função para realizar requisição HTTP
+local function got(Url, Method, Body)
+    Method = Method or "GET"
+    
+    local res = request({
+        ["Url"] = Url,
+        ["Method"] = Method,
+        ["Headers"] = {
+            ["cookie"] = "CONSENT=YES+"
+        },
+        ["Body"] = Body
+    })
+    
+    if res.Body:match("https://consent.google.com/s") then
+        res = syn.request({
+            ["Url"] = Url,
+            ["Method"] = "GET",
+            ["Headers"] = {
+                ["cookie"] = "CONSENT=YES+"
+            }
+        })
     end
     
-    local url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=" .. userLocale .. "&dt=t&q=" .. HttpService:UrlEncqode(texto)
-    
-    -- Tenta fazer a requisição HTTP com tratamento de erros
-    local success, response = pcall(function()
-        return request({
-            Url = url,
-            Method = "GET",
-            Headers = { ["Content-Type"] = "application/json" }
-        })
-    end)
+    return res
+end
 
-    -- Verifica se a requisição foi bem-sucedida
-    if success and response.StatusCode == 200 then
-        local successDecode, resultado = pcall(function()
-            return HttpService:JSONDecode(response.Body)
-        end)
-
-        -- Verifica se a decodificação foi bem-sucedida
-        if successDecode and resultado and resultado[1] and resultado[1][1] and resultado[1][1][1] then
-            local traducao = resultado[1][1][1]
-            cache[texto] = traducao -- Armazena a tradução no cache
-            return traducao  -- Retorna o texto traduzido
+-- Função para codificar a query
+local function stringifyQuery(Fields)
+    local data = ""
+    for Ind, Val1 in pairs(Fields) do
+        if type(Val1) == "table" then
+            for _, Val2 in pairs(Val1) do
+                data = data .. ("&%s=%s"):format(HttpService:UrlEncode(Ind), HttpService:UrlEncode(Val2))
+            end
         else
-            warn("Erro ao decodificar a resposta de tradução.")
-            return texto -- Retorna o texto original se falhar
+            data = data .. ("&%s=%s"):format(HttpService:UrlEncode(Ind), HttpService:UrlEncode(Val1))
         end
+    end
+    data = data:sub(2)
+    return data
+end
+
+-- Função para traduzir texto
+local function Translate(str, to, from)
+    from = from or "auto"
+    to = to or "en"
+    
+    local data = {{str, from, to, true}, {nil}}
+    local freq = {{{"MkEWBc", Encode(data), nil, "generic"}}}
+    
+    local url = executeURL .. "?" .. stringifyQuery{rpcids = "MkEWBc", ["f.sid"] = "", bl = "", hl = "en", _reqid = 0, rt = "c"}
+    local body = stringifyQuery{["f.req"] = Encode(freq)}
+    local req = got(url, "POST", body)
+    
+    local body = Decode(req.Body:match"%[.-%]\n")
+    local translationData = Decode(body[1][3])
+    local result = {
+        text = "",
+        from = {
+            language = "",
+            text = ""
+        },
+        raw = ""
+    }
+    
+    result.raw = translationData
+    result.text = translationData[2][1][1][6][1][1]
+    result.from.language = translationData[3]
+    result.from.text = translationData[2][5][1]
+    
+    return result
+end
+
+-- Função para traduzir para o idioma do usuário
+function RaelHubTradutor.Tradutor(texto)
+    local result = Translate(texto, userLocale)
+    
+    if result.from.language ~= userLocale then
+        return result.text
     else
-        warn("Falha na requisição de tradução. Verifique a conexão ou a URL.")
-        return texto -- Retorna o texto original se falhar
+        return texto
     end
 end
 
