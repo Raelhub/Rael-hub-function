@@ -135,7 +135,7 @@ local SetProps, SetChildren, InsertTheme, Create do
       local decode = HttpService:JSONDecode(readfile(file))
       
       if type(decode) == "table" then
-        if rawget(decode, "UISize") then redzlib.Save["UISize"] = decode["UISize"] end
+        --if rawget(decode, "UISize") then redzlib.Save["UISize"] = decode["UISize"] end
         if rawget(decode, "TabSize") then redzlib.Save["TabSize"] = decode["TabSize"] end
         if rawget(decode, "Theme") and VerifyTheme(decode["Theme"]) then redzlib.Save["Theme"] = decode["Theme"] end
       end
