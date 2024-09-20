@@ -26,12 +26,12 @@ function RaelHubTradutor.Tradutor(texto)
 
     -- Faz a requisição HTTP
     local success, response = pcall(function()
-        return request({
-            Url = url,
-            Method = "POST",
-            Headers = headers,
-            Body = body
-        })
+    return syn.request({
+        Url = url,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
     end)
 
     if success and response.StatusCode == 200 then
