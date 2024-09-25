@@ -138,38 +138,40 @@ local function ProcessarKeyObtain(KeyObtain)
 end
 
 function RaelHubEspPDOORS.EspKeyAtivado()
-    local KeysPastas = workspace.CurrentRooms
+  local KeysPastas = workspace.CurrentRooms
 
-    for _, KeyPasta in ipairs(KeysPastas:GetChildren()) do
-        if KeyPasta:IsA("Model") then
-            local Pasta = KeyPasta:FindFirstChild("Assets")
-            if Pasta then
-                local KeyObtain = Pasta:FindFirstChild("KeyObtain")
-                ProcessarKeyObtain(KeyObtain)
+  for _, KeyPasta in ipairs(KeysPastas:GetChildren()) do
+    if KeyPasta:IsA("Model") then
+      local Pasta = KeyPasta:FindFirstChild("Assets")
+      if Pasta then
+        local KeyObtain = Pasta:FindFirstChild("KeyObtain")
+        ProcessarKeyObtain(KeyObtain)
 
-                -- Verifica a pasta "Alternate"
-                local AlternatePasta = Pasta:FindFirstChild("Alternate")
-                if AlternatePasta and AlternatePasta:IsA("Folder") then
-                    local KeysFolder = AlternatePasta:FindFirstChild("Keys")
-                    if KeysFolder then
-                        for _, PastaKey in ipairs(KeysFolder:GetChildren()) do
-                            ProcessarKeyObtain(PastaKey:FindFirstChild("KeyObtain"))
-                        end
-                    end
-                end
-
-                -- Verifica a pasta "Dresser"
-                local DresserPasta = Pasta:FindFirstChild("Dresser")
-                if DresserPasta then
-                    for _, DrawerContainerPasta in ipairs(DresserPasta:GetChildren()) do
-                        if DrawerContainerPasta.Name == "DrawerContainer" then
-                            ProcessarKeyObtain(DrawerContainerPasta:FindFirstChild("KeyObtain"))
-                        end
-                    end
-                end
+        local AlternatePasta = Pasta:FindFirstChild("Alternate")
+        if AlternatePasta and AlternatePasta:IsA("Folder") then
+          local KeysFolder = AlternatePasta:FindFirstChild("Keys")
+          if KeysFolder then
+            for _, PastaKey in ipairs(KeysFolder:GetChildren()) do
+              ProcessarKeyObtain(PastaKey:FindFirstChild("KeyObtain"))
             end
+          end
         end
+
+        for _, PastaPossiveil in ipairs(Pasta:GetChildren()) do
+          if PastaPossiveil:IsA("Model") then
+                
+            if PastaPossiveil then
+              for _, DrawerContainerPasta in ipairs(PastaPossiveil:GetChildren()) do
+                if DrawerContainerPasta.Name == "DrawerContainer" then
+                  ProcessarKeyObtain(DrawerContainerPasta:FindFirstChild("KeyObtain"))
+                end
+              end
+            end
+          end
+        end
+      end
     end
+  end
 end
 
 
