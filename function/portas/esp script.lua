@@ -146,20 +146,22 @@ function RaelHubEspPDOORS.EspKeyAtivado()
       end
       for _, AlternatePasta in ipairs(Pasta:GetChildren()) do
         if AlternatePasta:IsA("Folder") and AlternatePasta.Name == "Alternate" then
-          for PastaKey in ipairs(AlternatePasta.Keys:GetChildren()) do
+          if AlternatePasta.Keys then
+            for PastaKey in ipairs(AlternatePasta.Keys:GetChildren()) do
             
-            if PastaKey:FindFirstChild("KeyObtain") then
+              if PastaKey:FindFirstChild("KeyObtain") then
               
-              CreateEsp1(PastaKey:FindFirstChild("KeyObtain"), Color3.fromRGB(0, 255, 255), "", "")
+                CreateEsp1(PastaKey:FindFirstChild("KeyObtain"), Color3.fromRGB(0, 255, 255), "", "")
               
-              local KeyKey = PastaKey:FindFirstChild("KeyObtain").Hitbox.Key
+                local KeyKey = PastaKey:FindFirstChild("KeyObtain").Hitbox.Key
           
-              if not KeyKey:FindFirstChild("RaelHubDestaque") and not KeyKey:FindFirstChild("RaelHubIcon") then
+                if not KeyKey:FindFirstChild("RaelHubDestaque") and not KeyKey:FindFirstChild("RaelHubIcon") then
         
-                CreateEsp1(KeyKey, Color3.fromRGB(0, 255, 255), "117047144730308", "")
+                  CreateEsp1(KeyKey, Color3.fromRGB(0, 255, 255), "117047144730308", "")
+                end
               end
-            end
             
+            end
           end
         end
       end
