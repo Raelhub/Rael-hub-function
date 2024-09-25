@@ -242,7 +242,7 @@ function RaelHubEspPDOORS.EspBookAtivado()
           if LivroPasta:IsA("Model") then
             local livro = LivroPasta:FindFirstChild("LiveHintBook")
               if livro and not livro:FindFirstChild("RaelHubDestaque") and not livro:FindFirstChild("RaelHubIcon") then
-                CreateEsp1(livro, Color3.fromRGB(0, 255, 255), "117047144730308", "")
+                CreateEsp1(livro, Color3.fromRGB(0, 255, 255), "112846382225194", "")
               end
           end
         end
