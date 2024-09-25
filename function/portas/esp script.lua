@@ -167,6 +167,7 @@ function RaelHubEspPDOORS.EspKeyAtivado()
                 end
               end
             end
+            ProcessarKeyObtain(PastaPossiveil:FindFirstChild("KeyObtain"))
           end
         end
       end
