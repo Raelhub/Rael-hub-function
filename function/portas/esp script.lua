@@ -126,13 +126,29 @@ function RaelHubEspPDOORS.EspAlavancaDesativado()
   end
 end
 
-local function ProcessarKeyObtain(KeyObtain)
+local function ProcessarKeyObtainOn(KeyObtain)
     if KeyObtain and not KeyObtain:FindFirstChild("RaelHubDestaque") and not KeyObtain:FindFirstChild("RaelHubIcon") then
         CreateEsp1(KeyObtain, Color3.fromRGB(0, 255, 255), "", "")
         
         local KeyKey = KeyObtain.Hitbox and KeyObtain.Hitbox:FindFirstChild("Key")
         if KeyKey and not KeyKey:FindFirstChild("RaelHubDestaque") and not KeyKey:FindFirstChild("RaelHubIcon") then
             CreateEsp1(KeyKey, Color3.fromRGB(0, 255, 255), "117047144730308", "")
+        end
+    end
+end
+
+local function ProcessarKeyObtainOff(KeyObtain)
+    if KeyObtain and KeyObtain:FindFirstChild("RaelHubDestaque") and KeyObtain:FindFirstChild("RaelHubIcon") then
+        KeyObtain:FindFirstChild("RaelHubDestaque"):Destroy()
+            
+        KeyObtain:FindFirstChild("RaelHubIcon"):Destroy()
+        
+        local KeyKey = KeyObtain.Hitbox and KeyObtain.Hitbox:FindFirstChild("Key")
+        if KeyKey and KeyKey:FindFirstChild("RaelHubDestaque") and KeyKey:FindFirstChild("RaelHubIcon") then
+            KeyKey:FindFirstChild("RaelHubDestaque"):Destroy()
+            
+            KeyKey:FindFirstChild("RaelHubIcon"):Destroy()
+        
         end
     end
 end
@@ -145,14 +161,14 @@ function RaelHubEspPDOORS.EspKeyAtivado()
       local Pasta = KeyPasta:FindFirstChild("Assets")
       if Pasta then
         local KeyObtain = Pasta:FindFirstChild("KeyObtain")
-        ProcessarKeyObtain(KeyObtain)
+        ProcessarKeyObtainOn(KeyObtain)
 
         local AlternatePasta = Pasta:FindFirstChild("Alternate")
         if AlternatePasta and AlternatePasta:IsA("Folder") then
           local KeysFolder = AlternatePasta:FindFirstChild("Keys")
           if KeysFolder then
             for _, PastaKey in ipairs(KeysFolder:GetChildren()) do
-              ProcessarKeyObtain(PastaKey:FindFirstChild("KeyObtain"))
+              ProcessarKeyObtainOn(PastaKey:FindFirstChild("KeyObtain"))
             end
           end
         end
@@ -163,11 +179,11 @@ function RaelHubEspPDOORS.EspKeyAtivado()
             if PastaPossiveil then
               for _, DrawerContainerPasta in ipairs(PastaPossiveil:GetChildren()) do
                 if DrawerContainerPasta.Name == "DrawerContainer" then
-                  ProcessarKeyObtain(DrawerContainerPasta:FindFirstChild("KeyObtain"))
+                  ProcessarKeyObtainOn(DrawerContainerPasta:FindFirstChild("KeyObtain"))
                 end
               end
             end
-            ProcessarKeyObtain(PastaPossiveil:FindFirstChild("KeyObtain"))
+            ProcessarKeyObtainOn(PastaPossiveil:FindFirstChild("KeyObtain"))
           end
         end
       end
@@ -175,6 +191,43 @@ function RaelHubEspPDOORS.EspKeyAtivado()
   end
 end
 
+function RaelHubEspPDOORS.EspKeyDesativado()
+  local KeysPastas = workspace.CurrentRooms
+
+  for _, KeyPasta in ipairs(KeysPastas:GetChildren()) do
+    if KeyPasta:IsA("Model") then
+      local Pasta = KeyPasta:FindFirstChild("Assets")
+      if Pasta then
+        local KeyObtain = Pasta:FindFirstChild("KeyObtain")
+        ProcessarKeyObtainOff(KeyObtain)
+
+        local AlternatePasta = Pasta:FindFirstChild("Alternate")
+        if AlternatePasta and AlternatePasta:IsA("Folder") then
+          local KeysFolder = AlternatePasta:FindFirstChild("Keys")
+          if KeysFolder then
+            for _, PastaKey in ipairs(KeysFolder:GetChildren()) do
+              ProcessarKeyObtainOff(PastaKey:FindFirstChild("KeyObtain"))
+            end
+          end
+        end
+
+        for _, PastaPossiveil in ipairs(Pasta:GetChildren()) do
+          if PastaPossiveil:IsA("Model") then
+                
+            if PastaPossiveil then
+              for _, DrawerContainerPasta in ipairs(PastaPossiveil:GetChildren()) do
+                if DrawerContainerPasta.Name == "DrawerContainer" then
+                  ProcessarKeyObtainOff(DrawerContainerPasta:FindFirstChild("KeyObtain"))
+                end
+              end
+            end
+            ProcessarKeyObtainOff(PastaPossiveil:FindFirstChild("KeyObtain"))
+          end
+        end
+      end
+    end
+  end
+end
 
 
 return RaelHubEspPDOORS
