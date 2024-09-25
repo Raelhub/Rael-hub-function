@@ -163,12 +163,13 @@ function RaelHubEspPDOORS.EspKeyAtivado()
         local KeyObtain = Pasta:FindFirstChild("KeyObtain")
         ProcessarKeyObtainOn(KeyObtain)
 
-        local AlternatePasta = Pasta:FindFirstChild("Alternate")
-        if AlternatePasta and AlternatePasta:IsA("Folder") then
-          local KeysFolder = AlternatePasta:FindFirstChild("Keys")
-          if KeysFolder then
-            for _, PastaKey in ipairs(KeysFolder:GetChildren()) do
-              ProcessarKeyObtainOn(PastaKey:FindFirstChild("KeyObtain"))
+        for _, AlternatePasta in ipairs(Pasta:GetChildren()) do
+          if AlternatePasta and AlternatePasta:IsA("Folder") then
+            local KeysFolder = AlternatePasta:FindFirstChild("Keys")
+            if KeysFolder then
+              for _, PastaKey in ipairs(KeysFolder:GetChildren()) do
+                ProcessarKeyObtainOn(PastaKey:FindFirstChild("KeyObtain"))
+              end
             end
           end
         end
@@ -201,12 +202,13 @@ function RaelHubEspPDOORS.EspKeyDesativado()
         local KeyObtain = Pasta:FindFirstChild("KeyObtain")
         ProcessarKeyObtainOff(KeyObtain)
 
-        local AlternatePasta = Pasta:FindFirstChild("Alternate")
-        if AlternatePasta and AlternatePasta:IsA("Folder") then
-          local KeysFolder = AlternatePasta:FindFirstChild("Keys")
-          if KeysFolder then
-            for _, PastaKey in ipairs(KeysFolder:GetChildren()) do
-              ProcessarKeyObtainOff(PastaKey:FindFirstChild("KeyObtain"))
+        for _, AlternatePasta in ipairs(Pasta:GetChildren()) do
+          if AlternatePasta and AlternatePasta:IsA("Folder") then
+            local KeysFolder = AlternatePasta:FindFirstChild("Keys")
+            if KeysFolder then
+              for _, PastaKey in ipairs(KeysFolder:GetChildren()) do
+                ProcessarKeyObtainOff(PastaKey:FindFirstChild("KeyObtain"))
+              end
             end
           end
         end
