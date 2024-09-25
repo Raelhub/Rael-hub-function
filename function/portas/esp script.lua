@@ -10,6 +10,39 @@ function createESP2(part)
   espBox.Parent = part
 end
 
+function CreateEsp1(objeto, cor, imageId, texto)
+
+  local highlight = Instance.new("Highlight")
+  highlight.Name = "RaelHubDestaque"
+  highlight.Adornee = objeto
+  highlight.FillColor = cor
+  highlight.Parent = objeto
+
+  local billboard = Instance.new("BillboardGui")
+  billboard.Name = "RaelHubIcon"
+  billboard.Size = UDim2.new(0, 30, 0, 30)
+  billboard.StudsOffset = Vector3.new(0, 3, 0)
+  billboard.AlwaysOnTop = true
+  billboard.Adornee = objeto
+  billboard.Parent = objeto
+
+  local imageLabel = Instance.new("ImageLabel")
+  imageLabel.Size = UDim2.new(1, 0, 1, 0)
+  imageLabel.BackgroundTransparency = 1
+  imageLabel.Image = "rbxassetid://" .. imageId
+  imageLabel.Parent = billboard
+
+  local textLabel = Instance.new("TextLabel")
+  textLabel.Size = UDim2.new(1, 0, 0.3, 0)
+  textLabel.BackgroundTransparency = 1
+  textLabel.Text = texto
+  textLabel.Position = UDim2.new(0, 0, 1, 0)
+  textLabel.TextColor3 = cor
+  textLabel.TextSize = 13
+  textLabel.Font = Enum.Font.GothamBold
+  textLabel.Parent = billboard
+end
+
 local RaelHubEspPDOORS = {}
 
 function RaelHubEspPDOORS.EspDoorsAtivado()
@@ -43,6 +76,50 @@ function RaelHubEspPDOORS.EspDoorsDesativado()
   
           Porta:FindFirstChild("Door"):FindFirstChild("RaelHubEsp2"):Destroy()
   
+        end
+      end
+    end
+  end
+end
+
+function RaelHubEspPDOORS.EspAlavancaAtivado()
+  local AlavancasPastas = workspace.CurrentRooms
+
+  for _, AlavancaPasta in ipairs(AlavancasPastas:GetChildren()) do
+    if AlavancaPasta:IsA("Model") then
+      local Pasta = AlavancaPasta:FindFirstChild("Assets")
+
+      if Pasta then
+        local Alavanca = Pasta:FindFirstChild("LeverForGate")
+
+        if Alavanca then
+          if not Alavanca:FindFirstChild("RaelHubDestaque") and not Alavanca:FindFirstChild("RaelHubIcon") then
+            CreateEsp1(Alavanca, Color3.fromRGB(0, 255, 255), "", "Lever")
+          end
+        end
+      end
+    end
+  end
+end
+
+function RaelHubEspPDOORS.EspAlavancaDesativado()
+  local AlavancasPastas = workspace.CurrentRooms
+
+  for _, AlavancaPasta in ipairs(AlavancasPastas:GetChildren()) do
+    if AlavancaPasta:IsA("Model") then
+      local Pasta = AlavancaPasta:FindFirstChild("Assets")
+
+      if Pasta then
+        local Alavanca = Pasta:FindFirstChild("LeverForGate")
+
+        if Alavanca then
+          if Alavanca:FindFirstChild("RaelHubDestaque") and Alavanca:FindFirstChild("RaelHubIcon") then
+            
+            Alavanca:FindFirstChild("RaelHubDestaque"):Destroy()
+            
+            Alavanca:FindFirstChild("RaelHubIcon"):Destroy()
+            
+          end
         end
       end
     end
