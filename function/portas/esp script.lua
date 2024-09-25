@@ -21,7 +21,7 @@ function CreateEsp1(objeto, cor, imageId, texto)
   local billboard = Instance.new("BillboardGui")
   billboard.Name = "RaelHubIcon"
   billboard.Size = UDim2.new(0, 30, 0, 30)
-  billboard.StudsOffset = Vector3.new(0, 3, 0)
+  billboard.StudsOffset = Vector3.new(0, 0, 0)
   billboard.AlwaysOnTop = true
   billboard.Adornee = objeto
   billboard.Parent = objeto
@@ -118,6 +118,47 @@ function RaelHubEspPDOORS.EspAlavancaDesativado()
             Alavanca:FindFirstChild("RaelHubDestaque"):Destroy()
             
             Alavanca:FindFirstChild("RaelHubIcon"):Destroy()
+            
+          end
+        end
+      end
+    end
+  end
+end
+
+function RaelHubEspPDOORS.EspKeyAtivado()
+  local KeysPastas = workspace.CurrentRooms
+
+  for _, KeyPasta in ipairs(KeysPastas:GetChildren()) do
+    if KeyPasta:IsA("Model") then
+      local Pasta = KeyPasta:FindFirstChild("Assets")
+      
+      if Pasta:FindFirstChild("KeyObtain") then
+        if not Pasta:FindFirstChild("KeyObtain"):FindFirstChild("RaelHubDestaque") and not Pasta:FindFirstChild("KeyObtain"):FindFirstChild("RaelHubIcon") then
+        
+          CreateEsp1(Pasta:FindFirstChild("KeyObtain"), Color3.fromRGB(0, 255, 255), "", "")
+          local KeyKey = Pasta:FindFirstChild("KeyObtain").Hitbox.Key
+          if not KeyKey:FindFirstChild("RaelHubDestaque") and not KeyKey:FindFirstChild("RaelHubIcon") then
+        
+            CreateEsp1(KeyKey, Color3.fromRGB(0, 255, 255), "117047144730308", "")
+          end
+        end
+      end
+      for _, AlternatePasta in ipairs(Pasta:GetChildren()) do
+        if AlternatePasta:IsA("Folder") and AlternatePasta.Name == "Alternate" then
+          for PastaKey in ipairs(AlternatePasta.Keys:GetChildren()) do
+            
+            if PastaKey:FindFirstChild("KeyObtain") then
+              
+              CreateEsp1(PastaKey:FindFirstChild("KeyObtain"), Color3.fromRGB(0, 255, 255), "", "")
+              
+              local KeyKey = PastaKey:FindFirstChild("KeyObtain").Hitbox.Key
+          
+              if not KeyKey:FindFirstChild("RaelHubDestaque") and not KeyKey:FindFirstChild("RaelHubIcon") then
+        
+                CreateEsp1(KeyKey, Color3.fromRGB(0, 255, 255), "117047144730308", "")
+              end
+            end
             
           end
         end
