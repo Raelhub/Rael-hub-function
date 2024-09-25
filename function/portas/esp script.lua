@@ -241,9 +241,9 @@ function RaelHubEspPDOORS.EspBookAtivado()
         for _, LivroPasta in ipairs(Pasta:GetChildren()) do
           if LivroPasta:IsA("Model") then
             local livro = LivroPasta:FindFirstChild("LiveHintBook")
-            
-              CreateEsp1(livro, Color3.fromRGB(0, 255, 255), "117047144730308", "")
-            
+              if livro and not livro:FindFirstChild("RaelHubDestaque") and not livro:FindFirstChild("RaelHubIcon") then
+                CreateEsp1(livro, Color3.fromRGB(0, 255, 255), "117047144730308", "")
+              end
           end
         end
       end
@@ -251,5 +251,28 @@ function RaelHubEspPDOORS.EspBookAtivado()
   end
 end
 
+function RaelHubEspPDOORS.EspBookDesativado()
+  local BooksPastas = workspace.CurrentRooms
+
+  for _, BookPasta in ipairs(BooksPastas:GetChildren()) do
+    if BookPasta:IsA("Model") then
+      local Pasta = BookPasta:FindFirstChild("Assets")
+      if Pasta then
+        for _, LivroPasta in ipairs(Pasta:GetChildren()) do
+          if LivroPasta:IsA("Model") then
+            local livro = LivroPasta:FindFirstChild("LiveHintBook")
+              if livro and livro:FindFirstChild("RaelHubDestaque") and livro:FindFirstChild("RaelHubIcon") then
+                
+                livro:FindFirstChild("RaelHubDestaque"):Destroy()
+            
+                livro:FindFirstChild("RaelHubIcon"):Destroy()
+                
+              end
+          end
+        end
+      end
+    end
+  end
+end
 
 return RaelHubEspPDOORS
