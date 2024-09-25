@@ -170,11 +170,11 @@ function RaelHubEspPDOORS.EspKeyAtivado()
           for _, DrawerContainerPasta in ipairs(DresserPasta:GetChildren()) do
             if DrawerContainerPasta.Name == "DrawerContainer" then
             
-              if PastaKey:FindFirstChild("KeyObtain") then
+              if DrawerContainerPasta:FindFirstChild("KeyObtain") then
               
-                CreateEsp1(PastaKey:FindFirstChild("KeyObtain"), Color3.fromRGB(0, 255, 255), "", "")
+                CreateEsp1(DrawerContainerPasta:FindFirstChild("KeyObtain"), Color3.fromRGB(0, 255, 255), "", "")
               
-                local KeyKey = PastaKey:FindFirstChild("KeyObtain").Hitbox.Key
+                local KeyKey = DrawerContainerPasta:FindFirstChild("KeyObtain").Hitbox.Key
           
                 if not KeyKey:FindFirstChild("RaelHubDestaque") and not KeyKey:FindFirstChild("RaelHubIcon") then
         
