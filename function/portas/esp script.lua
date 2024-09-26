@@ -275,44 +275,36 @@ function RaelHubEspPDOORS.EspBookDesativado()
   end
 end
 
--- Inicia sem definir como uma string
-local DetectorMonsrros = nil
+
+local DetectorMonsrros = false
 
 function RaelHubEspPDOORS.EspMonstroAtivado()
-    local workspace = game:GetService("Workspace")
+  local workspace = game:GetService("Workspace")
+  while DetectorMonsrros do
+    for _, Rush in ipairs(workspace:GetChildren()) do
+      if Rush.Name == "RushMoving" then
+        local RushPart = Rush:FindFirstChild("RushNew")
 
-    DetectorMonsrros = workspace.ChildAdded:Connect(function(child)
-        if child:IsA("Model") and child.Name == "RushMoving" then
-            for _, Rush in ipairs(workspace:GetChildren()) do
-                if Rush.Name == "RushMoving" then
-                    local RushPart = Rush:FindFirstChild("RushNew")
-
-                    if RushPart and not RushPart:FindFirstChild("RaelHubDestaque") and not RushPart:FindFirstChild("RaelHubIcon") then
-                        CreateEsp1(RushPart, Color3.fromRGB(255, 102, 102), "140731226103831", "")
-                    end
-                end
-            end
+        if RushPart and not RushPart:FindFirstChild("RaelHubDestaque") and not RushPart:FindFirstChild("RaelHubIcon") then
+          CreateEsp1(RushPart, Color3.fromRGB(255, 102, 102), "140731226103831", "")
         end
-    end)
+      end
+    end
+    task.wait(1)
+  end
 end
 
 function RaelHubEspPDOORS.EspMonstroDesativado()
-    -- Verifica se DetectorMonsrros foi conectado antes de tentar desconectar
-    if DetectorMonsrros then
-        DetectorMonsrros:Disconnect()
-        DetectorMonsrros = nil  -- Limpa a variável após desconectar
-    end
-    
-    for _, Rush in ipairs(workspace:GetChildren()) do
-        if Rush.Name == "RushMoving" then
-            local RushPart = Rush:FindFirstChild("RushNew")
+  for _, Rush in ipairs(workspace:GetChildren()) do
+    if Rush.Name == "RushMoving" then
+      local RushPart = Rush:FindFirstChild("RushNew")
 
-            if RushPart and RushPart:FindFirstChild("RaelHubDestaque") and RushPart:FindFirstChild("RaelHubIcon") then
-                RushPart:FindFirstChild("RaelHubDestaque"):Destroy()
-                RushPart:FindFirstChild("RaelHubIcon"):Destroy()
-            end
-        end
+      if RushPart and RushPart:FindFirstChild("RaelHubDestaque") and RushPart:FindFirstChild("RaelHubIcon") then
+        RushPart:FindFirstChild("RaelHubDestaque"):Destroy()
+        RushPart:FindFirstChild("RaelHubIcon"):Destroy()
+      end
     end
+  end
 end
 
 return RaelHubEspPDOORS
