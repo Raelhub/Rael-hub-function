@@ -277,7 +277,7 @@ end
 
 local DetectorMonsrros = ""
 
-function EspMonstroAtivado()
+function RaelHubEspPDOORS.EspMonstroAtivado()
     local workspace = game:GetService("Workspace")
 
     DetectorMonsrros = workspace.ChildAdded:Connect(function(child)
@@ -295,7 +295,7 @@ function EspMonstroAtivado()
     end)
 end
 
-function EspMonstroDesativado()
+function RaelHubEspPDOORS.EspMonstroDesativado()
     DetectorMonsrros:Disconnect()
     
     for _, Rush in ipairs(workspace:GetChildren()) do
