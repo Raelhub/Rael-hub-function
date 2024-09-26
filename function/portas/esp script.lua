@@ -276,22 +276,19 @@ function RaelHubEspPDOORS.EspBookDesativado()
 end
 
 
-local DetectorMonsrros = false
+function RaelHubEspPDOORS.EspRushAtivado()
+  for _, Rush in ipairs(workspace:GetChildren()) do
+    if Rush.Name == "RushMoving" then
+      local RushPart = Rush:FindFirstChild("RushNew")
 
-function RaelHubEspPDOORS.EspMonstro()
-  local workspace = game:GetService("Workspace")
-  while DetectorMonsrros do
-    for _, Rush in ipairs(workspace:GetChildren()) do
-      if Rush.Name == "RushMoving" then
-        local RushPart = Rush:FindFirstChild("RushNew")
-
-        if RushPart and not RushPart:FindFirstChild("RaelHubDestaque") and not RushPart:FindFirstChild("RaelHubIcon") then
-          CreateEsp1(RushPart, Color3.fromRGB(255, 102, 102), "140731226103831", "")
-        end
+      if RushPart and not RushPart:FindFirstChild("RaelHubDestaque") and not RushPart:FindFirstChild("RaelHubIcon") then
+        CreateEsp1(RushPart, Color3.fromRGB(255, 102, 102), "140731226103831", "")
       end
     end
-    task.wait(1)
   end
+end
+
+function RaelHubEspPDOORS.EspRushDesativado()
   for _, Rush in ipairs(workspace:GetChildren()) do
     if Rush.Name == "RushMoving" then
       local RushPart = Rush:FindFirstChild("RushNew")
