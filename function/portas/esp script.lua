@@ -283,6 +283,20 @@ function RaelHubEspPDOORS.EspRushAtivado()
 
       if RushPart and not RushPart:FindFirstChild("RaelHubDestaque") and not RushPart:FindFirstChild("RaelHubIcon") then
         CreateEsp1(RushPart, Color3.fromRGB(255, 102, 102), "140731226103831", "")
+        RushPart:FindFirstChild("RaelHubIcon").Size = UDim2.new(0, 100, 0, 100)
+      end
+    end
+  end
+end
+
+function RaelHubEspPDOORS.EspAmbushAtivado()
+  for _, Ambush in ipairs(workspace:GetChildren()) do
+    if Ambush.Name == "AmbushMoving" then
+      local AmbushPart = Ambush:FindFirstChild("RushNew")
+
+      if AmbushPart and not AmbushPart:FindFirstChild("RaelHubDestaque") and not AmbushPart:FindFirstChild("RaelHubIcon") then
+        CreateEsp1(AmbushPart, Color3.fromRGB(255, 102, 102), "104928133693808", "")
+        AmbushPart:FindFirstChild("RaelHubIcon").Size = UDim2.new(0, 100, 0, 100)
       end
     end
   end
@@ -296,6 +310,19 @@ function RaelHubEspPDOORS.EspRushDesativado()
       if RushPart and RushPart:FindFirstChild("RaelHubDestaque") and RushPart:FindFirstChild("RaelHubIcon") then
         RushPart:FindFirstChild("RaelHubDestaque"):Destroy()
         RushPart:FindFirstChild("RaelHubIcon"):Destroy()
+      end
+    end
+  end
+end
+
+function RaelHubEspPDOORS.EspAmbushDesativado()
+  for _, Ambush in ipairs(workspace:GetChildren()) do
+    if Ambush.Name == "AmbushMoving" then
+      local AmbushPart = Ambush:FindFirstChild("RushNew")
+
+      if AmbushPart and AmbushPart:FindFirstChild("RaelHubDestaque") and AmbushPart:FindFirstChild("RaelHubIcon") then
+        AmbushPart:FindFirstChild("RaelHubDestaque"):Destroy()
+        AmbushPart:FindFirstChild("RaelHubIcon"):Destroy()
       end
     end
   end
