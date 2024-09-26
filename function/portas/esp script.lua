@@ -95,6 +95,12 @@ function RaelHubEspPDOORS.EspAlavancaAtivado()
         if Alavanca then
           if not Alavanca:FindFirstChild("RaelHubDestaque") and not Alavanca:FindFirstChild("RaelHubIcon") then
             CreateEsp1(Alavanca, Color3.fromRGB(0, 255, 255), "", "Lever")
+            
+            local Centro = Alavanca:FindFirstChild("Main")
+            
+            if not Centro:FindFirstChild("RaelHubDestaque") and not Centro:FindFirstChild("RaelHubIcon") then
+              CreateEsp1(Centro, Color3.fromRGB(0, 255, 255), "79484345415357", "Lever")
+            end
           end
         end
       end
@@ -118,6 +124,14 @@ function RaelHubEspPDOORS.EspAlavancaDesativado()
             Alavanca:FindFirstChild("RaelHubDestaque"):Destroy()
             
             Alavanca:FindFirstChild("RaelHubIcon"):Destroy()
+            
+            local Centro = Alavanca:FindFirstChild("Main")
+            
+            if Centro:FindFirstChild("RaelHubDestaque") and Centro:FindFirstChild("RaelHubIcon") then
+              Centro:FindFirstChild("RaelHubDestaque"):Destroy()
+            
+              Centro:FindFirstChild("RaelHubIcon"):Destroy()
+            end
             
           end
         end
@@ -326,6 +340,60 @@ function RaelHubEspPDOORS.EspAmbushDesativado()
       end
     end
   end
+end
+
+function RaelHubEspPDOORS.EspFigureAtivado()
+  local FigurePasta = workspace.CurrentRooms
+  
+  for _, Figure in ipairs(FigurePasta:GetChildren()) do
+    if Figure:IsA("Model") then
+      if Figure:FindFirstChild("FigureSetup") then
+        
+        local FigureModel = Figure:FindFirstChild("FigureSetup")
+        
+        if FigureModel and not FigureModel:FindFirstChild("RaelHubDestaque") and not FigureModel:FindFirstChild("RaelHubIcon") then
+          
+          CreateEsp1(FigureModel, Color3.fromRGB(255, 102, 102), "", "")
+          
+          local FigureTorso = FigureModel:FindFirstChild("FigureRig"):FindFirstChild("Torso")
+          
+          if FigureModel and not FigureModel:FindFirstChild("RaelHubDestaque") and not FigureModel:FindFirstChild("RaelHubIcon") then
+          
+            CreateEsp1(FigureTorso, Color3.fromRGB(255, 102, 102), "104928133693808", "")
+          
+          end
+        end
+      end
+    end
+  end    
+end
+
+function RaelHubEspPDOORS.EspFigureDesativa()
+  local FigurePasta = workspace.CurrentRooms
+  
+  for _, Figure in ipairs(FigurePasta:GetChildren()) do
+    if Figure:IsA("Model") then
+      if Figure:FindFirstChild("FigureSetup") then
+        
+        local FigureModel = Figure:FindFirstChild("FigureSetup")
+        
+        if FigureModel and FigureModel:FindFirstChild("RaelHubDestaque") and FigureModel:FindFirstChild("RaelHubIcon") then
+          
+          FigureModel:FindFirstChild("RaelHubDestaque"):Destroy()
+          FigureModel:FindFirstChild("RaelHubIcon"):Destroy()
+          
+          local FigureTorso = FigureModel:FindFirstChild("FigureRig"):FindFirstChild("Torso")
+          
+          if FigureTorso and FigureTorso:FindFirstChild("RaelHubDestaque") and FigureTorso:FindFirstChild("RaelHubIcon") then
+          
+            FigureTorso:FindFirstChild("RaelHubDestaque"):Destroy()
+            FigureTorso:FindFirstChild("RaelHubIcon"):Destroy()
+          
+          end
+        end
+      end
+    end
+  end    
 end
 
 return RaelHubEspPDOORS
