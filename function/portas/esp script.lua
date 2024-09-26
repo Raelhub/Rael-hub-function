@@ -278,7 +278,7 @@ end
 
 local DetectorMonsrros = false
 
-function RaelHubEspPDOORS.EspMonstroAtivado()
+function RaelHubEspPDOORS.EspMonstro()
   local workspace = game:GetService("Workspace")
   while DetectorMonsrros do
     for _, Rush in ipairs(workspace:GetChildren()) do
@@ -292,9 +292,6 @@ function RaelHubEspPDOORS.EspMonstroAtivado()
     end
     task.wait(1)
   end
-end
-
-function RaelHubEspPDOORS.EspMonstroDesativado()
   for _, Rush in ipairs(workspace:GetChildren()) do
     if Rush.Name == "RushMoving" then
       local RushPart = Rush:FindFirstChild("RushNew")
