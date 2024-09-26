@@ -275,6 +275,8 @@ function RaelHubEspPDOORS.EspBookDesativado()
   end
 end
 
+local DetectorMonsrros = ""
+
 function EspMonstroAtivado()
     local workspace = game:GetService("Workspace")
 
