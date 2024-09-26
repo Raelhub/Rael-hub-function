@@ -275,7 +275,8 @@ function RaelHubEspPDOORS.EspBookDesativado()
   end
 end
 
-local DetectorMonsrros = ""
+-- Inicia sem definir como uma string
+local DetectorMonsrros = nil
 
 function RaelHubEspPDOORS.EspMonstroAtivado()
     local workspace = game:GetService("Workspace")
@@ -296,7 +297,11 @@ function RaelHubEspPDOORS.EspMonstroAtivado()
 end
 
 function RaelHubEspPDOORS.EspMonstroDesativado()
-    DetectorMonsrros:Disconnect()
+    -- Verifica se DetectorMonsrros foi conectado antes de tentar desconectar
+    if DetectorMonsrros then
+        DetectorMonsrros:Disconnect()
+        DetectorMonsrros = nil  -- Limpa a variável após desconectar
+    end
     
     for _, Rush in ipairs(workspace:GetChildren()) do
         if Rush.Name == "RushMoving" then
