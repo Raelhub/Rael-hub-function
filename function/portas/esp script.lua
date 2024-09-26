@@ -283,7 +283,7 @@ function RaelHubEspPDOORS.EspRushAtivado()
 
       if RushPart and not RushPart:FindFirstChild("RaelHubDestaque") and not RushPart:FindFirstChild("RaelHubIcon") then
         CreateEsp1(RushPart, Color3.fromRGB(255, 102, 102), "140731226103831", "")
-        RushPart:FindFirstChild("RaelHubIcon").Size = UDim2.new(0, 100, 0, 100)
+        RushPart:FindFirstChild("RaelHubIcon").Size = UDim2.new(0, 50, 0, 50)
       end
     end
   end
@@ -296,7 +296,7 @@ function RaelHubEspPDOORS.EspAmbushAtivado()
 
       if AmbushPart and not AmbushPart:FindFirstChild("RaelHubDestaque") and not AmbushPart:FindFirstChild("RaelHubIcon") then
         CreateEsp1(AmbushPart, Color3.fromRGB(255, 102, 102), "104928133693808", "")
-        AmbushPart:FindFirstChild("RaelHubIcon").Size = UDim2.new(0, 100, 0, 100)
+        AmbushPart:FindFirstChild("RaelHubIcon").Size = UDim2.new(0, 50, 0, 50)
       end
     end
   end
