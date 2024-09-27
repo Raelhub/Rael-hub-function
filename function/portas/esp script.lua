@@ -352,7 +352,7 @@ function RaelHubEspPDOORS.EspFigureAtivado()
       
       if FigureModel and not FigureModel:FindFirstChild("RaelHubDestaque") and not FigureModel:FindFirstChild("RaelHubIcon") then
         
-        CreateEsp1(FigureModel, Color3.fromRGB(255, 102, 102), "140731226103831", "")
+        CreateEsp1(FigureModel, Color3.fromRGB(255, 102, 102), "105012060760767", "")
          
       end
     end
