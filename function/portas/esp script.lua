@@ -53,7 +53,7 @@ function RaelHubEspPDOORS.EspDoorsAtivado()
 
       local Porta = PortaPasta:FindFirstChild("Door")
 
-      if Porta:FindFirstChild("Door") then
+      if Porta then
         if not Porta:FindFirstChild("Door"):FindFirstChild("RaelHubEsp2") then
             createESP2(Porta:FindFirstChild("Door"))
         end
@@ -344,25 +344,16 @@ end
 
 function RaelHubEspPDOORS.EspFigureAtivado()
   local FigurePasta = workspace.CurrentRooms
-  
+
   for _, Figure in ipairs(FigurePasta:GetChildren()) do
-    if Figure:IsA("Model") then
-      if Figure:FindFirstChild("FigureSetup") then
+    if Figure:IsA("Model") and Figure.Name == "50" then
+      local FigureSetup = Figure:WaitForChild("FigureSetup")
+      local FigureModel = FigureSetup:WaitForChild("FigureRig")
+      
+      if FigureModel and not FigureModel:FindFirstChild("RaelHubDestaque") and not FigureModel:FindFirstChild("RaelHubIcon") then
         
-        local FigureModel = Figure:FindFirstChild("FigureSetup")
-        
-        if FigureModel and not FigureModel:FindFirstChild("RaelHubDestaque") and not FigureModel:FindFirstChild("RaelHubIcon") then
-          
-          CreateEsp1(FigureModel, Color3.fromRGB(255, 102, 102), "", "")
-          
-          local FigureTorso = FigureModel:FindFirstChild("FigureRig"):FindFirstChild("Torso")
-          
-          if FigureModel and not FigureModel:FindFirstChild("RaelHubDestaque") and not FigureModel:FindFirstChild("RaelHubIcon") then
-          
-            CreateEsp1(FigureTorso, Color3.fromRGB(255, 102, 102), "104928133693808", "")
-          
-          end
-        end
+        CreateEsp1(FigureModel, Color3.fromRGB(255, 102, 102), "140731226103831", "")
+         
       end
     end
   end    
@@ -370,27 +361,17 @@ end
 
 function RaelHubEspPDOORS.EspFigureDesativa()
   local FigurePasta = workspace.CurrentRooms
-  
+
   for _, Figure in ipairs(FigurePasta:GetChildren()) do
-    if Figure:IsA("Model") then
-      if Figure:FindFirstChild("FigureSetup") then
+    if Figure:IsA("Model") and Figure.Name == "50" then
+      local FigureSetup = Figure:WaitForChild("FigureSetup")
+      local FigureModel = FigureSetup:WaitForChild("FigureRig")
+            
+      if FigureModel and FigureModel:FindFirstChild("RaelHubDestaque") and FigureModel:FindFirstChild("RaelHubIcon") then
         
-        local FigureModel = Figure:FindFirstChild("FigureSetup")
+        FigureModel:FindFirstChild("RaelHubDestaque"):Destroy()
+        FigureModel:FindFirstChild("RaelHubIcon"):Destroy()
         
-        if FigureModel and FigureModel:FindFirstChild("RaelHubDestaque") and FigureModel:FindFirstChild("RaelHubIcon") then
-          
-          FigureModel:FindFirstChild("RaelHubDestaque"):Destroy()
-          FigureModel:FindFirstChild("RaelHubIcon"):Destroy()
-          
-          local FigureTorso = FigureModel:FindFirstChild("FigureRig"):FindFirstChild("Torso")
-          
-          if FigureTorso and FigureTorso:FindFirstChild("RaelHubDestaque") and FigureTorso:FindFirstChild("RaelHubIcon") then
-          
-            FigureTorso:FindFirstChild("RaelHubDestaque"):Destroy()
-            FigureTorso:FindFirstChild("RaelHubIcon"):Destroy()
-          
-          end
-        end
       end
     end
   end    
