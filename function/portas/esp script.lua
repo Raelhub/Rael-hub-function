@@ -346,7 +346,7 @@ function RaelHubEspPDOORS.EspFigureAtivado()
   local FigurePasta = workspace.CurrentRooms
 
   for _, Figure in ipairs(FigurePasta:GetChildren()) do
-    if Figure:IsA("Model") and Figure.Name == "50" then
+    if Figure:IsA("Model") and (Figure.Name == "50" or Figure.Name == "100") then
       local FigureSetup = Figure:WaitForChild("FigureSetup")
       local FigureModel = FigureSetup:WaitForChild("FigureRig")
       
@@ -363,7 +363,7 @@ function RaelHubEspPDOORS.EspFigureDesativa()
   local FigurePasta = workspace.CurrentRooms
 
   for _, Figure in ipairs(FigurePasta:GetChildren()) do
-    if Figure:IsA("Model") and Figure.Name == "50" then
+    if Figure:IsA("Model") and (Figure.Name == "50" or Figure.Name == "100") then
       local FigureSetup = Figure:WaitForChild("FigureSetup")
       local FigureModel = FigureSetup:WaitForChild("FigureRig")
             
