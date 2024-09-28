@@ -289,6 +289,55 @@ function RaelHubEspPDOORS.EspBookDesativado()
   end
 end
 
+function RaelHubEspPDOORS.EspItensAtivado()
+  local MainPasta = workspace.CurrentRooms
+  local DropsPastas = workspace.Drops
+
+
+  for _, Item in ipairs(DropsPastas:GetChildren()) do
+    if Item:IsA("Model") and Item.Name == "Lockpick" then
+      
+      if not Item:FindFirstChild("RaelHubDestaque") and not Item:FindFirstChild("RaelHubIcon") then
+      
+        CreateEsp1(Item, Color3.fromRGB(0, 255, 255), "91526397863419", "")
+      end
+      
+    elseif Item:IsA("Model") and Item.Name == "Candle" then
+      
+      if not Item:FindFirstChild("RaelHubDestaque") and not Item:FindFirstChild("RaelHubIcon") then
+      
+        CreateEsp1(Item, Color3.fromRGB(0, 255, 255), "91526397863419", "")
+      end
+      
+    end
+  end
+end
+
+function RaelHubEspPDOORS.EspItensDesativado()
+  local MainPasta = workspace.CurrentRooms
+  local DropsPastas = workspace.Drops
+
+
+  for _, Item in ipairs(DropsPastas:GetChildren()) do
+    if Item:IsA("Model") and Item.Name == "Lockpick" then
+      
+      if Item:FindFirstChild("RaelHubDestaque") and Item:FindFirstChild("RaelHubIcon") then
+
+        Item:FindFirstChild("RaelHubDestaque"):Destroy()
+        Item:FindFirstChild("RaelHubIcon"):Destroy()
+      end
+      
+    elseif Item:IsA("Model") and Item.Name == "Candle" then
+      
+      if Item:FindFirstChild("RaelHubDestaque") and Item:FindFirstChild("RaelHubIcon") then
+      
+        Item:FindFirstChild("RaelHubDestaque"):Destroy()
+        Item:FindFirstChild("RaelHubIcon"):Destroy()
+      end
+      
+    end
+  end
+end
 
 function RaelHubEspPDOORS.EspRushAtivado()
   for _, Rush in ipairs(workspace:GetChildren()) do
