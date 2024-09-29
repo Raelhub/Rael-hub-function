@@ -142,7 +142,7 @@ end
 
 local function ProcessarKeyObtainOn(KeyObtain)
     if KeyObtain and not KeyObtain:FindFirstChild("RaelHubDestaque") and not KeyObtain:FindFirstChild("RaelHubIcon") then
-        CreateEsp1(KeyObtain, Color3.fromRGB(0, 255, 255), "", "")
+        CreateEsp1(KeyObtain, Color3.fromRGB(25, 233, 165), "", "")
         
         local KeyKey = KeyObtain.Hitbox and KeyObtain.Hitbox:FindFirstChild("Key")
         if KeyKey and not KeyKey:FindFirstChild("RaelHubDestaque") and not KeyKey:FindFirstChild("RaelHubIcon") then
@@ -500,7 +500,7 @@ function RaelHubEspPDOORS.EspBreakAtivado()
           
           if not Break:FindFirstChild("RaelHubDestaque") and not Break:FindFirstChild("RaelHubIcon") then
         
-            CreateEsp1(Break, Color3.fromRGB(233, 175, 25), "105012060760767", "")
+            CreateEsp1(Break, Color3.fromRGB(233, 175, 25), "79769072112250", "")
          
           end
           
