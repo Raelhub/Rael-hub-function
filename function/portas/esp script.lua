@@ -592,7 +592,7 @@ function RaelHubEspPDOORS.EspArmarioAtivado()
   
 end
 
-function RaelHubEspPDOORS.EspArmarioAtivado()
+function RaelHubEspPDOORS.EspArmarioDesativado()
   
   local CurrentRoomPasta = workspace.CurrentRooms
   
