@@ -551,13 +551,27 @@ function RaelHubEspPDOORS.EspArmarioAtivado()
     
     if Sala:IsA("Model") then
       
+      for _, Armario in ipairs(Sala:GetChildren()) do
+        
+        if Armario.Name == "Toolshed" then
+          
+          if not Armario:FindFirstChild("RaelHubDestaque") and not Armario:FindFirstChild("RaelHubIcon") then
+        
+            CreateEsp1(Armario, Color3.fromRGB(233, 175, 25), "79769072112250", "")
+         
+          end
+          
+        end
+        
+      end
+      
       local PastaAssest = Sala:FindFirstChild("Assets")
       
       if PastaAssest then
         
         for _, Armario in ipairs(PastaAssest:GetChildren()) do
           
-          if Armario.Name == "Wardrobe" or Armario.Name == "Toolshed" then
+          if Armario.Name == "Wardrobe" then
             
             if not Armario:FindFirstChild("RaelHubDestaque") and not Armario:FindFirstChild("RaelHubIcon") then
         
@@ -578,7 +592,7 @@ function RaelHubEspPDOORS.EspArmarioAtivado()
   
 end
 
-function RaelHubEspPDOORS.EspArmarioDesativado()
+function RaelHubEspPDOORS.EspArmarioAtivado()
   
   local CurrentRoomPasta = workspace.CurrentRooms
   
@@ -586,13 +600,28 @@ function RaelHubEspPDOORS.EspArmarioDesativado()
     
     if Sala:IsA("Model") then
       
+      for _, Armario in ipairs(Sala:GetChildren()) do
+        
+        if Armario.Name == "Toolshed" then
+          
+          if Armario:FindFirstChild("RaelHubDestaque") and Armario:FindFirstChild("RaelHubIcon") then
+        
+            Armario:FindFirstChild("RaelHubDestaque"):Destroy()
+            Armario:FindFirstChild("RaelHubIcon"):Destroy()
+         
+          end
+          
+        end
+        
+      end
+      
       local PastaAssest = Sala:FindFirstChild("Assets")
       
       if PastaAssest then
         
         for _, Armario in ipairs(PastaAssest:GetChildren()) do
           
-          if Armario.Name == "Wardrobe" or Armario.Name == "Toolshed" then
+          if Armario.Name == "Wardrobe" then
             
             if Armario:FindFirstChild("RaelHubDestaque") and Armario:FindFirstChild("RaelHubIcon") then
         
