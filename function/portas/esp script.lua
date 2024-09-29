@@ -543,4 +543,75 @@ function RaelHubEspPDOORS.EspBreakDesativado()
 
 end
 
+function RaelHubEspPDOORS.EspArmarioAtivado()
+  
+  local CurrentRoomPasta = workspace.CurrentRooms
+  
+  for _, Sala in ipairs(CurrentRoomPasta:GetChildren()) do
+    
+    if Sala:IsA("Model") then
+      
+      local PastaAssest = Sala:FindFirstChild("Assets")
+      
+      if PastaAssest then
+        
+        for _, Armario in ipairs(PastaAssest:GetChildren()) do
+          
+          if Armario.Name == "Wardrobe" or Armario.Name == "Toolshed" then
+            
+            if not Armario:FindFirstChild("RaelHubDestaque") and not Armario:FindFirstChild("RaelHubIcon") then
+        
+              CreateEsp1(Armario, Color3.fromRGB(233, 175, 25), "79769072112250", "")
+         
+            end
+            
+          end
+          
+        end
+        
+      end
+      
+      
+    end
+    
+  end
+  
+end
+
+function RaelHubEspPDOORS.EspArmarioDesativado()
+  
+  local CurrentRoomPasta = workspace.CurrentRooms
+  
+  for _, Sala in ipairs(CurrentRoomPasta:GetChildren()) do
+    
+    if Sala:IsA("Model") then
+      
+      local PastaAssest = Sala:FindFirstChild("Assets")
+      
+      if PastaAssest then
+        
+        for _, Armario in ipairs(PastaAssest:GetChildren()) do
+          
+          if Armario.Name == "Wardrobe" or Armario.Name == "Toolshed" then
+            
+            if Armario:FindFirstChild("RaelHubDestaque") and Armario:FindFirstChild("RaelHubIcon") then
+        
+              Armario:FindFirstChild("RaelHubDestaque"):Destroy()
+              Armario:FindFirstChild("RaelHubIcon"):Destroy()
+         
+            end
+            
+          end
+          
+        end
+        
+      end
+      
+      
+    end
+    
+  end
+  
+end
+
 return RaelHubEspPDOORS
