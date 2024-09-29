@@ -94,12 +94,12 @@ function RaelHubEspPDOORS.EspAlavancaAtivado()
 
         if Alavanca then
           if not Alavanca:FindFirstChild("RaelHubDestaque") and not Alavanca:FindFirstChild("RaelHubIcon") then
-            CreateEsp1(Alavanca, Color3.fromRGB(0, 255, 255), "", "Lever")
+            CreateEsp1(Alavanca, Color3.fromRGB(3, 133, 222), "", "Lever")
             
             local Centro = Alavanca:FindFirstChild("Main")
             
             if not Centro:FindFirstChild("RaelHubDestaque") and not Centro:FindFirstChild("RaelHubIcon") then
-              CreateEsp1(Centro, Color3.fromRGB(0, 255, 255), "79484345415357", "Lever")
+              CreateEsp1(Centro, Color3.fromRGB(3, 133, 222), "79484345415357", "Lever")
             end
           end
         end
@@ -256,7 +256,7 @@ function RaelHubEspPDOORS.EspBookAtivado()
           if LivroPasta:IsA("Model") then
             local livro = LivroPasta:FindFirstChild("LiveHintBook")
               if livro and not livro:FindFirstChild("RaelHubDestaque") and not livro:FindFirstChild("RaelHubIcon") then
-                CreateEsp1(livro, Color3.fromRGB(0, 255, 255), "112846382225194", "")
+                CreateEsp1(livro, Color3.fromRGB(222, 3, 123), "112846382225194", "")
               end
           end
         end
