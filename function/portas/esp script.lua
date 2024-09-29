@@ -146,7 +146,7 @@ local function ProcessarKeyObtainOn(KeyObtain)
         
         local KeyKey = KeyObtain.Hitbox and KeyObtain.Hitbox:FindFirstChild("Key")
         if KeyKey and not KeyKey:FindFirstChild("RaelHubDestaque") and not KeyKey:FindFirstChild("RaelHubIcon") then
-            CreateEsp1(KeyKey, Color3.fromRGB(0, 255, 255), "117047144730308", "")
+            CreateEsp1(KeyKey, Color3.fromRGB(25, 233, 165), "117047144730308", "")
         end
     end
 end
@@ -326,12 +326,12 @@ function RaelHubEspPDOORS.EspItensAtivado()
                 
               elseif Object.Name == "Bandage" then
                 if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
-                  CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "99106958694614", "")
+                  CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "105204077319304", "")
                 end
                 
               elseif Object.Name == "Battery" then
                 if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
-                  CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "99106958694614", "")
+                  CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "75525877405108", "")
                 end
               end
             end
@@ -484,6 +484,63 @@ function RaelHubEspPDOORS.EspFigureDesativa()
       end
     end
   end    
+end
+
+function RaelHubEspPDOORS.EspBreakAtivado()
+  
+  local CurrentRoomPasta = workspace.CurrentRooms
+  
+  for _, Sala in ipairs(CurrentRoomPasta:GetChildren()) do
+    
+    if Sala:IsA("Model") then
+      
+      for _, Break in ipairs(Sala:GetChildren()) do
+        
+        if Break.Name == "LiveBreakerPolePickup" then
+          
+          if not Break:FindFirstChild("RaelHubDestaque") and not Break:FindFirstChild("RaelHubIcon") then
+        
+            CreateEsp1(Break, Color3.fromRGB(233, 175, 25), "105012060760767", "")
+         
+          end
+          
+        end
+        
+      end
+      
+    end
+    
+  end
+
+end
+
+function RaelHubEspPDOORS.EspBreakDesativado()
+  
+  local CurrentRoomPasta = workspace.CurrentRooms
+  
+  for _, Sala in ipairs(CurrentRoomPasta:GetChildren()) do
+    
+    if Sala:IsA("Model") then
+      
+      for _, Break in ipairs(Sala:GetChildren()) do
+        
+        if Break.Name == "LiveBreakerPolePickup" then
+          
+          if Break:FindFirstChild("RaelHubDestaque") and Break:FindFirstChild("RaelHubIcon") then
+        
+            Break:FindFirstChild("RaelHubDestaque"):Destroy()
+            Break:FindFirstChild("RaelHubIcon"):Destroy()
+         
+          end
+          
+        end
+        
+      end
+      
+    end
+    
+  end
+
 end
 
 return RaelHubEspPDOORS
