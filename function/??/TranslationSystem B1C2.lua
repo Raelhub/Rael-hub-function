@@ -175,9 +175,9 @@ function TranslationModule:GetTabs()
   Jogador.button = RaelHubTradutor.Tradutor("Teleport to player")
   
   Mostrar.name = "Esp"
-  Mostrar.toggle1 = "Esp " .. RaelHubTradutor.Tradutor(" monster ")
-  Mostrar.toggle2 = "Esp " .. RaelHubTradutor.Tradutor(" players ")
-  Mostrar.toggle3 = "Esp " .. RaelHubTradutor.Tradutor(" objects ")
+  Mostrar.toggle1 = "Esp " .. RaelHubTradutor.Tradutor(" object ")
+  Mostrar.toggle2 = "Esp " .. RaelHubTradutor.Tradutor(" monster ")
+  Mostrar.toggle3 = "Esp " .. RaelHubTradutor.Tradutor(" players ")
   
   Creditos.name = RaelHubTradutor.Tradutor("Credits")
   Creditos.section = RaelHubTradutor.Tradutor("Script creator")
