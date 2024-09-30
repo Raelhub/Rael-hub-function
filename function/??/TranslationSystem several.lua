@@ -126,16 +126,6 @@ function TranslationModule:GetTabs()
     button = ""
   }
 
-  local Jigoku = {
-    name = "",
-    section = "",
-    button = "",
-    title = "",
-    content = "",
-    ConfirmButton = "",
-    CancelButton = "",
-    NotifyContent = ""
-  }
   local Jogador = {
     name = "",
     section1 = "",
@@ -185,7 +175,7 @@ function TranslationModule:GetTabs()
   Creditos.ContentNotify = RaelHubTradutor.Tradutor("The script has been copied to the desktop")
   screenGui:Destroy()
   
-  return Main, Jigoku, Jogador, Mostrar, Creditos
+  return Main, Jogador, Mostrar, Creditos
   
 end
 
