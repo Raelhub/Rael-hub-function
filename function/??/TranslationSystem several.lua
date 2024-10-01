@@ -142,12 +142,7 @@ function TranslationModule:GetTabs()
     toggle2 = "",
     toggle3 = ""
   }
-  local EspNames = {
-    section1 = {
-      name1 = "",
-      name2 = ""
-    }
-  }
+
   local Creditos = {
     name = "",
     section = "",
@@ -174,16 +169,13 @@ function TranslationModule:GetTabs()
   Mostrar.toggle2 = "Esp " .. RaelHubTradutor.Tradutor(" monster ")
   Mostrar.toggle3 = "Esp " .. RaelHubTradutor.Tradutor(" players ")
   
-  EspNames.section1.name1 = RaelHubTradutor.Tradutor("Key ")
-  EspNames.section1.name2 = RaelHubTradutor.Tradutor("Pé de cabra")
-  
   Creditos.name = RaelHubTradutor.Tradutor("Credits")
   Creditos.section = RaelHubTradutor.Tradutor("Script creator")
   Creditos.descricao = RaelHubTradutor.Tradutor("Join my YouTube channel and Discord for new updates")
   Creditos.ContentNotify = RaelHubTradutor.Tradutor("The script has been copied to the desktop")
   screenGui:Destroy()
   
-  return Main, Jogador, Mostrar, EspNames, Creditos
+  return Main, Jogador, Mostrar, Creditos
   
 end
 
