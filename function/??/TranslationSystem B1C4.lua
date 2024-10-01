@@ -146,6 +146,9 @@ function TranslationModule:GetTabs()
     section1 = {
       name1 = "",
       name2 = ""
+    },
+    section3 = {
+      name1 = ""
     }
   }
   local Creditos = {
@@ -176,6 +179,7 @@ function TranslationModule:GetTabs()
   
   EspNames.section1.name1 = RaelHubTradutor.Tradutor("Key ")
   EspNames.section1.name2 = RaelHubTradutor.Tradutor("Pé de cabra")
+  EspNames.section3.name1 = RaelHubTradutor.Tradutor("Armadura")
   
   Creditos.name = RaelHubTradutor.Tradutor("Credits")
   Creditos.section = RaelHubTradutor.Tradutor("Script creator")
