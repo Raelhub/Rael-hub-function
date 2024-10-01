@@ -123,9 +123,19 @@ function TranslationModule:GetTabs()
     name = "",
     section1 = "",
     section2 = "",
-    button = ""
+    section3 = "",
+    section4 = "",
+    button = "",
+    button1 = ""
   }
-
+  local saigomo = {
+    section1 = "",
+    section2 = "",
+    section3 = "",
+    button1 = "",
+    button2 = "",
+    button3 = ""
+  }
   local Jogador = {
     name = "",
     section1 = "",
@@ -162,7 +172,17 @@ function TranslationModule:GetTabs()
   Main.section1 = RaelHubTradutor.Tradutor("Auto win part 1")
   Main.section2 = RaelHubTradutor.Tradutor("Auto win part 2")
   Main.section3 = RaelHubTradutor.Tradutor("Auto win part 3")
+  Main.section4 = RaelHubTradutor.Tradutor("Auto win part 4")
   Main.button = RaelHubTradutor.Tradutor("Auto win")
+  Main.button1 = RaelHubTradutor.Tradutor("Auto atacar os corações")
+  
+  saigomo.section1 = RaelHubTradutor.Tradutor("Auto matar a saigomo simples")
+  saigomo.section2 = RaelHubTradutor.Tradutor("Auto matar a saigomo completo [Beta]")
+  saigomo.section3 = RaelHubTradutor.Tradutor("Auto clicar na tela")
+  saigomo.button1 = RaelHubTradutor.Tradutor("Auto saigomo simples")
+  saigomo.button2 = RaelHubTradutor.Tradutor("Auto saigomo completo")
+  saigomo.button3 = RaelHubTradutor.Tradutor("Auto click")
+  
   
   Jogador.name = RaelHubTradutor.Tradutor("Player")
   Jogador.section1 = RaelHubTradutor.Tradutor("Teleport to players")
@@ -187,7 +207,7 @@ function TranslationModule:GetTabs()
   Creditos.ContentNotify = RaelHubTradutor.Tradutor("The script has been copied to the desktop")
   screenGui:Destroy()
   
-  return Main, Jogador, Mostrar, EspNames, Creditos
+  return Main, saigomo, Jogador, Mostrar, EspNames, Creditos
   
 end
 
