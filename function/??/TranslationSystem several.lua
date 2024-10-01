@@ -153,7 +153,7 @@ function TranslationModule:GetTabs()
   Main.name = RaelHubTradutor.Tradutor("Main")
   Main.section1 = RaelHubTradutor.Tradutor("Auto win part 1")
   Main.section2 = RaelHubTradutor.Tradutor("Auto win part 2")
-  Main.section2 = RaelHubTradutor.Tradutor("Auto win part 3")
+  Main.section3 = RaelHubTradutor.Tradutor("Auto win part 3")
   Main.button = RaelHubTradutor.Tradutor("Auto win")
   
   Jogador.name = RaelHubTradutor.Tradutor("Player")
