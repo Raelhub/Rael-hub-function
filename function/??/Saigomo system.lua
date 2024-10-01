@@ -1,8 +1,10 @@
+local RaelHubSaigomo = {}
+
 local RunService = game:GetService("RunService")
 local heightOffset = 27
 
 
-local function teleportPlayerToBoss(player, bossPart)
+function teleportPlayerToBoss(player, bossPart)
     local character = player.Character
     if character then
         local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
@@ -13,7 +15,7 @@ local function teleportPlayerToBoss(player, bossPart)
     end
 end
 
-local function onHeartbeat()
+function RaelHubSaigomo.onHeartbeat()
   local Players = game:GetService("Players")
   local Workspace = game:GetService("Workspace")
   
@@ -30,3 +32,5 @@ local function onHeartbeat()
   end
 
 end
+
+return RaelHubSaigomo
