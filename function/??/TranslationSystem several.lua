@@ -117,68 +117,108 @@ spawn(function()
 end)
 
 local TranslationModule = {}
+local configFolder = "RaelHub book1" -- Pasta onde os arquivos de tradução serão salvos
 
-function TranslationModule:GetTabs()
-  local Main = {
-    name = "",
-    section1 = "",
-    section2 = "",
-    button = ""
-  }
+-- Serviço de localização do Roblox
+local LocalizationService = game:GetService("LocalizationService")
 
-  local Jogador = {
-    name = "",
-    section1 = "",
-    section2 = "",
-    section3 = "",
-    dropdowntext = "",
-    slidetext = "",
-    button = ""
-  }
-  
-  local Mostrar = {
-    name = "",
-    toggle1 = "",
-    toggle2 = "",
-    toggle3 = ""
-  }
-
-  local Creditos = {
-    name = "",
-    section = "",
-    descricao = "",
-    ContentNotify = ""
-  }
-  
-  Main.name = RaelHubTradutor.Tradutor("Main")
-  Main.section1 = RaelHubTradutor.Tradutor("Auto win part 1")
-  Main.section2 = RaelHubTradutor.Tradutor("Auto win part 2")
-  Main.section3 = RaelHubTradutor.Tradutor("Auto win part 3")
-  Main.button = RaelHubTradutor.Tradutor("Auto win")
-  
-  Jogador.name = RaelHubTradutor.Tradutor("Player")
-  Jogador.section1 = RaelHubTradutor.Tradutor("Teleport to players")
-  Jogador.section2 = RaelHubTradutor.Tradutor("Player Speed")
-  Jogador.section3 = RaelHubTradutor.Tradutor("Light up the map")
-  Jogador.dropdowntext = RaelHubTradutor.Tradutor("Players: ")
-  Jogador.slidetext = RaelHubTradutor.Tradutor("Speed: ")
-  Jogador.button = RaelHubTradutor.Tradutor("Teleport to player")
-  
-  Mostrar.name = "Esp"
-  Mostrar.toggle1 = "Esp " .. RaelHubTradutor.Tradutor(" object ")
-  Mostrar.toggle2 = "Esp " .. RaelHubTradutor.Tradutor(" monster ")
-  Mostrar.toggle3 = "Esp " .. RaelHubTradutor.Tradutor(" players ")
-  
-  Creditos.name = RaelHubTradutor.Tradutor("Credits")
-  Creditos.section = RaelHubTradutor.Tradutor("Script creator")
-  Creditos.descricao = RaelHubTradutor.Tradutor("Join my YouTube channel and Discord for new updates")
-  Creditos.ContentNotify = RaelHubTradutor.Tradutor("The script has been copied to the desktop")
-  screenGui:Destroy()
-  
-  return Main, Jogador, Mostrar, Creditos
-  
+-- Função para detectar o idioma do jogador usando LocalizationService
+local function GetPlayerLanguage()
+    local result, code = pcall(function()
+        return LocalizationService.RobloxLocaleId
+    end)
+    if result then
+        return code:sub(1, 2) -- Retorna o código do idioma, como "en", "pt", etc.
+    else
+        return "en" -- Se houver erro, usa o inglês como padrão
+    end
 end
 
+-- Função para salvar as traduções com base no idioma
+local function SaveConfig(configTable, language)
+    local fileName = configFolder .. "/" .. language .. ".json"
+    local json = game:GetService("HttpService"):JSONEncode(configTable)
+    writefile(fileName, json)
+end
 
+-- Função para carregar as traduções de um arquivo com base no idioma
+local function LoadConfig(language)
+    local fileName = configFolder .. "/" .. language .. ".json"
+    if isfile(fileName) then
+        local json = readfile(fileName)
+        return game:GetService("HttpService"):JSONDecode(json)
+    else
+        return nil -- Retorna nil se o arquivo não existir
+    end
+end
+
+-- Função principal para carregar ou traduzir
+function TranslationModule:GetTabs()
+    -- Verifica se a pasta de traduções existe, se não, cria
+    if not isfolder(configFolder) then
+        makefolder(configFolder)
+    end
+
+    -- Detectar o idioma do jogador usando o LocalizationService
+    local currentLanguage = GetPlayerLanguage()
+
+    -- Carregar as traduções do idioma do jogador se já existirem
+    local savedConfig = LoadConfig(currentLanguage)
+
+    -- Se as traduções já existem para o idioma atual, carregar
+    if savedConfig then
+        wait(1)
+        screenGui:Destroy()
+        return savedConfig.Main, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
+    end
+
+    -- Se as traduções não existem, fazer a tradução e salvar para o idioma atual
+    local Main = {
+        name = RaelHubTradutor.Tradutor("Main", currentLanguage),
+        section1 = RaelHubTradutor.Tradutor("Auto win part 1", currentLanguage),
+        section2 = RaelHubTradutor.Tradutor("Auto win part 2", currentLanguage),
+        section3 = RaelHubTradutor.Tradutor("Auto win part 3", currentLanguage),
+        button = RaelHubTradutor.Tradutor("Auto win", currentLanguage)
+    }
+
+    local Jogador = {
+        name = RaelHubTradutor.Tradutor("Player", currentLanguage),
+        section1 = RaelHubTradutor.Tradutor("Teleport to players", currentLanguage),
+        section2 = RaelHubTradutor.Tradutor("Player Speed", currentLanguage),
+        section3 = RaelHubTradutor.Tradutor("Light up the map", currentLanguage),
+        dropdowntext = RaelHubTradutor.Tradutor("Players: ", currentLanguage),
+        slidetext = RaelHubTradutor.Tradutor("Speed: ", currentLanguage),
+        button = RaelHubTradutor.Tradutor("Teleport to player", currentLanguage)
+    }
+
+    local Mostrar = {
+        name = "Esp",
+        toggle1 = "Esp " .. RaelHubTradutor.Tradutor(" object ", currentLanguage),
+        toggle2 = "Esp " .. RaelHubTradutor.Tradutor(" monster ", currentLanguage),
+        toggle3 = "Esp " .. RaelHubTradutor.Tradutor(" players ", currentLanguage)
+    }
+
+    local Creditos = {
+        name = RaelHubTradutor.Tradutor("Credits", currentLanguage),
+        section = RaelHubTradutor.Tradutor("Script creator", currentLanguage),
+        descricao = RaelHubTradutor.Tradutor("Join my YouTube channel and Discord for new updates", currentLanguage),
+        ContentNotify = RaelHubTradutor.Tradutor("The script has been copied to the desktop", currentLanguage)
+    }
+
+    -- Salvar as traduções para o idioma do jogador
+    local updatedConfig = {
+        Main = Main,
+        saigomo = saigomo,
+        Jogador = Jogador,
+        Mostrar = Mostrar,
+        EspNames = EspNames,
+        Creditos = Creditos
+    }
+
+    SaveConfig(updatedConfig, currentLanguage)
+
+    screenGui:Destroy()
+    return Main, Jogador, Mostrar, Creditos
+end
 
 return TranslationModule
