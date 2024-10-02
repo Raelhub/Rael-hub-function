@@ -167,7 +167,7 @@ function TranslationModule:GetTabs()
 
     -- Se as traduções já existem para o idioma atual, carregar
     if savedConfig then
-        wait(3)
+        wait(1)
         screenGui:Destroy()
         return savedConfig.Main, savedConfig.saigomo, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.EspNames, savedConfig.Creditos
     end
