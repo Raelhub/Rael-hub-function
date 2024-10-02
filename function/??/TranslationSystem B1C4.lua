@@ -141,6 +141,7 @@ function TranslationModule:GetTabs()
 
   -- Se as traduções já existem, não precisa traduzir novamente
   if savedConfig then
+    screenGui:Destroy()
     return savedConfig.Main, savedConfig.saigomo, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.EspNames, savedConfig.Creditos
   end
 
