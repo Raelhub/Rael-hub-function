@@ -139,102 +139,69 @@ function TranslationModule:GetTabs()
   -- Carregar as traduções se já existirem
   local savedConfig = LoadConfig()
 
+  -- Se as traduções já existem, não precisa traduzir novamente
+  if savedConfig then
+    return savedConfig.Main, savedConfig.saigomo, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.EspNames, savedConfig.Creditos
+  end
+
+  -- Se as traduções não existem, fazer a tradução e salvar
   local Main = {
-    name = savedConfig and savedConfig.Main and savedConfig.Main.name or "",
-    section1 = savedConfig and savedConfig.Main and savedConfig.Main.section1 or "",
-    section2 = savedConfig and savedConfig.Main and savedConfig.Main.section2 or "",
-    section3 = savedConfig and savedConfig.Main and savedConfig.Main.section3 or "",
-    section4 = savedConfig and savedConfig.Main and savedConfig.Main.section4 or "",
-    button = savedConfig and savedConfig.Main and savedConfig.Main.button or "",
-    button1 = savedConfig and savedConfig.Main and savedConfig.Main.button1 or ""
+    name = RaelHubTradutor.Tradutor("Main"),
+    section1 = RaelHubTradutor.Tradutor("Auto win part 1"),
+    section2 = RaelHubTradutor.Tradutor("Auto win part 2"),
+    section3 = RaelHubTradutor.Tradutor("Auto win part 3"),
+    section4 = RaelHubTradutor.Tradutor("Auto matar todos os corações da saigomo"),
+    button = RaelHubTradutor.Tradutor("Auto win"),
+    button1 = RaelHubTradutor.Tradutor("Auto matar saigomo")
   }
-  
+
   local saigomo = {
-    section1 = savedConfig and savedConfig.saigomo and savedConfig.saigomo.section1 or "",
-    section2 = savedConfig and savedConfig.saigomo and savedConfig.saigomo.section2 or "",
-    section3 = savedConfig and savedConfig.saigomo and savedConfig.saigomo.section3 or "",
-    button1 = savedConfig and savedConfig.saigomo and savedConfig.saigomo.button1 or "",
-    button2 = savedConfig and savedConfig.saigomo and savedConfig.saigomo.button2 or "",
-    button3 = savedConfig and savedConfig.saigomo and savedConfig.saigomo.button3 or ""
+    section1 = RaelHubTradutor.Tradutor("Auto matar a saigomo simples"),
+    section2 = RaelHubTradutor.Tradutor("Auto matar a saigomo completo [Beta]"),
+    section3 = RaelHubTradutor.Tradutor("Auto clicar na tela"),
+    button1 = RaelHubTradutor.Tradutor("Auto saigomo simples"),
+    button2 = RaelHubTradutor.Tradutor("Auto saigomo completo"),
+    button3 = RaelHubTradutor.Tradutor("Auto click")
   }
-  
+
   local Jogador = {
-    name = savedConfig and savedConfig.Jogador and savedConfig.Jogador.name or "",
-    section1 = savedConfig and savedConfig.Jogador and savedConfig.Jogador.section1 or "",
-    section2 = savedConfig and savedConfig.Jogador and savedConfig.Jogador.section2 or "",
-    section3 = savedConfig and savedConfig.Jogador and savedConfig.Jogador.section3 or "",
-    dropdowntext = savedConfig and savedConfig.Jogador and savedConfig.Jogador.dropdowntext or "",
-    slidetext = savedConfig and savedConfig.Jogador and savedConfig.Jogador.slidetext or "",
-    button = savedConfig and savedConfig.Jogador and savedConfig.Jogador.button or ""
+    name = RaelHubTradutor.Tradutor("Player"),
+    section1 = RaelHubTradutor.Tradutor("Teleport to players"),
+    section2 = RaelHubTradutor.Tradutor("Player Speed"),
+    section3 = RaelHubTradutor.Tradutor("Light up the map"),
+    dropdowntext = RaelHubTradutor.Tradutor("Players: "),
+    slidetext = RaelHubTradutor.Tradutor("Speed: "),
+    button = RaelHubTradutor.Tradutor("Teleport to player")
   }
-  
+
   local Mostrar = {
-    name = savedConfig and savedConfig.Mostrar and savedConfig.Mostrar.name or "",
-    toggle1 = savedConfig and savedConfig.Mostrar and savedConfig.Mostrar.toggle1 or "",
-    toggle2 = savedConfig and savedConfig.Mostrar and savedConfig.Mostrar.toggle2 or "",
-    toggle3 = savedConfig and savedConfig.Mostrar and savedConfig.Mostrar.toggle3 or ""
+    name = "Esp",
+    toggle1 = "Esp " .. RaelHubTradutor.Tradutor(" object "),
+    toggle2 = "Esp " .. RaelHubTradutor.Tradutor(" monster "),
+    toggle3 = "Esp " .. RaelHubTradutor.Tradutor(" players ")
   }
-  
+
   local EspNames = {
     section1 = {
-      name1 = savedConfig and savedConfig.EspNames and savedConfig.EspNames.section1.name1 or "",
-      name2 = savedConfig and savedConfig.EspNames and savedConfig.EspNames.section1.name2 or ""
+      name1 = RaelHubTradutor.Tradutor("Key "),
+      name2 = RaelHubTradutor.Tradutor("Pé de cabra")
     },
     section3 = {
-      name1 = savedConfig and savedConfig.EspNames and savedConfig.EspNames.section3.name1 or ""
+      name1 = RaelHubTradutor.Tradutor("Armadura")
     },
     section4 = {
-      name1 = savedConfig and savedConfig.EspNames and savedConfig.EspNames.section4.name1 or ""
+      name1 = RaelHubTradutor.Tradutor("Coração")
     }
   }
-  
+
   local Creditos = {
-    name = savedConfig and savedConfig.Creditos and savedConfig.Creditos.name or "",
-    section = savedConfig and savedConfig.Creditos and savedConfig.Creditos.section or "",
-    descricao = savedConfig and savedConfig.Creditos and savedConfig.Creditos.descricao or "",
-    ContentNotify = savedConfig and savedConfig.Creditos and savedConfig.Creditos.ContentNotify or ""
+    name = RaelHubTradutor.Tradutor("Credits"),
+    section = RaelHubTradutor.Tradutor("Script creator"),
+    descricao = RaelHubTradutor.Tradutor("Join my YouTube channel and Discord for new updates"),
+    ContentNotify = RaelHubTradutor.Tradutor("The script has been copied to the desktop")
   }
 
-  -- Atualiza as strings
-  Main.name = RaelHubTradutor.Tradutor("Main")
-  Main.section1 = RaelHubTradutor.Tradutor("Auto win part 1")
-  Main.section2 = RaelHubTradutor.Tradutor("Auto win part 2")
-  Main.section3 = RaelHubTradutor.Tradutor("Auto win part 3")
-  Main.section4 = RaelHubTradutor.Tradutor("Auto matar todos os corações da saigomo")
-  Main.button = RaelHubTradutor.Tradutor("Auto win")
-  Main.button1 = RaelHubTradutor.Tradutor("Auto matar saigomo")
-
-  saigomo.section1 = RaelHubTradutor.Tradutor("Auto matar a saigomo simples")
-  saigomo.section2 = RaelHubTradutor.Tradutor("Auto matar a saigomo completo [Beta]")
-  saigomo.section3 = RaelHubTradutor.Tradutor("Auto clicar na tela")
-  saigomo.button1 = RaelHubTradutor.Tradutor("Auto saigomo simples")
-  saigomo.button2 = RaelHubTradutor.Tradutor("Auto saigomo completo")
-  saigomo.button3 = RaelHubTradutor.Tradutor("Auto click")
-
-  Jogador.name = RaelHubTradutor.Tradutor("Player")
-  Jogador.section1 = RaelHubTradutor.Tradutor("Teleport to players")
-  Jogador.section2 = RaelHubTradutor.Tradutor("Player Speed")
-  Jogador.section3 = RaelHubTradutor.Tradutor("Light up the map")
-  Jogador.dropdowntext = RaelHubTradutor.Tradutor("Players: ")
-  Jogador.slidetext = RaelHubTradutor.Tradutor("Speed: ")
-  Jogador.button = RaelHubTradutor.Tradutor("Teleport to player")
-
-  Mostrar.name = "Esp"
-  Mostrar.toggle1 = "Esp " .. RaelHubTradutor.Tradutor(" object ")
-  Mostrar.toggle2 = "Esp " .. RaelHubTradutor.Tradutor(" monster ")
-  Mostrar.toggle3 = "Esp " .. RaelHubTradutor.Tradutor(" players ")
-
-  EspNames.section1.name1 = RaelHubTradutor.Tradutor("Key ")
-  EspNames.section1.name2 = RaelHubTradutor.Tradutor("Pé de cabra")
-  EspNames.section3.name1 = RaelHubTradutor.Tradutor("Armadura")
-  EspNames.section4.name1 = RaelHubTradutor.Tradutor("Coração")
-
-  Creditos.name = RaelHubTradutor.Tradutor("Credits")
-  Creditos.section = RaelHubTradutor.Tradutor("Script creator")
-  Creditos.descricao = RaelHubTradutor.Tradutor("Join my YouTube channel and Discord for new updates")
-  Creditos.ContentNotify = RaelHubTradutor.Tradutor("The script has been copied to the desktop")
-
-  -- Salvar as traduções atualizadas
+  -- Salvar as traduções após traduzir
   local updatedConfig = {
     Main = Main,
     saigomo = saigomo,
@@ -246,6 +213,7 @@ function TranslationModule:GetTabs()
 
   SaveConfig(updatedConfig)
 
+  -- Destrói a GUI original e retorna os valores traduzidos
   screenGui:Destroy()
   return Main, saigomo, Jogador, Mostrar, EspNames, Creditos
 end
