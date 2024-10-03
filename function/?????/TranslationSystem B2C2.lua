@@ -233,7 +233,7 @@ function TranslationModule:GetTabs()
       section3 = RaelHubTradutor.Tradutor("Auto fazer Globos oculares", currentLanguage),
       section4 = RaelHubTradutor.Tradutor("Auto fugir do Zuboshi", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Auto frango", currentLanguage),
-      button2 = RaelHubTradutor.Tradutor("Auto ") .. RaelHubTradutor.Tradutor("presunto"),
+      button2 = RaelHubTradutor.Tradutor("Auto ") .. RaelHubTradutor.Tradutor(" presunto"),
       button3 = RaelHubTradutor.Tradutor("Auto Globos oculares", currentLanguage),
       button4 = RaelHubTradutor.Tradutor("Auto escapar", currentLanguage)
     }
