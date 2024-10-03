@@ -182,10 +182,10 @@ function TranslationModule:GetTabs()
     }
 
     local Tab_ComedorCarne = {
-      name = RaelHubTradutor.Tradutor("Fase Comedores", currentLanguage),
-      section = RaelHubTradutor.Tradutor("Pular essa fase dos comedores", currentLanguage),
-      button1 = RaelHubTradutor.Tradutor("Pular comedores [Normal]", currentLanguage),
-      button2 = RaelHubTradutor.Tradutor("Pular comedores [Nightmare]", currentLanguage)
+      name = RaelHubTradutor.Tradutor("Fase jikininkis", currentLanguage),
+      section = RaelHubTradutor.Tradutor("Pular essa fase dos jikininkis", currentLanguage),
+      button1 = RaelHubTradutor.Tradutor("Pular jikininkis [Normal]", currentLanguage),
+      button2 = RaelHubTradutor.Tradutor("Pular jikininkis [Nightmare]", currentLanguage)
     }
 
     local Tab_Meat = {
