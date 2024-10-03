@@ -169,7 +169,7 @@ function TranslationModule:GetTabs()
     if savedConfig then
         wait(1)
         screenGui:Destroy()
-        return savedConfig.Tab_Oceano, savedConfig.Tab_ComedorCarne, savedConfig.Tab_Meat, savedConfig.Tab_esqueletos, savedConfig.Tab_Alavancas, savedConfig.Tab_Engima, savedConfig.Tab_Comida, savedConfig.Tab_Teiryu, savedConfig.Tab_Torre, savedConfig.Tab_Chihiro, savedConfig.Tab_Boss, savedConfig.Tab_Others, savedConfig.Tab_Credits
+        return savedConfig.Tab_Oceano, savedConfig.Tab_ComedorCarne, savedConfig.Tab_Meat, savedConfig.Tab_Esqueletos, savedConfig.Tab_Alavancas, savedConfig.Tab_Engima, savedConfig.Tab_Comida, savedConfig.Tab_Teiryu, savedConfig.Tab_Torre, savedConfig.Tab_Chihiro, savedConfig.Tab_Boss, savedConfig.Tab_Others, savedConfig.Tab_Credits
         
     end
 
@@ -297,7 +297,7 @@ function TranslationModule:GetTabs()
         Tab_Oceano = Tab_Oceano,
         Tab_ComedorCarne = Tab_ComedorCarne,
         Tab_Meat = Tab_Meat,
-        Tab_esqueletos = Tab_esqueletos,
+        Tab_Esqueletos = Tab_Esqueletos,
         Tab_Alavancas = Tab_Alavancas,
         Tab_Engima = Tab_Engima,
         Tab_Comida = Tab_Comida,
@@ -312,7 +312,7 @@ function TranslationModule:GetTabs()
     SaveConfig(updatedConfig, currentLanguage)
 
     screenGui:Destroy()
-    return Tab_Oceano, Tab_ComedorCarne, Tab_Meat, Tab_esqueletos, Tab_Alavancas, Tab_Engima, Tab_Comida, Tab_Teiryu, Tab_Torre, Tab_Chihiro, Tab_Boss, Tab_Others, Tab_Credits
+    return Tab_Oceano, Tab_ComedorCarne, Tab_Meat, Tab_Esqueletos, Tab_Alavancas, Tab_Engima, Tab_Comida, Tab_Teiryu, Tab_Torre, Tab_Chihiro, Tab_Boss, Tab_Others, Tab_Credits
 end
 
 return TranslationModule
