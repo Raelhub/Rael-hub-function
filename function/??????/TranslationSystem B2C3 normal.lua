@@ -258,7 +258,7 @@ function TranslationModule:GetTabs()
     }
 
     local Tab_Lama = {
-      name = RaelHubTradutor.Tradutor("Fase ", currentLanguage) .. RaelHubTradutor.Tradutor(" lama", currentLanguage),
+      name = RaelHubTradutor.Tradutor("Mud phase", currentLanguage),
       section = RaelHubTradutor.Tradutor("Finalizar essa fase", currentLanguage),
       button = RaelHubTradutor.Tradutor("Auto finalizar", currentLanguage)
     }
