@@ -173,7 +173,7 @@ function TranslationModule:GetTabs()
     end
     
     local Tab_cutscene = {
-      name = RaelHubTradutor.Tradutor("Pular Cutscene", currentLanguage),
+      name = RaelHubTradutor.Tradutor("Pular a Cutscene", currentLanguage),
       section = RaelHubTradutor.Tradutor("Pular a cutscene do Gozu e Mezu", currentLanguage),
       button = RaelHubTradutor.Tradutor("Pular Cutscene", currentLanguage)
     }
