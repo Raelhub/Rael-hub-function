@@ -173,7 +173,7 @@ function TranslationModule:GetTabs()
     end
     
     local Tab_cutscene = {
-      name = RaelHubTradutor.Tradutor("Pular a Cutscene", currentLanguage),
+      name = RaelHubTradutor.Tradutor("Skip the Cutscene", currentLanguage),
       section = RaelHubTradutor.Tradutor("Pular a cutscene do Gozu e Mezu", currentLanguage),
       button = RaelHubTradutor.Tradutor("Pular Cutscene", currentLanguage)
     }
@@ -202,7 +202,7 @@ function TranslationModule:GetTabs()
     }
 
     local Tab_DodoMeki = {
-      name = RaelHubTradutor.Tradutor("Fase DodoMeki", currentLanguage),
+      name = RaelHubTradutor.Tradutor("Fase ", currentLanguage) .. "DodoMeki",
       section1 = RaelHubTradutor.Tradutor("Mostrar a localização do DodoMeki", currentLanguage),
       section2 = RaelHubTradutor.Tradutor("Teleportar para os sinos", currentLanguage),
       section3 = RaelHubTradutor.Tradutor("Teleportar para a porta do puzzle", currentLanguage),
@@ -216,7 +216,7 @@ function TranslationModule:GetTabs()
     }
 
     for i = 1, 6 do
-      Tab_DodoMeki["SinoButton" .. i] = RaelHubTradutor.Tradutor("Sino " .. i, currentLanguage)
+      Tab_DodoMeki["SinoButton" .. i] = RaelHubTradutor.Tradutor("Sinos" .. i, currentLanguage)
     end
 
     local Tab_Enzuzai = {
@@ -233,7 +233,7 @@ function TranslationModule:GetTabs()
       section2 = RaelHubTradutor.Tradutor("Teleportar para o telhado", currentLanguage),
       section3 = RaelHubTradutor.Tradutor("Ficar imuni ao isamu", currentLanguage),
       section4 = RaelHubTradutor.Tradutor("Auto limpar o chão", currentLanguage),
-      button1 = RaelHubTradutor.Tradutor("Tp casa", currentLanguage),
+      button1 = RaelHubTradutor.Tradutor("Teleportar casa", currentLanguage),
       button2 = RaelHubTradutor.Tradutor("Teleporte telhado", currentLanguage),
       button3 = RaelHubTradutor.Tradutor("Imuni isamu", currentLanguage),
       button4 = RaelHubTradutor.Tradutor("Auto varrer", currentLanguage),
@@ -258,7 +258,7 @@ function TranslationModule:GetTabs()
     }
 
     local Tab_Lama = {
-      name = RaelHubTradutor.Tradutor("Fase lama", currentLanguage),
+      name = RaelHubTradutor.Tradutor("Fase ", currentLanguage) .. RaelHubTradutor.Tradutor("lama", currentLanguage),
       section = RaelHubTradutor.Tradutor("Finalizar essa fase", currentLanguage),
       button = RaelHubTradutor.Tradutor("Auto finalizar", currentLanguage)
     }
