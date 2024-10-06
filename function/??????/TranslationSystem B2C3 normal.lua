@@ -324,6 +324,7 @@ function TranslationModule:GetTabs()
       Tab_Lama = Tab_Lama,
       Tab_HouseYurei = Tab_HouseYurei,
       Tab_BossYurei = Tab_BossYurei,
+      Tab_FaseFinal = Tab_FaseFinal,
       Tab_Others = Tab_Others
     }
 
