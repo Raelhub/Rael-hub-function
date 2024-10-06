@@ -202,7 +202,7 @@ function TranslationModule:GetTabs()
     }
 
     local Tab_DodoMeki = {
-      name = RaelHubTradutor.Tradutor("Fase ", currentLanguage) .. "DodoMeki",
+      name = RaelHubTradutor.Tradutor("Fase ", currentLanguage) .. " DodoMeki",
       section1 = RaelHubTradutor.Tradutor("Mostrar a localização do DodoMeki", currentLanguage),
       section2 = RaelHubTradutor.Tradutor("Teleportar para os sinos", currentLanguage),
       section3 = RaelHubTradutor.Tradutor("Teleportar para a porta do puzzle", currentLanguage),
@@ -216,7 +216,7 @@ function TranslationModule:GetTabs()
     }
 
     for i = 1, 6 do
-      Tab_DodoMeki["SinoButton" .. i] = RaelHubTradutor.Tradutor("Sinos" .. i, currentLanguage)
+      Tab_DodoMeki["SinoButton" .. i] = RaelHubTradutor.Tradutor("Bell" .. i, currentLanguage)
     end
 
     local Tab_Enzuzai = {
@@ -258,7 +258,7 @@ function TranslationModule:GetTabs()
     }
 
     local Tab_Lama = {
-      name = RaelHubTradutor.Tradutor("Fase ", currentLanguage) .. RaelHubTradutor.Tradutor("lama", currentLanguage),
+      name = RaelHubTradutor.Tradutor("Fase ", currentLanguage) .. RaelHubTradutor.Tradutor(" lama", currentLanguage),
       section = RaelHubTradutor.Tradutor("Finalizar essa fase", currentLanguage),
       button = RaelHubTradutor.Tradutor("Auto finalizar", currentLanguage)
     }
