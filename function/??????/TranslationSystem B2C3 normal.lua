@@ -209,7 +209,7 @@ function TranslationModule:GetTabs()
       section4 = RaelHubTradutor.Tradutor("Escapa do Dodomeki", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Esp DodoMeki", currentLanguage),
       button2 = RaelHubTradutor.Tradutor("Teleportar para o Sino", currentLanguage),
-      button3 = RaelHubTradutor.Tradutor("Tp porta puzzle", currentLanguage),
+      button3 = RaelHubTradutor.Tradutor("Teleportar puzzle", currentLanguage),
       button4 = RaelHubTradutor.Tradutor("Fugir do DodoMeki", currentLanguage),
       
       BellDropdownName = RaelHubTradutor.Tradutor("Sinos", currentLanguage),
@@ -223,7 +223,7 @@ function TranslationModule:GetTabs()
       name = RaelHubTradutor.Tradutor("Fase do Enzukai", currentLanguage),
       section1 = RaelHubTradutor.Tradutor("Ativar o puzzle do Enzukai", currentLanguage),
       section2 = RaelHubTradutor.Tradutor("Clicar no Enzukai automaticamente", currentLanguage),
-      button1 = RaelHubTradutor.Tradutor("Ativar   puzzle", currentLanguage),
+      button1 = RaelHubTradutor.Tradutor("Ativar puzzle", currentLanguage),
       button2 = RaelHubTradutor.Tradutor("Imuni Enzukai", currentLanguage)
     }
 
@@ -292,7 +292,9 @@ function TranslationModule:GetTabs()
     local Tab_FaseFinal = {
       name = RaelHubTradutor.Tradutor("Fase Final", currentLanguage),
       section1 = RaelHubTradutor.Tradutor("Executar a cutscene do Shinigami", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor("Auto passar do Shinigami", currentLanguage)
+      section2 = RaelHubTradutor.Tradutor("Auto passar do Shinigami", currentLanguage),
+      button1 = RaelHubTradutor.Tradutor("Execute cutscene", currentLanguage),
+      button2 = RaelHubTradutor.Tradutor("Escape Shinigami", currentLanguage)
     }
     
     local Tab_Others = {
