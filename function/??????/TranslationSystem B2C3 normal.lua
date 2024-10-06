@@ -216,7 +216,7 @@ function TranslationModule:GetTabs()
     }
 
     for i = 1, 6 do
-      Tab_DodoMeki["SinoButton" .. i] = RaelHubTradutor.Tradutor("Bell" .. i, currentLanguage)
+      Tab_DodoMeki["SinoButton" .. i] = RaelHubTradutor.Tradutor("Bell " .. i, currentLanguage)
     end
 
     local Tab_Enzuzai = {
