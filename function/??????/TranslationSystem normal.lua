@@ -287,18 +287,7 @@ function TranslationModule:GetTabs()
       Tab_FaseFinal.button1 = "Executar cutscene"
       Tab_FaseFinal.button2 = "Fugir do Shinigami"
       
-      Tab_Others.name = "Outros"
-      Tab_Others.section1 = "Aumentar o fps"
-      Tab_Others.section2 = "Esp"
-      Tab_Others.section3 = "Auto coletar moedas"
-      Tab_Others.section4 = "Atravessar todas as portas"
-      Tab_Others.section5 = "ilumina ao seu redor"
-      Tab_Others.button1 = "Fps Boost"
-      Tab_Others.button2 = "Esp player"
-      Tab_Others.button3 = "Esp moedas"
-      Tab_Others.button4 = "Auto coletar moedas"
-      Tab_Others.button5 = "No clip Portas"
-      Tab_Others.button6 = "FullBright"
+      
       
       Tab_Credit.name = "Créditos"
       Tab_Credit.section1 = "Criador do Script e head programmer"
