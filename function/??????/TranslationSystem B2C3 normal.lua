@@ -268,9 +268,11 @@ function TranslationModule:GetTabs()
       section1 = RaelHubTradutor.Tradutor("Mostrar todas as estátuas malignas", currentLanguage),
       section2 = RaelHubTradutor.Tradutor("Mostrar a localização das casas", currentLanguage),
       section3 = RaelHubTradutor.Tradutor("Teleportar para as casas", currentLanguage),
+      section4 = RaelHubTradutor.Tradutor("Traduiz legenda da yurei casa", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Esp estátuas", currentLanguage),
       button2 = RaelHubTradutor.Tradutor("Esp casas", currentLanguage),
       button3 = RaelHubTradutor.Tradutor("Teleportar para o Casa", currentLanguage),
+      button4 = RaelHubTradutor.Tradutor("Auto traduzir", currentLanguage),
       HouseDropdownName = RaelHubTradutor.Tradutor("Casas", currentLanguage),
     }
 
