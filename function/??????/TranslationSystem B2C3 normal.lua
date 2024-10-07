@@ -169,8 +169,14 @@ function TranslationModule:GetTabs()
     if savedConfig then
         wait(1)
         screenGui:Destroy()
-        return savedConfig.Tab_cutscene, savedConfig.Tab_GiveHeart, savedConfig.Tab_Mapmaze, savedConfig.Tab_DodoMeki, savedConfig.Tab_Enzuzai, savedConfig.Tab_HouseUchiumi, savedConfig.Tab_Train, savedConfig.Tab_larvas, savedConfig.Tab_Lama, savedConfig.Tab_HouseYurei, savedConfig.Tab_BossYurei, savedConfig.Tab_FaseFinal, savedConfig.Tab_Others
+        return savedConfig.Tab_Yurei, savedConfig.Tab_cutscene, savedConfig.Tab_GiveHeart, savedConfig.Tab_Mapmaze, savedConfig.Tab_DodoMeki, savedConfig.Tab_Enzuzai, savedConfig.Tab_HouseUchiumi, savedConfig.Tab_Train, savedConfig.Tab_larvas, savedConfig.Tab_Lama, savedConfig.Tab_HouseYurei, savedConfig.Tab_BossYurei, savedConfig.Tab_FaseFinal, savedConfig.Tab_Others
     end
+    
+    local Tab_Yurei = {
+      name = RaelHubTradutor.Tradutor("Auto yurei", currentLanguage),
+      section = RaelHubTradutor.Tradutor("Auto ir para a casa da yurei", currentLanguage),
+      button = RaelHubTradutor.Tradutor("Auto yurei casa", currentLanguage)
+    }
     
     local Tab_cutscene = {
       name = RaelHubTradutor.Tradutor("Skip the Cutscene", currentLanguage),
@@ -317,6 +323,7 @@ function TranslationModule:GetTabs()
     }
     
     local updatedConfig = {
+      Tab_Yurei = Tab_Yurei,
       Tab_cutscene = Tab_cutscene,
       Tab_GiveHeart = Tab_GiveHeart,
       Tab_Mapmaze = Tab_Mapmaze,
@@ -335,7 +342,7 @@ function TranslationModule:GetTabs()
     SaveConfig(updatedConfig, currentLanguage)
 
     screenGui:Destroy()
-    return Tab_cutscene, Tab_GiveHeart, Tab_Mapmaze, Tab_DodoMeki, Tab_Enzuzai, Tab_HouseUchiumi, Tab_Train, Tab_larvas, Tab_Lama, Tab_HouseYurei, Tab_BossYurei, Tab_FaseFinal, Tab_Others
+    return Tab_Yurei, Tab_cutscene, Tab_GiveHeart, Tab_Mapmaze, Tab_DodoMeki, Tab_Enzuzai, Tab_HouseUchiumi, Tab_Train, Tab_larvas, Tab_Lama, Tab_HouseYurei, Tab_BossYurei, Tab_FaseFinal, Tab_Others
 end
 
 return TranslationModule
