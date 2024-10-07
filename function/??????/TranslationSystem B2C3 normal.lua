@@ -214,9 +214,11 @@ function TranslationModule:GetTabs()
       
       BellDropdownName = RaelHubTradutor.Tradutor("Sinos", currentLanguage),
     }
-
+    
+    local SinoText = RaelHubTradutor.Tradutor("Bell ", currentLanguage)
+    
     for i = 1, 6 do
-      Tab_DodoMeki["SinoButton" .. i] = RaelHubTradutor.Tradutor("Bell " .. i, currentLanguage)
+      Tab_DodoMeki["SinoButton" .. i] = SinoText .. i
     end
 
     local Tab_Enzuzai = {
