@@ -3,6 +3,61 @@ local RaelHubTradutor = loadstring(game:HttpGet("https://raw.githubusercontent.c
 local player = game.Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
+-- Função para fazer o fade in
+local function fadeInText(duration, object)
+    local increment = 0.05
+    local step = increment / duration
+    for i = 0, 1, step do
+        object.TextTransparency = 1 - i
+        wait(increment)
+    end
+end
+
+-- Função para fazer o fade out
+local function fadeOutText(duration, object)
+    local increment = 0.05
+    local step = increment / duration
+    for i = 0, 1, step do
+        object.TextTransparency = i
+        wait(increment)
+    end
+end
+
+-- Função para fade in da imagem
+local function fadeInImage(duration, object)
+  local increment = 0.05
+  local step = increment / duration
+  task.spawn(function()
+    for i = 0, 1, step do
+      object.ImageTransparency = 1 - i
+      wait(increment)
+    end
+  end)
+end
+
+-- Função para fade out da imagem
+local function fadeOutImage(duration, object)
+  local increment = 0.05
+  local step = increment / duration
+  for i = 0, 1, step do
+    object.ImageTransparency = i
+    wait(increment)
+  end
+end
+
+-- Função para fazer o ícone girar
+local function rotateIcon(icon)
+    local rotation = 0
+    task.spawn(function()
+      while icon.Parent do
+        rotation = rotation + 30 -- Gira o ícone
+        icon.Rotation = rotation
+        task.wait(0.05) -- Velocidade da rotação
+      end
+      
+  end)
+end
+
 -- Cria a tela de carregamento
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = playerGui
@@ -31,55 +86,7 @@ title.TextScaled = true
 title.TextTransparency = 1 -- Começa invisível
 title.Parent = screenGui
 
--- Função para fazer o fade in
-local function fadeInText(duration, object)
-    local increment = 0.05
-    local step = increment / duration
-    for i = 0, 1, step do
-        object.TextTransparency = 1 - i
-        wait(increment)
-    end
-end
-
--- Função para fazer o fade out
-local function fadeOutText(duration, object)
-    local increment = 0.05
-    local step = increment / duration
-    for i = 0, 1, step do
-        object.TextTransparency = i
-        wait(increment)
-    end
-end
-
-local function fadeInImage(duration, object)
-  local increment = 0.05
-  local step = increment / duration
-  task.spawn(function()
-    for i = 0, 1, step do
-      object.ImageTransparency = 1 - i
-      wait(increment)
-    end
-  end)
-end
-
-local function fadeOutImage(duration, object)
-  local increment = 0.05
-  local step = increment / duration
-  for i = 0, 1, step do
-    object.ImageTransparency = i
-    wait(increment)
-  end
-end
-
--- Função para fazer o ícone girar
-local function rotateIcon(icon)
-    local rotation = 0
-    while icon.Parent do
-        rotation = rotation + 30 -- Gira o ícone
-        icon.Rotation = rotation
-        task.wait(0.05) -- Velocidade da rotação
-    end
-end
+fadeInText(0.5, title)
 
 -- Som ao iniciar (opcional)
 local startSound = Instance.new("Sound")
@@ -88,23 +95,21 @@ startSound.Volume = 1
 startSound.Parent = screenGui
 startSound:Play()
 
-fadeInText(0.5, title)
-
--- Ícone de carregamento giratório
 local loadingIcon = Instance.new("ImageLabel")
 loadingIcon.Size = UDim2.new(0.1, 0, 0.1, 0) -- Mantém a proporção
 loadingIcon.Position = UDim2.new(0.45, 0, 0.5, 0) -- Centralizado
-loadingIcon.Image = "rbxassetid://106296997072730" -- Ícone de loading
+loadingIcon.Image = "rbxassetid://106296997072730"
+loadingIcon.ImageTransparency = 0
 loadingIcon.BackgroundTransparency = 1
 loadingIcon.ScaleType = Enum.ScaleType.Fit -- Ajuste para manter a proporção
 loadingIcon.Parent = screenGui
-
 fadeInImage(0.5, loadingIcon)
 
--- Inicia a rotação do ícone de carregamento
 spawn(function()
     rotateIcon(loadingIcon)
 end)
+
+fadeInImage(0.5, loadingIcon)
 
 local TranslationModule = {}
 local configFolder = "RaelHub B2C3" -- Pasta onde os arquivos de tradução serão salvos
