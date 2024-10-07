@@ -16,6 +16,8 @@ imageLabel.BackgroundTransparency = 1
 imageLabel.ScaleType = Enum.ScaleType.Stretch
 imageLabel.Parent = screenGui
 
+fadeInImage(0.5, imageLabel)
+
 -- Cria o TextLabel
 local title = Instance.new("TextLabel")
 title.Size = UDim2.new(0.6, 0, 0.1, 0)
@@ -28,10 +30,6 @@ title.Font = Enum.Font.ArialBold
 title.TextScaled = true
 title.TextTransparency = 1 -- Começa invisível
 title.Parent = screenGui
-
-fadeInText(0.5, title)
-
-
 
 -- Função para fazer o fade in
 local function fadeInText(duration, object)
@@ -64,7 +62,6 @@ local function fadeInImage(duration, object)
   end)
 end
 
-
 local function fadeOutImage(duration, object)
   local increment = 0.05
   local step = increment / duration
@@ -91,7 +88,7 @@ startSound.Volume = 1
 startSound.Parent = screenGui
 startSound:Play()
 
-fadeOutText(0.5, title)
+fadeInText(0.5, title)
 
 -- Ícone de carregamento giratório
 local loadingIcon = Instance.new("ImageLabel")
