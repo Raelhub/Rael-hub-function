@@ -19,15 +19,17 @@ imageLabel.Parent = screenGui
 -- Cria o TextLabel
 local title = Instance.new("TextLabel")
 title.Size = UDim2.new(0.6, 0, 0.1, 0)
-title.AnchorPoint = Vector2.new(0.5, 0.5)
-title.Position = UDim2.new(0.5, 0, 0.5, 0) -- Posição centralizada
 title.BackgroundTransparency = 1
-title.Text = Text1
+title.Text = "RAEL HUB"
+title.AnchorPoint = Vector2.new(0, 0)
+title.Position = UDim2.new(0.2, 0, 0.35, 0)
 title.TextColor3 = Color3.fromRGB(16, 235, 138) -- Cor do texto
 title.Font = Enum.Font.ArialBold
 title.TextScaled = true
 title.TextTransparency = 1 -- Começa invisível
 title.Parent = screenGui
+
+fadeInText(0.5, title)
 
 
 
@@ -89,11 +91,7 @@ startSound.Volume = 1
 startSound.Parent = screenGui
 startSound:Play()
 
-fadeOutText(0.5, title) -- Faz o texto desaparecer
-title.Text = "RAEL HUB"
-title.AnchorPoint = Vector2.new(0, 0)
-title.Position = UDim2.new(0.2, 0, 0.35, 0)
-fadeInText(0.5, title)
+fadeOutText(0.5, title)
 
 -- Ícone de carregamento giratório
 local loadingIcon = Instance.new("ImageLabel")
