@@ -1,7 +1,5 @@
 local RaelHubTradutor = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/refs/heads/main/RaelHubTranslatorSystem/script.lua"))()
 
-local Text1 = RaelHubTradutor.Tradutor("OBRIGADO POR USAR RAEL HUB")
-
 local player = game.Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
@@ -91,9 +89,6 @@ startSound.Volume = 1
 startSound.Parent = screenGui
 startSound:Play()
 
--- Exemplo de uso
-fadeInText(0.5, title) -- Faz o texto aparecer
-wait(2)
 fadeOutText(0.5, title) -- Faz o texto desaparecer
 title.Text = "RAEL HUB"
 title.AnchorPoint = Vector2.new(0, 0)
