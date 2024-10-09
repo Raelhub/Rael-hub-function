@@ -170,7 +170,7 @@ function TranslationModule:GetTabs()
         wait(1)
         screenGui:Destroy()
         
-        return savedConfig.Tab_Talk_elf, savedConfig.Tab_Fix_sledding, savedConfig.Tab_Collect_toys, savedConfig.Tab_Get_key, savedConfig.Tab_Esp, savedConfig.Tab_Creditos
+        return savedConfig.Tab_Talk_elf, savedConfig.Tab_Fix_sledding, savedConfig.Tab_Collect_toys, savedConfig.Tab_Get_key, savedConfig.Tab_Player, savedConfig.Tab_Esp, savedConfig.Tab_Creditos
     end
 
     -- Se as traduções não existem, fazer a tradução e salvar para o idioma atual
@@ -199,6 +199,17 @@ function TranslationModule:GetTabs()
       button = RaelHubTradutor.Tradutor("Auto coletar", currentLanguage)
     }
     
+    local Tab_Player = {
+      name = RaelHubTradutor.Tradutor("Jogadores", currentLanguage),
+      section1 = RaelHubTradutor.Tradutor("Teleportar para os jogadores", currentLanguage),
+      section2 = RaelHubTradutor.Tradutor( "Velocidade do jogador", currentLanguage),
+      section3 = RaelHubTradutor.Tradutor( "Iluminar ao seu redor", currentLanguage),
+      AddDropdownName = RaelHubTradutor.Tradutor("Lista de jogadores: ", currentLanguage),
+      AddSliderName = RaelHubTradutor.Tradutor("Velocidade", currentLanguage),
+      button = RaelHubTradutor.Tradutor("Teleportar jogador", currentLanguage),
+      toggle = RaelHubTradutor.Tradutor("Fullbright", currentLanguage)
+    }
+   
     local Tab_Esp = {
       name = RaelHubTradutor.Tradutor("Esp", currentLanguage),
       section1 = RaelHubTradutor.Tradutor("Mostrar a localização dos jogadores", currentLanguage),
@@ -223,6 +234,7 @@ function TranslationModule:GetTabs()
         Tab_Fix_sledding = Tab_Fix_sledding,
         Tab_Collect_toys = Tab_Collect_toys,
         Tab_Get_key = Tab_Get_key,
+        Tab_Player = Tab_Player,
         Tab_Esp = Tab_Esp,
         Tab_Creditos = Tab_Creditos
     }
@@ -230,7 +242,7 @@ function TranslationModule:GetTabs()
     SaveConfig(updatedConfig, currentLanguage)
 
     screenGui:Destroy()
-    return Tab_Talk_elf, Tab_Fix_sledding, Tab_Collect_toys, Tab_Get_key, Tab_Esp, Tab_Creditos
+    return Tab_Talk_elf, Tab_Fix_sledding, Tab_Collect_toys, Tab_Get_key, Tab_Player, Tab_Esp, Tab_Creditos
 end
 
 return TranslationModule
