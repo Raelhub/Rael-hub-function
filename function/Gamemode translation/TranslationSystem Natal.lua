@@ -117,7 +117,7 @@ spawn(function()
 end)
 
 local TranslationModule = {}
-local configFolder = "RaelHub book1" -- Pasta onde os arquivos de tradução serão salvos
+local configFolder = "RaelHub Christmas trials" -- Pasta onde os arquivos de tradução serão salvos
 
 -- Serviço de localização do Roblox
 local LocalizationService = game:GetService("LocalizationService")
