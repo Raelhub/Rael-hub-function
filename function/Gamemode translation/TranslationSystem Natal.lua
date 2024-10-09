@@ -192,7 +192,13 @@ function TranslationModule:GetTabs()
       section = RaelHubTradutor.Tradutor("Auto coletar os brinquedos", currentLanguage),
       button = RaelHubTradutor.Tradutor("Auto coletar", currentLanguage)
     }
-
+    
+    local Tab_Get_key = {
+      name = RaelHubTradutor.Tradutor("Auto pegar chave", currentLanguage),
+      section = RaelHubTradutor.Tradutor("Auto coletar a chave", currentLanguage),
+      button = RaelHubTradutor.Tradutor("Auto coletar", currentLanguage)
+    }
+    
     local Tab_Esp = {
       name = RaelHubTradutor.Tradutor("Esp", currentLanguage),
       section1 = RaelHubTradutor.Tradutor("Mostrar a localização dos jogadores", currentLanguage),
