@@ -208,7 +208,8 @@ function TranslationModule:GetTabs()
       button1 = RaelHubTradutor.Tradutor("Esp jogadores", currentLanguage),
       button2 = RaelHubTradutor.Tradutor("Esp itens", currentLanguage),
       button3 = RaelHubTradutor.Tradutor("Esp brinquedos", currentLanguage),
-      button4 = RaelHubTradutor.Tradutor("Esp monstro", currentLanguage)
+      button4 = RaelHubTradutor.Tradutor("Esp monstro", currentLanguage),
+      ObjectName = RaelHubTradutor.Tradutor("Brinquedo", currentLanguage)
     }
     
     local Tab_Creditos = {
