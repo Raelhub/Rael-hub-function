@@ -202,7 +202,7 @@ function TranslationModule:GetTabs()
     local Tab_Esp = {
       name = RaelHubTradutor.Tradutor("Esp", currentLanguage),
       section1 = RaelHubTradutor.Tradutor("Mostrar a localização dos jogadores", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor("Mostrar itens para o trenó", currentLanguage),
+      section2 = RaelHubTradutor.Tradutor("Mostrar a localização dos itens para o trenó", currentLanguage),
       section3 = RaelHubTradutor.Tradutor("Mostrar a localização dos brinquedos", currentLanguage),
       section4 = RaelHubTradutor.Tradutor("Mostrar a localização dos monstro", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Esp jogadores", currentLanguage),
