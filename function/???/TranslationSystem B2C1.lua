@@ -238,7 +238,7 @@ function TranslationModule:GetTabs()
       section4 = RaelHubTradutor.Tradutor("Escapar de Tenomo", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Zona segura", currentLanguage),
       button2 = RaelHubTradutor.Tradutor("Esp monstros", currentLanguage),
-      button3 = RaelHubTradutor.Tradutor("Teleportar velas", currentLanguage),
+      button3 = RaelHubTradutor.Tradutor("Teleportar vela", currentLanguage),
       button4 = RaelHubTradutor.Tradutor("Auto escapar", currentLanguage),
       AddDropdownName = RaelHubTradutor.Tradutor("Velas", currentLanguage)
       
