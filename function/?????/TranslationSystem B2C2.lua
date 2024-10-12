@@ -169,7 +169,7 @@ function TranslationModule:GetTabs()
     if savedConfig then
         wait(1)
         screenGui:Destroy()
-        return savedConfig.Tab_Oceano, savedConfig.Tab_ComedorCarne, savedConfig.Tab_Meat, savedConfig.Tab_Esqueletos, savedConfig.Tab_Alavancas, savedConfig.Tab_Engima, savedConfig.Tab_Comida, savedConfig.Tab_Teiryu, savedConfig.Tab_Torre, savedConfig.Tab_Chihiro, savedConfig.Tab_Boss, savedConfig.Tab_Others, savedConfig.Tab_Credits
+        return savedConfig.Tab_Oceano, savedConfig.Tab_ComedorCarne, savedConfig.Tab_Meat, savedConfig.Tab_Esqueletos, savedConfig.Tab_Alavancas, savedConfig.Tab_Engima, savedConfig.Tab_Comida, savedConfig.Tab_Teiryu, savedConfig.Tab_Torre, savedConfig.Tab_Chihiro, savedConfig.Tab_Boss, savedConfig.Tab_Others, savedConfig.Tab_Creditos
         
     end
 
@@ -282,12 +282,9 @@ function TranslationModule:GetTabs()
       button3 = RaelHubTradutor.Tradutor("Auto coletar moedas", currentLanguage),
     }
 
-    local Tab_Credits = {
+    local Tab_Creditos = {
       name = RaelHubTradutor.Tradutor("Créditos", currentLanguage),
-      section = RaelHubTradutor.Tradutor("Criador do script e desenvolvedor", currentLanguage),
-      button = RaelHubTradutor.Tradutor("Rael | Laelmano24", currentLanguage),
-      NotifierName = RaelHubTradutor.Tradutor("Copiado!", currentLanguage),
-      NotifierContent = RaelHubTradutor.Tradutor("Nick do criador foi copiado na área de transferência.", currentLanguage),
+      paragrafo = RaelHubTradutor.Tradutor("Entre no meu canal do YouTube e no meu Discord para novas atualizações.", currentLanguage)
     }
     
     
@@ -306,13 +303,13 @@ function TranslationModule:GetTabs()
         Tab_Chihiro = Tab_Chihiro,
         Tab_Boss = Tab_Boss,
         Tab_Others = Tab_Others,
-        Tab_Credits = Tab_Credits
+        Tab_Creditos = Tab_Creditos
     }
 
     SaveConfig(updatedConfig, currentLanguage)
 
     screenGui:Destroy()
-    return Tab_Oceano, Tab_ComedorCarne, Tab_Meat, Tab_Esqueletos, Tab_Alavancas, Tab_Engima, Tab_Comida, Tab_Teiryu, Tab_Torre, Tab_Chihiro, Tab_Boss, Tab_Others, Tab_Credits
+    return Tab_Oceano, Tab_ComedorCarne, Tab_Meat, Tab_Esqueletos, Tab_Alavancas, Tab_Engima, Tab_Comida, Tab_Teiryu, Tab_Torre, Tab_Chihiro, Tab_Boss, Tab_Others, Tab_Creditos
 end
 
 return TranslationModule
