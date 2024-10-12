@@ -212,22 +212,22 @@ function TranslationModule:GetTabs()
       section5 = RaelHubTradutor.Tradutor("Teleportar para as casas", currentLanguage),
       section6 = RaelHubTradutor.Tradutor("Teleportar para a casa de acender as velas", currentLanguage),
       section7 = RaelHubTradutor.Tradutor("Auto acender as velas", currentLanguage),
-      section8 = RaelHubTradutor.Tradutor("Auto coletar o esfera", currentLanguage),
+      section8 = RaelHubTradutor.Tradutor("Auto coletar a esfera", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Falar", currentLanguage),
       button2 = RaelHubTradutor.Tradutor("Esp monstro", currentLanguage),
       button3 = RaelHubTradutor.Tradutor("Auto chave", currentLanguage),
-      button4 = RaelHubTradutor.Tradutor("Auto quadro", currentLanguage),
+      button4 = RaelHubTradutor.Tradutor("Auto coletar quadro", currentLanguage),
       button5 = RaelHubTradutor.Tradutor("Teleportar casa", currentLanguage),
       button6 = RaelHubTradutor.Tradutor("Teleportar casa de acender as velas", currentLanguage),
       button7 = RaelHubTradutor.Tradutor("Auto acender velas", currentLanguage),
-      button8 = RaelHubTradutor.Tradutor("Auto coletar orb", currentLanguage),
+      button8 = RaelHubTradutor.Tradutor("Auto coletar esfera", currentLanguage),
       description = RaelHubTradutor.Tradutor("Só funciona corretamente depois que você faz o puzzle da casa 3 e abri a porta da casa das velas", currentLanguage),
       addDropdown = RaelHubTradutor.Tradutor("Casas", currentLanguage)
     }
-    local VelaText = RaelHubTradutor.Tradutor("Casa ", currentLanguage)
+    local HouseText = RaelHubTradutor.Tradutor("Casa ", currentLanguage)
         
     for i = 1, 5 do
-      Tab_PhasesFrame["VelaButton" .. i] = VelaText .. i
+      Tab_PhasesFrame["HouseButton" .. i] = HouseText .. i
     end
 
     local Tab_VelaFase = {
