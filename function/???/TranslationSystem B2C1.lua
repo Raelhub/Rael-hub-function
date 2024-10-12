@@ -224,7 +224,7 @@ function TranslationModule:GetTabs()
       description = RaelHubTradutor.Tradutor("Só funciona corretamente depois que você faz o puzzle da casa 3 e abri a porta da casa das velas", currentLanguage),
       AddDropdownName = RaelHubTradutor.Tradutor("Houses", currentLanguage)
     }
-    local HouseText = RaelHubTradutor.Tradutor("Casa ", currentLanguage)
+    local HouseText = RaelHubTradutor.Tradutor("House ", currentLanguage)
         
     for i = 1, 5 do
       Tab_PhasesFrame["HouseButton" .. i] = HouseText .. i
@@ -244,7 +244,7 @@ function TranslationModule:GetTabs()
       
     }
     
-    local NavioVelaText = RaelHubTradutor.Tradutor("Vela ", currentLanguage)
+    local NavioVelaText = RaelHubTradutor.Tradutor("Candle ", currentLanguage)
             
     for i = 1, 9 do
       Tab_VelaFase["VelaButton" .. i] = NavioVelaText .. i
