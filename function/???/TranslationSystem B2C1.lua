@@ -251,7 +251,7 @@ function TranslationModule:GetTabs()
     local Tab_Other = {
       name = RaelHubTradutor.Tradutor("Outros", currentLanguage),
       section1 = RaelHubTradutor.Tradutor("Mostrar onde o jogador tá", currentLanguage),
-      button1 = RaelHubTradutor.Tradutor("Esp player (não funciona corretamente)", currentLanguage),
+      button1 = RaelHubTradutor.Tradutor("Esp player", currentLanguage),
       section2 = RaelHubTradutor.Tradutor("Iluminar ao redor", currentLanguage),
       button2 = RaelHubTradutor.Tradutor("FullBright", currentLanguage)
     }
