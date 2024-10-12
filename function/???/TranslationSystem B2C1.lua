@@ -182,7 +182,7 @@ function TranslationModule:GetTabs()
     local Tab_Sisters = {
       name = RaelHubTradutor.Tradutor("Fase das Irmãs", currentLanguage),
       section1 = RaelHubTradutor.Tradutor("Ler livro na sala", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor("Esp monstro rin", currentLanguage),
+      section2 = RaelHubTradutor.Tradutor("Esp monstro", currentLanguage),
       section3 = RaelHubTradutor.Tradutor("Auto coletar os ratos", currentLanguage),
       section4 = RaelHubTradutor.Tradutor("Auto escapar dessa sala", currentLanguage),
       section5 = RaelHubTradutor.Tradutor("Auto escapar de Rin", currentLanguage),
