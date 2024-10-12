@@ -222,7 +222,7 @@ function TranslationModule:GetTabs()
       button7 = RaelHubTradutor.Tradutor("Auto acender velas", currentLanguage),
       button8 = RaelHubTradutor.Tradutor("Auto coletar esfera", currentLanguage),
       description = RaelHubTradutor.Tradutor("Só funciona corretamente depois que você faz o puzzle da casa 3 e abri a porta da casa das velas", currentLanguage),
-      addDropdown = RaelHubTradutor.Tradutor("Casas", currentLanguage)
+      AddDropdownName = RaelHubTradutor.Tradutor("Casas", currentLanguage)
     }
     local HouseText = RaelHubTradutor.Tradutor("Casa ", currentLanguage)
         
