@@ -173,7 +173,19 @@ function TranslationModule:GetTabs()
   local Tab_Creditos = {
     name = RaelHubTradutor.Tradutor("Créditos", currentLanguage),
     paragrafo = RaelHubTradutor.Tradutor("Entre no meu canal do YouTube e no meu Discord para novas atualizações.", currentLanguage)
-   }
+  }
+   
+  local updatedConfig = {
+    Tab_TpBoxe = Tab_TpBoxe,
+    Tab_Cards = Tab_Cards,
+    Tab_RingMaster = Tab_RingMaster,
+    Tab_Player = Tab_Player,
+    Tab_Esp = Tab_Esp,
+    Tab_Creditos = Tab_Creditos
+  }
+  
+  SaveConfig(updatedConfig, currentLanguage)
+   
   screenGui:Destroy()
   
   return Tab_TpBoxe, Tab_Cards, Tab_RingMaster, Tab_Player, Tab_Esp, Tab_Creditos
