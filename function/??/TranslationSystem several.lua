@@ -198,7 +198,7 @@ function TranslationModule:GetTabs()
         toggle3 = "Esp " .. RaelHubTradutor.Tradutor(" players ", currentLanguage)
     }
 
-    local Tab_Creditos = {
+    local Creditos = {
         name = RaelHubTradutor.Tradutor("Credits", currentLanguage),
         section = RaelHubTradutor.Tradutor("Script creator", currentLanguage),
         descricao = RaelHubTradutor.Tradutor("Join my YouTube channel and Discord for new updates", currentLanguage),
@@ -208,10 +208,8 @@ function TranslationModule:GetTabs()
     -- Salvar as traduções para o idioma do jogador
     local updatedConfig = {
         Main = Main,
-        saigomo = saigomo,
         Jogador = Jogador,
         Mostrar = Mostrar,
-        EspNames = EspNames,
         Creditos = Creditos
     }
 
