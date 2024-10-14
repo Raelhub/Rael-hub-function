@@ -117,8 +117,63 @@ spawn(function()
 end)
 
 local TranslationModule = {}
+local configFolder = "RaelHub Natal trials" -- Pasta onde os arquivos de tradução serão salvos
 
+-- Serviço de localização do Roblox
+local LocalizationService = game:GetService("LocalizationService")
+
+-- Função para detectar o idioma do jogador usando LocalizationService
+local function GetPlayerLanguage()
+    local result, code = pcall(function()
+        return LocalizationService.RobloxLocaleId
+    end)
+    if result then
+        return code:sub(1, 2) -- Retorna o código do idioma, como "en", "pt", etc.
+    else
+        return "en" -- Se houver erro, usa o inglês como padrão
+    end
+end
+
+-- Função para salvar as traduções com base no idioma
+local function SaveConfig(configTable, language)
+    local fileName = configFolder .. "/" .. language .. ".json"
+    local json = game:GetService("HttpService"):JSONEncode(configTable)
+    writefile(fileName, json)
+end
+
+-- Função para carregar as traduções de um arquivo com base no idioma
+local function LoadConfig(language)
+    local fileName = configFolder .. "/" .. language .. ".json"
+    if isfile(fileName) then
+        local json = readfile(fileName)
+        return game:GetService("HttpService"):JSONDecode(json)
+    else
+        return nil -- Retorna nil se o arquivo não existir
+    end
+end
+
+-- Função principal para carregar ou traduzir
 function TranslationModule:GetTabs()
+  -- Verifica se a pasta de traduções existe, se não, cria
+  if not isfolder(configFolder) then
+    makefolder(configFolder)
+  end
+
+  -- Detectar o idioma do jogador usando o LocalizationService
+  local currentLanguage = GetPlayerLanguage()
+
+  -- Carregar as traduções do idioma do jogador se já existirem
+  local savedConfig = LoadConfig(currentLanguage)
+
+  -- Se as traduções já existem para o idioma atual, carregar
+  if savedConfig then
+    task.wait(1)
+    screenGui:Destroy()
+        
+    return savedConfig.Tab_TpBoxe, savedConfig.Tab_Cards, savedConfig.Tab_RingMaster, savedConfig.Tab_Player, savedConfig.Tab_Esp, savedConfig.Tab_Creditos
+  end
+
+  -- Se as traduções não existem, fazer a tradução e salvar para o idioma atual
   local Tab_TpBoxe = {
     name = RaelHubTradutor.Tradutor("Tp caixas", currentLanguage),
     section1 = RaelHubTradutor.Tradutor("Pular a fase do palhaço", currentLanguage),
@@ -176,7 +231,8 @@ function TranslationModule:GetTabs()
     name = RaelHubTradutor.Tradutor("Créditos", currentLanguage),
     paragrafo = RaelHubTradutor.Tradutor("Entre no meu canal do YouTube e no meu Discord para novas atualizações.", currentLanguage)
   }
-   
+    
+  -- Salvar as traduções para o idioma do jogador
   local updatedConfig = {
     Tab_TpBoxe = Tab_TpBoxe,
     Tab_Cards = Tab_Cards,
@@ -187,13 +243,9 @@ function TranslationModule:GetTabs()
   }
   
   SaveConfig(updatedConfig, currentLanguage)
-   
-  screenGui:Destroy()
-  
-  return Tab_TpBoxe, Tab_Cards, Tab_RingMaster, Tab_Player, Tab_Esp, Tab_Creditos
-  
+
+    screenGui:Destroy()
+    return Tab_TpBoxe, Tab_Cards, Tab_RingMaster, Tab_Player, Tab_Esp, Tab_Creditos
 end
-
-
 
 return TranslationModule

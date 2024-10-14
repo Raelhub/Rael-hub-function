@@ -117,7 +117,7 @@ spawn(function()
 end)
 
 local TranslationModule = {}
-local configFolder = "RaelHub Nightmare circus" -- Pasta onde os arquivos de tradução serão salvos
+local configFolder = "RaelHub Natal trials" -- Pasta onde os arquivos de tradução serão salvos
 
 -- Serviço de localização do Roblox
 local LocalizationService = game:GetService("LocalizationService")
@@ -170,7 +170,7 @@ function TranslationModule:GetTabs()
         wait(1)
         screenGui:Destroy()
         
-        return savedConfig.Tab_TpBoxe, savedConfig.Tab_Cards, savedConfig.Tab_RingMaster, savedConfig.Tab_Player, savedConfig.Tab_Esp, savedConfig.Tab_Creditos
+        return savedConfig.Tab_Talk_elf, savedConfig.Tab_Fix_sledding, savedConfig.Tab_Collect_toys, savedConfig.Tab_Get_key, savedConfig.Tab_Player, savedConfig.Tab_Esp, savedConfig.Tab_Creditos
     end
 
     -- Se as traduções não existem, fazer a tradução e salvar para o idioma atual
