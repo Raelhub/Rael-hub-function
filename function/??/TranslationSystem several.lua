@@ -117,7 +117,7 @@ spawn(function()
 end)
 
 local TranslationModule = {}
-local configFolder = "RaelHub book1" -- Pasta onde os arquivos de tradução serão salvos
+local configFolder = "RaelHub chapter normal" -- Pasta onde os arquivos de tradução serão salvos
 
 -- Serviço de localização do Roblox
 local LocalizationService = game:GetService("LocalizationService")
@@ -198,7 +198,7 @@ function TranslationModule:GetTabs()
         toggle3 = "Esp " .. RaelHubTradutor.Tradutor(" players ", currentLanguage)
     }
 
-    local Creditos = {
+    local Tab_Creditos = {
         name = RaelHubTradutor.Tradutor("Credits", currentLanguage),
         section = RaelHubTradutor.Tradutor("Script creator", currentLanguage),
         descricao = RaelHubTradutor.Tradutor("Join my YouTube channel and Discord for new updates", currentLanguage),
