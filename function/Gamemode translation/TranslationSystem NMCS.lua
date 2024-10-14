@@ -129,9 +129,11 @@ function TranslationModule:GetTabs()
     button3 = RaelHubTradutor.Tradutor("Teleportar caixa", currentLanguage),
     AddDropdown = RaelHubTradutor.Tradutor("Caixa", currentLanguage)
   }
-
+  
+  local BoxText = RaelHubTradutor.Tradutor("Caixa ", currentLanguage)
+        
   for i = 1, 7 do
-    Tab_TpBoxe["TpBoxeButton" .. i] = RaelHubTradutor.Tradutor("Caixa " .. i, currentLanguage)
+    Tab_TpBoxe["TpBoxeButton" .. i] = BoxText .. i
   end
 
   local Tab_Cards = {
