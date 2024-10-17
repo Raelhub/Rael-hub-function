@@ -328,6 +328,10 @@ function RaelHubEspPDOORS.EspItensAtivado()
             if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
                 CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "75525877405108", "")
             end
+          elseif Object.Name == "Lighter" then
+            if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
+                CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "76220389746171", "")
+            end
           end
         end
       end
@@ -379,6 +383,11 @@ function RaelHubEspPDOORS.EspItensDesativado()
               Object:FindFirstChild("RaelHubIcon"):Destroy()
             end
           elseif Object.Name == "Battery" then
+            if Object and Object:FindFirstChild("RaelHubDestaque") and Object:FindFirstChild("RaelHubIcon") then
+              Object:FindFirstChild("RaelHubDestaque"):Destroy()
+              Object:FindFirstChild("RaelHubIcon"):Destroy()
+            end
+          elseif Object.Name == "Lighter" then
             if Object and Object:FindFirstChild("RaelHubDestaque") and Object:FindFirstChild("RaelHubIcon") then
               Object:FindFirstChild("RaelHubDestaque"):Destroy()
               Object:FindFirstChild("RaelHubIcon"):Destroy()
@@ -632,6 +641,47 @@ function RaelHubEspPDOORS.EspArmarioDesativado()
     
   end
   
+end
+
+function RaelHubEspPDOORS.EspCoinAtivado()
+  local MainPasta = workspace.CurrentRooms
+  for _, Sala in ipairs(MainPasta:GetChildren()) do
+    if Sala:IsA("Model") then
+      local PastaAssest = Sala:FindFirstChild("Assets")
+      if PastaAssest then
+        for _, Moeda in ipairs(PastaAssest:GetDescendants()) do
+          if Moeda.Name == "GoldPile" then
+            
+            if not Moeda:FindFirstChild("RaelHubDestaque") and not Moeda:FindFirstChild("RaelHubIcon") then
+              CreateEsp1(Moeda, Color3.fromRGB(255, 234, 0), "125713439145812", "")
+            end
+          end
+        end
+      end
+    end
+  end
+end
+
+function RaelHubEspPDOORS.EspCoinDesativado()
+  local MainPasta = workspace.CurrentRooms
+  for _, Sala in ipairs(MainPasta:GetChildren()) do
+    if Sala:IsA("Model") then
+      local PastaAssest = Sala:FindFirstChild("Assets")
+      if PastaAssest then
+        for _, Moeda in ipairs(PastaAssest:GetDescendants()) do
+          if Moeda.Name == "GoldPile" then
+            
+            if Moeda:FindFirstChild("RaelHubDestaque") and Moeda:FindFirstChild("RaelHubIcon") then
+        
+              Moeda:FindFirstChild("RaelHubDestaque"):Destroy()
+              Moeda:FindFirstChild("RaelHubIcon"):Destroy()
+         
+            end
+          end
+        end
+      end
+    end
+  end
 end
 
 return RaelHubEspPDOORS
