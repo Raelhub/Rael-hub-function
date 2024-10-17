@@ -292,7 +292,6 @@ end
 function RaelHubEspPDOORS.EspItensAtivado()
   local MainPasta = workspace.CurrentRooms
   local DropsPastas = workspace.Drops
-
   for _, Item in ipairs(DropsPastas:GetChildren()) do
     if Item:IsA("Model") and Item.Name == "Lockpick" then
       if not Item:FindFirstChild("RaelHubDestaque") and not Item:FindFirstChild("RaelHubIcon") then
@@ -311,59 +310,23 @@ function RaelHubEspPDOORS.EspItensAtivado()
       local PastaAssest = Sala:FindFirstChild("Assets")
       
       if PastaAssest then
-        for _, TableModel in ipairs(PastaAssest:GetChildren()) do
-          if TableModel:IsA("Model") then
-            for _, Object in ipairs(TableModel:GetChildren()) do
-              if Object.Name == "Candle" then
-                if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
-                  CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "99106958694614", "")
-                end
-                
-              elseif Object.Name == "Lockpick" then
-                if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
-                  CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "91526397863419", "")
-                end
-                
-              elseif Object.Name == "Bandage" then
-                if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
-                  CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "105204077319304", "")
-                end
-                
-              elseif Object.Name == "Battery" then
-                if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
-                  CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "75525877405108", "")
-                end
-              end
-            end
-          end
-        end
-      
-        for _, ModelAleatorio in ipairs(PastaAssest:GetChildren()) do
+        for _, Object in ipairs(PastaAssest: GetDescendants()) do
           
-          if ModelAleatorio:IsA("Model") then
-            
-            for _, Obejct in ipairs(ModelAleatorio:GetChildren()) do
-              
-              if Object.Name == "Candle" then
-                if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
-                  CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "99106958694614", "")
-                end
-                
-              elseif Object.Name == "Lockpick" then
-                if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
-                  CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "91526397863419", "")
-                end
-                
-              elseif Object.Name == "Bandage" then
-                if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
-                  CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "105204077319304", "")
-                end
-                
-              elseif Object.Name == "Battery" then
-                if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
-                  CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "75525877405108", "")
-                end
-              end
+          if Object.Name == "Candle" then
+            if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
+              CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "99106958694614", "")
+            end
+          elseif Object.Name == "Lockpick" then
+            if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
+              CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "91526397863419", "")
+            end
+          elseif Object.Name == "Bandage" then
+            if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
+              CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "105204077319304", "")
+            end
+          elseif Object.Name == "Battery" then
+            if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
+                CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "75525877405108", "")
             end
           end
         end
@@ -378,80 +341,47 @@ function RaelHubEspPDOORS.EspItensDesativado()
 
   for _, Item in ipairs(DropsPastas:GetChildren()) do
     if Item:IsA("Model") and Item.Name == "Lockpick" then
-      if not Item:FindFirstChild("RaelHubDestaque") and not Item:FindFirstChild("RaelHubIcon") then
-        CreateEsp1(Item, Color3.fromRGB(0, 255, 255), "91526397863419", "")
+      if Item:FindFirstChild("RaelHubDestaque") and Item:FindFirstChild("RaelHubIcon") then
+        if Item and Item:FindFirstChild("RaelHubDestaque") and RushPart:FindFirstChild("RaelHubIcon") then
+          Item:FindFirstChild("RaelHubDestaque"):Destroy()
+          Item:FindFirstChild("RaelHubIcon"):Destroy()
+        end
       end
-      
     elseif Item:IsA("Model") and Item.Name == "Candle" then
-      if not Item:FindFirstChild("RaelHubDestaque") and not Item:FindFirstChild("RaelHubIcon") then
-        CreateEsp1(Item, Color3.fromRGB(0, 255, 255), "99106958694614", "")
+      if Item:FindFirstChild("RaelHubDestaque") and Item:FindFirstChild("RaelHubIcon") then
+        if Item and Item:FindFirstChild("RaelHubDestaque") and Item:FindFirstChild("RaelHubIcon") then
+          Item:FindFirstChild("RaelHubDestaque"):Destroy()
+          Item:FindFirstChild("RaelHubIcon"):Destroy()
+        end
       end
     end
   end
-
   for _, Sala in ipairs(MainPasta:GetChildren()) do
     if Sala:IsA("Model") then
       local PastaAssest = Sala:FindFirstChild("Assets")
       
       if PastaAssest then
-        for _, TableModel in ipairs(PastaAssest:GetChildren()) do
-          if TableModel:IsA("Model") then
-            for _, Object in ipairs(TableModel:GetChildren()) do
-              if Object.Name == "Candle" then
-                if Object:FindFirstChild("RaelHubDestaque") and Object:FindFirstChild("RaelHubIcon") then
-                  Object:FindFirstChild("RaelHubDestaque"):Destroy()
-                  Object:FindFirstChild("RaelHubIcon"):Destroy()
-                end
-                
-              elseif Object.Name == "Lockpick" then
-                if Object:FindFirstChild("RaelHubDestaque") and Object:FindFirstChild("RaelHubIcon") then
-                  Object:FindFirstChild("RaelHubDestaque"):Destroy()
-                  Object:FindFirstChild("RaelHubIcon"):Destroy()
-                end
-                
-              elseif Object.Name == "Bandage" then
-                if Object:FindFirstChild("RaelHubDestaque") and Object:FindFirstChild("RaelHubIcon") then
-                  Object:FindFirstChild("RaelHubDestaque"):Destroy()
-                  Object:FindFirstChild("RaelHubIcon"):Destroy()
-                end
-                
-              elseif Object.Name == "Battery" then
-                if Object:FindFirstChild("RaelHubDestaque") and Object:FindFirstChild("RaelHubIcon") then
-                  Object:FindFirstChild("RaelHubDestaque"):Destroy()
-                  Object:FindFirstChild("RaelHubIcon"):Destroy()
-                end
-              end
-            end
-          end
-        end
-      
-        for _, ModelAleatorio in ipairs(PastaAssest:GetChildren()) do
+        for _, Object in ipairs(PastaAssest: GetDescendants()) do
           
-          if ModelAleatorio:IsA("Model") then
-            
-            for _, Obejct in ipairs(ModelAleatorio:GetChildren()) do
-              
-              if Object.Name == "Candle" then
-                if Object:FindFirstChild("RaelHubDestaque") and Object:FindFirstChild("RaelHubIcon") then
-                  Object:FindFirstChild("RaelHubDestaque"):Destroy()
-                  Object:FindFirstChild("RaelHubIcon"):Destroy()
-                end
-              elseif Object.Name == "Lockpick" then
-                if Object:FindFirstChild("RaelHubDestaque") and Object:FindFirstChild("RaelHubIcon") then
-                  Object:FindFirstChild("RaelHubDestaque"):Destroy()
-                  Object:FindFirstChild("RaelHubIcon"):Destroy()
-                end
-              elseif Object.Name == "Bandage" then
-                if Object:FindFirstChild("RaelHubDestaque") and Object:FindFirstChild("RaelHubIcon") then
-                  Object:FindFirstChild("RaelHubDestaque"):Destroy()
-                  Object:FindFirstChild("RaelHubIcon"):Destroy()
-                end
-              elseif Object.Name == "Battery" then
-                if Object:FindFirstChild("RaelHubDestaque") and Object:FindFirstChild("RaelHubIcon") then
-                  Object:FindFirstChild("RaelHubDestaque"):Destroy()
-                  Object:FindFirstChild("RaelHubIcon"):Destroy()
-                end
-              end
+          if Object.Name == "Candle" then
+            if Object and Object:FindFirstChild("RaelHubDestaque") and Object:FindFirstChild("RaelHubIcon") then
+              Object:FindFirstChild("RaelHubDestaque"):Destroy()
+              Object:FindFirstChild("RaelHubIcon"):Destroy()
+            end
+          elseif Object.Name == "Lockpick" then
+            if Object and Object:FindFirstChild("RaelHubDestaque") and Object:FindFirstChild("RaelHubIcon") then
+              Object:FindFirstChild("RaelHubDestaque"):Destroy()
+              Object:FindFirstChild("RaelHubIcon"):Destroy()
+            end
+          elseif Object.Name == "Bandage" then
+            if Object and Object:FindFirstChild("RaelHubDestaque") and Object:FindFirstChild("RaelHubIcon") then
+              Object:FindFirstChild("RaelHubDestaque"):Destroy()
+              Object:FindFirstChild("RaelHubIcon"):Destroy()
+            end
+          elseif Object.Name == "Battery" then
+            if Object and Object:FindFirstChild("RaelHubDestaque") and Object:FindFirstChild("RaelHubIcon") then
+              Object:FindFirstChild("RaelHubDestaque"):Destroy()
+              Object:FindFirstChild("RaelHubIcon"):Destroy()
             end
           end
         end
