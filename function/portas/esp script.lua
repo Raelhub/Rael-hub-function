@@ -328,7 +328,7 @@ function RaelHubEspPDOORS.EspItensAtivado()
             if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
                 CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "75525877405108", "")
             end
-          elseif Object.Name == "Lighter" then
+          elseif Object.Name == "Lighter" and Object:IsA("Model") then
             if not Object:FindFirstChild("RaelHubDestaque") and not Object:FindFirstChild("RaelHubIcon") then
                 CreateEsp1(Object, Color3.fromRGB(0, 255, 255), "76220389746171", "")
             end
