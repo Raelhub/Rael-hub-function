@@ -9,9 +9,7 @@ NotificationManager.__index = NotificationManager
 
 NotificationManager.activeNotifications = 0
 
-local RaelHubFunction = {}
-
-function RaelHubFunction.NotificationManager.new()
+function NotificationManager.new()
     local self = setmetatable({}, NotificationManager)
     self.screenGui = Instance.new("ScreenGui", game.Players.LocalPlayer:WaitForChild("PlayerGui"))
     self.screenGui.Name = "RaelHubNotification"
@@ -74,6 +72,8 @@ function NotificationManager:animateNotification(notificationFrame, duracao)
     self.activeNotifications = self.activeNotifications - 1 -- Correção do operador
     notificationFrame:Destroy()
 end
+
+local RaelHubFunction = {}
 
 function RaelHubFunction.CreateEsp(objeto, cor, imageId, texto)
   if not objeto or not objeto:IsA("Model") or not objeto:FindFirstChild("HumanoidRootPart") then
