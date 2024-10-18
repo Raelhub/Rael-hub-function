@@ -77,6 +77,8 @@ function NotificationManager:animateNotification(notificationFrame, duracao)
     notificationFrame:Destroy()
 end
 
+local RaelHubNotify = NotificationManager.new()
+
 function RaelHubFunction.CreateEsp(objeto, cor, imageId, texto)
   if not objeto or not objeto:IsA("Model") or not objeto:FindFirstChild("HumanoidRootPart") then
     return
