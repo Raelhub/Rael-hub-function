@@ -11,7 +11,7 @@ NotificationManager.activeNotifications = 0
 
 local RaelHubFunction = {}
 
-function NotificationManager.new()
+function RaelHubFunction.NotificationManager.new()
     local self = setmetatable({}, NotificationManager)
     self.screenGui = Instance.new("ScreenGui", game.Players.LocalPlayer:WaitForChild("PlayerGui"))
     self.screenGui.Name = "RaelHubNotification"
@@ -19,7 +19,7 @@ function NotificationManager.new()
 end
 
 function NotificationManager:createNotification(texto, duracao)
-    self.activeNotifications += 1
+    self.activeNotifications = self.activeNotifications + 1 -- Correção do operador
 
     local notificationFrame = Instance.new("Frame", self.screenGui)
     notificationFrame.Size = UDim2.new(0, 310, 0, 90)
@@ -50,7 +50,7 @@ function NotificationManager:createNotification(texto, duracao)
     notificationText.Position = UDim2.new(0, 0, 0, 40)
     notificationText.BackgroundTransparency = 1
     notificationText.Text = texto
-    notificationText.TextColor3 = Color3.new(1, 1, 1)
+    notificationText.TextColor3 = Color3.new(1, 1, 1) -- Verifique se esta cor é legível
     notificationText.TextScaled = true
     notificationText.TextWrapped = true
     notificationText.Font = Enum.Font.ArialBold
@@ -65,12 +65,13 @@ function NotificationManager:createNotification(texto, duracao)
     task.spawn(function() self:animateNotification(notificationFrame, duracao) end)
 end
 
+-- Ajuste na animação para garantir a limpeza correta
 function NotificationManager:animateNotification(notificationFrame, duracao)
     notificationFrame:TweenPosition(UDim2.new(1, -310, 1, -(self.activeNotifications * 90) - 10), "Out", "Quad", 0.7, true)
     wait(duracao)
     notificationFrame:TweenPosition(UDim2.new(1, 310, 1, -(self.activeNotifications * 90) - 10), "In", "Quad", 1, true)
     wait(1)
-    self.activeNotifications -= 1
+    self.activeNotifications = self.activeNotifications - 1 -- Correção do operador
     notificationFrame:Destroy()
 end
 
