@@ -1,11 +1,3 @@
-local Light = game:GetService("Lighting")
-local originalAmbient = Light.Ambient
-local originalColorShiftBottom = Light.ColorShift_Bottom
-local originalColorShiftTop = Light.ColorShift_Top
-local originalClockTime = Light.ClockTime
-
-local RaelHubFunction = {}
-
 local NotificationManager = {}
 NotificationManager.__index = NotificationManager
 NotificationManager.activeNotifications = 0
@@ -78,6 +70,14 @@ function NotificationManager:animateNotification(notificationFrame, duracao)
 end
 
 local RaelHubNotify = NotificationManager.new()
+
+local Light = game:GetService("Lighting")
+local originalAmbient = Light.Ambient
+local originalColorShiftBottom = Light.ColorShift_Bottom
+local originalColorShiftTop = Light.ColorShift_Top
+local originalClockTime = Light.ClockTime
+
+local RaelHubFunction = {}
 
 function RaelHubFunction.CreateEsp(objeto, cor, imageId, texto)
   if not objeto or not objeto:IsA("Model") or not objeto:FindFirstChild("HumanoidRootPart") then
