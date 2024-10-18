@@ -9,17 +9,23 @@ function NotificationManager.new()
     return self
 end
 
--- Função para criar o fundo da notificação
-function NotificationManager:createBackground(notificationFrame)
+function NotificationManager:createNotification(texto, duracao)
+    self.activeNotifications += 1
+
+    local notificationFrame = Instance.new("Frame", self.screenGui)
+    notificationFrame.Size = UDim2.new(0, 310, 0, 90)
+    notificationFrame.Position = UDim2.new(1, 310, 1, -(self.activeNotifications * 100) - 10)
+    notificationFrame.BackgroundTransparency = 1
+    notificationFrame.ClipsDescendants = true
+
+    -- Imagem de fundo
     local backgroundImage = Instance.new("ImageLabel", notificationFrame)
     backgroundImage.Size = UDim2.new(1, 0, 1, 0)
     backgroundImage.Image = "rbxassetid://18665679839"
     backgroundImage.BackgroundTransparency = 1
     Instance.new("UICorner", backgroundImage).CornerRadius = UDim.new(0, 20)
-end
 
--- Função para criar o título da notificação
-function NotificationManager:createTitle(notificationFrame)
+    -- Título da notificação
     local titleLabel = Instance.new("TextLabel", notificationFrame)
     titleLabel.Size = UDim2.new(1, 0, 0, 25)
     titleLabel.Position = UDim2.new(0, 0, 0, 10)
@@ -28,10 +34,8 @@ function NotificationManager:createTitle(notificationFrame)
     titleLabel.TextColor3 = Color3.fromRGB(34, 168, 110)
     titleLabel.TextScaled = true
     titleLabel.Font = Enum.Font.ArialBold
-end
 
--- Função para criar o texto da notificação
-function NotificationManager:createNotificationText(notificationFrame, texto)
+    -- Texto da notificação
     local notificationText = Instance.new("TextLabel", notificationFrame)
     notificationText.Size = UDim2.new(1, 0, 0, 15)
     notificationText.Position = UDim2.new(0, 0, 0, 40)
@@ -44,29 +48,11 @@ function NotificationManager:createNotificationText(notificationFrame, texto)
 
     -- Atualiza a altura do notificationText
     notificationText.Size = UDim2.new(1, 0, 0, notificationText.TextBounds.Y)
-    return notificationText
-end
 
--- Função para criar o som da notificação
-function NotificationManager:createSound()
+    -- Som da notificação
     local sound = Instance.new("Sound", self.screenGui)
     sound.SoundId = "rbxassetid://7817336081"
     sound:Play()
-end
-
-function NotificationManager:createNotification(texto, duracao)
-    self.activeNotifications += 1
-
-    local notificationFrame = Instance.new("Frame", self.screenGui)
-    notificationFrame.Size = UDim2.new(0, 310, 0, 90)
-    notificationFrame.Position = UDim2.new(1, 310, 1, -(self.activeNotifications * 100) - 10)
-    notificationFrame.BackgroundTransparency = 1
-    notificationFrame.ClipsDescendants = true
-
-    self:createBackground(notificationFrame)
-    self:createTitle(notificationFrame)
-    local notificationText = self:createNotificationText(notificationFrame, texto)
-    self:createSound()
 
     -- Animação da notificação
     task.spawn(function()
@@ -86,3 +72,6 @@ function NotificationManager:destroyNotification(notificationFrame)
     self.activeNotifications -= 1
     notificationFrame:Destroy()
 end
+
+-- Retorna a tabela NotificationManager
+return NotificationManager
