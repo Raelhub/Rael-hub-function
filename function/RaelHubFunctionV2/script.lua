@@ -9,7 +9,7 @@ NotificationManager.__index = NotificationManager
 
 NotificationManager.activeNotifications = 0
 
-function NotificationManager.new()
+function NotificationManager()
     local self = setmetatable({}, NotificationManager)
     self.screenGui = Instance.new("ScreenGui", game.Players.LocalPlayer:WaitForChild("PlayerGui"))
     self.screenGui.Name = "RaelHubNotification"
