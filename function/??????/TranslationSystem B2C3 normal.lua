@@ -164,7 +164,7 @@ function TranslationModule:GetTabs()
     if savedConfig then
         wait(1)
         screenGui:Destroy()
-        return savedConfig.Tab_Yurei, savedConfig.Tab_cutscene, savedConfig.Tab_GiveHeart, savedConfig.Tab_Mapmaze, savedConfig.Tab_DodoMeki, savedConfig.Tab_Enzuzai, savedConfig.Tab_HouseUchiumi, savedConfig.Tab_Train, savedConfig.Tab_larvas, savedConfig.Tab_Lama, savedConfig.Tab_HouseYurei, savedConfig.Tab_BossYurei, savedConfig.Tab_FaseFinal, savedConfig.Tab_Others
+        return savedConfig.Tab_Yurei, savedConfig.Tab_cutscene, savedConfig.Tab_GiveHeart, savedConfig.Tab_Mapmaze, savedConfig.Tab_DodoMeki, savedConfig.Tab_Enzuzai, savedConfig.Tab_HouseUchiumi, savedConfig.Tab_Train, savedConfig.Tab_larvas, savedConfig.Tab_Lama, savedConfig.Tab_HouseYurei, savedConfig.Tab_BossYurei, savedConfig.Tab_FaseFinal, savedConfig.Tab_Others, savedConfig.Tab_Creditos
     end
     
     local Tab_Yurei = {
@@ -316,6 +316,12 @@ function TranslationModule:GetTabs()
       button5 = RaelHubTradutor.Tradutor("No clip Portas", currentLanguage),
       button6 = RaelHubTradutor.Tradutor("FullBright", currentLanguage)
     }
+    local Tab_Creditos = {
+      name = RaelHubTradutor.Tradutor("Credits", currentLanguage),
+      section = RaelHubTradutor.Tradutor("Script creator", currentLanguage),
+      descricao = RaelHubTradutor.Tradutor("Join my YouTube channel and Discord for new updates", currentLanguage),
+      ContentNotify = RaelHubTradutor.Tradutor("The script has been copied to the desktop", currentLanguage)
+    }
     
     local updatedConfig = {
       Tab_Yurei = Tab_Yurei,
@@ -331,13 +337,14 @@ function TranslationModule:GetTabs()
       Tab_HouseYurei = Tab_HouseYurei,
       Tab_BossYurei = Tab_BossYurei,
       Tab_FaseFinal = Tab_FaseFinal,
-      Tab_Others = Tab_Others
+      Tab_Others = Tab_Others,
+      Tab_Creditos = Tab_Creditos
     }
 
     SaveConfig(updatedConfig, currentLanguage)
 
     screenGui:Destroy()
-    return Tab_Yurei, Tab_cutscene, Tab_GiveHeart, Tab_Mapmaze, Tab_DodoMeki, Tab_Enzuzai, Tab_HouseUchiumi, Tab_Train, Tab_larvas, Tab_Lama, Tab_HouseYurei, Tab_BossYurei, Tab_FaseFinal, Tab_Others
+    return Tab_Yurei, Tab_cutscene, Tab_GiveHeart, Tab_Mapmaze, Tab_DodoMeki, Tab_Enzuzai, Tab_HouseUchiumi, Tab_Train, Tab_larvas, Tab_Lama, Tab_HouseYurei, Tab_BossYurei, Tab_FaseFinal, Tab_Others, Tab_Creditos
 end
 
 return TranslationModule
