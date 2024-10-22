@@ -185,18 +185,20 @@ function TranslationModule:GetTabs()
         notify1 = RaelHubTradutor.Tradutor("Buscando geradores", currentLanguage),
         notify2 = RaelHubTradutor.Tradutor("Geradores encontrados com sucesso", currentLanguage),
         dropdowntext = RaelHubTradutor.Tradutor("Geradores", currentLanguage),
-        generator = RaelHubTradutor.Tradutor("Geradore", currentLanguage)
+        generator = RaelHubTradutor.Tradutor("Gerador", currentLanguage)
         
     }
 
     local Jogador = {
         name = RaelHubTradutor.Tradutor("Player", currentLanguage),
-        section1 = RaelHubTradutor.Tradutor("Teleportes", currentLanguage),
+        section1 = RaelHubTradutor.Tradutor("Teleporte para jogadores", currentLanguage),
         section2 = RaelHubTradutor.Tradutor("Player Speed", currentLanguage),
         section3 = RaelHubTradutor.Tradutor("Light up the map", currentLanguage),
         dropdowntext = RaelHubTradutor.Tradutor("Players: ", currentLanguage),
         slidetext = RaelHubTradutor.Tradutor("Speed: ", currentLanguage),
-        button = RaelHubTradutor.Tradutor("Teleport to player", currentLanguage)
+        button = RaelHubTradutor.Tradutor("Teleport to player", currentLanguage),
+        toggle1 = RaelHubTradutor.Tradutor("Ativar velocidade", currentLanguage),
+        toggle2 = RaelHubTradutor.Tradutor("Fullbright", currentLanguage)
     }
 
     local Mostrar = {
