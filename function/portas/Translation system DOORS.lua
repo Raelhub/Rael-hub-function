@@ -175,12 +175,12 @@ function TranslationModule:GetTabs()
     -- Se as traduções não existem, fazer a tradução e salvar para o idioma atual
     local Main = {
         name = RaelHubTradutor.Tradutor("Main", currentLanguage),
-        section1 = RaelHubTradutor.Tradutor("Remover o ", currentLanguage) .. "Screech",
-        section2 = RaelHubTradutor.Tradutor("Remover o ", currentLanguage) .. "Halt",
-        section3 = RaelHubTradutor.Tradutor("Escapa do ", currentLanguage) .. "Rush/Ambush",
+        section1 = RaelHubTradutor.Tradutor("Remover o", currentLanguage) .. " Screech",
+        section2 = RaelHubTradutor.Tradutor("Remover o", currentLanguage) .. " Halt",
+        section3 = RaelHubTradutor.Tradutor("Escapa do", currentLanguage) .. " Rush/Ambush",
         section4 = RaelHubTradutor.Tradutor("Deletar o seek para todos", currentLanguage),
         section5 = RaelHubTradutor.Tradutor("Notificar os monstros", currentLanguage),
-        button1 = RaelHubTradutor.Tradutor("Sem ", currentLanguage) .. "Screech",
+        button1 = RaelHubTradutor.Tradutor("Sem", currentLanguage) .. " Screech",
         button2 = RaelHubTradutor.Tradutor("Sem Halt", currentLanguage),
         button3 = RaelHubTradutor.Tradutor("Anti ", currentLanguage) .. "Rush/Ambush",
         button4 = RaelHubTradutor.Tradutor("Deletar o Seek FE", currentLanguage),
@@ -209,25 +209,25 @@ function TranslationModule:GetTabs()
 
     local Mostrar = {
         name = RaelHubTradutor.Tradutor("Esp", currentLanguage),
-        toggle1 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("players", currentLanguage),
+        toggle1 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor(" players", currentLanguage),
         
-        toggle2 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("doors", currentLanguage),
+        toggle2 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor(" doors", currentLanguage),
         
-        toggle3 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("chaves", currentLanguage),
+        toggle3 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor(" chaves", currentLanguage),
         
-        toggle4 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("alavancas", currentLanguage),
+        toggle4 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor(" alavancas", currentLanguage),
         
-        toggle5 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("itens", currentLanguage),
+        toggle5 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor(" itens", currentLanguage),
         
-        toggle6 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("coins", currentLanguage),
+        toggle6 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor(" coins", currentLanguage),
         
-        toggle7 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("armários", currentLanguage),
+        toggle7 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor(" armários", currentLanguage),
         
-        toggle8 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("books", currentLanguage),
+        toggle8 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor(" books", currentLanguage),
         
-        toggle9 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("breaks", currentLanguage),
+        toggle9 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor(" breaks", currentLanguage),
         
-        toggle10 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("monstros", currentLanguage),
+        toggle10 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor(" monstros", currentLanguage),
         
     }
 
