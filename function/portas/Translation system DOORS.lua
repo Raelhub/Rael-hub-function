@@ -175,19 +175,20 @@ function TranslationModule:GetTabs()
     -- Se as traduções não existem, fazer a tradução e salvar para o idioma atual
     local Main = {
         name = RaelHubTradutor.Tradutor("Main", currentLanguage),
-        section1 = RaelHubTradutor.Tradutor("Remover o Screech", currentLanguage),
-        section2 = RaelHubTradutor.Tradutor("Remover o halt", currentLanguage),
-        section3 = RaelHubTradutor.Tradutor("Escapa do Rush e Ambush", currentLanguage),
+        section1 = RaelHubTradutor.Tradutor("Remover o ", currentLanguage) .. "Screech",
+        section2 = RaelHubTradutor.Tradutor("Remover o ", currentLanguage) .. "Halt",
+        section3 = RaelHubTradutor.Tradutor("Escapa do ", currentLanguage) .. "Rush/Ambush",
         section4 = RaelHubTradutor.Tradutor("Deletar o seek para todos", currentLanguage),
         section5 = RaelHubTradutor.Tradutor("Notificar os monstros", currentLanguage),
-        button1 = RaelHubTradutor.Tradutor("Sem Screech", currentLanguage),
+        button1 = RaelHubTradutor.Tradutor("Sem ", currentLanguage) .. "Screech",
         button2 = RaelHubTradutor.Tradutor("Sem Halt", currentLanguage),
-        button3 = RaelHubTradutor.Tradutor("Anti Rush e Ambush", currentLanguage),
+        button3 = RaelHubTradutor.Tradutor("Anti ", currentLanguage) .. "Rush/Ambush",
         button4 = RaelHubTradutor.Tradutor("Deletar o Seek FE", currentLanguage),
         button5 = RaelHubTradutor.Tradutor("Ativar o notificador", currentLanguage),
-        notify1 = RaelHubTradutor.Tradutor("O Rush está vindo", currentLanguage),
-        notify2 = RaelHubTradutor.Tradutor("O Ambust está vindo", currentLanguage),
-        notify3 = RaelHubTradutor.Tradutor("O Eyes está aqui", currentLanguage),
+        notify1 = RaelHubTradutor.Tradutor("O", currentLanguage) .. " Rush " .. RaelHubTradutor.Tradutor("está vindo", currentLanguage),
+        
+        notify2 = RaelHubTradutor.Tradutor("O", currentLanguage) .. " Ambust " .. RaelHubTradutor.Tradutor("está vindo", currentLanguage),
+        notify3 = RaelHubTradutor.Tradutor("O", currentLanguage) .. " Eyes " .. RaelHubTradutor.Tradutor("está aqui", currentLanguage),
         description = RaelHubTradutor.Tradutor("Não funciona na porta 89 em sequência.", currentLanguage),
         dropdowntext = RaelHubTradutor.Tradutor("Tipo de notificação", currentLanguage),
        element1 = RaelHubTradutor.Tradutor("Notificar pelo chat", currentLanguage),
@@ -208,16 +209,25 @@ function TranslationModule:GetTabs()
 
     local Mostrar = {
         name = RaelHubTradutor.Tradutor("Esp", currentLanguage),
-        toggle1 = RaelHubTradutor.Tradutor("Esp players", currentLanguage),
-        toggle2 = RaelHubTradutor.Tradutor("Esp Doors", currentLanguage),
-        toggle3 = RaelHubTradutor.Tradutor("Esp Chave", currentLanguage),
-        toggle4 = RaelHubTradutor.Tradutor("Esp Alavanca", currentLanguage),
-        toggle5 = RaelHubTradutor.Tradutor("Esp itens", currentLanguage),
-        toggle6 = RaelHubTradutor.Tradutor("Esp Coin", currentLanguage),
-        toggle7 = RaelHubTradutor.Tradutor("Esp Armario", currentLanguage),
-        toggle8 = RaelHubTradutor.Tradutor("Esp books", currentLanguage),
-        toggle9 = RaelHubTradutor.Tradutor("Esp Break", currentLanguage),
-        toggle10 = RaelHubTradutor.Tradutor("Esp Monstro", currentLanguage)
+        toggle1 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("players", currentLanguage),
+        
+        toggle2 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("doors", currentLanguage),
+        
+        toggle3 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("chaves", currentLanguage),
+        
+        toggle4 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("alavancas", currentLanguage),
+        
+        toggle5 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("itens", currentLanguage),
+        
+        toggle6 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("coins", currentLanguage),
+        
+        toggle7 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("armários", currentLanguage),
+        
+        toggle8 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("books", currentLanguage),
+        
+        toggle9 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("breaks", currentLanguage),
+        
+        toggle10 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. RaelHubTradutor.Tradutor("monstros", currentLanguage),
         
     }
 
