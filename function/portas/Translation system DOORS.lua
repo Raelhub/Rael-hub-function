@@ -227,7 +227,7 @@ function TranslationModule:GetTabs()
         
         toggle9 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. " " .. RaelHubTradutor.Tradutor(" breaks", currentLanguage),
         
-        toggle10 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. " " .. RaelHubTradutor.Tradutor("onstros", currentLanguage),
+        toggle10 = RaelHubTradutor.Tradutor("Esp ", currentLanguage) .. " " .. RaelHubTradutor.Tradutor("monstros", currentLanguage),
         
     }
 
