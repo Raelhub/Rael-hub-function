@@ -192,7 +192,7 @@ function TranslationModule:GetTabs()
       button4 = RaelHubTradutor.Tradutor("Auto escapar", currentLanguage),
       button5 = RaelHubTradutor.Tradutor("Auto fugir de Rin", currentLanguage),
       Notification = RaelHubTradutor.Tradutor("Carregando...", currentLanguage),
-      NotificationContent = RaelHubTradutor.Tradutor("Processando arquivos do jogo e carregando script", currentLanguage)
+      NotificationContent = RaelHubTradutor.Tradutor("Processando arquivos", currentLanguage)
     }
 
     local Tab_Nagisa = {
