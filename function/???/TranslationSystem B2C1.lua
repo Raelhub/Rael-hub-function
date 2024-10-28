@@ -152,8 +152,6 @@ end
 -- Função para traduzir e estruturar os textos
 local function CreateTranslation(language)
     local currentLanguage = language  -- Use a variável de linguagem passada para a função
-    local HouseText = RaelHubTradutor.Tradutor("House ", currentLanguage)
-    local NavioVelaText = RaelHubTradutor.Tradutor("Candle ", currentLanguage)
 
     return {
         Tab_Oficine = {
@@ -205,7 +203,8 @@ local function CreateTranslation(language)
             button7 = RaelHubTradutor.Tradutor("Auto acender velas", currentLanguage),
             button8 = RaelHubTradutor.Tradutor("Auto coletar esfera", currentLanguage),
             description = RaelHubTradutor.Tradutor("Só funciona corretamente depois que você faz o puzzle da casa 3 e abri a porta da casa das velas", currentLanguage),
-            AddDropdownName = RaelHubTradutor.Tradutor("Houses", currentLanguage)
+            AddDropdownName = RaelHubTradutor.Tradutor("Houses", currentLanguage),
+            HouseText = RaelHubTradutor.Tradutor("House ", currentLanguage)
         },
 
         Tab_VelaFase = {
@@ -218,7 +217,8 @@ local function CreateTranslation(language)
             button2 = RaelHubTradutor.Tradutor("Esp monstros", currentLanguage),
             button3 = RaelHubTradutor.Tradutor("Teleportar vela", currentLanguage),
             button4 = RaelHubTradutor.Tradutor("Auto escapar", currentLanguage),
-            AddDropdownName = RaelHubTradutor.Tradutor("Candles", currentLanguage)
+            AddDropdownName = RaelHubTradutor.Tradutor("Candles", currentLanguage),
+            NavioVelaText = RaelHubTradutor.Tradutor("Candle ", currentLanguage)
         },
 
         Tab_Other = {
