@@ -248,14 +248,6 @@ function TranslationModule:GetTabs()
       return savedConfig.Tab_Oficine, savedConfig.Tab_Sisters, savedConfig.Tab_Nagisa, savedConfig.Tab_PhasesFrame, savedConfig.Tab_VelaFase, savedConfig.Tab_Other, savedConfig.Tab_Creditos
     else
         local newConfig = CreateTranslation(currentLanguage)
-        for i = 1, 5 do
-          translations.Tab_PhasesFrame["HouseButton" .. i] = translations.HouseText .. i
-        end
-
-        for i = 1, 9 do
-          translations.Tab_VelaFase["VelaButton" .. i] = translations.NavioVelaText .. i
-        end
-        
         SaveConfig(newConfig, currentLanguage)
         return newConfig.Tab_Oficine, newConfig.Tab_Sisters, newConfig.Tab_Nagisa, newConfig.Tab_PhasesFrame, newConfig.Tab_VelaFase, newConfig.Tab_Other, newConfig.Tab_Creditos
     end
