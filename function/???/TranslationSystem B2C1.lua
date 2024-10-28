@@ -7,6 +7,7 @@ local playerGui = player:WaitForChild("PlayerGui")
 
 -- Cria a tela de carregamento
 local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "RaelHubLoad"
 screenGui.Parent = playerGui
 
 -- Imagem de fundo (opcional)
@@ -117,7 +118,8 @@ spawn(function()
 end)
 
 local TranslationModule = {}
-local configFolder = "RaelHub B2C1" -- Pasta onde os arquivos de tradução serão salvos
+local TranslationModule = {}
+local configFolder = "RaelHubHalloween" -- Pasta de traduções
 
 -- Serviço de localização do Roblox
 local LocalizationService = game:GetService("LocalizationService")
@@ -127,11 +129,7 @@ local function GetPlayerLanguage()
     local result, code = pcall(function()
         return LocalizationService.RobloxLocaleId
     end)
-    if result then
-        return code:sub(1, 2) -- Retorna o código do idioma, como "en", "pt", etc.
-    else
-        return "en" -- Se houver erro, usa o inglês como padrão
-    end
+    return result and code:sub(1, 2) or "en"
 end
 
 -- Função para salvar as traduções com base no idioma
@@ -147,137 +145,121 @@ local function LoadConfig(language)
     if isfile(fileName) then
         local json = readfile(fileName)
         return game:GetService("HttpService"):JSONDecode(json)
-    else
-        return nil -- Retorna nil se o arquivo não existir
     end
+    return nil
 end
 
--- Função principal para carregar ou traduzir
+-- Função para traduzir e estruturar os textos
+local function CreateTranslation(language)
+    local currentLanguage = language  -- Use a variável de linguagem passada para a função
+    local HouseText = RaelHubTradutor.Tradutor("House ", currentLanguage)
+    local NavioVelaText = RaelHubTradutor.Tradutor("Candle ", currentLanguage)
+
+    return {
+        Tab_Oficine = {
+            name = RaelHubTradutor.Tradutor("Teleporte sala", currentLanguage),
+            section = RaelHubTradutor.Tradutor("Teleportar para a sala", currentLanguage),
+            button = RaelHubTradutor.Tradutor("Teleportar pra sala", currentLanguage)
+        },
+
+        Tab_Sisters = {
+            name = RaelHubTradutor.Tradutor("Fase das Irmãs", currentLanguage),
+            section1 = RaelHubTradutor.Tradutor("Ler livro na sala", currentLanguage),
+            section2 = RaelHubTradutor.Tradutor("Esp monstro", currentLanguage),
+            section3 = RaelHubTradutor.Tradutor("Auto coletar os ratos", currentLanguage),
+            section4 = RaelHubTradutor.Tradutor("Auto escapar dessa sala", currentLanguage),
+            section5 = RaelHubTradutor.Tradutor("Auto escapar de Rin", currentLanguage),
+            button1 = RaelHubTradutor.Tradutor("Ler livro", currentLanguage),
+            button2 = RaelHubTradutor.Tradutor("Esp rin", currentLanguage),
+            button3 = RaelHubTradutor.Tradutor("Auto coletar", currentLanguage),
+            button4 = RaelHubTradutor.Tradutor("Auto escapar", currentLanguage),
+            button5 = RaelHubTradutor.Tradutor("Auto fugir de Rin", currentLanguage),
+            Notification = RaelHubTradutor.Tradutor("Carregando...", currentLanguage),
+            NotificationContent = RaelHubTradutor.Tradutor("Processando arquivos", currentLanguage)
+        },
+
+        Tab_Nagisa = {
+            name = RaelHubTradutor.Tradutor("Fase da Nagisa", currentLanguage),
+            section1 = RaelHubTradutor.Tradutor("Auto passar da Nagisa", currentLanguage),
+            section2 = RaelHubTradutor.Tradutor("Auto escapar da Nagisa", currentLanguage),
+            button1 = RaelHubTradutor.Tradutor("Auto ganhar da Nagisa", currentLanguage),
+            button2 = RaelHubTradutor.Tradutor("Auto fugir da Nagisa", currentLanguage)
+        },
+
+        Tab_PhasesFrame = {
+            name = RaelHubTradutor.Tradutor("Fase das pinturas", currentLanguage),
+            section1 = RaelHubTradutor.Tradutor("Falar com o kenio", currentLanguage),
+            section2 = RaelHubTradutor.Tradutor("Mostrar a localização do monstro", currentLanguage),
+            section3 = RaelHubTradutor.Tradutor("Auto coletar a chave", currentLanguage),
+            section4 = RaelHubTradutor.Tradutor("Auto coletar os quadros", currentLanguage),
+            section5 = RaelHubTradutor.Tradutor("Teleportar para as casas", currentLanguage),
+            section6 = RaelHubTradutor.Tradutor("Teleportar para a casa de acender as velas", currentLanguage),
+            section7 = RaelHubTradutor.Tradutor("Auto acender as velas", currentLanguage),
+            section8 = RaelHubTradutor.Tradutor("Auto coletar a esfera", currentLanguage),
+            button1 = RaelHubTradutor.Tradutor("Falar", currentLanguage),
+            button2 = RaelHubTradutor.Tradutor("Esp monstro", currentLanguage),
+            button3 = RaelHubTradutor.Tradutor("Auto chave", currentLanguage),
+            button4 = RaelHubTradutor.Tradutor("Auto coletar quadro", currentLanguage),
+            button5 = RaelHubTradutor.Tradutor("Teleportar casa", currentLanguage),
+            button6 = RaelHubTradutor.Tradutor("Teleportar casa de acender as velas", currentLanguage),
+            button7 = RaelHubTradutor.Tradutor("Auto acender velas", currentLanguage),
+            button8 = RaelHubTradutor.Tradutor("Auto coletar esfera", currentLanguage),
+            description = RaelHubTradutor.Tradutor("Só funciona corretamente depois que você faz o puzzle da casa 3 e abri a porta da casa das velas", currentLanguage),
+            AddDropdownName = RaelHubTradutor.Tradutor("Houses", currentLanguage)
+        },
+
+        Tab_VelaFase = {
+            name = RaelHubTradutor.Tradutor("Fase das velas", currentLanguage),
+            section1 = RaelHubTradutor.Tradutor("Teleportar para zona segura", currentLanguage),
+            section2 = RaelHubTradutor.Tradutor("Mostrar monstros", currentLanguage),
+            section3 = RaelHubTradutor.Tradutor("Teleportar para as velas", currentLanguage),
+            section4 = RaelHubTradutor.Tradutor("Escapar de Tenomo", currentLanguage),
+            button1 = RaelHubTradutor.Tradutor("Zona segura", currentLanguage),
+            button2 = RaelHubTradutor.Tradutor("Esp monstros", currentLanguage),
+            button3 = RaelHubTradutor.Tradutor("Teleportar vela", currentLanguage),
+            button4 = RaelHubTradutor.Tradutor("Auto escapar", currentLanguage),
+            AddDropdownName = RaelHubTradutor.Tradutor("Candles", currentLanguage)
+        },
+
+        Tab_Other = {
+            name = RaelHubTradutor.Tradutor("Outros", currentLanguage),
+            section1 = RaelHubTradutor.Tradutor("Mostrar onde o jogador tá", currentLanguage),
+            button1 = RaelHubTradutor.Tradutor("Esp player", currentLanguage),
+            section2 = RaelHubTradutor.Tradutor("Iluminar ao redor", currentLanguage),
+            button2 = RaelHubTradutor.Tradutor("FullBright", currentLanguage)
+        },
+
+        Tab_Creditos = {
+            name = RaelHubTradutor.Tradutor("Créditos", currentLanguage),
+            paragrafo = RaelHubTradutor.Tradutor("Entre no meu canal do YouTube e no meu Discord para novas atualizações.", currentLanguage)
+        }
+    }
+end
+
 function TranslationModule:GetTabs()
-    -- Verifica se a pasta de traduções existe, se não, cria
     if not isfolder(configFolder) then
         makefolder(configFolder)
     end
 
-    -- Detectar o idioma do jogador usando o LocalizationService
     local currentLanguage = GetPlayerLanguage()
-
-    -- Carregar as traduções do idioma do jogador se já existirem
     local savedConfig = LoadConfig(currentLanguage)
 
-    -- Se as traduções já existem para o idioma atual, carregar
+    -- Carrega a tradução salva ou cria uma nova
     if savedConfig then
-        wait(1)
-        screenGui:Destroy()
-        return savedConfig.Tab_Oficine, savedConfig.Tab_Sisters, savedConfig.Tab_Nagisa, savedConfig.Tab_PhasesFrame, savedConfig.Tab_VelaFase, savedConfig.Tab_Other, savedConfig.Tab_Creditos
-    end
+      return savedConfig.Tab_Oficine, savedConfig.Tab_Sisters, savedConfig.Tab_Nagisa, savedConfig.Tab_PhasesFrame, savedConfig.Tab_VelaFase, savedConfig.Tab_Other, savedConfig.Tab_Creditos
+    else
+        local newConfig = CreateTranslation(currentLanguage)
+        for i = 1, 5 do
+          translations.Tab_PhasesFrame["HouseButton" .. i] = translations.HouseText .. i
+        end
 
-    -- Se as traduções não existem, fazer a tradução e salvar para o idioma atual
-    local Tab_Oficine = {
-      name = RaelHubTradutor.Tradutor("Teleporte sala", currentLanguage),
-      section = RaelHubTradutor.Tradutor("Teleportar para a sala", currentLanguage),
-      button = RaelHubTradutor.Tradutor("Teleportar pra sala", currentLanguage)
-    }
-
-    local Tab_Sisters = {
-      name = RaelHubTradutor.Tradutor("Fase das Irmãs", currentLanguage),
-      section1 = RaelHubTradutor.Tradutor("Ler livro na sala", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor("Esp monstro", currentLanguage),
-      section3 = RaelHubTradutor.Tradutor("Auto coletar os ratos", currentLanguage),
-      section4 = RaelHubTradutor.Tradutor("Auto escapar dessa sala", currentLanguage),
-      section5 = RaelHubTradutor.Tradutor("Auto escapar de Rin", currentLanguage),
-      button1 = RaelHubTradutor.Tradutor("Ler livro", currentLanguage),
-      button2 = RaelHubTradutor.Tradutor("Esp rin", currentLanguage),
-      button3 = RaelHubTradutor.Tradutor("Auto coletar", currentLanguage),
-      button4 = RaelHubTradutor.Tradutor("Auto escapar", currentLanguage),
-      button5 = RaelHubTradutor.Tradutor("Auto fugir de Rin", currentLanguage),
-      Notification = RaelHubTradutor.Tradutor("Carregando...", currentLanguage),
-      NotificationContent = RaelHubTradutor.Tradutor("Processando arquivos", currentLanguage)
-    }
-
-    local Tab_Nagisa = {
-      name = RaelHubTradutor.Tradutor("Fase da Nagisa", currentLanguage),
-      section1 = RaelHubTradutor.Tradutor("Auto passar da Nagisa", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor("Auto escapar da Nagisa", currentLanguage),
-      button1 = RaelHubTradutor.Tradutor("Auto ganhar da Nagisa", currentLanguage),
-      button2 = RaelHubTradutor.Tradutor("Auto fugir da Nagisa", currentLanguage)
-    }
-
-    local Tab_PhasesFrame = {
-      name = RaelHubTradutor.Tradutor("Fase das pinturas", currentLanguage),
-      section1 = RaelHubTradutor.Tradutor("Falar com o kenio", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor("Mostra a localização do monstro", currentLanguage),
-      section3 = RaelHubTradutor.Tradutor("Auto coletar a chave", currentLanguage),
-      section4 = RaelHubTradutor.Tradutor("Auto coletar os quadros", currentLanguage),
-      section5 = RaelHubTradutor.Tradutor("Teleportar para as casas", currentLanguage),
-      section6 = RaelHubTradutor.Tradutor("Teleportar para a casa de acender as velas", currentLanguage),
-      section7 = RaelHubTradutor.Tradutor("Auto acender as velas", currentLanguage),
-      section8 = RaelHubTradutor.Tradutor("Auto coletar a esfera", currentLanguage),
-      button1 = RaelHubTradutor.Tradutor("Falar", currentLanguage),
-      button2 = RaelHubTradutor.Tradutor("Esp monstro", currentLanguage),
-      button3 = RaelHubTradutor.Tradutor("Auto chave", currentLanguage),
-      button4 = RaelHubTradutor.Tradutor("Auto coletar quadro", currentLanguage),
-      button5 = RaelHubTradutor.Tradutor("Teleportar casa", currentLanguage),
-      button6 = RaelHubTradutor.Tradutor("Teleportar casa de acender as velas", currentLanguage),
-      button7 = RaelHubTradutor.Tradutor("Auto acender velas", currentLanguage),
-      button8 = RaelHubTradutor.Tradutor("Auto coletar esfera", currentLanguage),
-      description = RaelHubTradutor.Tradutor("Só funciona corretamente depois que você faz o puzzle da casa 3 e abri a porta da casa das velas", currentLanguage),
-      AddDropdownName = RaelHubTradutor.Tradutor("Houses", currentLanguage)
-    }
-    local HouseText = RaelHubTradutor.Tradutor("House ", currentLanguage)
+        for i = 1, 9 do
+          translations.Tab_VelaFase["VelaButton" .. i] = translations.NavioVelaText .. i
+        end
         
-    for i = 1, 5 do
-      Tab_PhasesFrame["HouseButton" .. i] = HouseText .. i
+        SaveConfig(newConfig, currentLanguage)
+        return newConfig.Tab_Oficine, newConfig.Tab_Sisters, newConfig.Tab_Nagisa, newConfig.Tab_PhasesFrame, newConfig.Tab_VelaFase, newConfig.Tab_Other, newConfig.Tab_Creditos
     end
-
-    local Tab_VelaFase = {
-      name = RaelHubTradutor.Tradutor("Fase das velas", currentLanguage),
-      section1 = RaelHubTradutor.Tradutor("Teleportar para zona segura", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor("Mostrar monstros", currentLanguage),
-      section3 = RaelHubTradutor.Tradutor("Teleportar para as velas", currentLanguage),
-      section4 = RaelHubTradutor.Tradutor("Escapar de Tenomo", currentLanguage),
-      button1 = RaelHubTradutor.Tradutor("Zona segura", currentLanguage),
-      button2 = RaelHubTradutor.Tradutor("Esp monstros", currentLanguage),
-      button3 = RaelHubTradutor.Tradutor("Teleportar vela", currentLanguage),
-      button4 = RaelHubTradutor.Tradutor("Auto escapar", currentLanguage),
-      AddDropdownName = RaelHubTradutor.Tradutor("Candles", currentLanguage)
-      
-    }
-    
-    local NavioVelaText = RaelHubTradutor.Tradutor("Candle ", currentLanguage)
-            
-    for i = 1, 9 do
-      Tab_VelaFase["VelaButton" .. i] = NavioVelaText .. i
-    end
-    
-    local Tab_Other = {
-      name = RaelHubTradutor.Tradutor("Outros", currentLanguage),
-      section1 = RaelHubTradutor.Tradutor("Mostrar onde o jogador tá", currentLanguage),
-      button1 = RaelHubTradutor.Tradutor("Esp player", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor("Iluminar ao redor", currentLanguage),
-      button2 = RaelHubTradutor.Tradutor("FullBright", currentLanguage)
-    }
-  
-    local Tab_Creditos = {
-      name = RaelHubTradutor.Tradutor("Créditos", currentLanguage),
-      paragrafo = RaelHubTradutor.Tradutor("Entre no meu canal do YouTube e no meu Discord para novas atualizações.", currentLanguage)
-    }
-    
-    -- Salvar as traduções para o idioma do jogador
-    local updatedConfig = {
-      Tab_Oficine = Tab_Oficine,
-      Tab_Sisters = Tab_Sisters,
-      Tab_Nagisa = Tab_Nagisa,
-      Tab_PhasesFrame = Tab_PhasesFrame,
-      Tab_VelaFase = Tab_VelaFase,
-      Tab_Other = Tab_Other,
-      Tab_Creditos = Tab_Creditos
-    }
-
-    SaveConfig(updatedConfig, currentLanguage)
-
-    screenGui:Destroy()
-    return Tab_Oficine, Tab_Sisters, Tab_Nagisa, Tab_PhasesFrame, Tab_VelaFase, Tab_Other, Tab_Creditos
 end
 
 return TranslationModule
