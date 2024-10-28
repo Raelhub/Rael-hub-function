@@ -7,6 +7,7 @@ local playerGui = player:WaitForChild("PlayerGui")
 
 -- Cria a tela de carregamento
 local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "RaelHubLoad"
 screenGui.Parent = playerGui
 
 -- Imagem de fundo (opcional)
@@ -117,7 +118,8 @@ spawn(function()
 end)
 
 local TranslationModule = {}
-local configFolder = "RaelHub Jigoku" -- Pasta onde os arquivos de tradução serão salvos
+local TranslationModule = {}
+local configFolder = "RaelHub Jigoku" -- Pasta de traduções
 
 -- Serviço de localização do Roblox
 local LocalizationService = game:GetService("LocalizationService")
@@ -127,11 +129,7 @@ local function GetPlayerLanguage()
     local result, code = pcall(function()
         return LocalizationService.RobloxLocaleId
     end)
-    if result then
-        return code:sub(1, 2) -- Retorna o código do idioma, como "en", "pt", etc.
-    else
-        return "en" -- Se houver erro, usa o inglês como padrão
-    end
+    return result and code:sub(1, 2) or "en"
 end
 
 -- Função para salvar as traduções com base no idioma
@@ -147,34 +145,14 @@ local function LoadConfig(language)
     if isfile(fileName) then
         local json = readfile(fileName)
         return game:GetService("HttpService"):JSONDecode(json)
-    else
-        return nil -- Retorna nil se o arquivo não existir
     end
+    return nil
 end
 
--- Função principal para carregar ou traduzir
-function TranslationModule:GetTabs()
-    -- Verifica se a pasta de traduções existe, se não, cria
-    if not isfolder(configFolder) then
-        makefolder(configFolder)
-    end
-
-    -- Detectar o idioma do jogador usando o LocalizationService
-    local currentLanguage = GetPlayerLanguage()
-
-    -- Carregar as traduções do idioma do jogador se já existirem
-    local savedConfig = LoadConfig(currentLanguage)
-
-    -- Se as traduções já existem para o idioma atual, carregar
-    if savedConfig then
-        wait(1)
-        screenGui:Destroy()
-        
-        return savedConfig.Main, savedConfig.Tab_Player, savedConfig.Tab_Esp, savedConfig.Tab_Creditos
-    end
-
-    -- Se as traduções não existem, fazer a tradução e salvar para o idioma atual
-    local Main = {
+-- Função para traduzir e estruturar os textos
+local function CreateTranslation(language)
+    return {
+      Main = {
         name = RaelHubTradutor.Tradutor("Main", currentLanguage),
         section1 = RaelHubTradutor.Tradutor("Começar custcine", currentLanguage),
         section2 = RaelHubTradutor.Tradutor("Teleportar para a zona segura", currentLanguage),
@@ -182,46 +160,52 @@ function TranslationModule:GetTabs()
         button1 = RaelHubTradutor.Tradutor("Começar custcine", currentLanguage),
         button2 = RaelHubTradutor.Tradutor("Zona segura", currentLanguage),
         button3 = RaelHubTradutor.Tradutor("Auto coletar", currentLanguage)
-    }
-    local Tab_Player = {
-      name = RaelHubTradutor.Tradutor("Jogadores", currentLanguage),
-      section1 = RaelHubTradutor.Tradutor("Teleportar para os jogadores", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor( "Velocidade do jogador", currentLanguage),
-      section3 = RaelHubTradutor.Tradutor( "Iluminar ao seu redor", currentLanguage),
-      AddDropdownName = RaelHubTradutor.Tradutor("Lista de jogadores: ", currentLanguage),
-      AddSliderName = RaelHubTradutor.Tradutor("Velocidade", currentLanguage),
-      button = RaelHubTradutor.Tradutor("Teleportar jogador", currentLanguage),
-      toggle = RaelHubTradutor.Tradutor("Fullbright", currentLanguage)
-    }
-   
-    local Tab_Esp = {
-      name = RaelHubTradutor.Tradutor("Esp", currentLanguage),
-      section1 = RaelHubTradutor.Tradutor("Mostrar a localização dos jogadores", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor("Mostrar a localização das almas", currentLanguage),
-      section3 = RaelHubTradutor.Tradutor("Mostrar a localização do monstro", currentLanguage),
-      button1 = RaelHubTradutor.Tradutor("Esp jogadores", currentLanguage),
-      button2 = RaelHubTradutor.Tradutor("Esp almas", currentLanguage),
-      button3 = RaelHubTradutor.Tradutor("Esp monstro", currentLanguage),
-      ObjectName = RaelHubTradutor.Tradutor("Alma", currentLanguage)
-    }
+      },
+      Tab_Player = {
+        name = RaelHubTradutor.Tradutor("Jogadores", currentLanguage),
+        section1 = RaelHubTradutor.Tradutor("Teleportar para os jogadores", currentLanguage),
+        section2 = RaelHubTradutor.Tradutor( "Velocidade do jogador", currentLanguage),
+        section3 = RaelHubTradutor.Tradutor( "Iluminar ao seu redor", currentLanguage),
+        AddDropdownName = RaelHubTradutor.Tradutor("Lista de jogadores: ", currentLanguage),
+        AddSliderName = RaelHubTradutor.Tradutor("Velocidade", currentLanguage),
+        button = RaelHubTradutor.Tradutor("Teleportar jogador", currentLanguage),
+        toggle = RaelHubTradutor.Tradutor("Fullbright", currentLanguage)
+      },
+      Tab_Esp = {
+        name = RaelHubTradutor.Tradutor("Esp", currentLanguage),
+        section1 = RaelHubTradutor.Tradutor("Mostrar a localização dos jogadores", currentLanguage),
+        section2 = RaelHubTradutor.Tradutor("Mostrar a localização das almas", currentLanguage),
+        section3 = RaelHubTradutor.Tradutor("Mostrar a localização do monstro", currentLanguage),
+        button1 = RaelHubTradutor.Tradutor("Esp jogadores", currentLanguage),
+        button2 = RaelHubTradutor.Tradutor("Esp almas", currentLanguage),
+        button3 = RaelHubTradutor.Tradutor("Esp monstro", currentLanguage),
+        ObjectName = RaelHubTradutor.Tradutor("Alma", currentLanguage)
+      },
     
-    local Tab_Creditos = {
-      name = RaelHubTradutor.Tradutor("Créditos", currentLanguage),
-      paragrafo = RaelHubTradutor.Tradutor("Entre no meu canal do YouTube e no meu Discord para novas atualizações.", currentLanguage)
+      Tab_Creditos = {
+        name = RaelHubTradutor.Tradutor("Créditos", currentLanguage),
+        paragrafo = RaelHubTradutor.Tradutor("Entre no meu canal do YouTube e no meu Discord para novas atualizações.", currentLanguage)
+      }
     }
-    
-    -- Salvar as traduções para o idioma do jogador
-    local updatedConfig = {
-        Main = Main,
-        Tab_Player = Tab_Player,
-        Tab_Esp = Tab_Esp,
-        Tab_Creditos = Tab_Creditos
-    }
+end
 
-    SaveConfig(updatedConfig, currentLanguage)
+-- Função principal para carregar ou traduzir
+function TranslationModule:GetTabs()
+    if not isfolder(configFolder) then
+        makefolder(configFolder)
+    end
 
-    screenGui:Destroy()
-    return Main, Tab_Player, Tab_Esp, Tab_Creditos
+    local currentLanguage = GetPlayerLanguage()
+    local savedConfig = LoadConfig(currentLanguage)
+
+    -- Carrega a tradução salva ou cria uma nova
+    if savedConfig then
+        return savedConfig.Main, savedConfig.Tab_Player, savedConfig.Tab_Esp, savedConfig.Tab_Creditos
+    else
+        local newConfig = CreateTranslation(currentLanguage)
+        SaveConfig(newConfig, currentLanguage)
+        return newConfig.Main, newConfig.Tab_Player, newConfig.Tab_Esp, newConfig.Tab_Creditos
+    end
 end
 
 return TranslationModule
