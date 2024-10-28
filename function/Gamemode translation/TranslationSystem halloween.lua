@@ -117,7 +117,8 @@ spawn(function()
 end)
 
 local TranslationModule = {}
-local configFolder = "RaelHub halloween" -- Pasta onde os arquivos de tradução serão salvos
+local TranslationModule = {}
+local configFolder = "RaelHubHalloween" -- Pasta de traduções
 
 -- Serviço de localização do Roblox
 local LocalizationService = game:GetService("LocalizationService")
@@ -127,11 +128,7 @@ local function GetPlayerLanguage()
     local result, code = pcall(function()
         return LocalizationService.RobloxLocaleId
     end)
-    if result then
-        return code:sub(1, 2) -- Retorna o código do idioma, como "en", "pt", etc.
-    else
-        return "en" -- Se houver erro, usa o inglês como padrão
-    end
+    return result and code:sub(1, 2) or "en"
 end
 
 -- Função para salvar as traduções com base no idioma
@@ -147,95 +144,78 @@ local function LoadConfig(language)
     if isfile(fileName) then
         local json = readfile(fileName)
         return game:GetService("HttpService"):JSONDecode(json)
-    else
-        return nil -- Retorna nil se o arquivo não existir
     end
+    return nil
+end
+
+-- Função para traduzir e estruturar os textos
+local function CreateTranslation(language)
+    return {
+        Main = {
+            name = RaelHubTradutor.Tradutor("Main", language),
+            section1 = RaelHubTradutor.Tradutor("Auto win part 1", language),
+            section2 = RaelHubTradutor.Tradutor("Auto win part 2", language),
+            section3 = RaelHubTradutor.Tradutor("Auto win part 3", language),
+            button = RaelHubTradutor.Tradutor("Auto win", language)
+        },
+        Tab_Candy = {
+            section = RaelHubTradutor.Tradutor("Auto coletar todos os doces", language),
+            button = RaelHubTradutor.Tradutor("Auto coletar doces", language)
+        },
+        Part2 = {
+            EspName = RaelHubTradutor.Tradutor("Pumpkin", language),
+            button1 = RaelHubTradutor.Tradutor("Auto win (Singleplayer)", language),
+            button2 = RaelHubTradutor.Tradutor("Auto win (Multiplayer)", language),
+            description1 = RaelHubTradutor.Tradutor("Teleportar direto para terceira parte", language),
+            description2 = RaelHubTradutor.Tradutor("Acende todas as velas", language)
+        },
+        Part3 = {
+            button1 = RaelHubTradutor.Tradutor("Auto win (Singleplayer)", language),
+            button2 = RaelHubTradutor.Tradutor("Auto criar a poção", language),
+            description1 = RaelHubTradutor.Tradutor("Teleportar direto para kabocha", language),
+            description2 = RaelHubTradutor.Tradutor("Auto fazer a poção", language)
+        },
+        Jogador = {
+            name = RaelHubTradutor.Tradutor("Player", language),
+            section1 = RaelHubTradutor.Tradutor("Teleport to players", language),
+            section2 = RaelHubTradutor.Tradutor("Player Speed", language),
+            section3 = RaelHubTradutor.Tradutor("Light up the map", language),
+            dropdowntext = RaelHubTradutor.Tradutor("Players: ", language),
+            slidetext = RaelHubTradutor.Tradutor("Speed: ", language),
+            button = RaelHubTradutor.Tradutor("Teleport to player", language)
+        },
+        Mostrar = {
+            name = "Esp",
+            toggle1 = "Esp " .. RaelHubTradutor.Tradutor(" object ", language),
+            toggle2 = "Esp " .. RaelHubTradutor.Tradutor(" monster ", language),
+            toggle3 = "Esp " .. RaelHubTradutor.Tradutor(" players ", language)
+        },
+        Creditos = {
+            name = RaelHubTradutor.Tradutor("Credits", language),
+            section = RaelHubTradutor.Tradutor("Script creator", language),
+            descricao = RaelHubTradutor.Tradutor("Join my YouTube channel and Discord for new updates", language),
+            ContentNotify = RaelHubTradutor.Tradutor("The script has been copied to the desktop", language)
+        }
+    }
 end
 
 -- Função principal para carregar ou traduzir
 function TranslationModule:GetTabs()
-    -- Verifica se a pasta de traduções existe, se não, cria
     if not isfolder(configFolder) then
         makefolder(configFolder)
     end
 
-    -- Detectar o idioma do jogador usando o LocalizationService
     local currentLanguage = GetPlayerLanguage()
-
-    -- Carregar as traduções do idioma do jogador se já existirem
     local savedConfig = LoadConfig(currentLanguage)
 
-    -- Se as traduções já existem para o idioma atual, carregar
+    -- Carrega a tradução salva ou cria uma nova
     if savedConfig then
-        wait(1)
-        screenGui:Destroy()
         return savedConfig.Main, savedConfig.Tab_Candy, savedConfig.Part2, savedConfig.Part3, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
+    else
+        local newConfig = CreateTranslation(currentLanguage)
+        SaveConfig(newConfig, currentLanguage)
+        return newConfig.Main, newConfig.Tab_Candy, newConfig.Part2, newConfig.Part3, newConfig.Jogador, newConfig.Mostrar, newConfig.Creditos
     end
-
-    -- Se as traduções não existem, fazer a tradução e salvar para o idioma atual
-    local Main = {
-        name = RaelHubTradutor.Tradutor("Main", currentLanguage),
-        section1 = RaelHubTradutor.Tradutor("Auto win part 1", currentLanguage),
-        section2 = RaelHubTradutor.Tradutor("Auto win part 2", currentLanguage),
-        section3 = RaelHubTradutor.Tradutor("Auto win part 3", currentLanguage),
-        button = RaelHubTradutor.Tradutor("Auto win", currentLanguage)
-    }
-    local Tab_Candy = {
-      section = RaelHubTradutor.Tradutor("Auto coletar todos os doces"),
-      button = RaelHubTradutor.Tradutor("Auto coletar doces"),
-    }
-    local Part2 = {
-      EspName = RaelHubTradutor.Tradutor("Pumpkin"),
-      button1 = RaelHubTradutor.Tradutor("Auto win (Singleplayer)"),
-      button2 = RaelHubTradutor.Tradutor("Auto win (Multiplayer)"),
-      description1 = RaelHubTradutor.Tradutor("Teleportar direto para terceira parte"),
-      description2 = RaelHubTradutor.Tradutor("Acende todas as velas")
-    }
-    local Part3 = {
-      button1 = RaelHubTradutor.Tradutor("Auto win (Singleplayer)"),
-      button2 = RaelHubTradutor.Tradutor("Auto criar a poção"),
-      description1 = RaelHubTradutor.Tradutor("Teleportar direto para kabocha"),
-      description2 = RaelHubTradutor.Tradutor("Auto fazer a poção")
-    }
-    local Jogador = {
-        name = RaelHubTradutor.Tradutor("Player", currentLanguage),
-        section1 = RaelHubTradutor.Tradutor("Teleport to players", currentLanguage),
-        section2 = RaelHubTradutor.Tradutor("Player Speed", currentLanguage),
-        section3 = RaelHubTradutor.Tradutor("Light up the map", currentLanguage),
-        dropdowntext = RaelHubTradutor.Tradutor("Players: ", currentLanguage),
-        slidetext = RaelHubTradutor.Tradutor("Speed: ", currentLanguage),
-        button = RaelHubTradutor.Tradutor("Teleport to player", currentLanguage)
-    }
-
-    local Mostrar = {
-        name = "Esp",
-        toggle1 = "Esp " .. RaelHubTradutor.Tradutor(" object ", currentLanguage),
-        toggle2 = "Esp " .. RaelHubTradutor.Tradutor(" monster ", currentLanguage),
-        toggle3 = "Esp " .. RaelHubTradutor.Tradutor(" players ", currentLanguage)
-    }
-
-    local Creditos = {
-        name = RaelHubTradutor.Tradutor("Credits", currentLanguage),
-        section = RaelHubTradutor.Tradutor("Script creator", currentLanguage),
-        descricao = RaelHubTradutor.Tradutor("Join my YouTube channel and Discord for new updates", currentLanguage),
-        ContentNotify = RaelHubTradutor.Tradutor("The script has been copied to the desktop", currentLanguage)
-    }
-
-    -- Salvar as traduções para o idioma do jogador
-    local updatedConfig = {
-        Main = Main,
-        Tab_Candy = Tab_Candy,
-        Part2 = Part2,
-        Part3 = Part3,
-        Jogador = Jogador,
-        Mostrar = Mostrar,
-        Creditos = Creditos
-    }
-
-    SaveConfig(updatedConfig, currentLanguage)
-
-    screenGui:Destroy()
-    return Main, Tab_Candy, Part2, Part3, Jogador, Mostrar, Creditos
 end
 
 return TranslationModule
