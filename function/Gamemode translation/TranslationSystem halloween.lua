@@ -7,6 +7,7 @@ local playerGui = player:WaitForChild("PlayerGui")
 
 -- Cria a tela de carregamento
 local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "RaelHubLoad"
 screenGui.Parent = playerGui
 
 -- Imagem de fundo (opcional)
