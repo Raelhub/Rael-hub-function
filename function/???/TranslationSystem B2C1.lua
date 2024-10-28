@@ -119,7 +119,7 @@ end)
 
 local TranslationModule = {}
 local TranslationModule = {}
-local configFolder = "RaelHubHalloween" -- Pasta de traduções
+local configFolder = "RaelHubB2C1" -- Pasta de traduções
 
 -- Serviço de localização do Roblox
 local LocalizationService = game:GetService("LocalizationService")
