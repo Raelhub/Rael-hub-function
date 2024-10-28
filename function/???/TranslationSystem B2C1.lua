@@ -118,7 +118,8 @@ spawn(function()
 end)
 
 local TranslationModule = {}
-local configFolder = "RaelHubB2C1" -- Pasta de traduções
+local TranslationModule = {}
+local configFolder = "Rael Hub B2C1" -- Pasta de traduções
 
 -- Serviço de localização do Roblox
 local LocalizationService = game:GetService("LocalizationService")
@@ -245,7 +246,7 @@ function TranslationModule:GetTabs()
 
     -- Carrega a tradução salva ou cria uma nova
     if savedConfig then
-      return savedConfig.Tab_Oficine, savedConfig.Tab_Sisters, savedConfig.Tab_Nagisa, savedConfig.Tab_PhasesFrame, savedConfig.Tab_VelaFase, savedConfig.Tab_Other, savedConfig.Tab_Creditos
+        return savedConfig.Tab_Oficine, savedConfig.Tab_Sisters, savedConfig.Tab_Nagisa, savedConfig.Tab_PhasesFrame, savedConfig.Tab_VelaFase, savedConfig.Tab_Other, savedConfig.Tab_Creditos
     else
         local newConfig = CreateTranslation(currentLanguage)
         SaveConfig(newConfig, currentLanguage)
