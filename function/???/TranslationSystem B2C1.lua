@@ -118,7 +118,6 @@ spawn(function()
 end)
 
 local TranslationModule = {}
-local TranslationModule = {}
 local configFolder = "RaelHubB2C1" -- Pasta de traduções
 
 -- Serviço de localização do Roblox
