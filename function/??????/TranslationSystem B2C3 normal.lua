@@ -254,7 +254,7 @@ function TranslationModule:GetTabs()
       section1 = RaelHubTradutor.Tradutor("Auto escapar do trem", currentLanguage),
       section2 = RaelHubTradutor.Tradutor("Ficar imuni ao monstro do train", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Auto fugir trem", currentLanguage),
-      button2 = RaelHubTradutor.Tradutor("Auto fugir trem", currentLanguage)
+      button2 = RaelHubTradutor.Tradutor("Imunidade ao monstro do trem", currentLanguage)
     }
 
     local Tab_larvas = {
