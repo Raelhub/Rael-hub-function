@@ -209,16 +209,18 @@ function TranslationModule:GetTabs()
 
     local Tab_DodoMeki = {
       name = RaelHubTradutor.Tradutor("Fase ", currentLanguage) .. " DodoMeki",
-      section1 = RaelHubTradutor.Tradutor("Mostrar a localização do DodoMeki", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor("Mostrar a localização do sino", currentLanguage),
-      section3 = RaelHubTradutor.Tradutor("Teleportar para os sinos", currentLanguage),
-      section4 = RaelHubTradutor.Tradutor("Teleportar para a porta do puzzle", currentLanguage),
-      section5 = RaelHubTradutor.Tradutor("Escapa do Dodomeki", currentLanguage),
+      section1 = RaelHubTradutor.Tradutor("Teleportar para zona segura", currentLanguage),
+      section2 = RaelHubTradutor.Tradutor("Mostrar a localização do DodoMeki", currentLanguage),
+      section3 = RaelHubTradutor.Tradutor("Mostrar a localização do sino", currentLanguage),
+      section4 = RaelHubTradutor.Tradutor("Teleportar para os sinos", currentLanguage),
+      section5 = RaelHubTradutor.Tradutor("Teleportar para a porta do puzzle", currentLanguage),
+      section6 = RaelHubTradutor.Tradutor("Escapa do Dodomeki", currentLanguage),
       toggle = RaelHubTradutor.Tradutor("Esp sinos", currentLanguage),
-      button1 = RaelHubTradutor.Tradutor("Esp DodoMeki", currentLanguage),
-      button2 = RaelHubTradutor.Tradutor("Teleportar para o Sino", currentLanguage),
-      button3 = RaelHubTradutor.Tradutor("Teleportar puzzle", currentLanguage),
-      button4 = RaelHubTradutor.Tradutor("Fugir do DodoMeki", currentLanguage),
+      button1 = RaelHubTradutor.Tradutor("Zona segura", currentLanguage),
+      button2 = RaelHubTradutor.Tradutor("Esp DodoMeki", currentLanguage),
+      button3 = RaelHubTradutor.Tradutor("Teleportar para o Sino", currentLanguage),
+      button4 = RaelHubTradutor.Tradutor("Teleportar puzzle", currentLanguage),
+      button5 = RaelHubTradutor.Tradutor("Fugir do DodoMeki", currentLanguage),
       
       BellDropdownName = RaelHubTradutor.Tradutor("Sinos", currentLanguage),
     }
@@ -261,8 +263,7 @@ function TranslationModule:GetTabs()
       name = RaelHubTradutor.Tradutor("Fase Larvas", currentLanguage),
       section1 = RaelHubTradutor.Tradutor("Mostrar a localização do Boogeyman", currentLanguage),
       section2 = RaelHubTradutor.Tradutor("Teleportar para zona segura", currentLanguage),
-      section3 = RaelHubTradutor.Tradutor("Teleportar para as larvas", currentLanguage),
-      section4 = RaelHubTradutor.Tradutor("Teleportar para Nurikabe", currentLanguage),
+      section3 = RaelHubTradutor.Tradutor("Auto finalizar esse fase", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Esp Boogeyman", currentLanguage),
       button2 = RaelHubTradutor.Tradutor("Zona segura", currentLanguage),
       button3 = RaelHubTradutor.Tradutor("Auto finalizar", currentLanguage)
