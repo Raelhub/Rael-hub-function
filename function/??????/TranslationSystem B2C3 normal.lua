@@ -265,8 +265,7 @@ function TranslationModule:GetTabs()
       section4 = RaelHubTradutor.Tradutor("Teleportar para Nurikabe", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Esp Boogeyman", currentLanguage),
       button2 = RaelHubTradutor.Tradutor("Zona segura", currentLanguage),
-      button3 = RaelHubTradutor.Tradutor("Tp larva", currentLanguage),
-      button4 = RaelHubTradutor.Tradutor("Tp Nurikabe", currentLanguage)
+      button3 = RaelHubTradutor.Tradutor("Auto finalizar", currentLanguage)
     }
 
     local Tab_Lama = {
