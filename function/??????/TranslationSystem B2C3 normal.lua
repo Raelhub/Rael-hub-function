@@ -180,7 +180,7 @@ function TranslationModule:GetTabs()
     
     local Tab_cutscene = {
       name = RaelHubTradutor.Tradutor("Skip the Cutscene", currentLanguage),
-      section = RaelHubTradutor.Tradutor("Pular a cutscene do Gozu e Mezu", currentLanguage),
+      section = RaelHubTradutor.Tradutor("Skip the Gozu and Mezu cutscene", currentLanguage),
       button = RaelHubTradutor.Tradutor("Skip Gozu and Mezu", currentLanguage)
     }
 
@@ -289,8 +289,8 @@ function TranslationModule:GetTabs()
     }
 
     for i = 1, 5 do
-      Tab_HouseYurei["NameEsp" .. i] = RaelHubTradutor.Tradutor("Casa " .. i, currentLanguage)
-      Tab_HouseYurei["House" .. i] = RaelHubTradutor.Tradutor("Casa " .. i, currentLanguage)
+      Tab_HouseYurei["NameEsp" .. i] = RaelHubTradutor.Tradutor("House " .. i, currentLanguage)
+      Tab_HouseYurei["House" .. i] = RaelHubTradutor.Tradutor("House " .. i, currentLanguage)
     end
 
     local Tab_BossYurei = {
