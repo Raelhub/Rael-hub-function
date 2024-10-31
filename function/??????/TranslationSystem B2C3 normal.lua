@@ -210,9 +210,11 @@ function TranslationModule:GetTabs()
     local Tab_DodoMeki = {
       name = RaelHubTradutor.Tradutor("Fase ", currentLanguage) .. " DodoMeki",
       section1 = RaelHubTradutor.Tradutor("Mostrar a localização do DodoMeki", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor("Teleportar para os sinos", currentLanguage),
-      section3 = RaelHubTradutor.Tradutor("Teleportar para a porta do puzzle", currentLanguage),
-      section4 = RaelHubTradutor.Tradutor("Escapa do Dodomeki", currentLanguage),
+      section2 = RaelHubTradutor.Tradutor("Mostrar a localização do sino", currentLanguage),
+      section3 = RaelHubTradutor.Tradutor("Teleportar para os sinos", currentLanguage),
+      section4 = RaelHubTradutor.Tradutor("Teleportar para a porta do puzzle", currentLanguage),
+      section5 = RaelHubTradutor.Tradutor("Escapa do Dodomeki", currentLanguage),
+      toggle = RaelHubTradutor.Tradutor("Esp sinos", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Esp DodoMeki", currentLanguage),
       button2 = RaelHubTradutor.Tradutor("Teleportar para o Sino", currentLanguage),
       button3 = RaelHubTradutor.Tradutor("Teleportar puzzle", currentLanguage),
@@ -249,8 +251,10 @@ function TranslationModule:GetTabs()
 
     local Tab_Train = {
       name = RaelHubTradutor.Tradutor("Fase metrô", currentLanguage),
-      section = RaelHubTradutor.Tradutor("Auto escapar do trem", currentLanguage),
-      button = RaelHubTradutor.Tradutor("Auto fugir trem", currentLanguage)
+      section1 = RaelHubTradutor.Tradutor("Auto escapar do trem", currentLanguage),
+      section2 = RaelHubTradutor.Tradutor("Ficar imuni ao monstro do train", currentLanguage),
+      button1 = RaelHubTradutor.Tradutor("Auto fugir trem", currentLanguage),
+      button2 = RaelHubTradutor.Tradutor("Auto fugir trem", currentLanguage)
     }
 
     local Tab_larvas = {
