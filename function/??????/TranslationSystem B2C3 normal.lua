@@ -301,7 +301,7 @@ function TranslationModule:GetTabs()
       section2 = RaelHubTradutor.Tradutor("Atravessar todas as árvores", currentLanguage),
       section3 = RaelHubTradutor.Tradutor("Voar + mira", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Coletar katanas", currentLanguage),
-      button2 = RaelHubTradutor.Tradutor("Coletar katanas", currentLanguage),
+      button2 = RaelHubTradutor.Tradutor("Auto equip katanas", currentLanguage),
       button3 = RaelHubTradutor.Tradutor("No clip Árvore", currentLanguage),
       button4 = RaelHubTradutor.Tradutor("Fly (velocidade recomendada: 1)", currentLanguage)
     }
