@@ -280,11 +280,13 @@ function TranslationModule:GetTabs()
       section1 = RaelHubTradutor.Tradutor("Mostrar todas as estátuas malignas", currentLanguage),
       section2 = RaelHubTradutor.Tradutor("Mostrar a localização das casas", currentLanguage),
       section3 = RaelHubTradutor.Tradutor("Teleportar para as casas", currentLanguage),
-      section4 = RaelHubTradutor.Tradutor("Traduiz legenda da yurei casa", currentLanguage),
+      section4 = RaelHubTradutor.Tradutor("Yurei monstro", currentLanguage),
+      section5 = RaelHubTradutor.Tradutor("Yurei puzzle", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Esp estátuas", currentLanguage),
       button2 = RaelHubTradutor.Tradutor("Esp casas", currentLanguage),
       button3 = RaelHubTradutor.Tradutor("Teleportar para o Casa", currentLanguage),
-      button4 = RaelHubTradutor.Tradutor("Auto traduzir", currentLanguage),
+      button4 = RaelHubTradutor.Tradutor("Anti yurei", currentLanguage),
+      button5 = RaelHubTradutor.Tradutor("Auto solve puzzle", currentLanguage),
       HouseDropdownName = RaelHubTradutor.Tradutor("Casas", currentLanguage),
     }
 
@@ -295,12 +297,13 @@ function TranslationModule:GetTabs()
 
     local Tab_BossYurei = {
       name = RaelHubTradutor.Tradutor("Boss Yurei", currentLanguage),
-      section1 = RaelHubTradutor.Tradutor("Auto coletar as katanas", currentLanguage),
+      section1 = RaelHubTradutor.Tradutor("Katanas", currentLanguage),
       section2 = RaelHubTradutor.Tradutor("Atravessar todas as árvores", currentLanguage),
       section3 = RaelHubTradutor.Tradutor("Voar + mira", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Coletar katanas", currentLanguage),
-      button2 = RaelHubTradutor.Tradutor("No clip Árvore", currentLanguage),
-      button3 = RaelHubTradutor.Tradutor("Fly (velocidade recomendada: 1)", currentLanguage)
+      button2 = RaelHubTradutor.Tradutor("Coletar katanas", currentLanguage),
+      button3 = RaelHubTradutor.Tradutor("No clip Árvore", currentLanguage),
+      button4 = RaelHubTradutor.Tradutor("Fly (velocidade recomendada: 1)", currentLanguage)
     }
 
     local Tab_FaseFinal = {
