@@ -188,11 +188,15 @@ function TranslationModule:GetTabs()
         section3 = RaelHubTradutor.Tradutor("Light up the map", currentLanguage),
         dropdowntext = RaelHubTradutor.Tradutor("Players: ", currentLanguage),
         slidetext = RaelHubTradutor.Tradutor("Speed: ", currentLanguage),
-        button = RaelHubTradutor.Tradutor("Teleport to player", currentLanguage)
+        button = RaelHubTradutor.Tradutor("Teleport to player", currentLanguage),
+        toggle = RaelHubTradutor.Tradutor("Ativar velocidade", currentLanguage)
     }
 
     local Mostrar = {
         name = "Esp",
+        section1 = RaelHubTradutor.Tradutor("Show objects", currentLanguage),
+        section2 = RaelHubTradutor.Tradutor("Show the monsters", currentLanguage),
+        section3 = RaelHubTradutor.Tradutor("Show players", currentLanguage),
         toggle1 = "Esp " .. RaelHubTradutor.Tradutor(" object ", currentLanguage),
         toggle2 = "Esp " .. RaelHubTradutor.Tradutor(" monster ", currentLanguage),
         toggle3 = "Esp " .. RaelHubTradutor.Tradutor(" players ", currentLanguage)
