@@ -75,7 +75,7 @@ local redzlib = {
   Options = {},
   Flags = {},
   Tabs = {},
-  Icons = nil
+  Icons = loadstring(game:HttpGet("https://pastebin.com/raw/U1Ar26Hv"))()
 }
 
 local ViewportSize = workspace.CurrentCamera.ViewportSize
