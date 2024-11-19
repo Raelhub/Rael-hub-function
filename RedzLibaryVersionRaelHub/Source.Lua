@@ -74,8 +74,7 @@ local redzlib = {
   Elements = {},
   Options = {},
   Flags = {},
-  Tabs = {},
-  Icons = nil
+  Tabs = {}
 }
 
 local ViewportSize = workspace.CurrentCamera.ViewportSize
@@ -535,26 +534,6 @@ local function GetColor(Instance)
   return ""
 end
 
--- /////////// --
-function redzlib:GetIcon(IconName)
-  if IconName:find("rbxassetid://") or IconName:len() < 1 then return IconName end
-  IconName = IconName:lower():gsub("lucide", ""):gsub("-", "")
-  
-  for Name, Icon in pairs(redzlib.Icons) do
-    Name = Name:gsub("lucide", ""):gsub("-", "")
-    if Name == IconName then
-      return Icon
-    end
-  end
-  for Name, Icon in pairs(redzlib.Icons) do
-    Name = Name:gsub("lucide", ""):gsub("-", "")
-    if Name:find(IconName) then
-      return Icon
-    end
-  end
-  return IconName
-end
-
 function redzlib:SetTheme(NewTheme)
   if not VerifyTheme(NewTheme) then return end
   
@@ -957,12 +936,6 @@ function redzlib:MakeWindow(Configs)
   function Window:MakeTab(paste, Configs)
     if type(paste) == "table" then Configs = paste end
     local TName = Configs[1] or Configs.Title or "Tab!"
-    local TIcon = Configs[2] or Configs.Icon or ""
-    
-    TIcon = redzlib:GetIcon(TIcon)
-    if not TIcon:find("rbxassetid://") or TIcon:gsub("rbxassetid://", ""):len() < 6 then
-      TIcon = false
-    end
     
     local TabSelect = Make("Button", MainScroll, {
       Size = UDim2.new(1, 0, 0, 24)
