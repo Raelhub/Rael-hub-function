@@ -279,7 +279,7 @@ function TranslationModule:GetTabs()
     SaveConfig(updatedConfig, currentLanguage)
 
     screenGui:Destroy()
-    return RepetitiveTexts, SkipPart, FisrtMap, OcenaPart, VillainPart, KeyPart, VictoriaPart, WhitePart, FinalPart, Jogador, Mostrar, Creditos
+    return RepetitiveTexts, SkipPart, FisrtMap, OcenaPart, VillainPart, KeyPart, VictoriaPart, GhostPart, WhitePart, FinalPart, Jogador, Mostrar, Creditos
 end
 
 return TranslationModule
