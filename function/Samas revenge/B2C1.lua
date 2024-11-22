@@ -220,8 +220,6 @@ function TranslationModule:GetTabs()
     local GhostPart = {
       name = RaelHubTradutor.Tradutor("Ghost Part", currentLanguage),
       section = RaelHubTradutor.Tradutor("Auto complete ghost part", currentLanguage),
-      
-      
     }
     local FinalPart = {
       name = RaelHubTradutor.Tradutor("Final Part", currentLanguage),
@@ -270,6 +268,7 @@ function TranslationModule:GetTabs()
         KeyPart = KeyPart,
         VictoriaPart = VictoriaPart,
         WhitePart = WhitePart,
+        GhostPart = GhostPart,
         FinalPart = FinalPart,
         Jogador = Jogador,
         Mostrar = Mostrar,
