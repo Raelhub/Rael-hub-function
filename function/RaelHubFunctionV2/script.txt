@@ -236,9 +236,14 @@ end
 
 function RaelHubFunction.DisableEsp(objeto)
   if objeto then
-    if objeto:FindFirstChild("RaelHubDestaque") and objeto:FindFirstChild("RaelHubIcon") then
-      objeto:FindFirstChild("RaelHubDestaque"):Destroy()
-      objeto:FindFirstChild("RaelHubIcon"):Destroy()
+    local RaelHubDestaque = objeto:FindFirstChild("RaelHubDestaque")
+    local RaelHubIcon = objeto:FindFirstChild("RaelHubIcon")
+    
+    if RaelHubDestaque then
+      RaelHubDestaque:Destroy()
+    end
+    if RaelHubIcon then
+      RaelHubIcon:Destroy()
     end
   end
 end
