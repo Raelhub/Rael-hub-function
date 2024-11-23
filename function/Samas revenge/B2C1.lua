@@ -169,7 +169,7 @@ function TranslationModule:GetTabs()
     if savedConfig then
         wait(1)
         screenGui:Destroy()
-        return savedConfig.Main, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
+        return savedConfig.RepetitiveTexts, savedConfig.SkipPart, savedConfig.FisrtMap, savedConfig.OcenaPart, savedConfig.VillainPart, savedConfig.KeyPart, savedConfig.VictoriaPart, savedConfig.WhitePart, savedConfig.GhostPart, savedConfig.FinalPart, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
     end
 
     local RepetitiveTexts = {
