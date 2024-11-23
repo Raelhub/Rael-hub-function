@@ -169,7 +169,7 @@ function TranslationModule:GetTabs()
     if savedConfig then
         wait(1)
         screenGui:Destroy()
-        return savedConfig.Main, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
+        return savedConfig.Main, savedConfig.AdditionalTranslations, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
     end
 
     -- Se as traduções não existem, fazer a tradução e salvar para o idioma atual
@@ -222,6 +222,7 @@ function TranslationModule:GetTabs()
     -- Salvar as traduções para o idioma do jogador
     local updatedConfig = {
         Main = Main,
+        AdditionalTranslations = AdditionalTranslations,
         Jogador = Jogador,
         Mostrar = Mostrar,
         Creditos = Creditos
