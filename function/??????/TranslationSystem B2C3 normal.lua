@@ -252,42 +252,42 @@ function TranslationModule:GetTabs()
     }
 
     local Tab_Train = {
-      name = RaelHubTradutor.Tradutor("Fase metrô", currentLanguage),
-      section1 = RaelHubTradutor.Tradutor("Auto escapar do trem", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor("Ficar imuni ao monstro do train", currentLanguage),
-      button1 = RaelHubTradutor.Tradutor("Auto fugir trem", currentLanguage),
-      button2 = RaelHubTradutor.Tradutor("Imunidade ao monstro do trem", currentLanguage)
+      name = RaelHubTradutor.Tradutor("Subway phase", currentLanguage),
+      section1 = RaelHubTradutor.Tradutor("Auto escape from the train", currentLanguage),
+      section2 = RaelHubTradutor.Tradutor("Become immune to the train monster", currentLanguage),
+      button1 = RaelHubTradutor.Tradutor("Auto run away train", currentLanguage),
+      button2 = RaelHubTradutor.Tradutor("Immunity to the train monster", currentLanguage)
     }
 
     local Tab_larvas = {
       name = RaelHubTradutor.Tradutor("Fase Larvas", currentLanguage),
-      section1 = RaelHubTradutor.Tradutor("Mostrar a localização do Boogeyman", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor("Teleportar para zona segura", currentLanguage),
-      section3 = RaelHubTradutor.Tradutor("Auto finalizar esse fase", currentLanguage),
+      section1 = RaelHubTradutor.Tradutor("Show Boogeyman's location", currentLanguage),
+      section2 = RaelHubTradutor.Tradutor("Teleport to safe zone", currentLanguage),
+      section3 = RaelHubTradutor.Tradutor("Auto end this phase", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Esp Boogeyman", currentLanguage),
-      button2 = RaelHubTradutor.Tradutor("Zona segura", currentLanguage),
-      button3 = RaelHubTradutor.Tradutor("Auto finalizar", currentLanguage)
+      button2 = RaelHubTradutor.Tradutor("Safe zone", currentLanguage),
+      button3 = RaelHubTradutor.Tradutor("Auto finish", currentLanguage)
     }
 
     local Tab_Lama = {
       name = RaelHubTradutor.Tradutor("Mud phase", currentLanguage),
-      section = RaelHubTradutor.Tradutor("Finalizar essa fase", currentLanguage),
-      button = RaelHubTradutor.Tradutor("Auto finalizar", currentLanguage)
+      section = RaelHubTradutor.Tradutor("Finish this phase", currentLanguage),
+      button = RaelHubTradutor.Tradutor("Auto finish", currentLanguage)
     }
 
     local Tab_HouseYurei = {
-      name = RaelHubTradutor.Tradutor("Casa Yurei", currentLanguage),
-      section1 = RaelHubTradutor.Tradutor("Mostrar todas as estátuas malignas", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor("Mostrar a localização das casas", currentLanguage),
-      section3 = RaelHubTradutor.Tradutor("Teleportar para as casas", currentLanguage),
-      section4 = RaelHubTradutor.Tradutor("Yurei monstro", currentLanguage),
+      name = RaelHubTradutor.Tradutor("Yurei House", currentLanguage),
+      section1 = RaelHubTradutor.Tradutor("Show all evil statues", currentLanguage),
+      section2 = RaelHubTradutor.Tradutor("Show the location of the houses", currentLanguage),
+      section3 = RaelHubTradutor.Tradutor("Teleport to houses", currentLanguage),
+      section4 = RaelHubTradutor.Tradutor("Yurei monster", currentLanguage),
       section5 = RaelHubTradutor.Tradutor("Yurei puzzle", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Esp estátuas", currentLanguage),
-      button2 = RaelHubTradutor.Tradutor("Esp casas", currentLanguage),
-      button3 = RaelHubTradutor.Tradutor("Teleportar para o Casa", currentLanguage),
+      button2 = RaelHubTradutor.Tradutor("Esp houses", currentLanguage),
+      button3 = RaelHubTradutor.Tradutor("Teleport to Home", currentLanguage),
       button4 = RaelHubTradutor.Tradutor("Anti yurei", currentLanguage),
       button5 = RaelHubTradutor.Tradutor("Auto solve puzzle", currentLanguage),
-      HouseDropdownName = RaelHubTradutor.Tradutor("Casas", currentLanguage),
+      HouseDropdownName = RaelHubTradutor.Tradutor("Houses", currentLanguage),
     }
 
     for i = 1, 5 do
@@ -298,34 +298,36 @@ function TranslationModule:GetTabs()
     local Tab_BossYurei = {
       name = RaelHubTradutor.Tradutor("Boss Yurei", currentLanguage),
       section1 = RaelHubTradutor.Tradutor("Katanas", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor("Atravessar todas as árvores", currentLanguage),
-      section3 = RaelHubTradutor.Tradutor("Voar + mira", currentLanguage),
-      button1 = RaelHubTradutor.Tradutor("Coletar katanas", currentLanguage),
+      section2 = RaelHubTradutor.Tradutor("Cross all the trees", currentLanguage),
+      section3 = RaelHubTradutor.Tradutor("Become immune to vines", currentLanguage),
+      section4 = RaelHubTradutor.Tradutor("Fly + aim", currentLanguage),
+      button1 = RaelHubTradutor.Tradutor("Collect katanas", currentLanguage),
       button2 = RaelHubTradutor.Tradutor("Auto equip katanas", currentLanguage),
       button3 = RaelHubTradutor.Tradutor("No clip Árvore", currentLanguage),
-      button4 = RaelHubTradutor.Tradutor("Fly (velocidade recomendada: 1)", currentLanguage)
+      button4 = RaelHubTradutor.Tradutor("Immunities to vines", currentLanguage),
+      button5 = RaelHubTradutor.Tradutor("Fly (recommended speed: 1)", currentLanguage)
     }
 
     local Tab_FaseFinal = {
-      name = RaelHubTradutor.Tradutor("Fase Final", currentLanguage),
-      section1 = RaelHubTradutor.Tradutor("Executar a cutscene do Shinigami", currentLanguage),
-      section2 = RaelHubTradutor.Tradutor("Auto passar do Shinigami", currentLanguage),
-      button1 = RaelHubTradutor.Tradutor("Execute cutscene", currentLanguage),
+      name = RaelHubTradutor.Tradutor("Final Phase", currentLanguage),
+      section1 = RaelHubTradutor.Tradutor("Run the Shinigami cutscene", currentLanguage),
+      section2 = RaelHubTradutor.Tradutor("Shinigami's Auto Pass", currentLanguage),
+      button1 = RaelHubTradutor.Tradutor("Run cutscene", currentLanguage),
       button2 = RaelHubTradutor.Tradutor("Escape Shinigami", currentLanguage)
     }
     
     local Tab_Others = {
-      name = RaelHubTradutor.Tradutor("Outros", currentLanguage),
-      section1 = RaelHubTradutor.Tradutor("Aumentar o fps", currentLanguage),
+      name = RaelHubTradutor.Tradutor("Others", currentLanguage),
+      section1 = RaelHubTradutor.Tradutor("Increase fps", currentLanguage),
       section2 = RaelHubTradutor.Tradutor("Esp", currentLanguage),
-      section3 = RaelHubTradutor.Tradutor("Auto coletar moedas", currentLanguage),
-      section4 = RaelHubTradutor.Tradutor("Atravessar todas as portas", currentLanguage),
-      section5 = RaelHubTradutor.Tradutor("Ilumina ao seu redor", currentLanguage),
+      section3 = RaelHubTradutor.Tradutor("Auto collect coins", currentLanguage),
+      section4 = RaelHubTradutor.Tradutor("Go through all the doors", currentLanguage),
+      section5 = RaelHubTradutor.Tradutor("Illuminates around you", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Fps Boost", currentLanguage),
       button2 = RaelHubTradutor.Tradutor("Esp player", currentLanguage),
-      button3 = RaelHubTradutor.Tradutor("Esp moedas", currentLanguage),
-      button4 = RaelHubTradutor.Tradutor("Auto coletar moedas", currentLanguage),
-      button5 = RaelHubTradutor.Tradutor("No clip Portas", currentLanguage),
+      button3 = RaelHubTradutor.Tradutor("Esp coins", currentLanguage),
+      button4 = RaelHubTradutor.Tradutor("Auto collect coins", currentLanguage),
+      button5 = RaelHubTradutor.Tradutor("No clip Doors", currentLanguage),
       button6 = RaelHubTradutor.Tradutor("FullBright", currentLanguage)
     }
     local Tab_Creditos = {
