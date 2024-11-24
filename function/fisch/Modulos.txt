@@ -1,8 +1,14 @@
 local RaelHubFisch = {}
 
 RaelHubFisch.FishingArea = {
+  None = function()
+    print("You can fish as much as you want")
+  end,
   Moosewood = function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(285.1558837890625, 133.61595153808594, 215.89834594726562)
+    local position = Vector3.new(285.14703369140625, 133.61595153808594, 215.8972930908203)
+    local rotation = Vector3.new(180, 89.21800231933594, 180)
+
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(position) * CFrame.Angles(math.rad(rotation.X), math.rad(rotation.Y), math.rad(rotation.Z))
   end,
 }
 
