@@ -1,8 +1,7 @@
 local RaelHubFisch = {}
 
 RaelHubFisch.FishingArea = {
-  Moosewood = function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(285.1558837890625, 133.61595153808594, 215.89834594726562)
+  Moosewood = CFrame.new(285.1558837890625, 133.61595153808594, 215.89834594726562)
   end
 }
 
