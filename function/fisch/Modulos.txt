@@ -1,4 +1,4 @@
-local RaelHubFish
+local RaelHubFish = {}
 RaelHubFish.FishAreas = {
 
     Roslit_Bay = CFrame.new(-1663.73889, 149.234116, 495.498016, 0.0380855016, 4.08820178e-08, -0.999274492, 5.74658472e-08, 1, 4.3101906e-08, 0.999274492, -5.90657123e-08, 0.0380855016),
