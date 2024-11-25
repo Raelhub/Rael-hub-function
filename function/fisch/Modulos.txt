@@ -1,6 +1,28 @@
 local RaelHubFisch = {}
 
 RaelHubFisch.FishingArea = {
+  Mushgrove_Swamp = function()
+    local position = Vector3.new(2685.083740234375, 132.49908447265625, -731.6041870117188)
+    local rotation = Vector3.new(180, 38.22100067138672, 180)
+    
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(position) * CFrame.Angles(math.rad(rotation.X), math.rad(rotation.Y), math.rad(rotation.Z))
+    
+  
+  end,
+  Statue_Of_Sovereignhty = function()
+    local position = Vector3.new(74.63957214355469, 141.92999267578125, -1027.432373046875)
+    local rotation = Vector3.new(180, -54.56399917602539, 180)
+
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(position) * CFrame.Angles(math.rad(rotation.X), math.rad(rotation.Y), math.rad(rotation.Z))
+    
+  end,
+  Terrapin_Island = function()
+    local position = Vector3.new(-206.06219482421875, 132.50001525878906, 1928.44140625)
+    local rotation = Vector3.new(0, 82.13200378417969, 0)
+
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(position) * CFrame.Angles(math.rad(rotation.X), math.rad(rotation.Y), math.rad(rotation.Z))
+    
+  end,
   Snowcaps_Island = function()
     local position = Vector3.new(2547.140380859375, 134.92489624023438, 2385.06640625)
     local rotation = Vector3.new(0, 56.650001525878906, 0)
@@ -107,6 +129,36 @@ RaelHubFisch.FishingArea = {
   None = function()
     print("You can fish as much as you want")
   end,
+}
+
+RaelHubFisch.TeleportSpots = {
+
+  altar = CFrame.new(1296.320068359375, -808.5519409179688, -298.93817138671875),
+
+  arch = CFrame.new(998.966796875, 126.6849365234375, -1237.1434326171875),
+  birch = CFrame.new(1742.3203125, 138.25787353515625, -2502.23779296875),
+  brine = CFrame.new(-1794.10596, -145.849701, -3302.92358, -5.16176224e-05, 3.10316682e-06, 0.99999994, 0.119907647, 0.992785037, 3.10316682e-06, -0.992785037, 0.119907647, -5.16176224e-05),
+  deep = CFrame.new(-1510.88672, -237.695053, -2852.90674, 0.573604643, 0.000580655003, 0.81913209, -0.000340352941, 0.999999762, -0.000470530824, -0.819132209, -8.89541116e-06, 0.573604763),
+  deepshop = CFrame.new(-979.196411, -247.910156, -2699.87207, 0.587748766, 0, 0.809043527, 0, 1, 0, -0.809043527, 0, 0.587748766),
+  enchant = CFrame.new(1296.320068359375, -808.5519409179688, -298.93817138671875),
+  executive = CFrame.new(-29.836761474609375, -250.48486328125, 199.11614990234375),
+  keepers = CFrame.new(1296.320068359375, -808.5519409179688, -298.93817138671875),
+  mod_house = CFrame.new(-30.205902099609375, -249.40594482421875, 204.0529022216797),
+  moosewood = CFrame.new(383.10113525390625, 131.2406005859375, 243.93385314941406),
+  mushgrove = CFrame.new(2501.48583984375, 127.7583236694336, -720.699462890625),
+  roslit = CFrame.new(-1476.511474609375, 130.16842651367188, 671.685302734375),
+  snow = CFrame.new(2648.67578125, 139.06605529785156, 2521.29736328125),
+  snowcap = CFrame.new(2648.67578125, 139.06605529785156, 2521.29736328125),
+  spike = CFrame.new(-1254.800537109375, 133.88555908203125, 1554.2021484375),
+  statue = CFrame.new(72.8836669921875, 138.6964874267578, -1028.4193115234375),
+  sunstone = CFrame.new(-933.259705, 128.143951, -1119.52063, -0.342042685, 0, -0.939684391, 0, 1, 0, 0.939684391, 0, -0.342042685),
+  swamp = CFrame.new(2501.48583984375, 127.7583236694336, -720.699462890625),
+  terrapin = CFrame.new(-143.875244140625, 141.1676025390625, 1909.6070556640625),
+  trident = CFrame.new(-1479.48987, -228.710632, -2391.39307, 0.0435845852, 0, 0.999049723, 0, 1, 0, -0.999049723, 0, 0.0435845852),
+  vertigo = CFrame.new(-112.007278, -492.901093, 1040.32788, -1, 0, 0, 0, 1, 0, 0, 0, -1),
+  volcano = CFrame.new(-1888.52319, 163.847565, 329.238281, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+  wilson = CFrame.new(2938.80591, 277.474762, 2567.13379, 0.4648332, 0, 0.885398269, 0, 1, 0, -0.885398269, 0, 0.4648332),
+  wilsons_rod = CFrame.new(2879.2085, 135.07663, 2723.64233, 0.970463336, -0.168695927, -0.172460333, 0.141582936, -0.180552125, 0.973321974, -0.195333466, -0.968990743, -0.151334763)
 }
 
 return RaelHubFisch
