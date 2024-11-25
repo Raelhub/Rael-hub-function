@@ -1,5 +1,10 @@
 local RaelHubFisch = {}
 
+RaelHubFisch.GetPlayerPosition = function()
+  local position = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+  return CFrame.new(position)
+end
+
 RaelHubFisch.FishingArea = {
   Mushgrove_Swamp = function()
     local position = Vector3.new(2685.083740234375, 132.49908447265625, -731.6041870117188)
