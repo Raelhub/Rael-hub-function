@@ -1,8 +1,7 @@
 local RaelHubFisch = {}
 
 RaelHubFisch.GetPlayerPosition = function()
-  local position = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-  return CFrame.new(position)
+  return game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 end
 
 RaelHubFisch.FishingArea = {
