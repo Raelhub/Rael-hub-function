@@ -1,6 +1,40 @@
 local RaelHubFisch = {}
 
 RaelHubFisch.FishingArea = {
+  Snowcaps_Island = function()
+    local position = Vector3.new(2547.140380859375, 134.92489624023438, 2385.06640625)
+    local rotation = Vector3.new(0, 56.650001525878906, 0)
+
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(position) * CFrame.Angles(math.rad(rotation.X), math.rad(rotation.Y), math.rad(rotation.Z))
+
+  end,
+  SunsStone_Island = function()
+    local position = Vector3.new(-836.9609985351562, 133.17218017578125, -1154.4503173828125)
+    local rotation = Vector3.new(180, -68.43299865722656, 180)
+
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(position) * CFrame.Angles(math.rad(rotation.X), math.rad(rotation.Y), math.rad(rotation.Z))
+  end,
+  Brine_Pool = function()
+    local position = Vector3.new(-1772.36279296875, -142.69313049316406, -3435.273193359375)
+    local rotation = Vector3.new(0, -53.72700119018555, 0)
+
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(position) * CFrame.Angles(math.rad(rotation.X), math.rad(rotation.Y), math.rad(rotation.Z))
+
+  end,
+  Keepers_Altas = function()
+    local position = Vector3.new(1421.5670166015625, -834.7742919921875, -247.43807983398438)
+    local rotation = Vector3.new(180, -62.935001373291016, 180)
+
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(position) * CFrame.Angles(math.rad(rotation.X), math.rad(rotation.Y), math.rad(rotation.Z))
+
+  end,
+  Roslit_Volcano = function()
+    local position = Vector3.new(-1995.8079833984375, 156.07608032226562, 257.9688720703125)
+    local rotation = Vector3.new(180, 73.04299926757812, 180)
+
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(position) * CFrame.Angles(math.rad(rotation.X), math.rad(rotation.Y), math.rad(rotation.Z))
+
+  end,
   Desolate_Deep = function()
     local position = Vector3.new(-1504.619140625, -234.71902465820312, -2863.5224609375)
     local rotation = Vector3.new(0, -53.18299865722656, 0)
