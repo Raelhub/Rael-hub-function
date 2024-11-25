@@ -1,6 +1,6 @@
 local RaelHubFisch = {}
 
-RaelHubFisch.SellAllFish()
+function RaelHubFisch.SellAllFish()
   local PlayerPositionNow = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2511.5849609375, 135.79074096679688, 1582.5435791015625)
   task.wait(0.5)
