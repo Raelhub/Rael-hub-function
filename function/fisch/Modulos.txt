@@ -1,5 +1,59 @@
 local RaelHubFisch = {}
 
+function RaelHubFisch.AutoTreasure(Value)
+  getgenv().RaelHubAutoTesouro = Value
+  function AutoDoTreasure()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2829.510009765625, 215.21519470214844, 1516.152099609375)
+ 
+    while true do
+      local Jack_Marrow = workspace.world.npcs:FindFirstChild("Jack Marrow")
+      if Jack_Marrow then
+        local Treasure = Jack_Marrow:FindFirstChild("treasure")
+        if Treasure then
+          local Repairmap = Treasure:FindFirstChild("repairmap")
+          if Repairmap then
+            task.wait(0.5)
+            Repairmap:InvokeServer()
+            break
+          end
+        end
+      end
+      task.wait()
+    end
+    task.wait(0.5)
+    for _, Bau in ipairs(workspace.world.chests:GetChildren()) do
+      if Bau:FindFirstChild("ChestClosed") then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Bau.Position)
+        task.wait(0.5)
+        fireproximityprompt(Bau.ProximityPrompt)
+      end
+    end
+  end
+  while getgenv().RaelHubAutoTesouro do
+    local Chests = workspace.world:FindFirstChild("chests")
+    if Chests and #Chests:GetChildren() > 0 then
+      local BauValue = false
+      for _, Bau in ipairs(Chests:GetChildren()) do
+        if Bau:FindFirstChild("ChestClosed") then
+          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Bau.Position)
+          task.wait(0.5)
+          fireproximityprompt(Bau.ProximityPrompt)
+        end
+      end
+    end
+    local MapBackPack = game.Players.LocalPlayer.Backpack:FindFirstChild("Treasure Map")
+    local MapObject = game.Players.LocalPlayer.Character:FindFirstChild("Treasure Map")
+    if MapBackPack and not MapObject then
+      game.Players.LocalPlayer.Character.Humanoid:EquipTool(MapBackPack)
+      task.wait(0.5)
+      AutoDoTreasure()
+    elseif MapObject then
+      AutoDoTreasure()
+    end
+    task.wait(1)
+  end
+end
+
 function RaelHubFisch.FishingRodSystem()
   local BackPack = game:GetService("Players").LocalPlayer:FindFirstChild("Backpack")
 
@@ -52,10 +106,10 @@ function RaelHubFisch.FishingRodSystem()
           if rod and rod:FindFirstChild("events") and rod.events:FindFirstChild("cast") then
               local castEvent = rod.events.cast
               local args = {
-              [1] = 100,
-              [2] = 1
-            }
-            castEvent:FireServer(unpack(args))
+                [1] = 100,
+                [2] = 1
+              }
+              castEvent:FireServer(unpack(args))
           
           end
         end)
