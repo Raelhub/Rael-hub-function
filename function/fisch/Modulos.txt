@@ -13,6 +13,7 @@ end
 
 function RaelHubFisch.AutoTreasure(Value)
   getgenv().RaelHubAutoTesouro = Value
+  game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
   function AutoDoTreasure()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2829.510009765625, 215.21519470214844, 1516.152099609375)
  
@@ -32,6 +33,7 @@ function RaelHubFisch.AutoTreasure(Value)
       task.wait()
     end
     task.wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
     for _, Bau in ipairs(workspace.world.chests:GetChildren()) do
       if Bau:FindFirstChild("ChestClosed") then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Bau.Position)
@@ -57,9 +59,13 @@ function RaelHubFisch.AutoTreasure(Value)
     if MapBackPack and not MapObject then
       game.Players.LocalPlayer.Character.Humanoid:EquipTool(MapBackPack)
       task.wait(0.5)
+      local PlayerPositionNow = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
       AutoDoTreasure()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(PlayerPositionNow)
     elseif MapObject then
+      local PlayerPositionNow = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
       AutoDoTreasure()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(PlayerPositionNow)
     end
     task.wait(1)
   end
@@ -132,6 +138,7 @@ end
 
 function RaelHubFisch.SellFishSelected()
   local PlayerPositionNow = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+  game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2511.5849609375, 135.79074096679688, 1582.5435791015625)
   task.wait(0.5)
   while true do
@@ -150,11 +157,13 @@ function RaelHubFisch.SellFishSelected()
     task.wait()
   end
   task.wait(0.5)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(PlayerPositionNow)
 end
 
 function RaelHubFisch.SellAllFish()
   local PlayerPositionNow = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+  game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2511.5849609375, 135.79074096679688, 1582.5435791015625)
   task.wait(0.5)
   while true do
@@ -173,6 +182,7 @@ function RaelHubFisch.SellAllFish()
     task.wait()
   end
   task.wait(0.5)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(PlayerPositionNow)
 end
 RaelHubFisch.FishingArea = {
