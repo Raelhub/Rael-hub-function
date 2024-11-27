@@ -65,6 +65,29 @@ function RaelHubFisch.FishingRodSystem()
   end)
 end
 
+function RaelHubFisch.SellFishSelected()
+  local PlayerPositionNow = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2511.5849609375, 135.79074096679688, 1582.5435791015625)
+  task.wait(0.5)
+  while true do
+    local Marytn_Merchant = workspace.world.npcs:FindFirstChild("Marytn Merchant")
+    if Marytn_Merchant then
+      local Merchant = Marytn_Merchant:FindFirstChild("merchant")
+      if Merchant then
+        local Sell = Merchant:FindFirstChild("sell")
+        if Sell then
+          task.wait(1)
+          Sell:InvokeServer()
+            break
+        end
+      end
+    end
+    task.wait()
+  end
+  task.wait(0.5)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(PlayerPositionNow)
+end
+
 function RaelHubFisch.SellAllFish()
   local PlayerPositionNow = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2511.5849609375, 135.79074096679688, 1582.5435791015625)
