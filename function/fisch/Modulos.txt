@@ -1,5 +1,16 @@
 local RaelHubFisch = {}
 
+function RaelHubFisch.DisableOxygenScript(State)
+  local YourPlayer = game.Players.LocalPlayer.Character
+  local Client = YourPlayer:FindFirstChild("client")
+  if Client then
+    local Oxygen = Client:FindFirstChild("oxygen")
+    if Oxygen then
+      Oxygen.Enabled = not State
+    end
+  end
+end
+
 function RaelHubFisch.AutoTreasure(Value)
   getgenv().RaelHubAutoTesouro = Value
   function AutoDoTreasure()
