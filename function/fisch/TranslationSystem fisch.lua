@@ -169,37 +169,46 @@ function TranslationModule:GetTabs()
     if savedConfig then
         wait(1)
         screenGui:Destroy()
-        return savedConfig.Main, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
+        return savedConfig.Main, savedConfig.Teleports, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
     end
 
     -- Se as traduções não existem, fazer a tradução e salvar para o idioma atual
     local Main = {
         name = RaelHubTradutor.Tradutor("Main", currentLanguage),
         section1 = RaelHubTradutor.Tradutor("Teleport to fishing area", currentLanguage),
-        section2 = RaelHubTradutor.Tradutor("Auto win part 2", currentLanguage),
+        section2 = RaelHubTradutor.Tradutor("Auto catch the fish", currentLanguage),
         section3 = RaelHubTradutor.Tradutor("Don't be afk", currentLanguage),
         section4 = RaelHubTradutor.Tradutor("Auto do the treasure map", currentLanguage),
         section5 = RaelHubTradutor.Tradutor("Fish sale", currentLanguage),
         section6 = RaelHubTradutor.Tradutor("Auto sell fish", currentLanguage),
         dropdown1 = RaelHubTradutor.Tradutor("Teleporte Area", currentLanguage),
         dropdown2 = RaelHubTradutor.Tradutor("Fishs", currentLanguage),
-        toggle1 = RaelHubTradutor.Tradutor("Auto catch the fish", currentLanguage),
+        toggle1 = RaelHubTradutor.Tradutor("Auto fisch", currentLanguage),
         toggle2 = RaelHubTradutor.Tradutor("Anti Afk", currentLanguage),
         toggle3 = RaelHubTradutor.Tradutor("Auto treasure", currentLanguage),
         toggle4 = RaelHubTradutor.Tradutor("Auto sell", currentLanguage),
         button1 = RaelHubTradutor.Tradutor("Sell the selected fish", currentLanguage),
         button2 = RaelHubTradutor.Tradutor("Sell all fish", currentLanguage),
-        slide = RaelHubTradutor.Tradutor("Delay in selling", currentLanguage),
-        
-        
-        
+        slide = RaelHubTradutor.Tradutor("Delay in selling", currentLanguage)
     }
-
+    local Teleports = {
+      name = RaelHubTradutor.Tradutor("Teleports", currentLanguage),
+      section1 = RaelHubTradutor.Tradutor("Teleport to the islands", currentLanguage),
+      section2 = RaelHubTradutor.Tradutor("Teleport to the npcs", currentLanguage),
+      section3 = RaelHubTradutor.Tradutor("Teleport to the itens", currentLanguage),
+      section4 = RaelHubTradutor.Tradutor("Teleport to the rods", currentLanguage),
+      dropdown1 = RaelHubTradutor.Tradutor("islands", currentLanguage),
+      dropdown2 = RaelHubTradutor.Tradutor("npcs", currentLanguage),
+      dropdown3 = RaelHubTradutor.Tradutor("itens", currentLanguage),
+      dropdown4 = RaelHubTradutor.Tradutor("rods", currentLanguage),
+      button = RaelHubTradutor.Tradutor("Teleport player", currentLanguage)
+    }
     local Jogador = {
         name = RaelHubTradutor.Tradutor("Player", currentLanguage),
         section1 = RaelHubTradutor.Tradutor("Teleport to players", currentLanguage),
         section2 = RaelHubTradutor.Tradutor("Player Speed", currentLanguage),
-        section3 = RaelHubTradutor.Tradutor("Light up the map", currentLanguage),
+        section3 = RaelHubTradutor.Tradutor("Pass through objects", currentLanguage),
+        section4 = RaelHubTradutor.Tradutor("Light up the map", currentLanguage),
         dropdowntext = RaelHubTradutor.Tradutor("Players: ", currentLanguage),
         slidetext = RaelHubTradutor.Tradutor("Speed: ", currentLanguage),
         button = RaelHubTradutor.Tradutor("Teleport to player", currentLanguage),
@@ -226,6 +235,7 @@ function TranslationModule:GetTabs()
     -- Salvar as traduções para o idioma do jogador
     local updatedConfig = {
         Main = Main,
+        Teleports = Teleports,
         Jogador = Jogador,
         Mostrar = Mostrar,
         Creditos = Creditos
@@ -234,7 +244,7 @@ function TranslationModule:GetTabs()
     SaveConfig(updatedConfig, currentLanguage)
 
     screenGui:Destroy()
-    return Main, Jogador, Mostrar, Creditos
+    return Main, Teleports, Jogador, Mostrar, Creditos
 end
 
 return TranslationModule
