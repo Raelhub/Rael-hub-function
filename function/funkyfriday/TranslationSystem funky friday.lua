@@ -210,7 +210,6 @@ function TranslationModule:GetTabs()
     -- Salvar as traduções para o idioma do jogador
     local updatedConfig = {
         Main = Main,
-        Teleports = Teleports,
         Jogador = Jogador,
         Mostrar = Mostrar,
         Creditos = Creditos
