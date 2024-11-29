@@ -174,9 +174,9 @@ function TranslationModule:GetTabs()
 
     -- Se as traduções não existem, fazer a tradução e salvar para o idioma atual
     local Main = {
-        name = RaelHubTradutor.Tradutor("Main", currentLanguage),
-        section = RaelHubTradutor.Tradutor("Autoplay for you", currentLanguage),
-        button = RaelHubTradutor.Tradutor("Auto play", currentLanguage)
+      name = RaelHubTradutor.Tradutor("Main", currentLanguage),
+      section = RaelHubTradutor.Tradutor("Autoplay for you", currentLanguage),
+      button = RaelHubTradutor.Tradutor("Auto play", currentLanguage)
     }
     local Jogador = {
         name = RaelHubTradutor.Tradutor("Player", currentLanguage),
