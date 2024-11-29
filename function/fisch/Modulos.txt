@@ -1,5 +1,32 @@
 local RaelHubFisch = {}
 
+function RaelHubFisch.AutoCollectCrabCage(state)
+  getgenv().RaelHubAutoCollectCrabCage = state
+  while getgenv().RaelHubAutoCollectCrabCage do
+    local Active = workspace:FindFirstChild("active")
+
+    if Active then
+      for _, Crab in ipairs(Active:GetChildren()) do
+        if Crab:IsA("Model") then
+          local cage = Crab:FindFirstChild("Cage")
+          if cage then
+            local BasePart = Crab:FindFirstChild("handle")
+            local prompt = Crab:FindFirstChild("Prompt")
+            if prompt and prompt.Enabled == true then
+              while Crab.Parent do   
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(BasePart.Position)
+                task.wait(0.5)
+                fireproximityprompt(prompt)
+              end
+            end
+          end
+        end
+      end
+    end
+    task.wait(1)
+  end
+end
+
 function RaelHubFisch.DisableOxygenScript(State)
   local YourPlayer = game.Players.LocalPlayer.Character
   local Client = YourPlayer:FindFirstChild("client")
