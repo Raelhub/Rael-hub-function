@@ -215,13 +215,11 @@ function TranslationModule:GetTabs()
       section2 = RaelHubTradutor.Tradutor("Teleport to the npcs", currentLanguage),
       section3 = RaelHubTradutor.Tradutor("Teleport to the itens", currentLanguage),
       section4 = RaelHubTradutor.Tradutor("Teleport to the rods", currentLanguage),
-      section5 = RaelHubTradutor.Tradutor("Do you walk on water", currentLanguage),
       dropdown1 = RaelHubTradutor.Tradutor("islands", currentLanguage),
       dropdown2 = RaelHubTradutor.Tradutor("npcs", currentLanguage),
       dropdown3 = RaelHubTradutor.Tradutor("itens", currentLanguage),
       dropdown4 = RaelHubTradutor.Tradutor("rods", currentLanguage),
       button = RaelHubTradutor.Tradutor("Teleport player", currentLanguage),
-      toggle = RaelHubTradutor.Tradutor("Walking On Water", currentLanguage)
     }
     local Jogador = {
         name = RaelHubTradutor.Tradutor("Player", currentLanguage),
@@ -229,10 +227,12 @@ function TranslationModule:GetTabs()
         section2 = RaelHubTradutor.Tradutor("Player Speed", currentLanguage),
         section3 = RaelHubTradutor.Tradutor("Pass through objects", currentLanguage),
         section4 = RaelHubTradutor.Tradutor("Light up the map", currentLanguage),
+        section5 = RaelHubTradutor.Tradutor("Do you walk on water", currentLanguage),
         dropdowntext = RaelHubTradutor.Tradutor("Players: ", currentLanguage),
         slidetext = RaelHubTradutor.Tradutor("Speed: ", currentLanguage),
         button = RaelHubTradutor.Tradutor("Teleport to player", currentLanguage),
-        toggle = RaelHubTradutor.Tradutor("Ativar velocidade", currentLanguage)
+        toggle1 = RaelHubTradutor.Tradutor("Ativar velocidade", currentLanguage),
+        toggle2 = RaelHubTradutor.Tradutor("Walking On Water", currentLanguage)
     }
 
     local Mostrar = {
