@@ -169,7 +169,7 @@ function TranslationModule:GetTabs()
     if savedConfig then
         wait(1)
         screenGui:Destroy()
-        return savedConfig.Main, savedConfig.Quest, savedConfig.Teleports, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
+        return savedConfig.Main, savedConfig.Quest, savedConfig.Eventos, savedConfig.Teleports, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
     end
 
     -- Se as traduções não existem, fazer a tradução e salvar para o idioma atual
@@ -202,17 +202,26 @@ function TranslationModule:GetTabs()
       section1 = RaelHubTradutor.Tradutor("Auto buy trident rod", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Auto trident rod", currentLanguage)
     }
+    local Eventos = {
+      name = RaelHubTradutor.Tradutor("Events", currentLanguage),
+      section = RaelHubTradutor.Tradutor("Megalodon features", currentLanguage),
+      button = RaelHubTradutor.Tradutor("Teleport to the megalodon", currentLanguage),
+      toggle1 = RaelHubTradutor.Tradutor("Teleport to the megalodon with the boat", currentLanguage),
+      toggle2 = RaelHubTradutor.Tradutor("Esp megalodon", currentLanguage),
+    }
     local Teleports = {
       name = RaelHubTradutor.Tradutor("Teleports", currentLanguage),
       section1 = RaelHubTradutor.Tradutor("Teleport to the islands", currentLanguage),
       section2 = RaelHubTradutor.Tradutor("Teleport to the npcs", currentLanguage),
       section3 = RaelHubTradutor.Tradutor("Teleport to the itens", currentLanguage),
       section4 = RaelHubTradutor.Tradutor("Teleport to the rods", currentLanguage),
+      section5 = RaelHubTradutor.Tradutor("Do you walk on water", currentLanguage),
       dropdown1 = RaelHubTradutor.Tradutor("islands", currentLanguage),
       dropdown2 = RaelHubTradutor.Tradutor("npcs", currentLanguage),
       dropdown3 = RaelHubTradutor.Tradutor("itens", currentLanguage),
       dropdown4 = RaelHubTradutor.Tradutor("rods", currentLanguage),
-      button = RaelHubTradutor.Tradutor("Teleport player", currentLanguage)
+      button = RaelHubTradutor.Tradutor("Teleport player", currentLanguage),
+      toggle = RaelHubTradutor.Tradutor("Walking On Water", currentLanguage)
     }
     local Jogador = {
         name = RaelHubTradutor.Tradutor("Player", currentLanguage),
@@ -247,6 +256,7 @@ function TranslationModule:GetTabs()
     local updatedConfig = {
         Main = Main,
         Quest = Quest,
+        Eventos = Eventos,
         Teleports = Teleports,
         Jogador = Jogador,
         Mostrar = Mostrar,
@@ -256,7 +266,7 @@ function TranslationModule:GetTabs()
     SaveConfig(updatedConfig, currentLanguage)
 
     screenGui:Destroy()
-    return Main, Quest, Teleports, Jogador, Mostrar, Creditos
+    return Main, Quest, Eventos, Teleports, Jogador, Mostrar, Creditos
 end
 
 return TranslationModule

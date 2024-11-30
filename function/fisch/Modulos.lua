@@ -207,6 +207,41 @@ function RaelHubFisch.SellAllFish()
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(PlayerPositionNow)
 end
 RaelHubFisch.FishingArea = {
+  Ancient_Waterfall = function()
+    
+    local position = Vector3.new(5800.4091796875, 135.3014678955078, 406.3511657714844)
+    local rotation = Vector3.new(0, -65.072998046875, 0)
+
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(position) * CFrame.Angles(math.rad(rotation.X), math.rad(rotation.Y), math.rad(rotation.Z))
+
+  end,
+  Ancient_Isles = function()
+    
+    local position = Vector3.new(5454.9765625, 138.4757080078125, -315.81341552734375)
+    local rotation = Vector3.new(-179.99099731445312, 10.02400016784668, 179.99899291992188)
+
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(position) * CFrame.Angles(math.rad(rotation.X), math.rad(rotation.Y), math.rad(rotation.Z))
+    
+
+  end,
+  Ancient_Archives = function()
+    
+    local position = Vector3.new(-3057.473876953125, -777.9583740234375, 1890.9439697265625)
+    local rotation = Vector3.new(180, 79.9010009765625, 180)
+
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(position) * CFrame.Angles(math.rad(rotation.X), math.rad(rotation.Y), math.rad(rotation.Z))
+
+
+  end,
+  Ancient_Pond = function()
+    
+    local position = Vector3.new(6038.2939453125, 196.474609375, 333.2248840332031)
+    local rotation = Vector3.new(179.99899291992188, 73.61599731445312, -179.99899291992188)
+
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(position) * CFrame.Angles(math.rad(rotation.X), math.rad(rotation.Y), math.rad(rotation.Z))
+
+
+  end,
   Mushgrove_Swamp = function()
     local position = Vector3.new(2685.083740234375, 132.49908447265625, -731.6041870117188)
     local rotation = Vector3.new(180, 38.22100067138672, 180)
@@ -363,7 +398,8 @@ RaelHubFisch.TeleportSpots = {
   vertigo = CFrame.new(-112.007278, -492.901093, 1040.32788, -1, 0, 0, 0, 1, 0, 0, 0, -1),
   volcano = CFrame.new(-1888.52319, 163.847565, 329.238281, 1, 0, 0, 0, 1, 0, 0, 0, 1),
   wilson = CFrame.new(2938.80591, 277.474762, 2567.13379, 0.4648332, 0, 0.885398269, 0, 1, 0, -0.885398269, 0, 0.4648332),
-  wilsons_rod = CFrame.new(2879.2085, 135.07663, 2723.64233, 0.970463336, -0.168695927, -0.172460333, 0.141582936, -0.180552125, 0.973321974, -0.195333466, -0.968990743, -0.151334763)
+  wilsons_rod = CFrame.new(2879.2085, 135.07663, 2723.64233, 0.970463336, -0.168695927, -0.172460333, 0.141582936, -0.180552125, 0.973321974, -0.195333466, -0.968990743, -0.151334763),
+  Arcient_Isle = CFrame.new(6071.46044921875, 194.98016357421875, 314.3388671875)
 }
 
 RaelHubFisch.TeleportNPCS = {
@@ -392,6 +428,8 @@ RaelHubFisch.TeleportNPCS = {
     Mod_Keeper = CFrame.new(-39.0905838, -245.141144, 195.837891, -0.948549569, -0.0898146331, -0.303623199, -0.197293222, 0.91766715, 0.34490931, 0.247647122, 0.387066364, -0.888172567),
     Ashe = CFrame.new(-1709.94055, 149.862411, 729.399536, -0.92290163, 0.0273250472, -0.384064913, 0, 0.997478604, 0.0709675401, 0.385035753, 0.0654960647, -0.920574605),
     Alfredrickus = CFrame.new(-1520.60632, 142.923264, 764.522034, 0.301733732, 0.390740901, -0.869642735, 0.0273988936, 0.908225596, 0.417582989, 0.952998459, -0.149826124, 0.26333645),
+    Meteoriticist = CFrame.new(5922.65625, 261.9778747558594, 594.5787963867188),
+    Shipwright = CFrame.new(5866.82373046875, 143.49661254882812, 9.936059951782227)
 }
 
 RaelHubFisch.TeleportsItens = {
@@ -411,8 +449,8 @@ RaelHubFisch.TeleportsItens = {
   Super_Flippers = CFrame.new(-970.062744140625, -244.91510009765625, -2696.084716796875),
   Glider = CFrame.new(-1637.8697509765625, -211.32920837402344, -2859.380126953125),
   Coral_Geode = CFrame.new(-1644.2064208984375, -213.679443359375, -2848.64990234375),
-  Conception_Conch = CFrame.new(-1632.965087890625, -213.67941284179688, -2860.5)
-  
+  Conception_Conch = CFrame.new(-1632.965087890625, -213.67941284179688, -2860.5),
+  Eclipse_Totem = CFrame.new(5967.33203125, 274.1360778808594, 839.1844482421875)
 }
 
 RaelHubFisch.TeleportsRods = {
@@ -433,8 +471,8 @@ RaelHubFisch.TeleportsRods = {
   Reinforced_Rod = CFrame.new(-986.000244140625, -242.5101776123047, -2689.334716796875),
   Trident_Rod = CFrame.new(-1482.8294677734375, -223.5010223388672, -2194.683837890625),
   Scurvy_Rod = CFrame.new(-2827.561279296875, 215.02590942382812, 1513.1224365234375),
-  Relic_Rod = CFrame.new(4096.28271484375, 40.02178192138672, 24.718124389648438)
-  
+  Relic_Rod = CFrame.new(4096.28271484375, 40.02178192138672, 24.718124389648438),
+  Phoenix_Rod = CFrame.new(5970.1953125, 272.317626953125, 852.5142211914062)
 }
 
 

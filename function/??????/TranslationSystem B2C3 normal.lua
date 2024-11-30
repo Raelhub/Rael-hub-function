@@ -240,15 +240,17 @@ function TranslationModule:GetTabs()
     }
 
     local Tab_HouseUchiumi = {
-      name = RaelHubTradutor.Tradutor("Fase Uchiumi", currentLanguage),
+      name = RaelHubTradutor.Tradutor("Phase Uchiumi", currentLanguage),
       section1 = RaelHubTradutor.Tradutor("Teleportar para área da casa", currentLanguage),
       section2 = RaelHubTradutor.Tradutor("Teleportar para o telhado", currentLanguage),
       section3 = RaelHubTradutor.Tradutor("Ficar imuni ao isamu", currentLanguage),
-      section4 = RaelHubTradutor.Tradutor("Auto limpar o chão", currentLanguage),
+      section4 = RaelHubTradutor.Tradutor("Automatically do the hearts minigame", currentLanguage),
+      section5 = RaelHubTradutor.Tradutor("Auto limpar o chão", currentLanguage),
       button1 = RaelHubTradutor.Tradutor("Teleportar casa", currentLanguage),
       button2 = RaelHubTradutor.Tradutor("Teleporte telhado", currentLanguage),
       button3 = RaelHubTradutor.Tradutor("Imuni isamu", currentLanguage),
-      button4 = RaelHubTradutor.Tradutor("Auto varrer", currentLanguage),
+      button4 = RaelHubTradutor.Tradutor("Auto do the minigame", currentLanguage),
+      button5 = RaelHubTradutor.Tradutor("Auto varrer", currentLanguage),
     }
 
     local Tab_Train = {
