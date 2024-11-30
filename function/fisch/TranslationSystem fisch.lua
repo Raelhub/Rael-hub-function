@@ -199,8 +199,8 @@ function TranslationModule:GetTabs()
     }
     local Quest = {
       name = RaelHubTradutor.Tradutor("Quest", currentLanguage),
-      section1 = RaelHubTradutor.Tradutor("Auto buy trident rod", currentLanguage),
-      button1 = RaelHubTradutor.Tradutor("Auto trident rod", currentLanguage)
+      section1 = RaelHubTradutor.Tradutor("Automatically buy the trident rod", currentLanguage),
+      button1 = RaelHubTradutor.Tradutor("Auto", currentLanguage) .. " " .. RaelHubTradutor.Tradutor("trident", currentLanguage)
     }
     local Eventos = {
       name = RaelHubTradutor.Tradutor("Events", currentLanguage),
