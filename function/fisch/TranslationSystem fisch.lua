@@ -169,7 +169,7 @@ function TranslationModule:GetTabs()
     if savedConfig then
         wait(1)
         screenGui:Destroy()
-        return savedConfig.Main, savedConfig.Teleports, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
+        return savedConfig.Main, savedConfig.Quest, savedConfig.Teleports, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
     end
 
     -- Se as traduções não existem, fazer a tradução e salvar para o idioma atual
@@ -182,6 +182,7 @@ function TranslationModule:GetTabs()
         section5 = RaelHubTradutor.Tradutor("Auto do the treasure map", currentLanguage),
         section6 = RaelHubTradutor.Tradutor("Fish sale", currentLanguage),
         section7 = RaelHubTradutor.Tradutor("Auto sell fish", currentLanguage),
+        section8 = RaelHubTradutor.Tradutor("Crab cage Features", currentLanguage),
         dropdown1 = RaelHubTradutor.Tradutor("Teleporte Area", currentLanguage),
         dropdown2 = RaelHubTradutor.Tradutor("Fishs", currentLanguage),
         toggle1 = RaelHubTradutor.Tradutor("Auto", currentLanguage) .. " " .. RaelHubTradutor.Tradutor("fisch", currentLanguage),
@@ -189,9 +190,17 @@ function TranslationModule:GetTabs()
         toggle3 = RaelHubTradutor.Tradutor("Anti Afk", currentLanguage),
         toggle4 = RaelHubTradutor.Tradutor("Auto treasure", currentLanguage),
         toggle5 = RaelHubTradutor.Tradutor("Auto sell", currentLanguage),
+        toggle6 = RaelHubTradutor.Tradutor("Auto buy crab cage", currentLanguage),
+        toggle7 = RaelHubTradutor.Tradutor("Auto collect crab cage", currentLanguage),
         button1 = RaelHubTradutor.Tradutor("Sell the selected fish", currentLanguage),
         button2 = RaelHubTradutor.Tradutor("Sell all fish", currentLanguage),
-        slide = RaelHubTradutor.Tradutor("Delay in selling", currentLanguage)
+        slide1 = RaelHubTradutor.Tradutor("Delay in selling", currentLanguage),
+        slide2 = RaelHubTradutor.Tradutor("Quantity of Crab cage", currentLanguage)
+    }
+    local Quest = {
+      name = RaelHubTradutor.Tradutor("Quest", currentLanguage),
+      section1 = RaelHubTradutor.Tradutor("Auto buy trident rod", currentLanguage),
+      button1 = RaelHubTradutor.Tradutor("Auto trident rod", currentLanguage)
     }
     local Teleports = {
       name = RaelHubTradutor.Tradutor("Teleports", currentLanguage),
@@ -237,6 +246,7 @@ function TranslationModule:GetTabs()
     -- Salvar as traduções para o idioma do jogador
     local updatedConfig = {
         Main = Main,
+        Quest = Quest,
         Teleports = Teleports,
         Jogador = Jogador,
         Mostrar = Mostrar,
@@ -246,7 +256,7 @@ function TranslationModule:GetTabs()
     SaveConfig(updatedConfig, currentLanguage)
 
     screenGui:Destroy()
-    return Main, Teleports, Jogador, Mostrar, Creditos
+    return Main, Quest, Teleports, Jogador, Mostrar, Creditos
 end
 
 return TranslationModule
