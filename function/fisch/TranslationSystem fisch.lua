@@ -85,7 +85,7 @@ function RaelHubLoadScreenGui(textvalue)
   local startSound = Instance.new("Sound")
   startSound.SoundId = "rbxassetid://6114974207"
   startSound.Volume = 1
-  startSound.Parent = screenGui
+  startSound.Parent = getgenv().RaelHubScreenGuiLoad
   startSound:Play()
 
   -- Exemplo de uso
@@ -104,7 +104,7 @@ function RaelHubLoadScreenGui(textvalue)
   loadingIcon.Image = "rbxassetid://106296997072730" -- Ícone de loading
   loadingIcon.BackgroundTransparency = 1
   loadingIcon.ScaleType = Enum.ScaleType.Fit -- Ajuste para manter a proporção
-  loadingIcon.Parent = screenGui
+  loadingIcon.Parent = getgenv().RaelHubScreenGuiLoad
 
   fadeInImage(0.5, loadingIcon)
 
