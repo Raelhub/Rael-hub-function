@@ -118,14 +118,14 @@ local RaelHubTradutor = loadstring(game:HttpGet("https://raw.githubusercontent.c
 
 local RaelHubFunction = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/refs/heads/main/function/RaelHubFunctionV2/script.txt"))()
 
-if not getgenv().RaelHubTradutor then
-  getgenv().RaelHubTradutor = true
+if not getgenv().RaelHubAutoTranslator then
+  getgenv().RaelHubAutoTranslator = true
 end
 
-if getgenv().RaelHubTradutor then
+if getgenv().RaelHubAutoTranslator then
   local RaelHubText1 = RaelHubTradutor.Tradutor("THANK YOU FOR USING RAEL HUB")
   RaelHubLoadScreenGui(RaelHubText1)
-elseif getgenv().RaelHubTradutor == false then
+elseif getgenv().RaelHubAutoTranslator == false then
   local RaelHubText1 = "THANK YOU FOR USING RAEL HUB"
   RaelHubLoadScreenGui(RaelHubText1)
 end
@@ -142,9 +142,9 @@ local function GetPlayerLanguage()
         return LocalizationService.RobloxLocaleId
     end)
     if result then
-        return code:sub(1, 2) -- Retorna o código do idioma, como "en", "pt", etc.
+        return code:sub(1, 2)
     else
-        return "en" -- Se houver erro, usa o inglês como padrão
+        return "en"
     end
 end
 
@@ -179,19 +179,19 @@ function TranslationModule:GetTabs()
     -- Carregar as traduções do idioma do jogador se já existirem
     local savedConfig = LoadConfig(currentLanguage)
     
-    if getgenv().RaelHubTradutor then
+    if getgenv().RaelHubAutoTranslator then
+      print("Ja foi aqui")
       -- Se as traduções já existem para o idioma atual, carregar
       if savedConfig then
         task.wait(1)
           getgenv().RaelHubScreenGuiLoad:Destroy()
         return savedConfig.Main, savedConfig.Quest, savedConfig.Eventos, savedConfig.Teleports, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
       else
-        
         local NotificationManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/refs/heads/main/RaelHubNotify/script.lua"))()
 
         local notification = NotificationManager.new()
-        
         notification:createNotification("This may take a few minutes.", 2)
+        print("Isso pode demorar um pouco")
         
       end
 
@@ -289,7 +289,7 @@ function TranslationModule:GetTabs()
 
       screenGui:Destroy()
       return Main, Quest, Eventos, Teleports, Jogador, Mostrar, Creditos
-    elseif getgenv().RaelHubTradutor == false then
+    elseif getgenv().RaelHubAutoTranslator == false then
       
       local Main = {
         name = "Main",
