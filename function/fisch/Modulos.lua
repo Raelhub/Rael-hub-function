@@ -6,7 +6,7 @@ function RaelHubFisch.AutoCollectCrabCage(state)
     local Active = workspace:FindFirstChild("active")
 
     if Active then
-      for _, Crab in ipairs(Active:GetChildren()) do
+      for _, Crab in ipairs(Active.crabcages:GetChildren()) do
         if Crab:IsA("Model") then
           local cage = Crab:FindFirstChild("Cage")
           if cage then
