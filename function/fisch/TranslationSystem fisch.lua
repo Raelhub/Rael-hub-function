@@ -4,7 +4,7 @@ getgenv().RaelHubTradutor = true
 
 if getgenv().RaelHubTradutor then
   local Text1 = RaelHubTradutor.Tradutor("THANK YOU FOR USING RAEL HUB")
-  local Text2 = RaelHubTradutor.Tradutor("This may take a few minutes...")
+  task.spawn(function()local Text2 = RaelHubTradutor.Tradutor("This may take a few minutes...")end)
 elseif getgenv().RaelHubTradutor == false then
   local Text1 = "THANK YOU FOR USING RAEL HUB"
 end
