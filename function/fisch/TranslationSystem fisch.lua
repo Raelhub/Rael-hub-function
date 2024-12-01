@@ -180,7 +180,6 @@ function TranslationModule:GetTabs()
     local savedConfig = LoadConfig(currentLanguage)
     
     if getgenv().RaelHubAutoTranslator then
-      print("Ja foi aqui")
       -- Se as traduções já existem para o idioma atual, carregar
       if savedConfig then
         task.wait(1)
@@ -190,8 +189,8 @@ function TranslationModule:GetTabs()
         local NotificationManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/refs/heads/main/RaelHubNotify/script.lua"))()
 
         local notification = NotificationManager.new()
-        notification:createNotification("This may take a few minutes.", 2)
-        print("Isso pode demorar um pouco")
+        local text = RaelHubTradutor.Tradutor("This may take a few minutes.", currentLanguage)
+        notification:createNotification(text, 5)
         
       end
 
