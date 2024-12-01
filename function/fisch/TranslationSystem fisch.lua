@@ -118,7 +118,9 @@ local RaelHubTradutor = loadstring(game:HttpGet("https://raw.githubusercontent.c
 
 local RaelHubFunction = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/refs/heads/main/function/RaelHubFunctionV2/script.txt"))()
 
-getgenv().RaelHubTradutor = true
+if not getgenv().RaelHubTradutor then
+  getgenv().RaelHubTradutor = true
+end
 
 if getgenv().RaelHubTradutor then
   local RaelHubText1 = RaelHubTradutor.Tradutor("THANK YOU FOR USING RAEL HUB")
@@ -183,6 +185,14 @@ function TranslationModule:GetTabs()
         task.wait(1)
           getgenv().RaelHubScreenGuiLoad:Destroy()
         return savedConfig.Main, savedConfig.Quest, savedConfig.Eventos, savedConfig.Teleports, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
+      else
+        
+        local NotificationManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/refs/heads/main/RaelHubNotify/script.lua"))()
+
+        local notification = NotificationManager.new()
+        
+        notification:createNotification("This may take a few minutes.", 2)
+        
       end
 
       local Main = {
