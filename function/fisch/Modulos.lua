@@ -6,7 +6,7 @@ function RaelHubFisch.AutoCollectCrabCage(state)
     local Active = workspace:FindFirstChild("active")
 
     if Active then
-      for _, Crab in ipairs(Active.crabcages:GetChildren()) do
+      for _, Crab in ipairs(Active:GetChildren()) do
         if Crab:IsA("Model") then
           local cage = Crab:FindFirstChild("Cage")
           if cage then
@@ -373,7 +373,9 @@ RaelHubFisch.FishingArea = {
 }
 
 RaelHubFisch.TeleportSpots = {
-  Forsaken_Shores = CFrame.new(-2515.0400390625, 135.79074096679688, 1576.5709228515625),
+  the_detphs_maze_exit = CFrame.new(978.142822265625, -701.1101684570312, 1253.7423095703125),
+  the_detphs_sentence = CFrame.new(11.46270751953125, -706.1237182617188, 1230.847900390625),
+  forsaken_Shores = CFrame.new(-2515.0400390625, 135.79074096679688, 1576.5709228515625),
   altar = CFrame.new(1296.320068359375, -808.5519409179688, -298.93817138671875),
   arch = CFrame.new(998.966796875, 126.6849365234375, -1237.1434326171875),
   birch = CFrame.new(1742.3203125, 138.25787353515625, -2502.23779296875),
@@ -399,7 +401,7 @@ RaelHubFisch.TeleportSpots = {
   volcano = CFrame.new(-1888.52319, 163.847565, 329.238281, 1, 0, 0, 0, 1, 0, 0, 0, 1),
   wilson = CFrame.new(2938.80591, 277.474762, 2567.13379, 0.4648332, 0, 0.885398269, 0, 1, 0, -0.885398269, 0, 0.4648332),
   wilsons_rod = CFrame.new(2879.2085, 135.07663, 2723.64233, 0.970463336, -0.168695927, -0.172460333, 0.141582936, -0.180552125, 0.973321974, -0.195333466, -0.968990743, -0.151334763),
-  Arcient_Isle = CFrame.new(6071.46044921875, 194.98016357421875, 314.3388671875)
+  arcient_Isle = CFrame.new(6071.46044921875, 194.98016357421875, 314.3388671875)
 }
 
 RaelHubFisch.TeleportNPCS = {
