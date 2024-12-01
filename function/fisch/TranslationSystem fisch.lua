@@ -116,8 +116,6 @@ end
 
 local RaelHubTradutor = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/refs/heads/main/RaelHubTranslatorSystem/script.lua"))()
 
-local RaelHubFunction = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/refs/heads/main/function/RaelHubFunctionV2/script.txt"))()
-
 if not getgenv().RaelHubAutoTranslator then
   getgenv().RaelHubAutoTranslator = true
 end
@@ -291,7 +289,7 @@ function TranslationModule:GetTabs()
 
       SaveConfig(updatedConfig, currentLanguage)
       notification:createNotification(RaelHubTradutor.Tradutor('Translation completed successfully', currentLanguage), 5)
-      screenGui:Destroy()
+      getgenv().RaelHubScreenGuiLoad:Destroy()
       return Main, Quest, Eventos, Teleports, Jogador, Mostrar, Creditos
     elseif getgenv().RaelHubAutoTranslator == false then
       
