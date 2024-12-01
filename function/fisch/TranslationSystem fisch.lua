@@ -121,9 +121,9 @@ local RaelHubFunction = loadstring(game:HttpGet("https://raw.githubusercontent.c
 getgenv().RaelHubTradutor = true
 
 if getgenv().RaelHubTradutor then
-  local Text1 = RaelHubTradutor.Tradutor("THANK YOU FOR USING RAEL HUB")
-  RaelHubLoadScreenGui(Text1)
-  local Text2 = RaelHubTradutor.Tradutor("This may take a few minutes...")
+  getgenv().RaelHubScreenLoadText1 = RaelHubTradutor.Tradutor("THANK YOU FOR USING RAEL HUB")
+  RaelHubLoadScreenGui(getgenv().RaelHubScreenLoadText1)
+  getgenv().RaelHubScreenLoadText2 = RaelHubTradutor.Tradutor("This may take a few minutes...")
 elseif getgenv().RaelHubTradutor == false then
   local Text1 = "THANK YOU FOR USING RAEL HUB"
 end
@@ -185,7 +185,7 @@ function TranslationModule:GetTabs()
         return savedConfig.Main, savedConfig.Quest, savedConfig.Eventos, savedConfig.Teleports, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
       end
 
-      RaelHubFunction.CreateNotification(Text2, 3)
+      RaelHubFunction.CreateNotification(getgenv().RaelHubScreenLoadText2, 3)
       local Main = {
         name = RaelHubTradutor.Tradutor("Main", currentLanguage),
         section1 = RaelHubTradutor.Tradutor("Teleport to fishing area", currentLanguage),
