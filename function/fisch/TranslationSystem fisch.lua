@@ -5,7 +5,7 @@ function RaelHubLoadScreenGui(textvalue)
   -- Cria a tela de carregamento
   getgenv().RaelHubScreenGuiLoad = Instance.new("ScreenGui")
   getgenv().RaelHubScreenGuiLoad.Parent = playerGui
-  
+
   -- Imagem de fundo (opcional)
   local imageLabel = Instance.new("ImageLabel")
   imageLabel.Size = UDim2.new(0.7, 0, 0.6, 0)
@@ -14,33 +14,21 @@ function RaelHubLoadScreenGui(textvalue)
   imageLabel.BackgroundTransparency = 1
   imageLabel.ScaleType = Enum.ScaleType.Stretch
   imageLabel.Parent = getgenv().RaelHubScreenGuiLoad
-  
-  local title1 = Instance.new("TextLabel")
-  title1.Size = UDim2.new(0.6, 0, 0.1, 0)
-  title1.AnchorPoint = Vector2.new(0.5, 0.5)
-  title1.Position = UDim2.new(0.5, 0, 0.5, 0) -- Posição centralizada
-  title1.BackgroundTransparency = 1
-  title1.Text = textvalue
-  title1.TextColor3 = Color3.fromRGB(16, 235, 138) -- Cor do texto
-  title1.Font = Enum.Font.ArialBold
-  title1.TextScaled = true
-  title1.TextTransparency = 1 -- Começa invisível
-  title1.Parent = getgenv().RaelHubScreenGuiLoad
 
   -- Cria o TextLabel
-  getgenv().RaelHubLoadTitle2 = Instance.new("TextLabel")
-  getgenv().RaelHubLoadTitle2.Size = UDim2.new(0.6, 0, 0.1, 0)
-  getgenv().RaelHubLoadTitle2.AnchorPoint = Vector2.new(0.5, 0.5)
-  getgenv().RaelHubLoadTitle2.Position = UDim2.new(0.5, 0, 0.55, 0) -- Posição centralizada
-  getgenv().RaelHubLoadTitle2.BackgroundTransparency = 1
-  getgenv().RaelHubLoadTitle2.Text = ""
-  getgenv().RaelHubLoadTitle2.TextColor3 = Color3.fromRGB(16, 235, 138) -- Cor do texto
-  getgenv().RaelHubLoadTitle2.Font = Enum.Font.ArialBold
-  getgenv().RaelHubLoadTitle2().RaelHubLoadTitle2.TextScaled = true
-  getgenv().RaelHubLoadTitle2.TextTransparency = 1 -- Começa invisível
-  getgenv().RaelHubLoadTitle2.Parent = getgenv().RaelHubScreenGuiLoad
+  local title = Instance.new("TextLabel")
+  title.Size = UDim2.new(0.6, 0, 0.1, 0)
+  title.AnchorPoint = Vector2.new(0.5, 0.5)
+  title.Position = UDim2.new(0.5, 0, 0.5, 0) -- Posição centralizada
+  title.BackgroundTransparency = 1
+  title.Text = textvalue
+  title.TextColor3 = Color3.fromRGB(16, 235, 138) -- Cor do texto
+  title.Font = Enum.Font.ArialBold
+  title.TextScaled = true
+  title.TextTransparency = 1 -- Começa invisível
+  title.Parent = getgenv().RaelHubScreenGuiLoad
 
-  
+
 
   -- Função para fazer o fade in
   local function fadeInText(duration, object)
@@ -92,15 +80,7 @@ function RaelHubLoadScreenGui(textvalue)
         task.wait(0.05) -- Velocidade da rotação
     end
   end
-  
-  local function SetNewText(text, value)
-    fadeOutText(0.5, text)
-    task.wait(0.3)
-    text.Text = value
-    fadeInText(0.5, text)
-  end
-    
-  
+
   -- Som ao iniciar (opcional)
   local startSound = Instance.new("Sound")
   startSound.SoundId = "rbxassetid://6114974207"
@@ -109,15 +89,29 @@ function RaelHubLoadScreenGui(textvalue)
   startSound:Play()
 
   -- Exemplo de uso
-  fadeInText(0.5, title1) -- Faz o texto aparecer
+  fadeInText(0.5, title) -- Faz o texto aparecer
   task.wait(2)
-  fadeOutText(0.5, title1) -- Faz o texto desaparecer
-  title1.Text = "RAEL HUB"
-  title1.AnchorPoint = Vector2.new(0, 0)
-  title1.Position = UDim2.new(0.2, 0, 0.35, 0)
-  fadeInText(0.5, title1)
-  SetNewText(getgenv().RaelHubLoadTitle2, "0%")
+  fadeOutText(0.5, title) -- Faz o texto desaparecer
+  title.Text = "RAEL HUB"
+  title.AnchorPoint = Vector2.new(0, 0)
+  title.Position = UDim2.new(0.2, 0, 0.35, 0)
+  fadeInText(0.5, title)
 
+  -- Ícone de carregamento giratório
+  local loadingIcon = Instance.new("ImageLabel")
+  loadingIcon.Size = UDim2.new(0.1, 0, 0.1, 0) -- Mantém a proporção
+  loadingIcon.Position = UDim2.new(0.45, 0, 0.5, 0) -- Centralizado
+  loadingIcon.Image = "rbxassetid://106296997072730" -- Ícone de loading
+  loadingIcon.BackgroundTransparency = 1
+  loadingIcon.ScaleType = Enum.ScaleType.Fit -- Ajuste para manter a proporção
+  loadingIcon.Parent = getgenv().RaelHubScreenGuiLoad
+
+  fadeInImage(0.5, loadingIcon)
+
+  -- Inicia a rotação do ícone de carregamento
+  spawn(function()
+    rotateIcon(loadingIcon)
+  end)
 end
 
 local RaelHubTradutor = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/refs/heads/main/RaelHubTranslatorSystem/script.lua"))()
@@ -186,15 +180,16 @@ function TranslationModule:GetTabs()
     local savedConfig = LoadConfig(currentLanguage)
     
     if getgenv().RaelHubAutoTranslator then
+      local NotificationManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/refs/heads/main/RaelHubNotify/script.lua"))()
+
+      local notification = NotificationManager.new()
       -- Se as traduções já existem para o idioma atual, carregar
       if savedConfig then
         task.wait(1)
           getgenv().RaelHubScreenGuiLoad:Destroy()
         return savedConfig.Main, savedConfig.Quest, savedConfig.Eventos, savedConfig.Teleports, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
       else
-        local NotificationManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/refs/heads/main/RaelHubNotify/script.lua"))()
-
-        local notification = NotificationManager.new()
+        
         local text = RaelHubTradutor.Tradutor("This may take a few minutes.", currentLanguage)
         notification:createNotification(text, 5)
         
@@ -224,13 +219,13 @@ function TranslationModule:GetTabs()
         slide1 = RaelHubTradutor.Tradutor("Delay in selling", currentLanguage),
         slide2 = RaelHubTradutor.Tradutor("Quantity of Crab cage", currentLanguage)
       }
-      SetNewText(getgenv().RaelHubLoadTitle2, "14%")
+      notification:createNotification(RaelHubTradutor.Tradutor('"Main" translation completed', currentLanguage), 5)
       local Quest = {
         name = RaelHubTradutor.Tradutor("Quest", currentLanguage),
         section1 = RaelHubTradutor.Tradutor("Automatically buy the trident rod", currentLanguage),
         button1 = RaelHubTradutor.Tradutor("Auto", currentLanguage) .. " " .. RaelHubTradutor.Tradutor("trident", currentLanguage)
       }
-      SetNewText(getgenv().RaelHubLoadTitle2, "28%")
+      notification:createNotification(RaelHubTradutor.Tradutor('"Quest" translation completed', currentLanguage), 5)
       local Eventos = {
         name = RaelHubTradutor.Tradutor("Events", currentLanguage),
         section = RaelHubTradutor.Tradutor("Megalodon features", currentLanguage),
@@ -238,7 +233,7 @@ function TranslationModule:GetTabs()
         toggle1 = RaelHubTradutor.Tradutor("Teleport to the megalodon with the boat", currentLanguage),
         toggle2 = RaelHubTradutor.Tradutor("Esp megalodon", currentLanguage),
       }
-      SetNewText(getgenv().RaelHubLoadTitle2, "42%")
+      notification:createNotification(RaelHubTradutor.Tradutor('"Eventos" translation completed', currentLanguage), 5)
       local Teleports = {
         name = RaelHubTradutor.Tradutor("Teleports", currentLanguage),
         section1 = RaelHubTradutor.Tradutor("Teleport to the islands", currentLanguage),
@@ -251,7 +246,7 @@ function TranslationModule:GetTabs()
         dropdown4 = RaelHubTradutor.Tradutor("rods", currentLanguage),
         button = RaelHubTradutor.Tradutor("Teleport player", currentLanguage),
       }
-      SetNewText(getgenv().RaelHubLoadTitle2, "56%")
+      notification:createNotification(RaelHubTradutor.Tradutor('"Teleports" translation completed', currentLanguage), 5)
       local Jogador = {
         name = RaelHubTradutor.Tradutor("Player", currentLanguage),
         section1 = RaelHubTradutor.Tradutor("Teleport to players", currentLanguage),
@@ -265,7 +260,7 @@ function TranslationModule:GetTabs()
         toggle1 = RaelHubTradutor.Tradutor("Ativar velocidade", currentLanguage),
         toggle2 = RaelHubTradutor.Tradutor("Walking On Water", currentLanguage)
       }
-      SetNewText(getgenv().RaelHubLoadTitle2, "70%")
+      notification:createNotification(RaelHubTradutor.Tradutor('"Player" translation completed', currentLanguage), 5)
       local Mostrar = {
         name = "Esp",
         section1 = RaelHubTradutor.Tradutor("Show objects", currentLanguage),
@@ -275,14 +270,14 @@ function TranslationModule:GetTabs()
         toggle2 = "Esp " .. RaelHubTradutor.Tradutor(" monster ", currentLanguage),
         toggle3 = "Esp " .. RaelHubTradutor.Tradutor(" players ", currentLanguage)
       }
-      SetNewText(getgenv().RaelHubLoadTitle2, "84%")
+      notification:createNotification(RaelHubTradutor.Tradutor('"Show" translation completed', currentLanguage), 5)
       local Creditos = {
         name = RaelHubTradutor.Tradutor("Credits", currentLanguage),
         section = RaelHubTradutor.Tradutor("Script creator", currentLanguage),
         descricao = RaelHubTradutor.Tradutor("Join my YouTube channel and Discord for new updates", currentLanguage),
         ContentNotify = RaelHubTradutor.Tradutor("The script has been copied to the desktop", currentLanguage)
       }
-      SetNewText(getgenv().RaelHubLoadTitle2, "100%")
+      notification:createNotification(RaelHubTradutor.Tradutor('"Credits" translation completed', currentLanguage), 5)
       -- Salvar as traduções para o idioma do jogador
       local updatedConfig = {
         Main = Main,
@@ -295,7 +290,7 @@ function TranslationModule:GetTabs()
       }
 
       SaveConfig(updatedConfig, currentLanguage)
-
+      notification:createNotification(RaelHubTradutor.Tradutor('Translation completed successfully', currentLanguage), 5)
       screenGui:Destroy()
       return Main, Quest, Eventos, Teleports, Jogador, Mostrar, Creditos
     elseif getgenv().RaelHubAutoTranslator == false then
