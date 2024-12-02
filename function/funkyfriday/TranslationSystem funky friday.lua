@@ -188,7 +188,7 @@ function TranslationModule:GetTabs()
       if savedConfig then
         task.wait(1)
           getgenv().RaelHubScreenGuiLoad:Destroy()
-        return savedConfig.Main, savedConfig.Quest, savedConfig.Eventos, savedConfig.Teleports, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
+        return savedConfig.Main, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
       else
         
         local text = RaelHubTradutor.Tradutor("This may take a few minutes.", currentLanguage)
@@ -250,7 +250,7 @@ function TranslationModule:GetTabs()
       SaveConfig(updatedConfig, currentLanguage)
       notification:createNotification(RaelHubTradutor.Tradutor('Translation completed successfully', currentLanguage), 5)
       getgenv().RaelHubScreenGuiLoad:Destroy()
-      return Main, Quest, Eventos, Teleports, Jogador, Mostrar, Creditos
+      return Main, Jogador, Mostrar, Creditos
     elseif getgenv().RaelHubAutoTranslator == false then
       
       local Main = {
@@ -292,7 +292,7 @@ function TranslationModule:GetTabs()
       }
 
       getgenv().RaelHubScreenGuiLoad:Destroy()
-      return Main, Quest, Eventos, Teleports, Jogador, Mostrar, Creditos
+      return Main, Jogador, Mostrar, Creditos
       
     end
 end
