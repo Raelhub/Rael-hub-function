@@ -397,15 +397,23 @@ function TranslationModule:GetTabs()
       
       -- Salvar as traduções para o idioma do jogador
       local updatedConfig = {
-        Main = Main,
-        Quest = Quest,
-        Eventos = Eventos,
-        Teleports = Teleports,
-        Jogador = Jogador,
-        Mostrar = Mostrar,
-        Creditos = Creditos
+        Tab_Yurei = Tab_Yurei,
+        Tab_cutscene = Tab_cutscene,
+        Tab_GiveHeart = Tab_GiveHeart,
+        Tab_Mapmaze = Tab_Mapmaze,
+        Tab_DodoMeki = Tab_DodoMeki,
+        Tab_Enzuzai = Tab_Enzuzai,
+        Tab_HouseUchiumi = Tab_HouseUchiumi,
+        Tab_Train = Tab_Train,
+        Tab_larvas = Tab_larvas,
+        Tab_Lama = Tab_Lama,
+        Tab_HouseYurei = Tab_HouseYurei,
+        Tab_BossYurei = Tab_BossYurei,
+        Tab_FaseFinal = Tab_FaseFinal,
+        Tab_Others = Tab_Others,
+        Tab_Creditos = Tab_Creditos
       }
-
+      
       SaveConfig(updatedConfig, currentLanguage)
       notification:createNotification(RaelHubTradutor.Tradutor('Translation completed successfully', currentLanguage), 5)
       getgenv().RaelHubScreenGuiLoad:Destroy()

@@ -132,7 +132,7 @@ elseif getgenv().RaelHubAutoTranslator == false then
 end
 
 local TranslationModule = {}
-local configFolder = "RaelHub fish" -- Pasta onde os arquivos de tradução serão salvos
+local configFolder = "RaelHub funky friday" -- Pasta onde os arquivos de tradução serão salvos
 
 -- Serviço de localização do Roblox
 local LocalizationService = game:GetService("LocalizationService")
@@ -239,9 +239,6 @@ function TranslationModule:GetTabs()
       -- Salvar as traduções para o idioma do jogador
       local updatedConfig = {
         Main = Main,
-        Quest = Quest,
-        Eventos = Eventos,
-        Teleports = Teleports,
         Jogador = Jogador,
         Mostrar = Mostrar,
         Creditos = Creditos
