@@ -5,7 +5,8 @@ function RaelHubLoadScreenGui(textvalue)
   -- Cria a tela de carregamento
   getgenv().RaelHubScreenGuiLoad = Instance.new("ScreenGui")
   getgenv().RaelHubScreenGuiLoad.Parent = playerGui
-
+  getgenv().RaelHubScreenGuiLoad.ResetOnSpawn = false
+  
   -- Imagem de fundo (opcional)
   local imageLabel = Instance.new("ImageLabel")
   imageLabel.Size = UDim2.new(0.7, 0, 0.6, 0)
