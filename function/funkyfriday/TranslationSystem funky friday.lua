@@ -116,8 +116,11 @@ end
 
 local RaelHubTradutor = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/refs/heads/main/RaelHubTranslatorSystem/script.lua"))()
 
-if not getgenv().RaelHubAutoTranslator then
+if getgenv and getgenv().RaelHubAutoTranslator == nil then
   getgenv().RaelHubAutoTranslator = true
+  warn("RaelHubAutoTranslator was created and set to true.")
+else
+  warn("RaelHubAutoTranslator already exists, keeping the current value.")
 end
 
 if getgenv().RaelHubAutoTranslator then
@@ -201,7 +204,7 @@ function TranslationModule:GetTabs()
         button = RaelHubTradutor.Tradutor("Redeem codes", currentLanguage)
       }
       
-      notification:createNotification(RaelHubTradutor.Tradutor('"Teleports" translation completed', currentLanguage), 5)
+      notification:createNotification(RaelHubTradutor.Tradutor('"Main" translation completed', currentLanguage), 5)
       local Jogador = {
         name = RaelHubTradutor.Tradutor("Player", currentLanguage),
         section1 = RaelHubTradutor.Tradutor("Teleport to players", currentLanguage),
