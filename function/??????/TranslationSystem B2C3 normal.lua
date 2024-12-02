@@ -117,8 +117,11 @@ end
 
 local RaelHubTradutor = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/refs/heads/main/RaelHubTranslatorSystem/script.lua"))()
 
-if not getgenv().RaelHubAutoTranslator then
+if getgenv and getgenv().RaelHubAutoTranslator == nil then
   getgenv().RaelHubAutoTranslator = true
+  warn("RaelHubAutoTranslator was created and set to true.")
+else
+  warn("RaelHubAutoTranslator already exists, keeping the current value.")
 end
 
 if getgenv().RaelHubAutoTranslator then
