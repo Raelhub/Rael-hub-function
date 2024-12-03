@@ -212,7 +212,7 @@ function TranslationModule:GetTabs()
         toggle2 = RaelHubTradutor.Tradutor("Infinite Oxygen", currentLanguage),
         toggle3 = RaelHubTradutor.Tradutor("Anti Afk", currentLanguage),
         toggle4 = RaelHubTradutor.Tradutor("Auto treasure", currentLanguage),
-        toggle5 = RaelHubTradutor.Tradutor("Auto sell", currentLanguage),
+        toggle5 = RaelHubTradutor.Tradutor("Sell fisch automatically", currentLanguage),
         toggle6 = RaelHubTradutor.Tradutor("Auto buy crab cage", currentLanguage),
         toggle7 = RaelHubTradutor.Tradutor("Auto collect crab cage", currentLanguage),
         button1 = RaelHubTradutor.Tradutor("Sell the selected fish", currentLanguage),
@@ -224,7 +224,13 @@ function TranslationModule:GetTabs()
       local Quest = {
         name = RaelHubTradutor.Tradutor("Quest", currentLanguage),
         section1 = RaelHubTradutor.Tradutor("Automatically buy the trident rod", currentLanguage),
-        button1 = RaelHubTradutor.Tradutor("Auto", currentLanguage) .. " " .. RaelHubTradutor.Tradutor("trident", currentLanguage)
+        section2 = RaelHubTradutor.Tradutor("The rod of depths", currentLanguage),
+        button1 = RaelHubTradutor.Tradutor("Auto", currentLanguage) .. " " .. RaelHubTradutor.Tradutor("trident", currentLanguage),
+        button2 = RaelHubTradutor.Tradutor("Teleportar para a porta", currentLanguage),
+        button3 = RaelHubTradutor.Tradutor("Teleport to the abissal", currentLanguage),
+        button4 = RaelHubTradutor.Tradutor("Teleport to the hexed", currentLanguage),
+        button5 = RaelHubTradutor.Tradutor("Teleport to the rod depths", currentLanguage)
+        
       }
       notification:createNotification(RaelHubTradutor.Tradutor('"Quest" translation completed', currentLanguage), 5)
       local Eventos = {
@@ -323,7 +329,12 @@ function TranslationModule:GetTabs()
       local Quest = {
         name = "Quest",
         section1 = "Automatically buy the trident rod",
-        button1 = "Auto trident"
+        section2 = "The rod of depths",
+        button1 = "Auto trident",
+        button2 = "Teleportar para a porta",
+        button3 = "Teleport to the abissal",
+        button4 = "Teleport to the hexed",
+        button5 = "Teleport to the rod depths"
       }
       local Eventos = {
         name = "Events",
