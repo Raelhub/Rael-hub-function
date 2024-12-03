@@ -9,7 +9,7 @@ function RaelHubBrookHaven.KillPlayer(targetPlayerName)
   local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
   local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
   local SavePositionPlayer = HumanoidRootPart.Position
-  local PlayerWhoWillDie = game.Players:FindFirstChild(targetPlayerName)
+  local PlayerWhoWillDie = game.workspace:FindFirstChild(targetPlayerName)
   local ButtonBusSchool = game:GetService("Players").LocalPlayer.PlayerGui.MainGUIHandler.MainVehicleMenu.Catalog.Container.ScrollingFrame.SchoolBus
   local ButtonNoCar = game:GetService("Players").LocalPlayer.PlayerGui.MainGUIHandler.MainVehicleMenu.Catalog.Header.CategoryTabs.NoCar
   local NameYourCar = tostring(LocalPlayer.Name .. "Car")
