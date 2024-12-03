@@ -1765,7 +1765,9 @@ function redzlib:MakeWindow(Configs)
       local function Input()
         local Text = TextBoxInput.Text
         if Text:gsub(" ", ""):len() > 0 then
-          if type(TextBox.OnChanging) then Text = TextBox.OnChanging(Text) or Text end
+          if type(TextBox.OnChanging) == "function" then 
+            Text = TextBox.OnChanging(Text) or Text 
+          end
           Funcs:FireCallback(Callback, Text)
           TextBoxInput.Text = Text
         end
