@@ -132,7 +132,7 @@ elseif getgenv().RaelHubAutoTranslator == false then
 end
 
 local TranslationModule = {}
-local configFolder = "RaelHub fish" -- Pasta onde os arquivos de tradução serão salvos
+local configFolder = "RaelHub fisch" -- Pasta onde os arquivos de tradução serão salvos
 
 -- Serviço de localização do Roblox
 local LocalizationService = game:GetService("LocalizationService")
@@ -257,13 +257,15 @@ function TranslationModule:GetTabs()
       local Jogador = {
         name = RaelHubTradutor.Tradutor("Player", currentLanguage),
         section1 = RaelHubTradutor.Tradutor("Teleport to players", currentLanguage),
-        section2 = RaelHubTradutor.Tradutor("Player Speed", currentLanguage),
-        section3 = RaelHubTradutor.Tradutor("Pass through objects", currentLanguage),
-        section4 = RaelHubTradutor.Tradutor("Light up the map", currentLanguage),
-        section5 = RaelHubTradutor.Tradutor("Do you walk on water", currentLanguage),
+        section2 = RaelHubTradutor.Tradutor("Remove all textures from the area", currentLanguage),
+        section3 = RaelHubTradutor.Tradutor("Player Speed", currentLanguage),
+        section4 = RaelHubTradutor.Tradutor("Pass through objects", currentLanguage),
+        section5 = RaelHubTradutor.Tradutor("Light up the map", currentLanguage),
+        section6 = RaelHubTradutor.Tradutor("Do you walk on water", currentLanguage),
         dropdowntext = RaelHubTradutor.Tradutor("Players: ", currentLanguage),
         slidetext = RaelHubTradutor.Tradutor("Speed: ", currentLanguage),
         button = RaelHubTradutor.Tradutor("Teleport to player", currentLanguage),
+        textureButton = RaelHubTradutor.Tradutor("Remove textures", currentLanguage),
         toggle1 = RaelHubTradutor.Tradutor("Ativar velocidade", currentLanguage),
         toggle2 = RaelHubTradutor.Tradutor("Walking On Water", currentLanguage)
       }
@@ -358,14 +360,16 @@ function TranslationModule:GetTabs()
       local Jogador = {
         name = "Player",
         section1 = "Teleport to players",
-        section2 = "Player Speed",
-        section3 = "Pass through objects",
-        section4 = "Light up the map",
-        section5 = "Do you walk on water",
+        section2 = "Remove all textures from the area",
+        section3 = "Player Speed",
+        section4 = "Pass through objects",
+        section5 = "Light up the map",
+        section6 = "Do you walk on water",
         dropdowntext = "Players: ",
         slidetext = "Speed: ",
         button = "Teleport to player",
-        toggle1 = "Enable speed",
+        textureButton = "Remove textures",
+        toggle1 = "Activate speed",
         toggle2 = "Walking On Water"
       }
 
