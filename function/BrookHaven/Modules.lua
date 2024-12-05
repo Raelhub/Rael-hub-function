@@ -41,6 +41,199 @@ RaelHubBrookHaven.GetSparkleTimeFedoraIds = {
   Bluesteel_Fedora = 98346834
 }
 
+function ChangePlayerColor(jogador)
+  local Player = workspace:FindFirstChild(jogador)
+  if Player then
+    local head = Player:FindFirstChild("Head")
+    if head then
+      local args = {
+        [1] = "skintone",
+        [2] = tostring(head.BrickColor)
+      }
+      game:GetService("ReplicatedStorage").RE:FindFirstChild("1Updat1eAvata1r"):FireServer(unpack(args))
+    end
+  end
+end
+
+function CopyPlayerAnimations(jogador)
+  local player = workspace:FindFirstChild(jogador)
+  
+  function EnviarAnimationId(valor)
+    local args = {
+      [1] = "wearWalkStyle",
+      [2] = valor
+    }
+
+    game:GetService("ReplicatedStorage").RE:FindFirstChild("1Updat1eAvata1r"):FireServer(unpack(args))
+  end
+  
+  if player and player:FindFirstChild("Humanoid") then
+    local humanoidDescription = player.Humanoid.HumanoidDescription
+    if humanoidDescription then
+      local animations = {
+        IdleAnimation = humanoidDescription.IdleAnimation,
+        WalkAnimation = humanoidDescription.WalkAnimation,
+        RunAnimation = humanoidDescription.RunAnimation,
+        JumpAnimation = humanoidDescription.JumpAnimation,
+        FallAnimation = humanoidDescription.FallAnimation,
+        SwimAnimation = humanoidDescription.SwimAnimation
+      }
+      
+      for key, value in pairs(animations) do
+        if value then
+          EnviarAnimationId(tonumber(value))
+          task.wait(0.3)
+        end
+      end
+    end
+  end
+end
+
+function CopyPlayerBody(jogador)
+  local player = workspace:FindFirstChild(jogador)
+  local BodyParts
+
+  if player and player:FindFirstChild("Humanoid") then
+    local humanoidDescription = player.Humanoid.HumanoidDescription
+    if humanoidDescription then
+      BodyParts = {
+        LeftArm = humanoidDescription.LeftArm,
+        RightArm = humanoidDescription.RightArm,
+        LeftLeg = humanoidDescription.LeftLeg,
+        RightLeg = humanoidDescription.RightLeg,
+        Torso = humanoidDescription.Torso,
+        Head = humanoidDescription.Head
+      }
+      
+      task.wait(0.3)
+      
+      local args = {
+          [1] = "CharacterChange",
+          [2] = {
+          [1] = BodyParts.Torso,
+          [2] = BodyParts.RightArm,
+          [3] = BodyParts.LeftArm,
+          [4] = BodyParts.RightLeg,
+          [5] = BodyParts.LeftLeg,
+          [6] = BodyParts.Head
+        },
+        [3] = "Boy"
+      }
+
+    game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+    end
+  end
+end
+
+function CopyAvatarPlayer(jogador)
+  local player = workspace:FindFirstChild(jogador)
+  local accessoriesAndClothes
+  
+  function EnviarId(valor)
+    local args = {
+      [1] = "wear",
+      [2] = valor
+    }
+    game:GetService("ReplicatedStorage").RE:FindFirstChild("1Updat1eAvata1r"):FireServer(unpack(args))
+  end
+  
+  function EquipBody(humanoidDescriptionPart)
+    local BodyParts = {
+      LeftArm = humanoidDescriptionPart.LeftArm,
+      RightArm = humanoidDescriptionPart.RightArm,
+      LeftLeg = humanoidDescriptionPart.LeftLeg,
+      RightLeg = humanoidDescriptionPart.RightLeg,
+      Torso = humanoidDescriptionPart.Torso,
+      Head = humanoidDescriptionPart.Head
+    }
+      
+    task.wait(0.3)
+      
+    local args = {
+      [1] = "CharacterChange",
+      [2] = {
+        [1] = BodyParts.Torso,
+        [2] = BodyParts.RightArm,
+        [3] = BodyParts.LeftArm,
+        [4] = BodyParts.RightLeg,
+        [5] = BodyParts.LeftLeg,
+        [6] = BodyParts.Head
+      },
+        [3] = "Boy"
+      }
+
+    game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+  end
+  
+  function ProcessarIds(ids)
+    local idArray = {}
+    for id in string.gmatch(ids, "%d+") do
+      table.insert(idArray, tonumber(id))
+    end
+    return idArray
+  end
+
+  if player and player:FindFirstChild("Humanoid") then
+    local humanoidDescription = player.Humanoid.HumanoidDescription
+    if humanoidDescription then
+      accessoriesAndClothes = {
+        BackAccessory = humanoidDescription.BackAccessory,
+        HatAccessory = humanoidDescription.HatAccessory,
+        HairAccessory = humanoidDescription.HairAccessory,
+        FaceAccessory = humanoidDescription.FaceAccessory,
+        NeckAccessory = humanoidDescription.NeckAccessory,
+        FrontAccessory = humanoidDescription.FrontAccessory,
+        WaistAccessory = humanoidDescription.WaistAccessory,
+        ShoulderAccessory = humanoidDescription.ShouldersAccessory,
+        Shirt = humanoidDescription.Shirt,
+        Pants = humanoidDescription.Pants,
+        GraphicTShirt = humanoidDescription.GraphicTShirt,
+        Face = humanoidDescription.Face
+      }
+      
+      EquipBody(humanoidDescription)
+      task.wait(0.3)
+      -- Envia os itens para o servidor
+      for key, values in pairs(accessoriesAndClothes) do
+        if type(values) == "string" then
+          local ids = ProcessarIds(values)
+          for _, id in ipairs(ids) do
+            if id and id ~= 0 then
+              print(id)
+              EnviarId(id)
+              task.wait(0.3)
+            end
+          end
+        elseif type(values) == "table" then
+          for _, value in pairs(values) do
+            if value and value ~= 0 then
+              print(value)
+              EnviarId(value)
+              task.wait(0.3)
+            end
+          end
+        else
+          if values and values ~= 0 then
+            print(values)
+            EnviarId(values)
+            task.wait(0.3)
+          end
+        end
+      end
+    end
+  end
+end
+
+function RaelHubBrookHaven.CopyPlayerSkin(jogador)
+
+  CopyAvatarPlayer(game.Players.LocalPlayer.Name)
+  ChangePlayerColor(jogador)
+  CopyPlayerBody(jogador)
+  CopyAvatarPlayer(jogador)
+  CopyPlayerAnimations(jogador)
+  
+end
+
 function RaelHubBrookHaven.KillPlayer(targetPlayerName)
   -- Variáveis goblais
   getgenv().RaelHubKillPlayerValue = true
