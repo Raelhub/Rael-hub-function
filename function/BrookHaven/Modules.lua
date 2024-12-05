@@ -199,7 +199,6 @@ function CopyAvatarPlayer(jogador)
           local ids = ProcessarIds(values)
           for _, id in ipairs(ids) do
             if id and id ~= 0 then
-              print(id)
               EnviarId(id)
               task.wait(0.3)
             end
@@ -207,14 +206,12 @@ function CopyAvatarPlayer(jogador)
         elseif type(values) == "table" then
           for _, value in pairs(values) do
             if value and value ~= 0 then
-              print(value)
               EnviarId(value)
               task.wait(0.3)
             end
           end
         else
           if values and values ~= 0 then
-            print(values)
             EnviarId(values)
             task.wait(0.3)
           end
@@ -228,9 +225,9 @@ function RaelHubBrookHaven.CopyPlayerSkin(jogador)
 
   CopyAvatarPlayer(game.Players.LocalPlayer.Name)
   ChangePlayerColor(jogador)
-  CopyPlayerBody(jogador)
   CopyAvatarPlayer(jogador)
   CopyPlayerAnimations(jogador)
+  CopyPlayerBody(jogador)
   
 end
 
