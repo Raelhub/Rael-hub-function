@@ -83,6 +83,13 @@ function RaelHubBrookHaven.KillPlayer(targetPlayerName)
 
   local YourBus = workspace.Vehicles[NameYourCar]
   YourBus:MoveTo(Vector3.new(15.605440139770508, -62.204490661621094, -62.37826919555664))
+  task.wait(1)
+  task.spawn(function()
+    
+    ClickButton(ButtonNoCar)
+    
+  end)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(SavePositionPlayer)
 end
 
 return RaelHubBrookHaven
