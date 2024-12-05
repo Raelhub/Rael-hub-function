@@ -1,5 +1,24 @@
 local RaelHubBrookHaven = {}
 
+RaelHubBrookHaven.GetValkyrieIds = {
+  Valkyrie_Helm = 1365767,
+  Blackvalk = 124730194,
+  Festive_Sword_Valkyrie = 189963816,
+  Tixvalk = 382881237,
+  Orinthian_Valkyrie = 928840419,
+  Sparkle_Time_Valkyrie = 1180433861,
+  Violet_Valkyrie = 1402432199,
+  Redvalk = 2274774123,
+  Sinister_Valk = 2738532568,
+  Emerald_Valkyrie = 2830437685,
+  Summer_Valk = 3756522670,
+  Ice_Valkyrie = 4390891467,
+  Valkyrie_of_the_Metaverse = 6845626233,
+  Valiant_Valkyrie_of_Testing = 7781687598,
+  Hallowis_Valk = 15054110920,
+  Timeless_Valkyrie_Helm = 17517206952
+}
+
 function RaelHubBrookHaven.KillPlayer(targetPlayerName)
   -- Variáveis goblais
   getgenv().RaelHubKillPlayerValue = true
