@@ -19,6 +19,28 @@ RaelHubBrookHaven.GetValkyrieIds = {
   Timeless_Valkyrie_Helm = 17517206952
 }
 
+RaelHubBrookHaven.GetFairyIds = {
+  Fall_Fairy = 128217885,
+  Winter_Fairy = 141742418,
+  St_Patrick_is_Day_Fairy = 226189871,
+  Spring_Fairy = 150381051
+}
+
+RaelHubBrookHaven.GetSparkleTimeFedoraIds = {
+  Yellow_Sparkle_Time_Fedora = 1285307,
+  Purple_Sparkle_Time_Fedora = 63043890,
+  Red_Sparkle_Time_Fedora = 72082328,
+  Green_Sparkle_Time_Fedora = 100929604,
+  Midnight_Blue_Sparkle_Time_Fedora = 119916949,
+  Teal_Sparkle_Time_Fedora = 147180077,
+  Orange_Sparkle_Time_Fedora = 215751161,
+  Black_Sparkle_Time_Fedora = 259423244,
+  Pink_Sparkle_Time_Fedora = 334663683,
+  Sky_Blue_Sparkle_Time_Fedora = 493476042,
+  White_Sparkle_Time_Fedora = 1016143686,
+  Bluesteel_Fedora = 98346834
+}
+
 function RaelHubBrookHaven.KillPlayer(targetPlayerName)
   -- Variáveis goblais
   getgenv().RaelHubKillPlayerValue = true
