@@ -147,6 +147,114 @@ function RaelHubBrookHaven.SetHandle(ID)
   end
 end
 
+function RaelHubBrookHaven.SetIdLeftArm(ID)
+  local player = workspace:FindFirstChild(game.Players.LocalPlayer.Name)
+  local BodyParts
+
+  if player and player:FindFirstChild("Humanoid") then
+    local humanoidDescription = player.Humanoid.HumanoidDescription
+    if humanoidDescription then
+      BodyParts = {
+        LeftArm = humanoidDescription.LeftArm,
+        RightArm = humanoidDescription.RightArm,
+        LeftLeg = humanoidDescription.LeftLeg,
+        RightLeg = humanoidDescription.RightLeg,
+        Torso = humanoidDescription.Torso,
+        Head = humanoidDescription.Head
+      }
+      
+      task.wait(0.3)
+      
+      local args = {
+          [1] = "CharacterChange",
+          [2] = {
+          [1] = BodyParts.Torso,
+          [2] = BodyParts.RightArm,
+          [3] = ID,
+          [4] = BodyParts.RightLeg,
+          [5] = BodyParts.LeftLeg,
+          [6] = BodyParts.Head
+        },
+        [3] = "Boy"
+      }
+
+    game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+    end
+  end
+end
+
+function RaelHubBrookHaven.SetIdRightArm(ID)
+  local player = workspace:FindFirstChild(game.Players.LocalPlayer.Name)
+  local BodyParts
+
+  if player and player:FindFirstChild("Humanoid") then
+    local humanoidDescription = player.Humanoid.HumanoidDescription
+    if humanoidDescription then
+      BodyParts = {
+        LeftArm = humanoidDescription.LeftArm,
+        RightArm = humanoidDescription.RightArm,
+        LeftLeg = humanoidDescription.LeftLeg,
+        RightLeg = humanoidDescription.RightLeg,
+        Torso = humanoidDescription.Torso,
+        Head = humanoidDescription.Head
+      }
+      
+      task.wait(0.3)
+      
+      local args = {
+          [1] = "CharacterChange",
+          [2] = {
+          [1] = BodyParts.Torso,
+          [2] = ID,
+          [3] = BodyParts.RightArm,
+          [4] = BodyParts.RightLeg,
+          [5] = BodyParts.LeftLeg,
+          [6] = BodyParts.Head
+        },
+        [3] = "Boy"
+      }
+
+    game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+    end
+  end
+end
+
+function RaelHubBrookHaven.SetIdTorso(ID)
+  local player = workspace:FindFirstChild(game.Players.LocalPlayer.Name)
+  local BodyParts
+
+  if player and player:FindFirstChild("Humanoid") then
+    local humanoidDescription = player.Humanoid.HumanoidDescription
+    if humanoidDescription then
+      BodyParts = {
+        LeftArm = humanoidDescription.LeftArm,
+        RightArm = humanoidDescription.RightArm,
+        LeftLeg = humanoidDescription.LeftLeg,
+        RightLeg = humanoidDescription.RightLeg,
+        Torso = humanoidDescription.Torso,
+        Head = humanoidDescription.Head
+      }
+      
+      task.wait(0.3)
+      
+      local args = {
+          [1] = "CharacterChange",
+          [2] = {
+          [1] = ID,
+          [2] = BodyParts.LeftArm,
+          [3] = BodyParts.RightArm,
+          [4] = BodyParts.RightLeg,
+          [5] = BodyParts.LeftLeg,
+          [6] = BodyParts.Head
+        },
+        [3] = "Boy"
+      }
+
+    game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+    end
+  end
+end
+
 function RaelHubBrookHaven.SetIdRightLeg(ID)
   local player = workspace:FindFirstChild(game.Players.LocalPlayer.Name)
   local BodyParts
@@ -594,4 +702,3 @@ function RaelHubBrookHaven.PullPlayer(targetPlayerName)
 end
 
 return RaelHubBrookHaven
-
