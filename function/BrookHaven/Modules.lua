@@ -763,6 +763,54 @@ function RaelHubBrookHaven.NoSeatCar(value)
     end
     task.wait()
   end
+  for _, player in ipairs(game:GetService("Players"):GetChildren()) do
+    local character = player.Character
+    if character then
+      for _, tool in ipairs(character:GetChildren()) do
+        if tool:IsA("Tool") then
+          for _, seat in ipairs(tool:GetChildren()) do
+            if seat:IsA("Seat") then
+              seat.CanTouch = true
+            end
+          end
+        end
+      end
+    end
+  end
+  for _, carro in ipairs(workspace.Vehicles:GetChildren()) do
+    local Body = carro:FindFirstChild("Body")
+    if Body then
+      for _, Assento in ipairs(Body:GetChildren()) do
+        if Assento:IsA("Seat") or Assento:IsA("VehicleSeat") then
+          Assento.CanTouch = true
+        end
+      end
+    end
+  end
+end
+
+function RaelHubBrookHaven.RemoveBan()
+  
+  for _, House in ipairs(workspace["001_Lots"]:GetChildren()) do
+    local HousePickedByPlayer = House:FindFirstChild("HousePickedByPlayer")
+    
+    if HousePickedByPlayer then
+      local HouseModel = HousePickedByPlayer:FindFirstChild("HouseModel")
+      if HouseModel then
+        for _, Ban in ipairs(HouseModel:GetChildren()) do
+          
+          if Ban:IsA("BasePart") and Ban.Parent.Name == "HouseModel" then
+            local isRedColor = Ban.Color == Color3.fromRGB(255, 0, 0)
+            local isReallyRed = Ban.BrickColor == BrickColor.new("Really red")
+
+            if isRedColor and isReallyRed then
+              Ban:Destroy()
+            end
+          end
+        end
+      end
+    end
+  end
 end
 
 return RaelHubBrookHaven
