@@ -313,7 +313,7 @@ function RaelHubBrookHaven.KillPlayer(targetPlayerName)
   end
 
   local YourBus = workspace.Vehicles[NameYourCar]
-  YourBus:MoveTo(Vector3.new(15.605440139770508, -62.204490661621094, -62.37826919555664))
+  YourBus:SetPrimaryPartCFrame(CFrame.new(15.605440139770508, -62.204490661621094, -62.37826919555664))
   task.wait(1)
   task.spawn(function()
     
