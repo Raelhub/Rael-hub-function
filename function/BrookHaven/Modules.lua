@@ -734,4 +734,35 @@ function RaelHubBrookHaven.PullPlayer(targetPlayerName)
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(SavePositionPlayer)
 end
 
+function RaelHubBrookHaven.NoSeatCar(value)
+  getgenv().RaelHubNoSeatCarValue = value
+  while getgenv().RaelHubNoSeatCarValue do
+    for _, player in ipairs(game:GetService("Players"):GetChildren()) do
+      local character = player.Character
+      if character then
+        for _, tool in ipairs(character:GetChildren()) do
+          if tool:IsA("Tool") then
+            for _, seat in ipairs(tool:GetChildren()) do
+              if seat:IsA("Seat") then
+                seat.CanTouch = not getgenv().RaelHubNoSeatCarValue
+              end
+            end
+          end
+        end
+      end
+    end
+    for _, carro in ipairs(workspace.Vehicles:GetChildren()) do
+      local Body = carro:FindFirstChild("Body")
+      if Body then
+        for _, Assento in ipairs(Body:GetChildren()) do
+          if Assento:IsA("Seat") or Assento:IsA("VehicleSeat") then
+            Assento.CanTouch = not getgenv().RaelHubNoSeatCarValue
+          end
+        end
+      end
+    end
+    task.wait()
+  end
+end
+
 return RaelHubBrookHaven
