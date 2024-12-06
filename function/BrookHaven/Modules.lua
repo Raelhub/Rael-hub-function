@@ -1,5 +1,75 @@
 local RaelHubBrookHaven = {}
 
+RaelHubBrookHaven.HeadPartsList = {
+  ["Korblox"] = 139610147,
+  ["Headless Horseman"] = 134082579,
+  ["Frost Guard General"] = 139573061,
+  ["Cheeks"] = 746767604,
+  ["David bazooka"] = 15091383633,
+  ["Amory"] = 15091931789,
+  ["Jester Equinox"] = 2962659137,
+}
+
+RaelHubBrookHaven.LeftArmPartsList = {
+  ["Korblox"] = 139607570,
+  ["Headless Horseman"] = 134082453,
+  ["Frost Guard General"] = 139572600,
+  ["David bazooka"] = 4416785861,
+  ["Amory"] = 2831353698,
+  ["Jester Equinox"] = 2962661848,
+  ["Zumbi"] = 37754607,
+  ["Pirate"] = 27847412,
+  ["Skeleton"] = 36781447
+}
+
+RaelHubBrookHaven.RigthArmPartsList = {
+  ["Korblox"] = 139607625,
+  ["Headless Horseman"] = 134082473,
+  ["Frost Guard General"] = 139572697,
+  ["David bazooka"] = 4416788553,
+  ["Amory"] = 2831355047,
+  ["Jester Equinox"] = 2962663610,
+  ["Zumbi"] = 37754562,
+  ["Pirate"] = 27847382,
+  ["Skeleton"] = 36781407
+}
+
+RaelHubBrookHaven.TorsoPartsList = {
+  ["Korblox"] = 139607770,
+  ["Headless Horseman"] = 134082557,
+  ["Frost Guard General"] = 139572973,
+  ["David bazooka"] = 4416793922,
+  ["Amory"] = 2831357250,
+  ["Jester Equinox"] = 2962665090,
+  ["Zumbi"] = 37754511,
+  ["Pirate"] = 27847359,
+  ["Skeleton"] = 36781360
+}
+
+RaelHubBrookHaven.LeftLegPartsList = {
+  ["Korblox"] = 139607673,
+  ["Headless Horseman"] = 134082507,
+  ["Frost Guard General"] = 139572789,
+  ["David bazooka"] = 4416780826,
+  ["Amory"] = 2831355934,
+  ["Jester Equinox"] = 2962662653,
+  ["Zumbi"] = 37754646,
+  ["Pirate"] = 27847445,
+  ["Skeleton"] = 36781481
+}
+
+RaelHubBrookHaven.RightLegPartsList = {
+  ["Korblox"] = 139607718,
+  ["Headless Horseman"] = 134082533,
+  ["Frost Guard General"] = 139572888,
+  ["David bazooka"] = 4416791577,
+  ["Amory"] = 2831356536,
+  ["Jester Equinox"] = 2962664429,
+  ["Zumbi"] = 37754710,
+  ["Pirate"] = 27847473,
+  ["Skeleton"] = 36781518
+}
+
 RaelHubBrookHaven.GetValkyrieIds = {
   Valkyrie_Helm = 1365767,
   Blackvalk = 124730194,
@@ -40,6 +110,114 @@ RaelHubBrookHaven.GetSparkleTimeFedoraIds = {
   White_Sparkle_Time_Fedora = 1016143686,
   Bluesteel_Fedora = 98346834
 }
+
+function RaelHubBrookHaven.SetHandle(ID)
+  local player = workspace:FindFirstChild(game.Players.LocalPlayer.Name)
+  local BodyParts
+
+  if player and player:FindFirstChild("Humanoid") then
+    local humanoidDescription = player.Humanoid.HumanoidDescription
+    if humanoidDescription then
+      BodyParts = {
+        LeftArm = humanoidDescription.LeftArm,
+        RightArm = humanoidDescription.RightArm,
+        LeftLeg = humanoidDescription.LeftLeg,
+        RightLeg = humanoidDescription.RightLeg,
+        Torso = humanoidDescription.Torso,
+        Head = humanoidDescription.Head
+      }
+      
+      task.wait(0.3)
+      
+      local args = {
+          [1] = "CharacterChange",
+          [2] = {
+          [1] = BodyParts.Torso,
+          [2] = BodyParts.RightArm,
+          [3] = BodyParts.LeftArm,
+          [4] = BodyParts.LeftLeg,
+          [5] = BodyParts.LeftLeg,
+          [6] = ID
+        },
+        [3] = "Boy"
+      }
+
+    game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+    end
+  end
+end
+
+function RaelHubBrookHaven.SetIdRightLeg(ID)
+  local player = workspace:FindFirstChild(game.Players.LocalPlayer.Name)
+  local BodyParts
+
+  if player and player:FindFirstChild("Humanoid") then
+    local humanoidDescription = player.Humanoid.HumanoidDescription
+    if humanoidDescription then
+      BodyParts = {
+        LeftArm = humanoidDescription.LeftArm,
+        RightArm = humanoidDescription.RightArm,
+        LeftLeg = humanoidDescription.LeftLeg,
+        RightLeg = humanoidDescription.RightLeg,
+        Torso = humanoidDescription.Torso,
+        Head = humanoidDescription.Head
+      }
+      
+      task.wait(0.3)
+      
+      local args = {
+          [1] = "CharacterChange",
+          [2] = {
+          [1] = BodyParts.Torso,
+          [2] = BodyParts.RightArm,
+          [3] = BodyParts.LeftArm,
+          [4] = ID,
+          [5] = BodyParts.LeftLeg,
+          [6] = BodyParts.Head
+        },
+        [3] = "Boy"
+      }
+
+    game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+    end
+  end
+end
+
+function RaelHubBrookHaven.SetIdLeftLeg(ID)
+  local player = workspace:FindFirstChild(game.Players.LocalPlayer.Name)
+  local BodyParts
+
+  if player and player:FindFirstChild("Humanoid") then
+    local humanoidDescription = player.Humanoid.HumanoidDescription
+    if humanoidDescription then
+      BodyParts = {
+        LeftArm = humanoidDescription.LeftArm,
+        RightArm = humanoidDescription.RightArm,
+        LeftLeg = humanoidDescription.LeftLeg,
+        RightLeg = humanoidDescription.RightLeg,
+        Torso = humanoidDescription.Torso,
+        Head = humanoidDescription.Head
+      }
+      
+      task.wait(0.3)
+      
+      local args = {
+          [1] = "CharacterChange",
+          [2] = {
+          [1] = BodyParts.Torso,
+          [2] = BodyParts.RightArm,
+          [3] = BodyParts.LeftArm,
+          [4] = BodyParts.RightLeg,
+          [5] = ID,
+          [6] = BodyParts.Head
+        },
+        [3] = "Boy"
+      }
+
+    game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+    end
+  end
+end
 
 function ChangePlayerColor(jogador)
   local Player = workspace:FindFirstChild(jogador)
@@ -416,3 +594,4 @@ function RaelHubBrookHaven.PullPlayer(targetPlayerName)
 end
 
 return RaelHubBrookHaven
+
