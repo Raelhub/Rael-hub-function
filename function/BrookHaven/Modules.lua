@@ -725,7 +725,7 @@ function RaelHubBrookHaven.PullPlayer(targetPlayerName)
   
   YourBus:SetPrimaryPartCFrame(CFrame.new(SavePositionPlayer))
   
-  task.wait(1)
+  task.wait(0.3)
   task.spawn(function()
     
     ClickButton(ButtonNoCar)
