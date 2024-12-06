@@ -8,6 +8,10 @@ RaelHubBrookHaven.HeadPartsList = {
   ["David bazooka"] = 15091383633,
   ["Amory"] = 15091931789,
   ["Jester Equinox"] = 2962659137,
+  ["Steampunk Robot"] = 4908014528,
+  ["Ud'zal"] = 15366383339,
+  ["Magma Fiend"] = 12726967427,
+  ["Mr. Toilet"] = 4416630203
 }
 
 RaelHubBrookHaven.LeftArmPartsList = {
@@ -19,7 +23,12 @@ RaelHubBrookHaven.LeftArmPartsList = {
   ["Jester Equinox"] = 2962661848,
   ["Zumbi"] = 37754607,
   ["Pirate"] = 27847412,
-  ["Skeleton"] = 36781447
+  ["Skeleton"] = 36781447,
+  ["Penguin"] = 46359095,
+  ["Steampunk Robot"] = 4908007367,
+  ["Ud'zal"] = 3333096407,
+  ["Magma Fiend"] = 2608534881,
+  ["Mr. Toilet"] = 4416456281
 }
 
 RaelHubBrookHaven.RigthArmPartsList = {
@@ -31,7 +40,12 @@ RaelHubBrookHaven.RigthArmPartsList = {
   ["Jester Equinox"] = 2962663610,
   ["Zumbi"] = 37754562,
   ["Pirate"] = 27847382,
-  ["Skeleton"] = 36781407
+  ["Skeleton"] = 36781407,
+  ["Penguin"] = 46359040,
+  ["Steampunk Robot"] = 4908010631,
+  ["Ud'zal"] = 3333102326,
+  ["Magma Fiend"] = 2608537440,
+  ["Mr. Toilet"] = 4416609175
 }
 
 RaelHubBrookHaven.TorsoPartsList = {
@@ -43,7 +57,12 @@ RaelHubBrookHaven.TorsoPartsList = {
   ["Jester Equinox"] = 2962665090,
   ["Zumbi"] = 37754511,
   ["Pirate"] = 27847359,
-  ["Skeleton"] = 36781360
+  ["Skeleton"] = 36781360,
+  ["Penguin"] = 46358991,
+  ["Steampunk Robot"] = 4908013767,
+  ["Ud'zal"] = 3333104378,
+  ["Magma Fiend"] = 2608539495,
+  ["Mr. Toilet"] = 4416616726
 }
 
 RaelHubBrookHaven.LeftLegPartsList = {
@@ -55,7 +74,12 @@ RaelHubBrookHaven.LeftLegPartsList = {
   ["Jester Equinox"] = 2962662653,
   ["Zumbi"] = 37754646,
   ["Pirate"] = 27847445,
-  ["Skeleton"] = 36781481
+  ["Skeleton"] = 36781481,
+  ["Penguin"] = 46359181,
+  ["Steampunk Robot"] = 4908008480,
+  ["Ud'zal"] = 3333101194,
+  ["Magma Fiend"] = 2608536258,
+  ["Mr. Toilet"] = 4416605868
 }
 
 RaelHubBrookHaven.RightLegPartsList = {
@@ -67,7 +91,12 @@ RaelHubBrookHaven.RightLegPartsList = {
   ["Jester Equinox"] = 2962664429,
   ["Zumbi"] = 37754710,
   ["Pirate"] = 27847473,
-  ["Skeleton"] = 36781518
+  ["Skeleton"] = 36781518,
+  ["Penguin"] = 46359241,
+  ["Steampunk Robot"] = 4908012938,
+  ["Ud'zal"] = 3333103459,
+  ["Magma Fiend"] = 2608538559,
+  ["Mr. Toilet"] = 4416612954
 }
 
 RaelHubBrookHaven.GetValkyrieIds = {
