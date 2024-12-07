@@ -641,7 +641,9 @@ end
 
 
 
-function RaelHubBrookHaven.PullCar(carro)
+function RaelHubBrookHaven.PullCar(carro, value)
+  
+  getgenv().RaelHubPullCarValue = value
   
   local Car = workspace.Vehicles:FindFirstChild(carro)
   local LocalPlayer = game.Players.LocalPlayer
@@ -667,9 +669,9 @@ function RaelHubBrookHaven.PullCar(carro)
         vehicleseat = Seat
       end
     end
-    while true do
+    while getgenv().RaelHubPullCarValue do
       if CheckPlayerSitting(vehicleseat, LocalPlayer.Name) then
-        break
+        getgenv().RaelHubPullCarValue = false
       else
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(vehicleseat.Position)
         task.wait(0.5)
