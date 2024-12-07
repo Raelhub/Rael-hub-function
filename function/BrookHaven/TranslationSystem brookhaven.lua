@@ -418,6 +418,8 @@ function TranslationModule:GetTabs()
         description = "Join my Discord and subscribe to my YouTube channel"
       }
       
+      return House, Clothes, Car, Jogador, Mostrar, Creditos
+      
     end
 end
 
