@@ -177,8 +177,6 @@ function TranslationModule:GetTabs()
     -- Detectar o idioma do jogador usando o LocalizationService
     local currentLanguage = GetPlayerLanguage()
     
-    print(currentLanguage)
-    
     -- Carregar as traduções do idioma do jogador se já existirem
     local savedConfig = LoadConfig(currentLanguage)
     
@@ -298,7 +296,128 @@ function TranslationModule:GetTabs()
         name = "Creditos",
         descricao = "Entre no meu discord e se inscreva no meu canal do YouTube"
       }
+      
+      task.wait(0.5)
+      
+      getgenv().RaelHubScreenGuiLoad:Destroy()
+      
       return House, Clothes, Car, Jogador, Mostrar, Creditos
+    else
+      
+      local House = {
+        name = "House",
+        section1 = "Remove your ban from houses",
+        section2 = "List of houses",
+        section3 = "Add sound ID to your house (gamepass)",
+        section4 = "Add sound ID to your house via player list (gamepass)",
+        toggle1 = "Automatically remove the ban",
+        toggle2 = "Pass through the house door",
+        toggle3 = "Spawn doorbell",
+        toggle4 = "Spawn door knock",
+        button1 = "Remove ban",
+        button2 = "Update house list",
+        button3 = "Teleport to the house",
+        button4 = "Teleport to the vault",
+        button5 = "Play the music",
+        button6 = "Save the playlist",
+        button7 = "Load the playlist",
+        dropdowntext1 = "Houses",
+        dropdowntext2 = "Music IDs",
+        textboxtext1 = "Music ID",
+        textboxtext2 = "Enter your pastebin",
+        textboxdescription = "Tutorial on Rael Hub channel"
+      }
+      
+      local Clothes = {
+        name = "Clothes",
+        section1 = "Make the character's name colorful",
+        section2 = "Make the character's bio colorful",
+        section3 = "Make the character colorful",
+        section4 = "Player list",
+        section5 = "Character body parts list",
+        section6 = "Valkyrie list",
+        section7 = "Sparkle time fedora list",
+        section8 = "Fairy list",
+        toggle1 = "Colorful name",
+        toggle2 = "Colorful bio",
+        toggle3 = "Colorful character",
+        equipedbutton = "Equip part",
+        equipedbutton2 = "Equip item",
+        button1 = "Copy player's skin",
+        button2 = "Copy nearest player's skin",
+        button3 = "Copy random player's skin",
+        dropdownplayertext = "Player list",
+        dropdownhandle = "Head",
+        dropdownleftarm = "Left arm",
+        dropdownrigtharm = "Right arm",
+        dropdowntorso = "Torso",
+        dropdownleftleg = "Left leg",
+        dropdownrigthleg = "Right leg",
+        dropdownvalkyrie = "Valkyries",
+        dropdownstf = "Sparkle time fedora",
+        dropdownfairy = "Fairies"
+      }
+      
+      local Car = {
+        name = "Cars",
+        section1 = "Modify vehicle speed",
+        section2 = "Make the car colorful",
+        section3 = "Car list",
+        section4 = "Spawns",
+        section5 = "Make the car lift",
+        section6 = "Do not sit in vehicles",
+        section7 = "Add sound ID to the car (gamepass)",
+        section8 = "Add sound ID to the car via playlist (gamepass)",
+        textboxtext1 = "Vehicle speed",
+        textboxtext2 = "Music ID",
+        toggle1 = "Colorful car",
+        toggle2 = "Pull car",
+        toggle3 = "Spawn fire",
+        toggle4 = "Spawn horn 1",
+        toggle5 = "Spawn horn 2",
+        toggle6 = "Lift car",
+        toggle7 = "Do not sit in vehicles",
+        button1 = "Update car list",
+        button2 = "Teleport to the car",
+        dropdowncar = "Cars"
+      }
+      
+      local Player = { 
+        name = "Player",
+        section1 = "Send message in chat",
+        section2 = "Player list",
+        section3 = "Player speed",
+        section4 = "Jump power",
+        section5 = "Pass through walls",
+        section6 = "Illuminate the map",
+        dropdowntext = "Players",
+        textboxtext = "Enter your text",
+        textboxplaceholder = "My text",
+        button1 = "Send text",
+        button2 = "Kill player",
+        button3 = "Pull player",
+        slide = "Text delay",
+        slidespeed = "Speed",
+        slidejump = "Power",
+        toggle1 = "Text spawn",
+        toggle2 = "Spectate player",
+        toggle3 = "Enable speed",
+        toggle4 = "Enable jump power",
+        toggle5 = "Enable no clip",
+        toggle6 = "Fullbright"
+      }
+      
+      local Show = {
+        name = "Esp",
+        toggle1 = "Esp player",
+        toggle2 = "Esp vehicle"
+      }
+      
+      local Credits = {
+        name = "Credits",
+        description = "Join my Discord and subscribe to my YouTube channel"
+      }
+      
     end
 end
 
