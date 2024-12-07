@@ -418,6 +418,10 @@ function TranslationModule:GetTabs()
         description = "Join my Discord and subscribe to my YouTube channel"
       }
       
+      task.wait(0.5)
+      
+      getgenv().RaelHubScreenGuiLoad:Destroy()
+      
       return House, Clothes, Car, Jogador, Mostrar, Creditos
       
     end
