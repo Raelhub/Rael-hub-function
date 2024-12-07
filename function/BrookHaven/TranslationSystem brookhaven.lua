@@ -297,7 +297,7 @@ function TranslationModule:GetTabs()
         name = "Creditos",
         descricao = "Entre no meu discord e se inscreva no meu canal do YouTube"
       }
-      
+      return House, Clothes, Car, Jogador, Mostrar, Creditos
     end
 end
 
