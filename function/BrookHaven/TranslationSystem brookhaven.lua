@@ -216,13 +216,13 @@ function TranslationModule:GetTabs()
         section4 = "Lista de jogadores",
         section5 = "Lista de partes do corpo do personagem",
         section6 = "Lista de valquírias",
-        section7 = "Lista de Sparkle time fedore",
-        section8 = "Lista de fardas",
+        section7 = "Lista de Sparkle time fedora",
+        section8 = "Lista de fadas",
         toggle1 = "Nome colorido",
         toggle2 = "Bio colorido",
         toggle3 = "Personagem colorido",
         equipedbutton = "Equipar parte",
-        equipedbutton2 = "Equipar parte",
+        equipedbutton2 = "Equipar item",
         button1 = "Copiar skin do jogador",
         button2 = "Copiar skin do jogador mais perto",
         button3 = "Copiar skin do jogador aleatório",
@@ -235,7 +235,7 @@ function TranslationModule:GetTabs()
         dropdownrigthleg = "Pé direito",
         dropdownvalkyrie = "Valquírias",
         dropdownstf = "Sparkle time fedora",
-        dropdownfairy = "Fairy"
+        dropdownfairy = "fadas"
         
       }
       
@@ -290,7 +290,7 @@ function TranslationModule:GetTabs()
       local Mostrar = {
         name = "Esp",
         toggle1 = "Esp player",
-        toggle2 = "Veículo"
+        toggle2 = "Esp Veículo"
       }
       
       local Creditos = {
