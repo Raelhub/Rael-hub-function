@@ -407,13 +407,13 @@ function TranslationModule:GetTabs()
         toggle6 = "Fullbright"
       }
       
-      local Show = {
+      local Mostrar = {
         name = "Esp",
         toggle1 = "Esp player",
         toggle2 = "Esp vehicle"
       }
       
-      local Credits = {
+      local Creditos = {
         name = "Credits",
         description = "Join my Discord and subscribe to my YouTube channel"
       }
