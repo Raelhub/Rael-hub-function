@@ -132,7 +132,7 @@ elseif getgenv().RaelHubAutoTranslator == false then
 end
 
 local TranslationModule = {}
-local configFolder = "RaelHub funky friday" -- Pasta onde os arquivos de tradução serão salvos
+local configFolder = "RaelHub brookhaven" -- Pasta onde os arquivos de tradução serão salvos
 
 -- Serviço de localização do Roblox
 local LocalizationService = game:GetService("LocalizationService")
@@ -180,116 +180,121 @@ function TranslationModule:GetTabs()
     -- Carregar as traduções do idioma do jogador se já existirem
     local savedConfig = LoadConfig(currentLanguage)
     
-    if getgenv().RaelHubAutoTranslator then
-      local NotificationManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/refs/heads/main/RaelHubNotify/script.lua"))()
+    if getgenv().RaelHubAutoTranslator and currentLanguage == "pt" then
 
-      local notification = NotificationManager.new()
-      -- Se as traduções já existem para o idioma atual, carregar
-      if savedConfig then
-        task.wait(1)
-          getgenv().RaelHubScreenGuiLoad:Destroy()
-        return savedConfig.Main, savedConfig.Jogador, savedConfig.Mostrar, savedConfig.Creditos
-      else
-        
-        local text = RaelHubTradutor.Tradutor("This may take a few minutes.", currentLanguage)
-        notification:createNotification(text, 5)
-        
-      end
-
-      local Main = {
-        name = RaelHubTradutor.Tradutor("Main", currentLanguage),
-        section1 = RaelHubTradutor.Tradutor("Autoplay for you", currentLanguage),
-        section2 = RaelHubTradutor.Tradutor("Auto put all funky friday code ", currentLanguage),
-        toggle = RaelHubTradutor.Tradutor("Auto play", currentLanguage),
-        button = RaelHubTradutor.Tradutor("Redeem codes", currentLanguage)
+      local House = {
+        name = "Casa",
+        section1 = "Remover seu ban nas casas",
+        section2 = "Lista de casas",
+        section3 = "Adicionar id de som na sua casa (gamepass)",
+        section4 = "Adicionar id de som na sua casa via playerlist (gamepass)",
+        toggle1 = "Remover o ban automáticamente",
+        toggle2 = "Atravessar a porta da casa",
+        toggle3 = "Spawn campinha",
+        toggle4 = "Spawn bater porta",
+        button1 = "Remover ban",
+        button2 = "Atulizar lista das casas",
+        button3 = "Teleportar para a casa",
+        button4 = "Teleportar para o cofre",
+        button5 = "Tocar a música",
+        button6 = "Salvar a playlist",
+        button7 = "Carrgar a playlist",
+        dropdowntext1 = "Casas",
+        dropdowntext2 = "Musicas ids",
+        textboxtext1 = "Musica Id",
+        textboxtext2 = "Ensira seu pastebin",
+        textboxdescription = "Tutorial no canal rael hub"
       }
       
-      notification:createNotification(RaelHubTradutor.Tradutor('"Main" translation completed', currentLanguage), 5)
-      local Jogador = {
-        name = RaelHubTradutor.Tradutor("Player", currentLanguage),
-        section1 = RaelHubTradutor.Tradutor("Teleport to players", currentLanguage),
-        section2 = RaelHubTradutor.Tradutor("Player Speed", currentLanguage),
-        section3 = RaelHubTradutor.Tradutor("Pass through objects", currentLanguage),
-        section4 = RaelHubTradutor.Tradutor("Light up the map", currentLanguage),
-        section5 = RaelHubTradutor.Tradutor("Do you walk on water", currentLanguage),
-        dropdowntext = RaelHubTradutor.Tradutor("Players: ", currentLanguage),
-        slidetext = RaelHubTradutor.Tradutor("Speed: ", currentLanguage),
-        button = RaelHubTradutor.Tradutor("Teleport to player", currentLanguage),
-        toggle1 = RaelHubTradutor.Tradutor("Ativar velocidade", currentLanguage),
-        toggle2 = RaelHubTradutor.Tradutor("Walking On Water", currentLanguage)
+      local Clothes = {
+        name = "Roupas",
+        section1 = "Deixar o nome do personagem colorido",
+        section2 = "Deixar o bio do personagem colorido",
+        section3 = "Deixar o personagem colorido",
+        section4 = "Lista de jogadores",
+        section5 = "Lista de partes do corpo do personagem",
+        section6 = "Lista de valquírias",
+        section7 = "Lista de Sparkle time fedore",
+        section8 = "Lista de fardas",
+        toggle1 = "Nome colorido",
+        toggle2 = "Bio colorido",
+        toggle3 = "Personagem colorido",
+        equipedbutton = "Equipar parte",
+        equipedbutton2 = "Equipar parte",
+        button1 = "Copiar skin do jogador",
+        button2 = "Copiar skin do jogador mais perto",
+        button3 = "Copiar skin do jogador aleatório",
+        dropdownplayertext = "Lista de jogadores",
+        dropdownhandle = "Cabeça",
+        dropdownleftarm = "Braço esquerdo",
+        dropdownrigtharm = "Braço direito",
+        dropdowntorso = "Tronco",
+        dropdownleftleg = "Pé esquerdo",
+        dropdownrigthleg = "Pé direito",
+        dropdownvalkyrie = "Valquírias",
+        dropdownstf = "Sparkle time fedora",
+        dropdownfairy = "Fairy"
+        
       }
-      notification:createNotification(RaelHubTradutor.Tradutor('"Player" translation completed', currentLanguage), 5)
-      local Mostrar = {
-        name = "Esp",
-        section1 = RaelHubTradutor.Tradutor("Show objects", currentLanguage),
-        section2 = RaelHubTradutor.Tradutor("Show the monsters", currentLanguage),
-        section3 = RaelHubTradutor.Tradutor("Show players", currentLanguage),
-        toggle1 = "Esp " .. RaelHubTradutor.Tradutor(" object ", currentLanguage),
-        toggle2 = "Esp " .. RaelHubTradutor.Tradutor(" monster ", currentLanguage),
-        toggle3 = "Esp " .. RaelHubTradutor.Tradutor(" players ", currentLanguage)
-      }
-      notification:createNotification(RaelHubTradutor.Tradutor('"Show" translation completed', currentLanguage), 5)
-      local Creditos = {
-        name = RaelHubTradutor.Tradutor("Credits", currentLanguage),
-        section = RaelHubTradutor.Tradutor("Script creator", currentLanguage),
-        descricao = RaelHubTradutor.Tradutor("Join my YouTube channel and Discord for new updates", currentLanguage),
-        ContentNotify = RaelHubTradutor.Tradutor("The script has been copied to the desktop", currentLanguage)
-      }
-      notification:createNotification(RaelHubTradutor.Tradutor('"Credits" translation completed', currentLanguage), 5)
-      -- Salvar as traduções para o idioma do jogador
-      local updatedConfig = {
-        Main = Main,
-        Jogador = Jogador,
-        Mostrar = Mostrar,
-        Creditos = Creditos
-      }
-
-      SaveConfig(updatedConfig, currentLanguage)
-      notification:createNotification(RaelHubTradutor.Tradutor('Translation completed successfully', currentLanguage), 5)
-      getgenv().RaelHubScreenGuiLoad:Destroy()
-      return Main, Jogador, Mostrar, Creditos
-    elseif getgenv().RaelHubAutoTranslator == false then
       
-      local Main = {
-        name = "Main",
-        section1 = "Autoplay for you",
-        section2 = "Auto put all funky friday code",
-        toggle = "Auto play",
-        button = "Redeem codes"
+      local Car = {
+        name = "Carros",
+        section1 = "Modificar a velocidade do veículo",
+        section2 = "Deixar o carro colorido",
+        section3 = "Lista de carros",
+        section4 = "Spawns",
+        section5 = "Fazer o carro subir",
+        section6 = "Não ficar sentando em veículos",
+        section7 = "Adicionar id de som no carro (gamepass)",
+        section8 = "Adicionar id de som no carro via playlist (gamepass)",
+        textboxtext1 = "Velocidade do veículo",
+        textboxtext2 = "Música id",
+        toggle1 = "Carro colorido",
+        toggle2 = "Puxar carro",
+        toggle3 = "Spawn fogo",
+        toggle4 = "Spawn buzina 1",
+        toggle5 = "Spawn buzina 2",
+        toggle6 = "Subir carro",
+        toggle7 = "Não se sentar em veículos",
+        button1 = "Atualizar lista de carros",
+        button2 = "Teleportar para o carro",
+        dropdowncar = "Carros"
       }
-      local Jogador = {
-        name = "Player",
-        section1 = "Teleport to players",
-        section2 = "Player Speed",
-        section3 = "Pass through objects",
-        section4 = "Light up the map",
-        section5 = "Do you walk on water",
-        dropdowntext = "Players: ",
-        slidetext = "Speed: ",
-        button = "Teleport to player",
-        toggle1 = "Enable speed",
-        toggle2 = "Walking On Water"
+      
+      local Jogador = { 
+        name = "Jogador",
+        section1 = "Mandar mensagem no chat",
+        section2 = "Lista de jogadores",
+        section3 = "Velocidade do jogador",
+        section4 = "Força do pulo",
+        section5 = "Atravessar as paredes",
+        section6 = "Iluminar o mapa",
+        textboxtext = "Ensira seu texto",
+        textboxplaceholder = "Meu texto",
+        button1 = "Mandar texto",
+        button2 = "Matar jogador",
+        button3 = "Puxar jogador",
+        slide = "Delay do texto",
+        slidespeed = "Velocidade",
+        slidejump = "Força",
+        toggle1 = "Spawn de textos",
+        toggle2 = "Spectar jogador",
+        toggle3 = "Ativar velocidade",
+        toggle4 = "Ativar força do pulo",
+        toggle5 = "Ativar no clip",
+        toggle6 = "Fullbright"
       }
-
+      
       local Mostrar = {
         name = "Esp",
-        section1 = "Show objects",
-        section2 = "Show the monsters",
-        section3 = "Show players",
-        toggle1 = "Esp object ",
-        toggle2 = "Esp monster ",
-        toggle3 = "Esp players "
+        toggle1 = "Esp player",
+        toggle2 = "Veículo"
       }
-
+      
       local Creditos = {
-        name = "Credits",
-        section = "Script creator",
-        descricao = "Join my YouTube channel and Discord for new updates",
-        ContentNotify = "The script has been copied to the desktop"
+        name = "Creditos",
+        descricao = "Entre no meu discord e se inscreva no meu canal do YouTube"
       }
-
-      getgenv().RaelHubScreenGuiLoad:Destroy()
-      return Main, Jogador, Mostrar, Creditos
       
     end
 end
