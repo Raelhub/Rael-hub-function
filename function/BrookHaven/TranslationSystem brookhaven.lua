@@ -271,6 +271,7 @@ function TranslationModule:GetTabs()
         section4 = "Força do pulo",
         section5 = "Atravessar as paredes",
         section6 = "Iluminar o mapa",
+        dropdowntext = "Jogadores",
         textboxtext = "Ensira seu texto",
         textboxplaceholder = "Meu texto",
         button1 = "Mandar texto",
