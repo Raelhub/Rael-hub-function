@@ -382,7 +382,7 @@ function TranslationModule:GetTabs()
         dropdowncar = "Cars"
       }
       
-      local Player = { 
+      local Jogador = { 
         name = "Player",
         section1 = "Send message in chat",
         section2 = "Player list",
