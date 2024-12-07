@@ -176,7 +176,9 @@ function TranslationModule:GetTabs()
 
     -- Detectar o idioma do jogador usando o LocalizationService
     local currentLanguage = GetPlayerLanguage()
-
+    
+    print(currentLanguage)
+    
     -- Carregar as traduções do idioma do jogador se já existirem
     local savedConfig = LoadConfig(currentLanguage)
     
