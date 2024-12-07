@@ -161,14 +161,14 @@ function RaelHubBrookHaven.SetHandle(ID)
       local args = {
           [1] = "CharacterChange",
           [2] = {
-          [1] = BodyParts.Torso,
-          [2] = BodyParts.RightArm,
-          [3] = BodyParts.LeftArm,
-          [4] = BodyParts.LeftLeg,
-          [5] = BodyParts.LeftLeg,
+          [1] = 1,
+          [2] = 1,
+          [3] = 1,
+          [4] = 1,
+          [5] = 1,
           [6] = ID
         },
-        [3] = "Boy"
+        [3] = "Join my Discord (Rael Hub)"
       }
 
     game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
@@ -197,14 +197,14 @@ function RaelHubBrookHaven.SetIdLeftArm(ID)
       local args = {
           [1] = "CharacterChange",
           [2] = {
-          [1] = BodyParts.Torso,
-          [2] = BodyParts.RightArm,
+          [1] = 1,
+          [2] = 1,
           [3] = ID,
-          [4] = BodyParts.RightLeg,
-          [5] = BodyParts.LeftLeg,
-          [6] = BodyParts.Head
+          [4] = 1,
+          [5] = 1,
+          [6] = 1
         },
-        [3] = "Boy"
+        [3] = "Join my Discord (Rael Hub)"
       }
 
     game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
@@ -233,14 +233,14 @@ function RaelHubBrookHaven.SetIdRightArm(ID)
       local args = {
           [1] = "CharacterChange",
           [2] = {
-          [1] = BodyParts.Torso,
+          [1] = 1,
           [2] = ID,
-          [3] = BodyParts.RightArm,
-          [4] = BodyParts.RightLeg,
-          [5] = BodyParts.LeftLeg,
-          [6] = BodyParts.Head
+          [3] = 1,
+          [4] = 1,
+          [5] = 1,
+          [6] = 1
         },
-        [3] = "Boy"
+        [3] = "Join my Discord (Rael Hub)"
       }
 
     game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
@@ -270,13 +270,13 @@ function RaelHubBrookHaven.SetIdTorso(ID)
           [1] = "CharacterChange",
           [2] = {
           [1] = ID,
-          [2] = BodyParts.LeftArm,
-          [3] = BodyParts.RightArm,
-          [4] = BodyParts.RightLeg,
-          [5] = BodyParts.LeftLeg,
-          [6] = BodyParts.Head
+          [2] = 1,
+          [3] = 1,
+          [4] = 1,
+          [5] = 1,
+          [6] = 1
         },
-        [3] = "Boy"
+        [3] = "Join my Discord (Rael Hub)"
       }
 
     game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
@@ -305,14 +305,14 @@ function RaelHubBrookHaven.SetIdRightLeg(ID)
       local args = {
           [1] = "CharacterChange",
           [2] = {
-          [1] = BodyParts.Torso,
-          [2] = BodyParts.RightArm,
-          [3] = BodyParts.LeftArm,
+          [1] = 1,
+          [2] = 1,
+          [3] = 1,
           [4] = ID,
-          [5] = BodyParts.LeftLeg,
-          [6] = BodyParts.Head
+          [5] = 1,
+          [6] = 1
         },
-        [3] = "Boy"
+        [3] = "Join my Discord (Rael Hub)"
       }
 
     game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
@@ -341,14 +341,14 @@ function RaelHubBrookHaven.SetIdLeftLeg(ID)
       local args = {
           [1] = "CharacterChange",
           [2] = {
-          [1] = BodyParts.Torso,
-          [2] = BodyParts.RightArm,
-          [3] = BodyParts.LeftArm,
-          [4] = BodyParts.RightLeg,
+          [1] = 1,
+          [2] = 1,
+          [3] = 1,
+          [4] = 1,
           [5] = ID,
-          [6] = BodyParts.Head
+          [6] = 1
         },
-        [3] = "Boy"
+        [3] = "Join my Discord (Rael Hub)"
       }
 
     game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
