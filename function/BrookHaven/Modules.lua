@@ -566,7 +566,6 @@ function RaelHubBrookHaven.KillPlayer(targetPlayerName)
       local character = seatweld.Part1.Parent
       local player = game.Players:GetPlayerFromCharacter(character)
       if player and player.Name == playername then
-        print("O jogador está sentado no assento.")
         return true
       end
     end
@@ -640,9 +639,50 @@ function RaelHubBrookHaven.KillPlayer(targetPlayerName)
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(SavePositionPlayer)
 end
 
+
+
+function RaelHubBrookHaven.PullCar(carro)
+  
+  local Car = workspace.Vehicles:FindFirstChild(carro)
+  local LocalPlayer = game.Players.LocalPlayer
+  local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+  local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
+  local SavePositionPlayer = HumanoidRootPart.Position
+
+  function CheckPlayerSitting(seat, playername)
+    local seatweld = seat:FindFirstChild("SeatWeld")
+    if seatweld then
+      local character = seatweld.Part1.Parent
+      local player = game.Players:GetPlayerFromCharacter(character)
+      if player and player.Name == playername then
+        return true
+      end
+    end
+    return
+  end
+  if Car then
+    local vehicleseat
+    for _, Seat in ipairs(Car:GetDescendants()) do
+      if Seat.Name == "VehicleSeat" then
+        vehicleseat = Seat
+      end
+    end
+    while true do
+      if CheckPlayerSitting(vehicleseat, LocalPlayer.Name) then
+        break
+      else
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(vehicleseat.Position)
+        task.wait(0.5)
+      end
+    end
+    task.wait(0.5)
+    Car:SetPrimaryPartCFrame(CFrame.new(SavePositionPlayer))
+  end
+end
+
 function RaelHubBrookHaven.PullPlayer(targetPlayerName)
   -- Variáveis goblais
-  getgenv().RaelHubKillPlayerValue = true
+  getgenv().RaelHubPullPlayerValue = true
 
   -- Variáveis Normais
   local LocalPlayer = game.Players.LocalPlayer
@@ -660,7 +700,6 @@ function RaelHubBrookHaven.PullPlayer(targetPlayerName)
       local character = seatweld.Part1.Parent
       local player = game.Players:GetPlayerFromCharacter(character)
       if player and player.Name == playername then
-        print("O jogador está sentado no assento.")
         return true
       end
     end
@@ -698,16 +737,16 @@ function RaelHubBrookHaven.PullPlayer(targetPlayerName)
     task.wait()
   end
   task.wait(0.3)
-  while getgenv().RaelHubKillPlayerValue do
+  while getgenv().RaelHubPullPlayerValue do
     local YourBus = workspace.Vehicles[NameYourCar]
     for _, acentos in ipairs(YourBus.Body:GetChildren()) do
       if acentos.Name == "Passenger" then
         if CheckPlayerSitting(acentos, PlayerWhoWillDie.Name) then
-          getgenv().RaelHubKillPlayerValue = false
+          getgenv().RaelHubPullPlayerValue = false
         else
           if YourBus.PrimaryPart and PlayerWhoWillDie:FindFirstChild("HumanoidRootPart") then
             local targetPosition = PlayerWhoWillDie.HumanoidRootPart.Position
-            local randomOffset = math.random(-8, 8)
+            local randomOffset = math.random(-9, 9)
             local teleportPosition = Vector3.new(
               targetPosition.X + randomOffset, 
               targetPosition.Y, 
