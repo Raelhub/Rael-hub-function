@@ -2,11 +2,9 @@ function RaelHubLoadScreenGui(textvalue)
   local player = game.Players.LocalPlayer
   local playerGui = player:WaitForChild("PlayerGui")
 
-  -- Cria a tela de carregamento
   getgenv().RaelHubScreenGuiLoad = Instance.new("ScreenGui")
   getgenv().RaelHubScreenGuiLoad.Parent = playerGui
 
-  -- Imagem de fundo (opcional)
   local imageLabel = Instance.new("ImageLabel")
   imageLabel.Size = UDim2.new(0.7, 0, 0.6, 0)
   imageLabel.Position = UDim2.new(0.15, 0, 0.2, 0)
@@ -15,22 +13,20 @@ function RaelHubLoadScreenGui(textvalue)
   imageLabel.ScaleType = Enum.ScaleType.Stretch
   imageLabel.Parent = getgenv().RaelHubScreenGuiLoad
 
-  -- Cria o TextLabel
   local title = Instance.new("TextLabel")
   title.Size = UDim2.new(0.6, 0, 0.1, 0)
   title.AnchorPoint = Vector2.new(0.5, 0.5)
-  title.Position = UDim2.new(0.5, 0, 0.5, 0) -- Posição centralizada
+  title.Position = UDim2.new(0.5, 0, 0.5, 0)
   title.BackgroundTransparency = 1
   title.Text = textvalue
-  title.TextColor3 = Color3.fromRGB(16, 235, 138) -- Cor do texto
+  title.TextColor3 = Color3.fromRGB(16, 235, 138)
   title.Font = Enum.Font.ArialBold
   title.TextScaled = true
-  title.TextTransparency = 1 -- Começa invisível
+  title.TextTransparency = 1
   title.Parent = getgenv().RaelHubScreenGuiLoad
 
 
 
-  -- Função para fazer o fade in
   local function fadeInText(duration, object)
     local increment = 0.05
     local step = increment / duration
@@ -40,7 +36,6 @@ function RaelHubLoadScreenGui(textvalue)
     end
   end
 
-  -- Função para fazer o fade out
   local function fadeOutText(duration, object)
     local increment = 0.05
     local step = increment / duration
@@ -132,7 +127,7 @@ elseif getgenv().RaelHubAutoTranslator == false then
 end
 
 local TranslationModule = {}
-local configFolder = "RaelHub brookhaven" -- Pasta onde os arquivos de tradução serão salvos
+local configFolder = "RaelHub brookhaven"
 
 -- Serviço de localização do Roblox
 local LocalizationService = game:GetService("LocalizationService")
