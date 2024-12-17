@@ -284,7 +284,7 @@ local GetFlag, SetFlag, CheckFlag do
 end
 
 local ScreenGui = Create("ScreenGui", CoreGui, {
-  Name = "redz Library V5",
+  Name = "rael hub with redz library",
 }, {
   Create("UIScale", {
     Scale = UIScale,
@@ -588,7 +588,7 @@ function redzlib:SetScale(NewScale)
 end
 
 function redzlib:MakeWindow(Configs)
-  local WTitle = Configs[1] or Configs.Name or Configs.Title or "redz Library V5"
+  local WTitle = Configs[1] or Configs.Name or Configs.Title or "rael hub with redz library"
   local WMiniText = Configs[2] or Configs.SubTitle or "by : redz9999"
   
   Settings.ScriptFile = Configs[3] or Configs.SaveFolder or false
