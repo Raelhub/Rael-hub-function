@@ -453,7 +453,8 @@ RaelHubFisch.TeleportsItens = {
   Glider = CFrame.new(-1637.8697509765625, -211.32920837402344, -2859.380126953125),
   Coral_Geode = CFrame.new(-1644.2064208984375, -213.679443359375, -2848.64990234375),
   Conception_Conch = CFrame.new(-1632.965087890625, -213.67941284179688, -2860.5),
-  Eclipse_Totem = CFrame.new(5967.33203125, 274.1360778808594, 839.1844482421875)
+  Eclipse_Totem = CFrame.new(5967.33203125, 274.1360778808594, 839.1844482421875),
+  Meteoro_Totem = CFrame.new(-1948, 275.3567199707031, 230)
 }
 
 RaelHubFisch.TeleportsRods = {
