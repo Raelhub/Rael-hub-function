@@ -373,6 +373,7 @@ RaelHubFisch.FishingArea = {
 }
 
 RaelHubFisch.TeleportSpots = {
+  Northern = CFrame.new(19535.4453125, 132.67010498046875, 5293.35546875),
   the_detphs_maze_exit = CFrame.new(978.142822265625, -701.1101684570312, 1253.7423095703125),
   the_detphs_sentence = CFrame.new(11.46270751953125, -706.1237182617188, 1230.847900390625),
   forsaken_Shores = CFrame.new(-2515.0400390625, 135.79074096679688, 1576.5709228515625),
