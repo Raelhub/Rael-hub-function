@@ -228,6 +228,7 @@ function TranslationModule:GetTabs()
         dropdowntorso = "Tronco",
         dropdownleftleg = "Pé esquerdo",
         dropdownrigthleg = "Pé direito",
+        dropdowndominus = "Dominus",
         dropdownvalkyrie = "Valquírias",
         dropdownstf = "Sparkle time fedora",
         dropdownfairy = "fadas"
