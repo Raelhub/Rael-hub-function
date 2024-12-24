@@ -212,6 +212,7 @@ function TranslationModule:GetTabs()
         section7 = "Lista de Valquírias",
         section8 = "Lista de Sparkle time fedora",
         section9 = "Lista de Fadas",
+        section10 = "Lista de itens de som",
         toggle1 = "Nome colorido",
         toggle2 = "Bio colorido",
         toggle3 = "Personagem colorido",
@@ -231,7 +232,8 @@ function TranslationModule:GetTabs()
         dropdowndominus = "Dominus",
         dropdownvalkyrie = "Valquírias",
         dropdownstf = "Sparkle time fedora",
-        dropdownfairy = "fadas"
+        dropdownfairy = "fadas",
+        dropdownsong = "Song itens"
         
       }
       
@@ -338,6 +340,7 @@ function TranslationModule:GetTabs()
         section7 = "Valkyrie list",
         section8 = "Sparkle time fedora list",
         section9 = "Fairy list",
+        section10 = "Sound Item List",
         toggle1 = "Colorful name",
         toggle2 = "Colorful bio",
         toggle3 = "Colorful character",
@@ -357,7 +360,8 @@ function TranslationModule:GetTabs()
         dropdowndominus = "Dominus",
         dropdownvalkyrie = "Valkyries",
         dropdownstf = "Sparkle time fedora",
-        dropdownfairy = "Fairies"
+        dropdownfairy = "Fairies",
+        dropdownsong = "Song itens"
       }
       
       local Car = {
