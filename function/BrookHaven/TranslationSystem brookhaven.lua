@@ -301,8 +301,8 @@ function TranslationModule:GetTabs()
         name = "Cliente",
         section1 = "Gamepass",
         section2 = "Puxe os jogadores para perto de você",
-        button1 = "Puxe todos os jogadores",
-        button2 = "Desbloquear gamepass de música"
+        button1 = "Desbloquear gamepass de música",
+        button2 = "Puxe todos os jogadores"
       }
       
       local Mostrar = {
@@ -320,7 +320,7 @@ function TranslationModule:GetTabs()
       
       getgenv().RaelHubScreenGuiLoad:Destroy()
       
-      return House, Clothes, Car, Jogador, Mostrar, Creditos
+      return House, Clothes, Car, Jogador, Cliente, Mostrar, Creditos
     else
       
       local House = {
