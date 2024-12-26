@@ -276,6 +276,10 @@ function TranslationModule:GetTabs()
         section6 = "Iluminar o mapa",
         dropdowntext = "Jogadores",
         dropdownchoosemode = "Escolher o modo",
+        dropdownchoosemodevalues = {
+          "Ônibus",
+          "Sofa"
+        },
         textboxtext = "Ensira seu texto",
         textboxplaceholder = "Meu texto",
         button1 = "Mandar texto",
@@ -291,6 +295,14 @@ function TranslationModule:GetTabs()
         toggle4 = "Ativar força do pulo",
         toggle5 = "Ativar no clip",
         toggle6 = "Fullbright"
+      }
+      
+      local Cliente = {
+        name = "Cliente",
+        section1 = "Gamepass",
+        section2 = "Puxe os jogadores para perto de você",
+        button1 = "Puxe todos os jogadores",
+        button2 = "Desbloquear gamepass de música"
       }
       
       local Mostrar = {
@@ -409,6 +421,10 @@ function TranslationModule:GetTabs()
         section6 = "Illuminate the map",
         dropdowntext = "Players",
         dropdownchoosemode = "Choose mode",
+        dropdownchoosemodevalues = {
+          "Bus",
+          "Couch"
+        },
         textboxtext = "Enter your text",
         textboxplaceholder = "My text",
         button1 = "Send text",
@@ -426,6 +442,14 @@ function TranslationModule:GetTabs()
         toggle6 = "Fullbright"
       }
       
+      local Cliente = {
+        name = "Client",
+        section1 = "Gamepass",
+        section2 = "Pull players towards you",
+        button1 = "Pull all players",
+        button2 = "Unlock music gamepass"
+      }
+      
       local Mostrar = {
         name = "Esp",
         toggle1 = "Esp player",
@@ -441,7 +465,7 @@ function TranslationModule:GetTabs()
       
       getgenv().RaelHubScreenGuiLoad:Destroy()
       
-      return House, Clothes, Car, Jogador, Mostrar, Creditos
+      return House, Clothes, Car, Jogador, Cliente, Mostrar, Creditos
       
     end
 end
