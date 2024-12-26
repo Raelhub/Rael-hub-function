@@ -446,8 +446,8 @@ function TranslationModule:GetTabs()
         name = "Client",
         section1 = "Gamepass",
         section2 = "Pull players towards you",
-        button1 = "Pull all players",
-        button2 = "Unlock music gamepass"
+        button1 = "Unlock music gamepass",
+        button2 = "Pull all players"
       }
       
       local Mostrar = {
