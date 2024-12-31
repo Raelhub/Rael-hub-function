@@ -465,11 +465,11 @@ function TranslationModule:GetTabs()
       local Ferramenta = { 
         name = "Tool",
         section1 = "Equip tool",
-        section2 = "Equip weapons",
+        section2 = "Equip guns",
         section3 = "Add weapon sound by ID",
         section4 = "Sound ID list",
         ToolDropdownName = "Tools names",
-        ToolGunDropdownName = "Weapons names",
+        ToolGunDropdownName = "Guns names",
         SoundIDDropdownName = "Sound IDs",
         SoundIDTextBoxName = "Enter sound ID",
         buttonEquip = "Equip item",
@@ -484,7 +484,6 @@ function TranslationModule:GetTabs()
         button1 = "Unlock music gamepass",
         button2 = "Pull all players"
       }
-      
       local Mostrar = {
         name = "Esp",
         toggle1 = "Esp player",
