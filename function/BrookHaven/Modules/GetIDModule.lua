@@ -1,5 +1,20 @@
 local GetIdBrookHaven = {}
 
+local LocalizationService = game:GetService("LocalizationService")
+
+function GetPlayerLanguage()
+  local result, code = pcall(function()
+    return LocalizationService.RobloxLocaleId
+  end)
+  if result then
+    return code:sub(1, 2)
+  else
+    return "en"
+  end
+end
+
+local PlayerLanguage = GetPlayerLanguage()
+
 GetIdBrookHaven.HeadPartsList = {
   ["Korblox"] = 139610147,
   ["Headless Horseman"] = 134082579,
@@ -167,11 +182,11 @@ GetIdBrookHaven.GetSparkleTimeFedoraIds = {
 }
 
 GetIdBrookHaven.GetGunsNames = {
-  "Glock",
-  "GlockBrown",
-  "Shotgun",
-  "Assault",
-  "Sniper"
+  ["Glock"] = "Glock",
+  ["GlockBrown"] = "GlockBrown",
+  ["Shotgun"] = "Shotgun",
+  ["Assault"] = "Assault",
+  ["Sniper"] = "Sniper"
 }
 
 return GetIdBrookHaven
