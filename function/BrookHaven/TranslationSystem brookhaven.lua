@@ -428,18 +428,21 @@ function TranslationModule:GetTabs()
         textboxtext = "Enter your text",
         textboxplaceholder = "My text",
         button1 = "Send text",
-        button2 = "Teleport to player",
-        button3 = "Kill player",
-        button4 = "Pull player",
+        button2 = "Kill player",
+        button3 = "Pull player",
+        button4 = "Teleport to player",
+        button5 = "Teleportar para o jogador com o carro",
         slide = "Text delay",
         slidespeed = "Speed",
         slidejump = "Power",
         toggle1 = "Text spawn",
         toggle2 = "Spectate player",
-        toggle3 = "Enable speed",
-        toggle4 = "Enable jump power",
-        toggle5 = "Enable no clip",
-        toggle6 = "Fullbright"
+        toggle3 = "Teleportar para jogador loop",
+        toggle4 = "Teleportar para o jogador com o carro loop",
+        toggle5 = "Enable speed",
+        toggle6 = "Enable jump power",
+        toggle7 = "Enable no clip",
+        toggle8 = "Fullbright"
       }
       
       local Cliente = {
