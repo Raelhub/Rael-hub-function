@@ -189,4 +189,13 @@ GetIdBrookHaven.GetGunsNames = {
   ["Sniper"] = "Sniper"
 }
 
+GetIdBrookHaven.GetToolsNames = {
+  ["Couch"] = "Couch",
+  ["Glock"] = "Glock",
+  ["GlockBrown"] = "GlockBrown",
+  ["Shotgun"] = "Shotgun",
+  ["Assault"] = "Assault",
+  ["Sniper"] = "Sniper"
+}
+
 return GetIdBrookHaven

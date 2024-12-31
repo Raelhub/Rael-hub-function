@@ -300,6 +300,20 @@ function TranslationModule:GetTabs()
         toggle8 = "Fullbright"
       }
       
+      local Ferramenta = { 
+        name = "Tool",
+        section1 = "Equipar tool",
+        section2 = "Equipar armas",
+        section3 = "Adicionar som de arma através do id",
+        section4 = "Lista de ids de som",
+        ToolDropdownName = "Tools names",
+        ToolGunDropdownName = "Armas names",
+        SoundIDDropdownName = "Sounds ids",
+        SoundIDTextBoxName = "Colocar id de som",
+        buttonEquip = "Equipe item",
+        buttonPlay = "Tocar música",
+        togglePlay = "Tocar música loop"
+      }
       local Cliente = {
         name = "Cliente",
         section1 = "Gamepass",
@@ -323,7 +337,7 @@ function TranslationModule:GetTabs()
       
       getgenv().RaelHubScreenGuiLoad:Destroy()
       
-      return House, Clothes, Car, Jogador, Cliente, Mostrar, Creditos
+      return House, Clothes, Car, Jogador, Ferramenta, Cliente, Mostrar, Creditos
     else
       
       local House = {
@@ -448,6 +462,21 @@ function TranslationModule:GetTabs()
         toggle8 = "Fullbright"
       }
       
+      local Ferramenta = { 
+        name = "Tool",
+        section1 = "Equip tool",
+        section2 = "Equip weapons",
+        section3 = "Add weapon sound by ID",
+        section4 = "Sound ID list",
+        ToolDropdownName = "Tools names",
+        ToolGunDropdownName = "Weapons names",
+        SoundIDDropdownName = "Sound IDs",
+        SoundIDTextBoxName = "Enter sound ID",
+        buttonEquip = "Equip item",
+        buttonPlay = "Play music",
+        togglePlay = "Play music loop"
+      }
+      
       local Cliente = {
         name = "Client",
         section1 = "Gamepass",
@@ -471,7 +500,7 @@ function TranslationModule:GetTabs()
       
       getgenv().RaelHubScreenGuiLoad:Destroy()
       
-      return House, Clothes, Car, Jogador, Cliente, Mostrar, Creditos
+      return House, Clothes, Car, Jogador, Ferramenta, Cliente, Mostrar, Creditos
       
     end
 end
